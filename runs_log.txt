@@ -1,0 +1,46 @@
+=== Drips Wave 11 hourly bot — run at 2026-11-13T19:17:16.420304+00:00 ===
+
+[0/4] No previous run state found — first run.
+[1/4] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
+[1/4] Fetching all open Wave issues (state=open only)...
+  page 1: got 100, cumulative=100, total=9639, hasNext=True
+  page 20: got 100, cumulative=2000, total=9639, hasNext=True
+  page 40: got 100, cumulative=4000, total=9639, hasNext=True
+  page 60: got 100, cumulative=6000, total=9639, hasNext=True
+  page 80: got 100, cumulative=8000, total=9639, hasNext=True
+  page 97: got 39, cumulative=9639, total=9639, hasNext=False
+[1/4] open issues total: 9639
+
+[2/4] Fetching closed+PR issues closed within Wave 11 window (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
+  page 1: got 100, cumulative=100, total=348138, hasNext=True
+  early-stop triggered at page 1 (cumulative=100)
+  → 0 unique rewarded issues closed within Wave 11 window
+[2/4] closed+rewarded in Wave 11 window: 0
+
+[3/4] Computing distributions + contributor scores + deltas...
+  maxTotalWave11Points = 6,129,400
+  totalPointsScored    = 0
+  contributors         = 0
+  newSinceLastRun      = 9639
+
+[4/4] Writing snapshot to runs/2026-11-13T19-18Z/...
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-18Z/summary.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-18Z/summary.md
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-18Z/contributors.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-18Z/closed_in_wave.json
+  appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
+  updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
+
+=== HOURLY RUN SUMMARY ===
+Run at (UTC)        : 2026-11-13T19:18:07+00:00
+Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
+In Wave window now? : False
+Open issues total   : 9,639
+Max W11 points (Σ base × 4): 6,129,400 pts
+Distribution        : small=3613, medium=683, large=5343
+New since last run  : 9,639
+Rewarded issues closed in Wave 11 window: 0
+Points scored so far in Wave 11: 0 pts
+Contributors paid in Wave 11: 0
+=== END ===
+
