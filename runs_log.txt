@@ -1,6 +1,6 @@
-=== Drips Wave 11 hourly bot — run at 2026-11-13T19:27:56.465716+00:00 ===
+=== Drips Wave 11 hourly bot — run at 2026-11-13T20:00:07.860879+00:00 ===
 
-[0/4] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-13T19:18:07+00:00, openIssues=9639)
+[0/4] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-13T19:28:24+00:00, openIssues=9639)
 [1/4] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
 [1/4] Fetching all open Wave issues (state=open only)...
   page 1: got 100, cumulative=100, total=9639, hasNext=True
@@ -17,34 +17,37 @@
   → 0 unique rewarded issues closed within Wave 11 window
 [2/4] closed+rewarded in Wave 11 window: 0
 
-[3/4] Computing distributions + contributor scores + deltas...
-  maxTotalWave11Points = 6,129,400
-  totalPointsScored    = 0
+[3/5] Computing precise metrics (per-issue points × multiplier)...
+  openTotalPoints      = 1,632,850
+  closedInWave points  = 0  (scored=0)
+  maxTotalPoints       = 1,632,850  (= open + closed-in-wave, PRECISE)
   contributors         = 0
   newSinceLastRun      = 0
 
-[4/4] Writing snapshot to runs/2026-11-13T19-28Z/...
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-28Z/summary.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-28Z/summary.md
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-28Z/contributors.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T19-28Z/closed_in_wave.json
+[4/5] Writing snapshot to runs/2026-11-13T20-01Z/...
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-01Z/summary.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-01Z/summary.md
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-01Z/contributors.json
   appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
   updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
+  wrote /home/runner/work/drips-wave-tracker/drips-wave-tracker/latest.json + /home/runner/work/drips-wave-tracker/drips-wave-tracker/history.json (for GitHub Pages site)
+[5/5] Pruning runs/ to keep last 10...
 
-=== HOURLY RUN SUMMARY ===
-Run at (UTC)        : 2026-11-13T19:28:24+00:00
+=== RUN SUMMARY ===
+Run at (UTC)        : 2026-11-13T20:01:00+00:00
 Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
 In Wave window now? : False
 Open issues total   : 9,639
-Current total pts   : 1,632,850  (PRECISE — Σ points × pointsMultiplier per issue)
-Max W11 pts (proj) : 6,129,400  (PROJECTION — Σ points × max(currentMult, 4))
+Open total pts      : 1,632,850  (PRECISE — Σ points × pointsMultiplier)
+Closed-in-W11 pts   : 0  (across 0 issues)
+Max total pts       : 1,632,850  (= open + closed-in-wave, PRECISE — NOT ×4)
+Scored so far       : 0  (Σ pointsEarned)
+Remaining claimable : 1,632,850
 Distribution        :
-  small  base= 100 count= 3613 cur= 417,300  w11max=1,445,200  mults=[×1=3107,×2=479,×4=27]
-  medium base= 150 count=  683 cur= 111,150  w11max= 409,800  mults=[×1=643,×2=31,×4=9]
-  large  base= 200 count= 5343 cur=1,104,400  w11max=4,274,400  mults=[×1=5176,×2=161,×4=6]
+  small  base= 100 count= 3613 cur= 417,300  mults=[×1=3107,×2=479,×4=27]
+  medium base= 150 count=  683 cur= 111,150  mults=[×1=643,×2=31,×4=9]
+  large  base= 200 count= 5343 cur=1,104,400  mults=[×1=5176,×2=161,×4=6]
 New since last run  : 0
-Rewarded issues closed in Wave 11 window: 0
-Points scored so far in Wave 11 (PRECISE — Σ pointsEarned): 0 pts
 Contributors paid in Wave 11: 0
 === END ===
 
