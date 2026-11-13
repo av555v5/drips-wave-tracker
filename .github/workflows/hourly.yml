@@ -1,9 +1,12 @@
-name: Hourly Wave 11 Tracker
+name: Wave 11 Tracker (every 1.5h)
 
 on:
   schedule:
-    # Top of every hour, UTC
-    - cron: '0 * * * *'
+    # Every 90 minutes — two crons spaced 1.5h apart.
+    # Fires at: 0:00, 1:30, 3:00, 4:30, 6:00, 7:30, 9:00, 10:30,
+    #           12:00, 13:30, 15:00, 16:30, 18:00, 19:30, 21:00, 22:30 UTC
+    - cron: '0 0,3,6,9,12,15,18,21 * * *'
+    - cron: '30 1,4,7,10,13,16,19,22 * * *'
   # Manual trigger from the Actions tab
   workflow_dispatch:
 
@@ -11,7 +14,7 @@ permissions:
   contents: write    # needed to push runs/ and state/ back to the repo
 
 concurrency:
-  group: hourly-wave-bot
+  group: wave-bot
   cancel-in-progress: false
 
 jobs:
@@ -44,16 +47,20 @@ jobs:
         run: |
           python bot.py | tee runs_log.txt
 
-      - name: Commit results & state
+      - name: Commit results, state, and GitHub Pages data
         run: |
           git config user.name  "wave-bot[bot]"
           git config user.email "wave-bot@users.noreply.github.com"
-          # add timestamped run dir, persistent state, and the raw log
-          git add runs/ state/ runs_log.txt 2>/dev/null || true
+          # add: timestamped run dir (auto-pruned to last 10 by bot.py),
+          # persistent state, the raw log, and the latest.json + history.json
+          # that the GitHub Pages site (index.html) reads on every load.
+          git add runs/ state/ runs_log.txt latest.json history.json 2>/dev/null || true
+          # also `git rm` any run dirs the bot pruned (so deletions actually commit)
+          git add -A runs/ 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(bot): hourly Wave 11 snapshot $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "chore(bot): Wave 11 snapshot $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push
           fi
 
@@ -66,7 +73,9 @@ jobs:
             runs_log.txt
             runs/
             state/
-          retention-days: 90
+            latest.json
+            history.json
+          retention-days: 30
 
       - name: Send summary to webhook (Slack/Discord/Telegram)
         # NOTE: GitHub Actions does not allow the `secrets` context directly
@@ -94,19 +103,21 @@ jobs:
           snap = json.loads(latest.read_text())
           w = snap.get('wave', {})
           oi = snap.get('openIssues', {})
-          cw = snap.get('closedRewardedInWave11', {})
+          cw = snap.get('closedInWave11', {})
           tc = snap.get('topContributors', [{}])[0] if snap.get('topContributors') else {}
           text = (
-              f"🌊 *Stellar Wave {snap.get('wave', {}).get('waveNumber', 11)} — hourly snapshot*\n"
+              f"🌊 *Stellar Wave {snap.get('wave', {}).get('waveNumber', 11)} — snapshot*\n"
               f"Run at (UTC): `{snap.get('runAt')}`\n"
               f"Wave status: *{w.get('status')}* "
               f"({w.get('startDate','?')[:10]} → {w.get('endDate','?')[:10]})\n"
               f"In wave window now? {'✅' if w.get('inWaveWindowNow') else '❌'}\n"
               f"Open issues total: *{oi.get('total', 0):,}*\n"
-              f"Max total Wave points (Σ base × 4): *{oi.get('maxTotalWave11Points', 0):,}*\n"
+              f"Open total pts: *{oi.get('totalPoints', 0):,}* (precise Σ points × mult)\n"
+              f"Closed-in-wave pts: *{cw.get('closedTotalPoints', 0):,}*\n"
+              f"Max total pts (open+closed, NOT ×4): *{snap.get('maxTotalPoints', 0):,}*\n"
+              f"Scored so far: *{snap.get('scoredPoints', 0):,}* pts\n"
+              f"Remaining: *{snap.get('remainingPoints', 0):,}* pts\n"
               f"New issues since last run: *{snap.get('newIssuesSinceLastRun', {}).get('newSinceLastRun', 0):,}*\n"
-              f"Rewarded issues closed in Wave window: *{cw.get('uniqueIssues', 0):,}*\n"
-              f"Points scored so far in Wave: *{cw.get('totalPointsScored', 0):,}* pts\n"
               f"Contributors paid in Wave: *{snap.get('contributorsCount', 0):,}*\n"
               f"Top contributor: `{tc.get('contributor', '—')}` — {tc.get('pointsEarned', 0):,} pts "
               f"({tc.get('issuesClosed', 0)} issues)\n"
