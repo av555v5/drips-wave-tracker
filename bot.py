@@ -156,25 +156,14 @@ def fetch_closed_rewarded_in_wave(wave_start: dt.datetime,
 
 def compute_distribution(open_issues: list[dict]) -> dict[str, Any]:
     """Precise distribution. Uses each issue's actual `points × pointsMultiplier`
-    from the JSON (no synthetic ×4 assumption) for all 'current' totals.
-    Also reports the Wave 11 max projection (×4 for any issue whose current
-    multiplier < 4) as a separate, clearly-labeled field."""
+    from the JSON (no synthetic ×4 assumption)."""
     buckets = []
     for label, base in [('small', 100), ('medium', 150), ('large', 200)]:
         issues_in_bucket = [i for i in open_issues if (i.get('points') or 0) == base]
         c = len(issues_in_bucket)
         # precise current contribution = Σ (points × pointsMultiplier) per issue
         cur_contrib = sum((i.get('points') or 0) * (i.get('pointsMultiplier') or 0) for i in issues_in_bucket)
-        # Wave 11 max projection: during active Wave, multiplier becomes 4 for
-        # any issue whose current multiplier < 4 (Wave boost rule). For issues
-        # already at mult=4 (or higher), keep their current multiplier.
-        w11_contrib = sum(
-            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
-            for i in issues_in_bucket
-        )
-        # breakdown of multiplier values present in this bucket (diagnostic)
         mult_breakdown = Counter(i.get('pointsMultiplier') for i in issues_in_bucket)
-        # breakdown of actual per-issue total points (points × multiplier) in this bucket
         pts_breakdown = Counter(
             (i.get('points') or 0) * (i.get('pointsMultiplier') or 0)
             for i in issues_in_bucket
@@ -185,23 +174,17 @@ def compute_distribution(open_issues: list[dict]) -> dict[str, Any]:
             'count': c,
             'sharePct': round(c / max(len(open_issues), 1) * 100, 2),
             'currentContribution': cur_contrib,
-            'wave11MaxContribution': w11_contrib,
             'multiplierBreakdown': {str(k): v for k, v in sorted(mult_breakdown.items())},
             'actualPointsBreakdown': {str(k): v for k, v in sorted(pts_breakdown.items())},
         })
     other = [i for i in open_issues if (i.get('points') or 0) not in (100, 150, 200)]
     if other:
         cur_other = sum((i.get('points') or 0) * (i.get('pointsMultiplier') or 0) for i in other)
-        w11_other = sum(
-            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
-            for i in other
-        )
         buckets.append({
             'complexity': 'other', 'basePoints': None,
             'count': len(other),
             'sharePct': round(len(other) / max(len(open_issues), 1) * 100, 2),
             'currentContribution': cur_other,
-            'wave11MaxContribution': w11_other,
             'multiplierBreakdown': {},
             'actualPointsBreakdown': {},
         })
@@ -211,11 +194,6 @@ def compute_distribution(open_issues: list[dict]) -> dict[str, Any]:
         # PRECISE: sum of actual per-issue (points × pointsMultiplier) from JSON
         'currentTotalPoints': sum(
             (i.get('points') or 0) * (i.get('pointsMultiplier') or 0)
-            for i in open_issues
-        ),
-        # PROJECTION: sum of (points × max(current_mult, 4)) — the Wave 11 boost rule
-        'maxTotalWave11Points': sum(
-            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
             for i in open_issues
         ),
     }
@@ -276,10 +254,26 @@ def detect_new_issues(open_issues: list[dict], last_state: dict | None) -> dict[
         ],
     }
 
+def compute_closed_in_wave_metrics(closed_rewarded: list[dict]) -> dict[str, Any]:
+    """Precise metrics for closed-and-PR'd issues closed within the Wave 11
+    window. Uses each issue's actual `points × pointsMultiplier` (NOT ×4)."""
+    closed_total_pts = sum(
+        (i.get('points') or 0) * (i.get('pointsMultiplier') or 0)
+        for i in closed_rewarded
+    )
+    scored_pts = sum(i.get('pointsEarned') or 0 for i in closed_rewarded)
+    return {
+        'uniqueIssues': len(closed_rewarded),
+        'closedTotalPoints': closed_total_pts,           # Σ points × multiplier (precise)
+        'scoredPoints': scored_pts,                       # Σ pointsEarned (already paid)
+        'remainingClosedPoints': closed_total_pts - scored_pts,
+    }
+
 # ──────────────────────────── OUTPUT ────────────────────────────
 def write_summary(run_ts: dt.datetime, wave11: dict | None,
                   open_issues: list[dict], closed_rewarded: list[dict],
-                  distribution: dict, contributors: list[dict],
+                  distribution: dict, closed_metrics: dict,
+                  contributors: list[dict],
                   new_issues: dict, last_state: dict | None) -> Path:
     run_dir = RUNS_DIR / run_ts.strftime('%Y-%m-%dT%H-%MZ')
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -289,7 +283,13 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
     now_utc    = dt.datetime.now(dt.timezone.utc)
     in_wave    = wave_start and wave_end and wave_start <= now_utc <= wave_end
 
-    total_scored = sum(i.get('pointsEarned') or 0 for i in closed_rewarded)
+    # Max points (PRECISE) = open total points + closed-in-wave total points
+    # Using actual per-issue `points × pointsMultiplier` — NOT ×4.
+    open_total_pts   = distribution['currentTotalPoints']
+    closed_total_pts = closed_metrics['closedTotalPoints']
+    max_total_pts    = open_total_pts + closed_total_pts
+    scored_pts       = closed_metrics['scoredPoints']
+    remaining_pts    = max_total_pts - scored_pts
 
     snapshot = {
         'runAt': run_ts.isoformat(),
@@ -303,16 +303,13 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         },
         'openIssues': {
             'total': distribution['totalOpenIssues'],
-            # PRECISE — Σ (points × pointsMultiplier) from each issue's actual JSON fields
-            'currentTotalPoints': distribution['currentTotalPoints'],
-            # PROJECTION — Σ (points × max(currentMult, 4)) assuming active-Wave boost
-            'maxTotalWave11Points': distribution['maxTotalWave11Points'],
+            'totalPoints': open_total_pts,   # PRECISE — Σ points × multiplier
             'distribution': distribution['byComplexity'],
         },
-        'closedRewardedInWave11': {
-            'uniqueIssues': len(closed_rewarded),
-            'totalPointsScored': total_scored,
-        },
+        'closedInWave11': closed_metrics,    # {uniqueIssues, closedTotalPoints, scoredPoints, remainingClosedPoints}
+        'maxTotalPoints': max_total_pts,     # PRECISE — open + closed (in wave)
+        'scoredPoints':   scored_pts,
+        'remainingPoints': remaining_pts,
         'newIssuesSinceLastRun': new_issues,
         'topContributors': [
             {'contributor': c['contributor'], 'pointsEarned': c['pointsEarned'],
@@ -328,29 +325,28 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
     # full per-contributor table
     (run_dir / 'contributors.json').write_text(json.dumps(contributors, indent=2))
 
-    # closed-in-wave dump
-    (run_dir / 'closed_in_wave.json').write_text(json.dumps(closed_rewarded, indent=2))
-
-    # open issues sample (first 50 — for debugging, not full dump to keep repo small)
-    (run_dir / 'open_issues_sample.json').write_text(
-        json.dumps(open_issues[:50], indent=2))
+    # NOTE: `closed_in_wave.json` and `open_issues_sample.json` were removed by
+    # request — only the aggregated metrics in summary.json + the contributor
+    # table are persisted per run. The closed-issue raw dump is no longer saved.
 
     # human-readable markdown
     md = []
-    md.append(f'# Drips Stellar Wave {WAVE_NUM} — hourly snapshot\n')
+    md.append(f'# Drips Stellar Wave {WAVE_NUM} — snapshot\n')
     md.append(f'**Run at (UTC):** {run_ts.isoformat()}  ')
     if wave11:
         md.append(f'**Wave {WAVE_NUM} window:** {wave11["startDate"]} → {wave11["endDate"]}  ')
         md.append(f'**Status:** {wave11["status"]}  ')
         md.append(f'**Prize budget:** ${float(wave11["budgetUSD"]):,.0f}  ')
         md.append(f'**In Wave window right now?** {"YES" if in_wave else "NO"}\n')
-    md.append('## Open issues (state=open only)\n')
-    md.append(f'- **Total open issues:** {distribution["totalOpenIssues"]:,}')
-    md.append(f'- **Current total points (PRECISE — Σ `points × pointsMultiplier` per issue):** **{distribution["currentTotalPoints"]:,} pts**')
-    md.append(f'- **Max total Wave {WAVE_NUM} points (PROJECTION — Σ `points × max(currentMult, 4)` assuming active-Wave boost):** **{distribution["maxTotalWave11Points"]:,} pts**\n')
+    md.append('## Max points (PRECISE — `Σ (points × pointsMultiplier)` per issue, NOT ×4)\n')
+    md.append(f'- **Open issues total points:** {open_total_pts:,} pts (across {distribution["totalOpenIssues"]:,} open issues)')
+    md.append(f'- **Closed-in-Wave-{WAVE_NUM} total points:** {closed_total_pts:,} pts (across {closed_metrics["uniqueIssues"]:,} closed+PR issues in Wave window)')
+    md.append(f'- **Max total points that can be scored:** **{max_total_pts:,} pts**  _(= open + closed-in-wave)_')
+    md.append(f'- **Scored so far (Σ `pointsEarned`):** **{scored_pts:,} pts**')
+    md.append(f'- **Remaining claimable points:** **{remaining_pts:,} pts**\n')
     md.append('### Distribution by complexity (precise per-issue `points × pointsMultiplier`)\n')
-    md.append('| Complexity | Base pts | # open issues | Share | Multiplier breakdown | Actual-pts breakdown | Current contribution (precise) | Wave 11 max contribution |')
-    md.append('|:--|--:|--:|--:|---|---|--:|--:|')
+    md.append('| Complexity | Base pts | # open issues | Share | Multiplier breakdown | Actual-pts breakdown | Current contribution (precise) |')
+    md.append('|:--|--:|--:|--:|---|---|--:|')
     for b in distribution['byComplexity']:
         mb = b.get('multiplierBreakdown') or {}
         mb_s = ', '.join(f'×{k}={v}' for k, v in sorted(mb.items())) or '—'
@@ -358,7 +354,7 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         pb_s = ', '.join(f'{k}pts={v}' for k, v in sorted(pb.items())) or '—'
         md.append(f'| {b["complexity"]} | {b["basePoints"] if b["basePoints"] is not None else "—"} | '
                   f'{b["count"]:,} | {b["sharePct"]}% | {mb_s} | {pb_s} | '
-                  f'{b["currentContribution"]:,} | {b["wave11MaxContribution"]:,} |')
+                  f'{b["currentContribution"]:,} |')
     md.append('')
     md.append(f'## New issues opened since last run\n')
     md.append(f'- **New since last run:** {new_issues["newSinceLastRun"]:,}')
@@ -372,9 +368,6 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
             md.append(f'| {idx} | `{n["repo"]}` | {n["title"][:80]} | {n["complexity"] or "—"} | '
                       f'{n["points"]} | ×{n["pointsMultiplier"]} | {n["totalPoints"]} |')
     md.append('')
-    md.append(f'## Closed-and-rewarded issues inside Wave {WAVE_NUM} window\n')
-    md.append(f'- **Unique rewarded issues closed in window:** {len(closed_rewarded):,}')
-    md.append(f'- **Total points scored so far in Wave {WAVE_NUM} (PRECISE — Σ `pointsEarned`):** **{total_scored:,} pts**\n')
     md.append(f'## Top contributors (by points earned in Wave {WAVE_NUM})\n')
     if contributors:
         md.append('| Rank | Contributor | Points earned | Issues closed | # Repos |')
@@ -395,10 +388,12 @@ def append_history(snapshot: dict) -> None:
         'waveStatus': snapshot['wave']['status'],
         'inWaveWindowNow': snapshot['wave']['inWaveWindowNow'],
         'openIssuesTotal': snapshot['openIssues']['total'],
-        'currentTotalPoints': snapshot['openIssues']['currentTotalPoints'],
-        'maxTotalWave11Points': snapshot['openIssues']['maxTotalWave11Points'],
-        'closedRewardedInWave11': snapshot['closedRewardedInWave11']['uniqueIssues'],
-        'totalPointsScored': snapshot['closedRewardedInWave11']['totalPointsScored'],
+        'openTotalPoints': snapshot['openIssues']['totalPoints'],
+        'closedInWave11': snapshot['closedInWave11']['uniqueIssues'],
+        'closedTotalPoints': snapshot['closedInWave11']['closedTotalPoints'],
+        'maxTotalPoints': snapshot['maxTotalPoints'],
+        'scoredPoints': snapshot['scoredPoints'],
+        'remainingPoints': snapshot['remainingPoints'],
         'newIssuesSinceLastRun': snapshot['newIssuesSinceLastRun']['newSinceLastRun'],
         'contributorsCount': snapshot['contributorsCount'],
         'topContributor': (snapshot['topContributors'][0] if snapshot['topContributors'] else None),
@@ -408,18 +403,46 @@ def append_history(snapshot: dict) -> None:
 
 def write_last_run(snapshot: dict, open_issues: list[dict]) -> None:
     LAST_RUN.parent.mkdir(parents=True, exist_ok=True)
-    # store only compact state + a sample of open issue ids (to keep file small,
-    # we store ALL ids — at ~9,639 ids × ~40 bytes ≈ 400KB which is fine)
+    # store only compact state + open issue ids (for delta detection next run)
     state = {
         'runAt': snapshot['runAt'],
         'openIssueIds': [i.get('id') for i in open_issues],
         'openIssuesTotal': snapshot['openIssues']['total'],
-        'currentTotalPoints': snapshot['openIssues']['currentTotalPoints'],
-        'maxTotalWave11Points': snapshot['openIssues']['maxTotalWave11Points'],
-        'closedRewardedInWave11': snapshot['closedRewardedInWave11']['uniqueIssues'],
-        'totalPointsScored': snapshot['closedRewardedInWave11']['totalPointsScored'],
+        'openTotalPoints': snapshot['openIssues']['totalPoints'],
+        'closedInWave11': snapshot['closedInWave11']['uniqueIssues'],
+        'maxTotalPoints': snapshot['maxTotalPoints'],
+        'scoredPoints': snapshot['scoredPoints'],
     }
     LAST_RUN.write_text(json.dumps(state))
+
+def write_latest_for_site(snapshot: dict) -> None:
+    """Write a stable /latest.json at repo root that the GitHub Pages site
+    fetches on every load. Also writes /state/history.json as a JSON array
+    (mirror of history.jsonl) for the site's time-series chart."""
+    latest_path = ROOT / 'latest.json'
+    latest_path.write_text(json.dumps(snapshot, indent=2))
+    # mirror history.jsonl -> history.json (array) for easy fetch() on the site
+    if HISTORY.exists():
+        rows = [json.loads(line) for line in HISTORY.read_text().splitlines() if line.strip()]
+        (ROOT / 'history.json').write_text(json.dumps(rows, indent=2))
+
+def prune_old_runs(keep: int = 10) -> None:
+    """Keep only the most recent `keep` run directories under runs/. Older ones
+    are removed so the repo doesn't grow unboundedly."""
+    if not RUNS_DIR.exists():
+        return
+    runs = sorted([p for p in RUNS_DIR.iterdir() if p.is_dir()],
+                  key=lambda p: p.name, reverse=True)
+    if len(runs) <= keep:
+        return
+    for old in runs[keep:]:
+        # remove all files in the old run dir
+        for f in old.iterdir():
+            try: f.unlink()
+            except Exception: pass
+        try: old.rmdir()
+        except Exception: pass
+        print(f'  pruned old run: {old.name}', flush=True)
 
 # ──────────────────────────── MAIN ────────────────────────────
 def main() -> int:
@@ -458,56 +481,66 @@ def main() -> int:
     closed_rewarded = fetch_closed_rewarded_in_wave(wave_start, wave_end)
     print(f'[2/4] closed+rewarded in Wave {WAVE_NUM} window: {len(closed_rewarded)}\n', flush=True)
 
-    # 4. Compute distributions + contributor scores + new issues delta
-    print(f'[3/4] Computing distributions + contributor scores + deltas...', flush=True)
-    distribution = compute_distribution(open_issues)
-    contributors = compute_contributor_scores(closed_rewarded)
-    new_issues   = detect_new_issues(open_issues, last_state)
-    print(f'  maxTotalWave11Points = {distribution["maxTotalWave11Points"]:,}', flush=True)
-    print(f'  totalPointsScored    = {sum(i.get("pointsEarned") or 0 for i in closed_rewarded):,}', flush=True)
+    # 4. Compute distributions + closed-in-wave metrics + contributor scores + deltas
+    print(f'[3/5] Computing precise metrics (per-issue points × multiplier)...', flush=True)
+    distribution    = compute_distribution(open_issues)
+    closed_metrics  = compute_closed_in_wave_metrics(closed_rewarded)
+    contributors    = compute_contributor_scores(closed_rewarded)
+    new_issues      = detect_new_issues(open_issues, last_state)
+    print(f'  openTotalPoints      = {distribution["currentTotalPoints"]:,}', flush=True)
+    print(f'  closedInWave points  = {closed_metrics["closedTotalPoints"]:,}  '
+          f'(scored={closed_metrics["scoredPoints"]:,})', flush=True)
+    print(f'  maxTotalPoints       = {distribution["currentTotalPoints"] + closed_metrics["closedTotalPoints"]:,}  '
+          f'(= open + closed-in-wave, PRECISE)', flush=True)
     print(f'  contributors         = {len(contributors)}', flush=True)
     print(f'  newSinceLastRun      = {new_issues["newSinceLastRun"]}\n', flush=True)
 
-    # 5. Write snapshot
+    # 5. Write snapshot + persistent state
     run_ts = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
-    print(f'[4/4] Writing snapshot to runs/{run_ts.strftime("%Y-%m-%dT%H-%MZ")}/...', flush=True)
+    print(f'[4/5] Writing snapshot to runs/{run_ts.strftime("%Y-%m-%dT%H-%MZ")}/...', flush=True)
     run_dir = write_summary(run_ts, wave11, open_issues, closed_rewarded,
-                            distribution, contributors, new_issues, last_state)
+                            distribution, closed_metrics, contributors,
+                            new_issues, last_state)
 
     # Load the snapshot we just wrote (consistent source of truth)
     snapshot = json.loads((run_dir / 'summary.json').read_text())
     append_history(snapshot)
     write_last_run(snapshot, open_issues)
+    write_latest_for_site(snapshot)
     print(f'  → {run_dir}/summary.json', flush=True)
     print(f'  → {run_dir}/summary.md', flush=True)
     print(f'  → {run_dir}/contributors.json', flush=True)
-    print(f'  → {run_dir}/closed_in_wave.json', flush=True)
     print(f'  appended row to {HISTORY}', flush=True)
     print(f'  updated {LAST_RUN}', flush=True)
+    print(f'  wrote {ROOT / "latest.json"} + {ROOT / "history.json"} (for GitHub Pages site)', flush=True)
+
+    # 5b. Prune old runs (keep last 10)
+    print(f'[5/5] Pruning runs/ to keep last 10...', flush=True)
+    prune_old_runs(keep=10)
 
     # 6. Print a concise log summary for the GitHub Actions log
-    print('\n=== HOURLY RUN SUMMARY ===', flush=True)
+    print('\n=== RUN SUMMARY ===', flush=True)
     print(f'Run at (UTC)        : {snapshot["runAt"]}', flush=True)
     print(f'Wave {WAVE_NUM} status      : {wave11.get("status")}  '
           f'({wave11["startDate"]} → {wave11["endDate"]})', flush=True)
     print(f'In Wave window now? : {snapshot["wave"]["inWaveWindowNow"]}', flush=True)
     print(f'Open issues total   : {snapshot["openIssues"]["total"]:,}', flush=True)
-    print(f'Current total pts   : {snapshot["openIssues"]["currentTotalPoints"]:,}  '
-          f'(PRECISE — Σ points × pointsMultiplier per issue)', flush=True)
-    print(f'Max W{WAVE_NUM} pts (proj) : {snapshot["openIssues"]["maxTotalWave11Points"]:,}  '
-          f'(PROJECTION — Σ points × max(currentMult, 4))', flush=True)
+    print(f'Open total pts      : {snapshot["openIssues"]["totalPoints"]:,}  '
+          f'(PRECISE — Σ points × pointsMultiplier)', flush=True)
+    print(f'Closed-in-W11 pts   : {snapshot["closedInWave11"]["closedTotalPoints"]:,}  '
+          f'(across {snapshot["closedInWave11"]["uniqueIssues"]:,} issues)', flush=True)
+    print(f'Max total pts       : {snapshot["maxTotalPoints"]:,}  '
+          f'(= open + closed-in-wave, PRECISE — NOT ×4)', flush=True)
+    print(f'Scored so far       : {snapshot["scoredPoints"]:,}  '
+          f'(Σ pointsEarned)', flush=True)
+    print(f'Remaining claimable : {snapshot["remainingPoints"]:,}', flush=True)
     print('Distribution        :', flush=True)
     for b in snapshot['openIssues']['distribution']:
         mb = b.get('multiplierBreakdown') or {}
         mb_s = ','.join(f'×{k}={v}' for k,v in sorted(mb.items())) or '—'
         print(f'  {b["complexity"]:6s} base={b["basePoints"]!s:>4} count={b["count"]:>5} '
-              f'cur={b["currentContribution"]:>8,}  w11max={b["wave11MaxContribution"]:>8,}  '
-              f'mults=[{mb_s}]', flush=True)
+              f'cur={b["currentContribution"]:>8,}  mults=[{mb_s}]', flush=True)
     print(f'New since last run  : {snapshot["newIssuesSinceLastRun"]["newSinceLastRun"]:,}', flush=True)
-    print(f'Rewarded issues closed in Wave {WAVE_NUM} window: '
-          f'{snapshot["closedRewardedInWave11"]["uniqueIssues"]:,}', flush=True)
-    print(f'Points scored so far in Wave {WAVE_NUM} (PRECISE — Σ pointsEarned): '
-          f'{snapshot["closedRewardedInWave11"]["totalPointsScored"]:,} pts', flush=True)
     print(f'Contributors paid in Wave {WAVE_NUM}: {snapshot["contributorsCount"]}', flush=True)
     if snapshot['topContributors']:
         tc = snapshot['topContributors'][0]
