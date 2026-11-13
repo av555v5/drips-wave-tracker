@@ -1,6 +1,6 @@
-=== Drips Wave 11 hourly bot — run at 2026-11-13T20:07:13.220355+00:00 ===
+=== Drips Wave 11 hourly bot — run at 2026-11-13T20:20:49.656565+00:00 ===
 
-[0/4] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-13T20:01:00+00:00, openIssues=9639)
+[0/4] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-13T20:08:02+00:00, openIssues=9639)
 [1/4] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
 [1/4] Fetching all open Wave issues (state=open only)...
   page 1: got 100, cumulative=100, total=9639, hasNext=True
@@ -24,17 +24,17 @@
   contributors         = 0
   newSinceLastRun      = 0
 
-[4/5] Writing snapshot to runs/2026-11-13T20-08Z/...
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-08Z/summary.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-08Z/summary.md
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-08Z/contributors.json
+[4/5] Writing snapshot to runs/2026-11-13T20-21Z/...
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-21Z/summary.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-21Z/summary.md
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-13T20-21Z/contributors.json
   appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
   updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
   wrote /home/runner/work/drips-wave-tracker/drips-wave-tracker/latest.json + /home/runner/work/drips-wave-tracker/drips-wave-tracker/history.json (for GitHub Pages site)
 [5/5] Pruning runs/ to keep last 10...
 
 === RUN SUMMARY ===
-Run at (UTC)        : 2026-11-13T20:08:02+00:00
+Run at (UTC)        : 2026-11-13T20:21:40+00:00
 Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
 In Wave window now? : False
 Open issues total   : 9,639

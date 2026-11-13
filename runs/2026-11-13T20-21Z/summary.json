@@ -1,0 +1,86 @@
+{
+  "runAt": "2026-11-13T20:21:40+00:00",
+  "wave": {
+    "waveNumber": 11,
+    "startDate": "2026-11-18T14:00:35.145Z",
+    "endDate": "2026-11-25T14:00:55.830Z",
+    "status": "upcoming",
+    "budgetUSD": "75000.00",
+    "inWaveWindowNow": false
+  },
+  "openIssues": {
+    "total": 9639,
+    "totalPoints": 1632850,
+    "distribution": [
+      {
+        "complexity": "small",
+        "basePoints": 100,
+        "count": 3613,
+        "sharePct": 37.48,
+        "currentContribution": 417300,
+        "multiplierBreakdown": {
+          "1": 3107,
+          "2": 479,
+          "4": 27
+        },
+        "actualPointsBreakdown": {
+          "100": 3107,
+          "200": 479,
+          "400": 27
+        }
+      },
+      {
+        "complexity": "medium",
+        "basePoints": 150,
+        "count": 683,
+        "sharePct": 7.09,
+        "currentContribution": 111150,
+        "multiplierBreakdown": {
+          "1": 643,
+          "2": 31,
+          "4": 9
+        },
+        "actualPointsBreakdown": {
+          "150": 643,
+          "300": 31,
+          "600": 9
+        }
+      },
+      {
+        "complexity": "large",
+        "basePoints": 200,
+        "count": 5343,
+        "sharePct": 55.43,
+        "currentContribution": 1104400,
+        "multiplierBreakdown": {
+          "1": 5176,
+          "2": 161,
+          "4": 6
+        },
+        "actualPointsBreakdown": {
+          "200": 5176,
+          "400": 161,
+          "800": 6
+        }
+      }
+    ]
+  },
+  "closedInWave11": {
+    "uniqueIssues": 0,
+    "closedTotalPoints": 0,
+    "scoredPoints": 0,
+    "remainingClosedPoints": 0
+  },
+  "maxTotalPoints": 1632850,
+  "scoredPoints": 0,
+  "remainingPoints": 1632850,
+  "newIssuesSinceLastRun": {
+    "newSinceLastRun": 0,
+    "prevOpenCount": 9639,
+    "currentOpenCount": 9639,
+    "newIssuesSample": []
+  },
+  "topContributors": [],
+  "allContributors": [],
+  "contributorsCount": 0
+}
