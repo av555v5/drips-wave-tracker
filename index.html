@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,9 +6,12 @@
 <title>Stellar Wave 11 · Live Tracker</title>
 <style>
   :root{
-    --bg:#0b0e1a; --bg-2:#0f1424; --panel:rgba(255,255,255,0.035);
-    --panel-border:rgba(255,255,255,0.07);
-    --text:#e8ecf5; --text-dim:#8b93a7; --text-mute:#5a6378;
+    --bg:#0b0e1a; --bg-2:#0f1424;
+    --panel:rgba(255,255,255,0.05);
+    --panel-border:rgba(255,255,255,0.10);
+    --text:#f5f7fa;            /* brightened — primary text */
+    --text-dim:#c4ccdb;        /* brightened — secondary text */
+    --text-mute:#8e98b0;       /* brightened — tertiary text */
     --accent:#7dd3fc; --accent-2:#a78bfa; --accent-3:#34d399;
     --warn:#fbbf24; --bad:#f87171;
     --grad:linear-gradient(135deg,#7dd3fc 0%, #a78bfa 50%, #f472b6 100%);
@@ -154,13 +156,14 @@
     border:1px solid rgba(255,255,255,0.04);transition:all .25s;
   }
   .contrib:hover{background:rgba(255,255,255,0.05);border-color:rgba(125,211,252,0.2)}
-  .contrib .rank{font-family:var(--mono);font-size:12px;color:var(--text-mute);text-align:center}
-  .contrib .name{font-size:13px;font-weight:500;color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .contrib .rank{font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:center}
+  .contrib .name{font-size:13.5px;font-weight:500;color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .contrib .name:hover{color:var(--accent)}
-  .contrib .issues{font-family:var(--mono);font-size:11px;color:var(--text-mute)}
+  .contrib .issues{font-family:var(--mono);font-size:11px;color:var(--text-dim)}
   .contrib .pts{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent-3);font-variant-numeric:tabular-nums}
-  .contrib.top{background:linear-gradient(90deg,rgba(125,211,252,0.08),transparent);border-color:rgba(125,211,252,0.15)}
+  .contrib.top{background:linear-gradient(90deg,rgba(125,211,252,0.10),transparent);border-color:rgba(125,211,252,0.22)}
   .contrib.top .rank{color:var(--accent)}
+  .contrib.top .pts{color:var(--accent)}
   .empty{color:var(--text-mute);font-size:13px;text-align:center;padding:32px 8px;font-style:italic}
 
   /* Sparkline */
@@ -219,7 +222,7 @@
     <header>
       <div class="brand">
         <h1>Stellar Wave 11</h1>
-        <div class="sub" id="sub">Live tracker · auto-updated every 1.5h</div>
+        <div class="sub" id="sub">Live tracker · auto-updated every hour</div>
         <div class="meta-row">
           <span>Window: <b id="m-window">—</b></span>
           <span>Budget: <b id="m-budget">—</b></span>
@@ -296,7 +299,7 @@
     <!-- Time-series sparkline -->
     <section class="sparkline-card">
       <h2>Points Over Time</h2>
-      <div class="desc">Each point = one bot run (~1.5h cadence). Open points (cyan) · Scored points (green).</div>
+      <div class="desc">Each point = one bot run (~1h cadence). Open points (cyan) · Max points (purple) · Scored (green).</div>
       <svg class="spark-svg" id="spark" viewBox="0 0 1000 140" preserveAspectRatio="none"></svg>
       <div class="spark-legend">
         <span><span class="dot" style="background:#7dd3fc"></span>Open total pts</span>
@@ -352,6 +355,19 @@ function countdown(targetISO){
   return h > 0 ? `${h}h ${m}m` : `${m}m`;
 }
 
+// Time until the next top-of-hour UTC, since the bot runs on cron `0 * * * *`
+// (i.e. at :00 of every hour). This is the next time latest.json will refresh.
+function timeUntilNextHourlyRun(){
+  const now = new Date();
+  const next = new Date(now);
+  next.setUTCMinutes(0, 0, 0);
+  next.setUTCHours(next.getUTCHours() + 1);   // next :00 UTC
+  const diff = next.getTime() - now.getTime();
+  const m = Math.floor(diff / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
+}
+
 function renderDist(distribution){
   const el = document.getElementById('dist');
   if(!distribution || !distribution.length){ el.innerHTML = '<div class="empty">No distribution data.</div>'; return; }
@@ -375,10 +391,18 @@ function renderDist(distribution){
   }).join('');
 }
 
-function renderContributors(top){
+function renderContributors(allContributors, topContributors){
   const el = document.getElementById('contrib-list');
-  if(!top || !top.length){ el.innerHTML = '<div class="empty">No contributor rewards recorded in Wave 11 yet.</div>'; return; }
-  el.innerHTML = top.map((c, i) => `
+  // Show ALL contributors (not just top 20). The bot writes the full list as
+  // `allContributors` in latest.json. Fall back to topContributors if absent.
+  const list = (allContributors && allContributors.length)
+    ? allContributors
+    : (topContributors || []);
+  if(!list.length){
+    el.innerHTML = '<div class="empty">No contributor rewards recorded in Wave 11 yet.</div>';
+    return;
+  }
+  el.innerHTML = list.map((c, i) => `
     <li class="contrib ${i===0?'top':''}">
       <span class="rank">${i+1}</span>
       <a class="name" href="https://github.com/${c.contributor}" target="_blank" rel="noopener">${c.contributor}</a>
@@ -386,6 +410,9 @@ function renderContributors(top){
       <span class="pts">${fmt(c.pointsEarned)} pts</span>
     </li>
   `).join('');
+  // update the panel heading to show the total count
+  const head = document.querySelector('#contrib-list').previousElementSibling;
+  if(head){ head.innerHTML = `All Contributors <span class="hint">${list.length} paid in Wave 11 · sorted by points</span>`; }
 }
 
 function renderNewIssues(sample){
@@ -433,9 +460,9 @@ function render(snap, history){
   // header
   document.getElementById('m-window').textContent = `${shortDate(w.startDate)} → ${shortDate(w.endDate)}`;
   document.getElementById('m-budget').textContent = w.budgetUSD ? '$' + Number(w.budgetUSD).toLocaleString('en-US') : '—';
-  // next refresh countdown — pick "end of wave" if in wave, else "start of wave" if upcoming
-  const next = w.inWaveWindowNow ? w.endDate : (w.status === 'upcoming' ? w.startDate : null);
-  document.getElementById('m-next').textContent = next ? countdown(next) : '—';
+  // Next refresh = time until next top-of-hour UTC (the bot's cron schedule).
+  // Updates live every second so the countdown ticks down visibly.
+  document.getElementById('m-next').textContent = timeUntilNextHourlyRun();
 
   setStatus(w.status, w.inWaveWindowNow);
 
@@ -465,7 +492,7 @@ function render(snap, history){
 
   // distribution + contributors + sparkline + new issues
   renderDist(oi.distribution);
-  renderContributors(snap.topContributors);
+  renderContributors(snap.allContributors, snap.topContributors);
   renderSparkline(history);
   renderNewIssues(ni.newIssuesSample);
 
@@ -489,7 +516,13 @@ async function main(){
 }
 
 main();
-// refresh page every 10 min so the site picks up new commits
+// Live-tick the "Next refresh" countdown every second, so users see it count
+// down to the next hourly bot run instead of a frozen number.
+setInterval(() => {
+  const el = document.getElementById('m-next');
+  if(el && !el.closest('.hidden')) el.textContent = timeUntilNextHourlyRun();
+}, 1000);
+// Refresh the page every 10 minutes so the site picks up new commits
 setTimeout(() => location.reload(), 10 * 60 * 1000);
 </script>
 </body>
