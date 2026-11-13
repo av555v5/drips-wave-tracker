@@ -314,7 +314,18 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         'topContributors': [
             {'contributor': c['contributor'], 'pointsEarned': c['pointsEarned'],
              'issuesClosed': c['issuesClosed']}
-            for c in contributors[:20]
+            for c in contributors[:20]   # short list used in the log summary
+        ],
+        # ALL contributors — used by the GitHub Pages site to render the full
+        # leaderboard. The bot writes this into latest.json so the site can
+        # fetch('latest.json') once and have the complete table.
+        'allContributors': [
+            {'contributor': c['contributor'],
+             'profileUrl':  c['profileUrl'],
+             'pointsEarned': c['pointsEarned'],
+             'issuesClosed': c['issuesClosed'],
+             'reposContributedTo': c['reposContributedTo']}
+            for c in contributors
         ],
         'contributorsCount': len(contributors),
     }
