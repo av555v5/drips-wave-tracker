@@ -155,26 +155,69 @@ def fetch_closed_rewarded_in_wave(wave_start: dt.datetime,
     return deduped
 
 def compute_distribution(open_issues: list[dict]) -> dict[str, Any]:
-    base_counter = Counter(i.get('points') for i in open_issues)
+    """Precise distribution. Uses each issue's actual `points × pointsMultiplier`
+    from the JSON (no synthetic ×4 assumption) for all 'current' totals.
+    Also reports the Wave 11 max projection (×4 for any issue whose current
+    multiplier < 4) as a separate, clearly-labeled field."""
     buckets = []
-    for label, base, w11_pts in [('small', 100, 400), ('medium', 150, 600), ('large', 200, 800)]:
-        c = base_counter.get(base, 0)
+    for label, base in [('small', 100), ('medium', 150), ('large', 200)]:
+        issues_in_bucket = [i for i in open_issues if (i.get('points') or 0) == base]
+        c = len(issues_in_bucket)
+        # precise current contribution = Σ (points × pointsMultiplier) per issue
+        cur_contrib = sum((i.get('points') or 0) * (i.get('pointsMultiplier') or 0) for i in issues_in_bucket)
+        # Wave 11 max projection: during active Wave, multiplier becomes 4 for
+        # any issue whose current multiplier < 4 (Wave boost rule). For issues
+        # already at mult=4 (or higher), keep their current multiplier.
+        w11_contrib = sum(
+            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
+            for i in issues_in_bucket
+        )
+        # breakdown of multiplier values present in this bucket (diagnostic)
+        mult_breakdown = Counter(i.get('pointsMultiplier') for i in issues_in_bucket)
+        # breakdown of actual per-issue total points (points × multiplier) in this bucket
+        pts_breakdown = Counter(
+            (i.get('points') or 0) * (i.get('pointsMultiplier') or 0)
+            for i in issues_in_bucket
+        )
         buckets.append({
-            'complexity': label, 'basePoints': base,
-            'wave11PointsPerIssue': w11_pts, 'count': c,
+            'complexity': label,
+            'basePoints': base,
+            'count': c,
             'sharePct': round(c / max(len(open_issues), 1) * 100, 2),
-            'wave11Contribution': c * w11_pts,
+            'currentContribution': cur_contrib,
+            'wave11MaxContribution': w11_contrib,
+            'multiplierBreakdown': {str(k): v for k, v in sorted(mult_breakdown.items())},
+            'actualPointsBreakdown': {str(k): v for k, v in sorted(pts_breakdown.items())},
         })
-    other = sum(v for k, v in base_counter.items() if k not in (100, 150, 200))
+    other = [i for i in open_issues if (i.get('points') or 0) not in (100, 150, 200)]
     if other:
-        buckets.append({'complexity': 'other', 'basePoints': None,
-                        'wave11PointsPerIssue': None, 'count': other,
-                        'sharePct': round(other / max(len(open_issues), 1) * 100, 2),
-                        'wave11Contribution': 0})
+        cur_other = sum((i.get('points') or 0) * (i.get('pointsMultiplier') or 0) for i in other)
+        w11_other = sum(
+            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
+            for i in other
+        )
+        buckets.append({
+            'complexity': 'other', 'basePoints': None,
+            'count': len(other),
+            'sharePct': round(len(other) / max(len(open_issues), 1) * 100, 2),
+            'currentContribution': cur_other,
+            'wave11MaxContribution': w11_other,
+            'multiplierBreakdown': {},
+            'actualPointsBreakdown': {},
+        })
     return {
         'totalOpenIssues': len(open_issues),
         'byComplexity': buckets,
-        'maxTotalWave11Points': sum((i.get('points') or 0) * ACTIVE_MULT for i in open_issues),
+        # PRECISE: sum of actual per-issue (points × pointsMultiplier) from JSON
+        'currentTotalPoints': sum(
+            (i.get('points') or 0) * (i.get('pointsMultiplier') or 0)
+            for i in open_issues
+        ),
+        # PROJECTION: sum of (points × max(current_mult, 4)) — the Wave 11 boost rule
+        'maxTotalWave11Points': sum(
+            (i.get('points') or 0) * max(i.get('pointsMultiplier') or 1, ACTIVE_MULT)
+            for i in open_issues
+        ),
     }
 
 def compute_contributor_scores(closed_rewarded: list[dict]) -> list[dict]:
@@ -226,6 +269,8 @@ def detect_new_issues(open_issues: list[dict], last_state: dict | None) -> dict[
              'url': f"https://github.com/{((i.get('repo') or {}).get('gitHubRepoFullName'))}/issues/{i.get('gitHubIssueNumber')}",
              'complexity': i.get('complexity'),
              'points': i.get('points'),
+             'pointsMultiplier': i.get('pointsMultiplier'),
+             'totalPoints': (i.get('points') or 0) * (i.get('pointsMultiplier') or 0),
              'createdAt': i.get('gitHubCreatedAt')}
             for i in new_items[:20]   # sample of up to 20
         ],
@@ -258,6 +303,9 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         },
         'openIssues': {
             'total': distribution['totalOpenIssues'],
+            # PRECISE — Σ (points × pointsMultiplier) from each issue's actual JSON fields
+            'currentTotalPoints': distribution['currentTotalPoints'],
+            # PROJECTION — Σ (points × max(currentMult, 4)) assuming active-Wave boost
             'maxTotalWave11Points': distribution['maxTotalWave11Points'],
             'distribution': distribution['byComplexity'],
         },
@@ -298,14 +346,19 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         md.append(f'**In Wave window right now?** {"YES" if in_wave else "NO"}\n')
     md.append('## Open issues (state=open only)\n')
     md.append(f'- **Total open issues:** {distribution["totalOpenIssues"]:,}')
-    md.append(f'- **Max total Wave {WAVE_NUM} points (Σ base × 4):** **{distribution["maxTotalWave11Points"]:,} pts**\n')
-    md.append('### Distribution by complexity\n')
-    md.append('| Complexity | Base pts | Per-issue pts in Wave 11 (×4) | # open issues | Share | Max contribution |')
-    md.append('|:--|--:|--:|--:|--:|--:|')
+    md.append(f'- **Current total points (PRECISE — Σ `points × pointsMultiplier` per issue):** **{distribution["currentTotalPoints"]:,} pts**')
+    md.append(f'- **Max total Wave {WAVE_NUM} points (PROJECTION — Σ `points × max(currentMult, 4)` assuming active-Wave boost):** **{distribution["maxTotalWave11Points"]:,} pts**\n')
+    md.append('### Distribution by complexity (precise per-issue `points × pointsMultiplier`)\n')
+    md.append('| Complexity | Base pts | # open issues | Share | Multiplier breakdown | Actual-pts breakdown | Current contribution (precise) | Wave 11 max contribution |')
+    md.append('|:--|--:|--:|--:|---|---|--:|--:|')
     for b in distribution['byComplexity']:
+        mb = b.get('multiplierBreakdown') or {}
+        mb_s = ', '.join(f'×{k}={v}' for k, v in sorted(mb.items())) or '—'
+        pb = b.get('actualPointsBreakdown') or {}
+        pb_s = ', '.join(f'{k}pts={v}' for k, v in sorted(pb.items())) or '—'
         md.append(f'| {b["complexity"]} | {b["basePoints"] if b["basePoints"] is not None else "—"} | '
-                  f'{b["wave11PointsPerIssue"] if b["wave11PointsPerIssue"] is not None else "—"} | '
-                  f'{b["count"]:,} | {b["sharePct"]}% | {b["wave11Contribution"]:,} pts |')
+                  f'{b["count"]:,} | {b["sharePct"]}% | {mb_s} | {pb_s} | '
+                  f'{b["currentContribution"]:,} | {b["wave11MaxContribution"]:,} |')
     md.append('')
     md.append(f'## New issues opened since last run\n')
     md.append(f'- **New since last run:** {new_issues["newSinceLastRun"]:,}')
@@ -313,14 +366,15 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
     md.append(f'- **Current open count:** {new_issues["currentOpenCount"]:,}\n')
     if new_issues['newIssuesSample']:
         md.append('Sample of new issues (up to 20):\n')
-        md.append('| # | Repo | Title | Complexity | Base pts |')
-        md.append('|--:|---|---|:--:|--:|')
+        md.append('| # | Repo | Title | Complexity | Base pts | Mult | Total pts (precise) |')
+        md.append('|--:|---|---|:--:|--:|--:|--:|')
         for idx, n in enumerate(new_issues['newIssuesSample'], 1):
-            md.append(f'| {idx} | `{n["repo"]}` | {n["title"][:80]} | {n["complexity"] or "—"} | {n["points"]} |')
+            md.append(f'| {idx} | `{n["repo"]}` | {n["title"][:80]} | {n["complexity"] or "—"} | '
+                      f'{n["points"]} | ×{n["pointsMultiplier"]} | {n["totalPoints"]} |')
     md.append('')
     md.append(f'## Closed-and-rewarded issues inside Wave {WAVE_NUM} window\n')
     md.append(f'- **Unique rewarded issues closed in window:** {len(closed_rewarded):,}')
-    md.append(f'- **Total points scored so far in Wave {WAVE_NUM}:** **{total_scored:,} pts**\n')
+    md.append(f'- **Total points scored so far in Wave {WAVE_NUM} (PRECISE — Σ `pointsEarned`):** **{total_scored:,} pts**\n')
     md.append(f'## Top contributors (by points earned in Wave {WAVE_NUM})\n')
     if contributors:
         md.append('| Rank | Contributor | Points earned | Issues closed | # Repos |')
@@ -341,6 +395,7 @@ def append_history(snapshot: dict) -> None:
         'waveStatus': snapshot['wave']['status'],
         'inWaveWindowNow': snapshot['wave']['inWaveWindowNow'],
         'openIssuesTotal': snapshot['openIssues']['total'],
+        'currentTotalPoints': snapshot['openIssues']['currentTotalPoints'],
         'maxTotalWave11Points': snapshot['openIssues']['maxTotalWave11Points'],
         'closedRewardedInWave11': snapshot['closedRewardedInWave11']['uniqueIssues'],
         'totalPointsScored': snapshot['closedRewardedInWave11']['totalPointsScored'],
@@ -359,6 +414,7 @@ def write_last_run(snapshot: dict, open_issues: list[dict]) -> None:
         'runAt': snapshot['runAt'],
         'openIssueIds': [i.get('id') for i in open_issues],
         'openIssuesTotal': snapshot['openIssues']['total'],
+        'currentTotalPoints': snapshot['openIssues']['currentTotalPoints'],
         'maxTotalWave11Points': snapshot['openIssues']['maxTotalWave11Points'],
         'closedRewardedInWave11': snapshot['closedRewardedInWave11']['uniqueIssues'],
         'totalPointsScored': snapshot['closedRewardedInWave11']['totalPointsScored'],
@@ -436,13 +492,21 @@ def main() -> int:
           f'({wave11["startDate"]} → {wave11["endDate"]})', flush=True)
     print(f'In Wave window now? : {snapshot["wave"]["inWaveWindowNow"]}', flush=True)
     print(f'Open issues total   : {snapshot["openIssues"]["total"]:,}', flush=True)
-    print(f'Max W{WAVE_NUM} points (Σ base × 4): {snapshot["openIssues"]["maxTotalWave11Points"]:,} pts', flush=True)
-    print(f'Distribution        : ' + ', '.join(
-        f'{b["complexity"]}={b["count"]}' for b in snapshot["openIssues"]["distribution"]), flush=True)
+    print(f'Current total pts   : {snapshot["openIssues"]["currentTotalPoints"]:,}  '
+          f'(PRECISE — Σ points × pointsMultiplier per issue)', flush=True)
+    print(f'Max W{WAVE_NUM} pts (proj) : {snapshot["openIssues"]["maxTotalWave11Points"]:,}  '
+          f'(PROJECTION — Σ points × max(currentMult, 4))', flush=True)
+    print('Distribution        :', flush=True)
+    for b in snapshot['openIssues']['distribution']:
+        mb = b.get('multiplierBreakdown') or {}
+        mb_s = ','.join(f'×{k}={v}' for k,v in sorted(mb.items())) or '—'
+        print(f'  {b["complexity"]:6s} base={b["basePoints"]!s:>4} count={b["count"]:>5} '
+              f'cur={b["currentContribution"]:>8,}  w11max={b["wave11MaxContribution"]:>8,}  '
+              f'mults=[{mb_s}]', flush=True)
     print(f'New since last run  : {snapshot["newIssuesSinceLastRun"]["newSinceLastRun"]:,}', flush=True)
     print(f'Rewarded issues closed in Wave {WAVE_NUM} window: '
           f'{snapshot["closedRewardedInWave11"]["uniqueIssues"]:,}', flush=True)
-    print(f'Points scored so far in Wave {WAVE_NUM}: '
+    print(f'Points scored so far in Wave {WAVE_NUM} (PRECISE — Σ pointsEarned): '
           f'{snapshot["closedRewardedInWave11"]["totalPointsScored"]:,} pts', flush=True)
     print(f'Contributors paid in Wave {WAVE_NUM}: {snapshot["contributorsCount"]}', flush=True)
     if snapshot['topContributors']:
