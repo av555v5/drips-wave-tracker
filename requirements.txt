@@ -1,0 +1,5 @@
+# No third-party Python deps required — bot.py uses only the Python standard
+# library (urllib, json, datetime, pathlib, collections, concurrent.futures).
+#
+# Python 3.11+ recommended (uses `dict[str, Any]` type hints; for 3.10 you may
+# need `from __future__ import annotations`, which is already imported).

@@ -1,0 +1,123 @@
+name: Hourly Wave 11 Tracker
+
+on:
+  schedule:
+    # Top of every hour, UTC
+    - cron: '0 * * * *'
+  # Manual trigger from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write    # needed to push runs/ and state/ back to the repo
+
+concurrency:
+  group: hourly-wave-bot
+  cancel-in-progress: false
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use a Personal Access Token (stored as PAT_TOKEN secret) if you want
+          # the bot's commits to re-trigger downstream workflows; otherwise the
+          # default GITHUB_TOKEN is fine and won't recurse.
+          token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run bot
+        run: |
+          python bot.py | tee runs_log.txt
+
+      - name: Commit results & state
+        run: |
+          git config user.name  "wave-bot[bot]"
+          git config user.email "wave-bot@users.noreply.github.com"
+          # add timestamped run dir, persistent state, and the raw log
+          git add runs/ state/ runs_log.txt 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(bot): hourly Wave 11 snapshot $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git push
+          fi
+
+      - name: Upload full run log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave-bot-log-${{ github.run_id }}
+          path: |
+            runs_log.txt
+            runs/
+            state/
+          retention-days: 90
+
+      - name: Send summary to webhook (Slack/Discord/Telegram)
+        if: ${{ secrets.WAVE_WEBHOOK_URL != '' }}
+        env:
+          WAVE_WEBHOOK_URL: ${{ secrets.WAVE_WEBHOOK_URL }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request, urllib.parse, datetime as dt, pathlib
+          url = os.environ.get('WAVE_WEBHOOK_URL')
+          if not url: 
+              print('No WAVE_WEBHOOK_URL set; skipping webhook.'); raise SystemExit
+          # find latest run dir
+          runs = sorted(pathlib.Path('runs').glob('*T*Z'))
+          if not runs:
+              print('No run dir found.'); raise SystemExit
+          latest = runs[-1] / 'summary.json'
+          if not latest.exists():
+              print('No summary.json found.'); raise SystemExit
+          snap = json.loads(latest.read_text())
+          w = snap.get('wave', {})
+          oi = snap.get('openIssues', {})
+          cw = snap.get('closedRewardedInWave11', {})
+          tc = snap.get('topContributors', [{}])[0] if snap.get('topContributors') else {}
+          text = (
+              f"🌊 *Stellar Wave {snap.get('wave', {}).get('waveNumber', 11)} — hourly snapshot*\n"
+              f"Run at (UTC): `{snap.get('runAt')}`\n"
+              f"Wave status: *{w.get('status')}* "
+              f"({w.get('startDate','?')[:10]} → {w.get('endDate','?')[:10]})\n"
+              f"In wave window now? {'✅' if w.get('inWaveWindowNow') else '❌'}\n"
+              f"Open issues total: *{oi.get('total', 0):,}*\n"
+              f"Max total Wave points (Σ base × 4): *{oi.get('maxTotalWave11Points', 0):,}*\n"
+              f"New issues since last run: *{snap.get('newIssuesSinceLastRun', {}).get('newSinceLastRun', 0):,}*\n"
+              f"Rewarded issues closed in Wave window: *{cw.get('uniqueIssues', 0):,}*\n"
+              f"Points scored so far in Wave: *{cw.get('totalPointsScored', 0):,}* pts\n"
+              f"Contributors paid in Wave: *{snap.get('contributorsCount', 0):,}*\n"
+              f"Top contributor: `{tc.get('contributor', '—')}` — {tc.get('pointsEarned', 0):,} pts "
+              f"({tc.get('issuesClosed', 0)} issues)\n"
+          )
+          payload = {'text': text}
+          # Discord wants {content: ...}; Slack/Telegram-style want {text: ...}.
+          # We send {text: ...} which Slack and Telegram-bridges accept; for
+          # Discord set the webhook URL to a Slack-compatible bridge.
+          req = urllib.request.Request(
+              url,
+              data=json.dumps(payload).encode('utf-8'),
+              headers={'Content-Type': 'application/json'},
+              method='POST',
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=15) as resp:
+                  print('Webhook response:', resp.status, resp.read().decode()[:200])
+          except Exception as e:
+              print('Webhook send failed:', e)
+          PY
