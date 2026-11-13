@@ -69,10 +69,16 @@ jobs:
           retention-days: 90
 
       - name: Send summary to webhook (Slack/Discord/Telegram)
-        if: ${{ secrets.WAVE_WEBHOOK_URL != '' }}
+        # NOTE: GitHub Actions does not allow the `secrets` context directly
+        # inside a step-level `if:` expression, so we always run this step
+        # and bail out inside the script when WAVE_WEBHOOK_URL is empty.
         env:
           WAVE_WEBHOOK_URL: ${{ secrets.WAVE_WEBHOOK_URL }}
         run: |
+          if [ -z "$WAVE_WEBHOOK_URL" ]; then
+            echo "WAVE_WEBHOOK_URL not set; skipping webhook."
+            exit 0
+          fi
           python - <<'PY'
           import json, os, urllib.request, urllib.parse, datetime as dt, pathlib
           url = os.environ.get('WAVE_WEBHOOK_URL')
