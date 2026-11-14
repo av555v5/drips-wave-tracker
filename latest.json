@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-13T20:55:10+00:00",
+  "runAt": "2026-11-14T01:23:54+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 9639,
-    "totalPoints": 1632850,
+    "total": 9637,
+    "totalPoints": 1632150,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 3613,
-        "sharePct": 37.48,
-        "currentContribution": 417300,
+        "count": 3616,
+        "sharePct": 37.52,
+        "currentContribution": 417600,
         "multiplierBreakdown": {
-          "1": 3107,
+          "1": 3110,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 3107,
+          "100": 3110,
           "200": 479,
           "400": 27
         }
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5343,
-        "sharePct": 55.43,
-        "currentContribution": 1104400,
+        "count": 5338,
+        "sharePct": 55.39,
+        "currentContribution": 1103400,
         "multiplierBreakdown": {
-          "1": 5176,
+          "1": 5171,
           "2": 161,
           "4": 6
         },
         "actualPointsBreakdown": {
-          "200": 5176,
+          "200": 5171,
           "400": 161,
           "800": 6
         }
@@ -71,13 +71,13 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1632850,
+  "maxTotalPoints": 1632150,
   "scoredPoints": 0,
-  "remainingPoints": 1632850,
+  "remainingPoints": 1632150,
   "newIssuesSinceLastRun": {
     "newSinceLastRun": 0,
     "prevOpenCount": 9639,
-    "currentOpenCount": 9639,
+    "currentOpenCount": 9637,
     "newIssuesSample": []
   },
   "topContributors": [],
@@ -950,7 +950,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.045932,
+    "usdPerPoint": 0.045952,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
     "projectedFinalScoredPts": 0,
@@ -971,7 +971,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4801,
+    "openAssigned": 4797,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -1097,14 +1097,14 @@
         "dueDate": "2026-10-22T13:00:56.198000+00:00"
       }
     ],
-    "staleAssignmentsCount": 4801
+    "staleAssignmentsCount": 4797
   },
   "issueQuality": {
     "closedWithPR": 348138,
     "closedWithoutPR": 13478,
     "prToIssueRatio": 96.27,
     "bounceRate": 3.73,
-    "staleOpenIssues": 7833,
+    "staleOpenIssues": 7828,
     "staleThresholdDays": 7,
     "recentlyActiveOpen": 0
   }
