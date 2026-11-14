@@ -1,70 +1,36 @@
-=== Drips Wave 11 hourly bot — run at 2026-11-14T19:11:07.083252+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-14T19:30:57+00:00 ===
 
-[0/7] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-14T18:44:24+00:00, openIssues=9717)
-[0/7] Last run was 26.7 min ago — proceeding.
-[1/7] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
-[1/6] Fetching all open Wave issues (state=open only)...
-  page 1: got 100, cumulative=100, total=9717, hasNext=True
-  page 20: got 100, cumulative=2000, total=9717, hasNext=True
-  page 40: got 100, cumulative=4000, total=9717, hasNext=True
-  page 60: got 100, cumulative=6000, total=9717, hasNext=True
-  page 80: got 100, cumulative=8000, total=9717, hasNext=True
-  page 98: got 17, cumulative=9717, total=9717, hasNext=False
-  open issues total: 9717
+[0] Loaded last run state (run at 2026-11-14T19:11:54+00:00, open=9717)
+Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
-[2/6] Fetching closed+PR issues closed within Wave 11 window (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
-  page 1: got 100, cumulative=100, total=348139, hasNext=True
-  early-stop triggered at page 1 (cumulative=100)
-  → 0 unique rewarded issues closed within Wave 11 window
-[3/7] closed+rewarded in Wave 11 window: 0
+[1/6] Fetching all open Wave issues...
+  page 1: got 100, unique so far=100, reported total=9739, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=9739, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=9739, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=9739, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=9739, hasNext=True
+  page 98: got 39, unique so far=9739, reported total=9739, hasNext=False
+  open issues: 9739
 
-[4/7] Fetching enrollments + filter counts...
+[2/6] Fetching closed+PR issues closed in Wave 11 window (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
+  page 1: got 100, unique so far=100, reported total=348139, hasNext=True
+  early stop at page 2 (unique=200)
+  → 0 closed+PR in window, 0 rewarded
+[4/6] Fetching enrollments + filter counts...
   fetching enrollments...
+  page 1: got 100, unique so far=100, reported total=968, hasNext=True
+  page 10: got 68, unique so far=968, reported total=968, hasNext=False
   → 968 enrollments
-  enrollments=968, closed+PR=348,139, closed−PR=13,603
-
-[5/7] Computing all metrics (per-repo, economics, velocity, pipeline, quality)...
-  openTotalPoints      = 1,651,850
-  closedInWave points  = 0  (scored=0)
-  maxTotalPoints       = 1,651,850  (PRECISE)
-  usdPerPoint          = $0.045404  (budget=$75,000 ÷ max)
-  per-repo rollup      = 569 repos
-  velocity (in-wave)   = opened 0, closed 0, new contribs 0
-  app pipeline         = assigned 4795, apps+no-assign 0, stale 4795
-  issue quality        = PR ratio 96.24%, bounce 3.76%, recently-active 0
-  contributors         = 0
-  newSinceLastRun      = 0
-
-[6/7] Writing snapshot to runs/2026-11-14T19-11Z/...
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/summary.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/summary.md
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/contributors.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/repos.json
-  appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
-  updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
-  wrote /home/runner/work/drips-wave-tracker/drips-wave-tracker/latest.json + /home/runner/work/drips-wave-tracker/drips-wave-tracker/history.json (for GitHub Pages site)
-[7/7] Pruning runs/ to keep last 10...
-  pruned old run: 2026-11-13T20-21Z
+[5/6] Computing metrics...
+[6/6] Writing outputs...
+  pruned old run: 2026-11-13T20-55Z
 
 === RUN SUMMARY ===
-Run at (UTC)        : 2026-11-14T19:11:54+00:00
-Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
-In Wave window now? : False
-Open issues total   : 9,717
-Open total pts      : 1,651,850
-Closed-in-W11 pts   : 0  (across 0 issues)
-Max total pts       : 1,651,850  (PRECISE — NOT ×4)
-Scored so far       : 0
-Remaining claimable : 1,651,850
-USD per point       : $0.045404  (budget $75,000, paid $0.00, remaining $75,000.00)
-Issue quality       : PR ratio 96.24%, bounce 3.76%, recently-active 0, stale>7d 7,837
-App pipeline        : assigned 4,795, apps+no-assign 0, avg apps/open 0.0, stale 4795
-Per-repo            : 569 repos active in Wave 11
-Distribution        :
-  small  base= 100 count= 3579 cur= 413,900  mults=[×1=3073,×2=479,×4=27]
-  medium base= 150 count=  683 cur= 111,150  mults=[×1=643,×2=31,×4=9]
-  large  base= 200 count= 5455 cur=1,126,800  mults=[×1=5288,×2=161,×4=6]
-New since last run  : 0
-Contributors paid in Wave 11: 0
+Run at (UTC)      : 2026-11-14T19:30:57+00:00   in window now: False
+Open issues       : 9,739  (1,656,250 pts)
+Closed in wave    : 0  (0 pts)
+Max / scored / left: 1,656,250 / 0 / 1,656,250
+USD per point     : $0.045283   paid $0.00   remaining $75,000.00
+Contributors      : 0   new issues: 0   repos: 571
+Warnings          : 0
 === END ===
-
