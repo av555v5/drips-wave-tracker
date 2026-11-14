@@ -7,15 +7,15 @@
 <style>
   :root{
     --bg:#0b0e1a; --bg-2:#0f1424;
-    --panel:rgba(255,255,255,0.05);
-    --panel-border:rgba(255,255,255,0.10);
-    --text:#f5f7fa;            /* brightened — primary text */
-    --text-dim:#c4ccdb;        /* brightened — secondary text */
-    --text-mute:#8e98b0;       /* brightened — tertiary text */
+    --panel:rgba(255,255,255,0.025);
+    --panel-border:rgba(255,255,255,0.08);
+    --text:#f5f7fa;
+    --text-dim:#c4ccdb;
+    --text-mute:#8e98b0;
     --accent:#7dd3fc; --accent-2:#a78bfa; --accent-3:#34d399;
     --warn:#fbbf24; --bad:#f87171;
-    --grad:linear-gradient(135deg,#7dd3fc 0%, #a78bfa 50%, #f472b6 100%);
-    --shadow:0 12px 40px -12px rgba(0,0,0,0.6);
+    --row-hover:rgba(125,211,252,0.06);
+    --shadow:0 4px 16px -4px rgba(0,0,0,0.4);
     --mono:'JetBrains Mono','SF Mono','Cascadia Code',ui-monospace,Menlo,monospace;
     --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;
   }
@@ -23,112 +23,96 @@
   html,body{height:100%}
   body{
     font-family:var(--sans);
-    background:
-      radial-gradient(900px 600px at 12% -10%, rgba(125,211,252,0.10), transparent 60%),
-      radial-gradient(800px 500px at 95% 110%, rgba(167,139,250,0.10), transparent 60%),
-      var(--bg);
+    background:var(--bg);
     color:var(--text);
-    line-height:1.5;
+    line-height:1.45;
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    font-size:13px;
   }
-  .container{max-width:1180px;margin:0 auto;padding:48px 24px 96px}
+  /* Full-width dashboard container — uses the whole screen */
+  .container{width:100%;max-width:none;margin:0;padding:20px 28px 56px}
 
-  /* Header */
-  header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
-  .brand{display:flex;flex-direction:column;gap:6px}
+  /* Header — compact, data-dashboard style */
+  header{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--panel-border)}
+  .brand{display:flex;flex-direction:column;gap:2px}
   .brand h1{
-    font-size:clamp(28px,4vw,42px);font-weight:700;letter-spacing:-0.02em;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+    font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
   }
-  .brand .sub{color:var(--text-dim);font-size:14px;letter-spacing:0.02em}
+  .brand .sub{color:var(--text-mute);font-size:12px;letter-spacing:0.01em}
   .status-pill{
-    display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:99px;
+    display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;
     background:var(--panel);border:1px solid var(--panel-border);
-    font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
-    transition:all .3s ease;
+    font-size:11px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
   }
-  .status-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 12px var(--warn);animation:pulse 2s infinite}
-  .status-pill.active .dot{background:var(--accent-3);box-shadow:0 0 12px var(--accent-3)}
+  .status-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--warn);box-shadow:0 0 8px var(--warn);animation:pulse 2s infinite}
+  .status-pill.active .dot{background:var(--accent-3);box-shadow:0 0 8px var(--accent-3)}
   .status-pill.ended .dot{background:var(--text-mute);box-shadow:none;animation:none}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
 
-  .meta-row{display:flex;gap:24px;flex-wrap:wrap;color:var(--text-dim);font-size:13px;margin-top:14px}
+  .meta-row{display:flex;gap:20px;flex-wrap:wrap;color:var(--text-dim);font-size:12px;margin-top:10px}
   .meta-row b{color:var(--text);font-weight:500}
-  .countdown{font-family:var(--mono);color:var(--accent);font-size:14px;font-weight:500}
+  .countdown{font-family:var(--mono);color:var(--accent);font-size:12px;font-weight:500}
 
-  /* Stat cards */
+  /* Stat cards — denser, less shadow */
   .stats{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;margin-bottom:48px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:10px;margin-bottom:24px;
   }
   .card{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:18px;
-    padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    box-shadow:var(--shadow);position:relative;overflow:hidden;
-    transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s;
-    opacity:0;transform:translateY(8px);animation:rise .55s cubic-bezier(.2,.8,.2,1) forwards;
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
+    padding:14px 16px;
+    transition:border-color .2s;
   }
-  .card:hover{transform:translateY(-2px);border-color:rgba(125,211,252,0.25)}
-  .card::before{
-    content:'';position:absolute;top:0;left:0;right:0;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
-  }
+  .card:hover{border-color:rgba(125,211,252,0.18)}
   .card .label{
-    font-size:11px;color:var(--text-mute);letter-spacing:0.08em;text-transform:uppercase;
-    font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:8px;
+    font-size:10px;color:var(--text-mute);letter-spacing:0.08em;text-transform:uppercase;
+    font-weight:500;margin-bottom:8px;
   }
   .card .value{
-    font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:-0.02em;
+    font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:-0.02em;
     color:var(--text);font-variant-numeric:tabular-nums;
   }
-  .card .value.accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .card .value.accent{color:var(--accent)}
   .card .value.good{color:var(--accent-3)}
   .card .value.warn{color:var(--warn)}
-  .card .sub{font-size:12px;color:var(--text-mute);margin-top:8px}
-  .card.delay-1{animation-delay:.05s}
-  .card.delay-2{animation-delay:.1s}
-  .card.delay-3{animation-delay:.15s}
-  .card.delay-4{animation-delay:.2s}
-  .card.delay-5{animation-delay:.25s}
-  .card.delay-6{animation-delay:.3s}
-  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .card .sub{font-size:11px;color:var(--text-mute);margin-top:4px}
 
   /* Progress bar (scored vs max) */
   .progress-card{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:18px;
-    padding:28px;margin-bottom:48px;box-shadow:var(--shadow);
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
+    padding:18px 20px;margin-bottom:24px;
   }
-  .progress-card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;flex-wrap:wrap;gap:8px}
-  .progress-card h2{font-size:16px;font-weight:600;letter-spacing:-0.01em}
-  .progress-card .pct{font-family:var(--mono);font-size:13px;color:var(--accent-3);font-weight:500}
+  .progress-card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+  .progress-card h2{font-size:13px;font-weight:600;letter-spacing:0}
+  .progress-card .pct{font-family:var(--mono);font-size:12px;color:var(--accent-3);font-weight:500}
   .progress-track{
-    height:14px;background:rgba(255,255,255,0.04);border-radius:99px;overflow:hidden;
+    height:10px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;
     border:1px solid var(--panel-border);position:relative;
   }
   .progress-fill{
-    height:100%;background:linear-gradient(90deg,var(--accent-3),var(--accent));
-    border-radius:99px;transition:width 1s cubic-bezier(.2,.8,.2,1);
-    box-shadow:0 0 24px rgba(52,211,153,0.4);width:0;
+    height:100%;background:var(--accent-3);
+    border-radius:4px;transition:width .8s cubic-bezier(.2,.8,.2,1);
+    width:0;
   }
   .progress-meta{
-    display:flex;justify-content:space-between;margin-top:12px;font-size:13px;
+    display:flex;justify-content:space-between;margin-top:8px;font-size:11px;
     color:var(--text-dim);font-family:var(--mono);
   }
   .progress-meta b{color:var(--text);font-weight:500}
 
   /* Grid: distribution + contributors */
   .grid-2{
-    display:grid;grid-template-columns:1.1fr 1fr;gap:24px;margin-bottom:48px;
+    display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-bottom:24px;
   }
-  @media (max-width:860px){.grid-2{grid-template-columns:1fr}}
+  @media (max-width:1100px){.grid-2{grid-template-columns:1fr}}
   .panel{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:18px;
-    padding:28px;box-shadow:var(--shadow);
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
+    padding:18px 20px;
   }
-  .panel h2{font-size:16px;font-weight:600;margin-bottom:20px;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px}
-  .panel h2 .hint{font-size:11px;color:var(--text-mute);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
+  .panel h2{font-size:13px;font-weight:600;margin-bottom:14px;letter-spacing:0;display:flex;align-items:center;gap:8px}
+  .panel h2 .hint{font-size:10px;color:var(--text-mute);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
 
   /* Distribution bars */
   .dist-row{margin-bottom:22px}
@@ -210,16 +194,16 @@
   .err{color:var(--bad);font-size:14px;text-align:center;padding:60px 20px}
   .hidden{display:none}
 
-  /* NEW: section heading with kicker */
+  /* NEW: section heading with kicker — compact for dashboard */
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
-    margin:64px 0 24px;gap:16px;flex-wrap:wrap;
+    margin:24px 0 12px;gap:16px;flex-wrap:wrap;
   }
   .section-head h2{
-    font-size:22px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
+    font-size:14px;font-weight:600;letter-spacing:0;color:var(--text);
   }
   .section-head .kicker{
-    font-size:11px;color:var(--text-mute);letter-spacing:0.1em;
+    font-size:10px;color:var(--text-mute);letter-spacing:0.1em;
     text-transform:uppercase;font-weight:500;
   }
 
@@ -328,6 +312,64 @@
   .payout-table td:nth-child(2) a{color:var(--accent);text-decoration:none;font-weight:500}
   .payout-table td:nth-child(2) a:hover{text-decoration:underline}
   .payout-table tr:hover td{background:rgba(255,255,255,0.02)}
+
+  /* NEW: clickable "View all" button */
+  .view-all-btn{
+    display:block;width:100%;margin-top:12px;padding:10px 14px;
+    background:transparent;border:1px dashed var(--panel-border);border-radius:6px;
+    color:var(--accent);font-family:var(--sans);font-size:12px;font-weight:500;
+    cursor:pointer;transition:all .15s;text-align:center;
+    letter-spacing:0.02em;
+  }
+  .view-all-btn:hover{background:var(--row-hover);border-color:rgba(125,211,252,0.3);border-style:solid}
+  .view-all-btn .arrow{margin-left:6px;display:inline-block;transition:transform .15s}
+  .view-all-btn:hover .arrow{transform:translateX(2px)}
+
+  /* NEW: modal dialog for full contributor / repo lists */
+  .modal{
+    position:fixed;inset:0;z-index:1000;display:none;
+    align-items:flex-start;justify-content:center;
+    background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);
+    padding:24px;overflow-y:auto;
+  }
+  .modal.open{display:flex}
+  .modal-content{
+    background:var(--bg-2);border:1px solid var(--panel-border);border-radius:8px;
+    width:100%;max-width:1400px;margin:0 auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.7);
+  }
+  .modal-header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 20px;border-bottom:1px solid var(--panel-border);
+    position:sticky;top:0;background:var(--bg-2);z-index:1;
+  }
+  .modal-header h3{font-size:15px;font-weight:600;color:var(--text)}
+  .modal-header .meta{font-size:11px;color:var(--text-mute);font-family:var(--mono);margin-top:2px}
+  .modal-close{
+    background:transparent;border:1px solid var(--panel-border);color:var(--text-dim);
+    width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:18px;
+    line-height:1;transition:all .15s;
+  }
+  .modal-close:hover{background:var(--bad);color:#fff;border-color:var(--bad)}
+  .modal-body{padding:0;max-height:calc(100vh - 100px);overflow-y:auto}
+  .modal-body::-webkit-scrollbar{width:8px}
+  .modal-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:4px}
+  .modal-body table{width:100%;font-size:12px}
+  .modal-body th{
+    position:sticky;top:0;background:var(--bg-2);z-index:1;
+  }
+
+  /* NEW: clickable panel heading (whole row is a button to open modal) */
+  .panel.clickable{cursor:pointer;transition:border-color .15s}
+  .panel.clickable:hover{border-color:rgba(125,211,252,0.25)}
+  .panel.clickable h2{cursor:pointer}
+  .panel.clickable h2::after{
+    content:'View all →';margin-left:auto;font-size:10px;color:var(--accent);
+    font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
+    padding:3px 8px;border:1px solid rgba(125,211,252,0.25);border-radius:4px;
+    transition:all .15s;
+  }
+  .panel.clickable:hover h2::after{background:rgba(125,211,252,0.1);border-color:rgba(125,211,252,0.4)}
 </style>
 </head>
 <body>
@@ -356,32 +398,32 @@
 
     <!-- Big stat cards -->
     <section class="stats">
-      <div class="card delay-1">
+      <div class="card">
         <div class="label">Open Issues</div>
         <div class="value" id="s-open">—</div>
         <div class="sub" id="s-open-sub">— open Wave issues</div>
       </div>
-      <div class="card delay-2">
+      <div class="card">
         <div class="label">Max Total Points</div>
         <div class="value accent" id="s-max">—</div>
         <div class="sub">open + closed-in-wave · precise Σ points × mult</div>
       </div>
-      <div class="card delay-3">
+      <div class="card">
         <div class="label">Scored So Far</div>
         <div class="value good" id="s-scored">—</div>
         <div class="sub" id="s-scored-sub">Σ pointsEarned · across <b id="s-closed">—</b> closed issues</div>
       </div>
-      <div class="card delay-4">
+      <div class="card">
         <div class="label">Remaining</div>
         <div class="value warn" id="s-remaining">—</div>
         <div class="sub">claimable points still on the table</div>
       </div>
-      <div class="card delay-5">
+      <div class="card">
         <div class="label">New Since Last Run</div>
         <div class="value" id="s-new">—</div>
-        <div class="sub">issues opened in the last ~1.5h</div>
+        <div class="sub">issues opened in the last ~1h</div>
       </div>
-      <div class="card delay-6">
+      <div class="card">
         <div class="label">Contributors Paid</div>
         <div class="value" id="s-contrib">—</div>
         <div class="sub" id="s-top-contrib">—</div>
@@ -409,9 +451,12 @@
         <h2>Distribution by Complexity <span class="hint">precise Σ points × mult</span></h2>
         <div id="dist"></div>
       </div>
-      <div class="panel">
-        <h2>Top Contributors <span class="hint">by points earned in Wave 11</span></h2>
-        <ul class="contributors" id="contrib-list"></ul>
+      <div class="panel clickable" id="contributors-panel" onclick="openContributorsModal()">
+        <h2>All Contributors <span class="hint" id="contrib-panel-hint">click to expand full table</span></h2>
+        <ul class="contributors" id="contrib-list" onclick="event.stopPropagation()"></ul>
+        <button class="view-all-btn" id="contrib-view-all-btn" onclick="event.stopPropagation(); openContributorsModal()">
+          <span id="contrib-view-all-label">View all contributors</span><span class="arrow">→</span>
+        </button>
       </div>
     </section>
 
@@ -436,10 +481,10 @@
     <!-- ─── NEW: Per-repo analytics ─── -->
     <div class="section-head">
       <h2>Per-Repo Analytics</h2>
-      <span class="kicker">Wave 11 · top 25 of <span id="repo-total-count">—</span> active repos</span>
+      <span class="kicker">Wave 11 · top 25 of <span id="repo-total-count">—</span> active repos · click panel to expand full table</span>
     </div>
-    <section class="panel" style="padding:18px 24px">
-      <table class="repo-table">
+    <section class="panel clickable" style="padding:14px 20px" onclick="openReposModal()">
+      <table class="repo-table" onclick="event.stopPropagation()">
         <thead>
           <tr>
             <th>#</th><th>Repo</th>
@@ -451,6 +496,9 @@
         </thead>
         <tbody id="repo-tbody"></tbody>
       </table>
+      <button class="view-all-btn" onclick="event.stopPropagation(); openReposModal()">
+        <span id="repo-view-all-label">View all repos</span><span class="arrow">→</span>
+      </button>
     </section>
 
     <!-- ─── NEW: Wave economics / payout modeling ─── -->
@@ -532,6 +580,20 @@
     </footer>
   </div>
 
+  <!-- Modal for full contributor / repo lists -->
+  <div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-title">—</h3>
+          <div class="meta" id="modal-meta"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
   <div class="err hidden" id="err"></div>
 </div>
 
@@ -606,16 +668,19 @@ function renderDist(distribution){
 
 function renderContributors(allContributors, topContributors){
   const el = document.getElementById('contrib-list');
-  // Show ALL contributors (not just top 20). The bot writes the full list as
-  // `allContributors` in latest.json. Fall back to topContributors if absent.
-  const list = (allContributors && allContributors.length)
+  // Show only top 8 in the compact panel; the modal (openContributorsModal)
+  // shows the full list with all stats.
+  const fullList = (allContributors && allContributors.length)
     ? allContributors
     : (topContributors || []);
-  if(!list.length){
-    el.innerHTML = '<div class="empty">No contributor rewards recorded in Wave 11 yet.</div>';
+  const compact = fullList.slice(0, 8);
+  if(!compact.length){
+    el.innerHTML = '<div class="empty">No contributor rewards recorded in Wave ' + WAVE_NUM + ' yet.</div>';
+    document.getElementById('contrib-view-all-label').textContent = 'No contributors yet';
+    document.getElementById('contrib-panel-hint').textContent = 'populates once Wave ' + WAVE_NUM + ' starts';
     return;
   }
-  el.innerHTML = list.map((c, i) => `
+  el.innerHTML = compact.map((c, i) => `
     <li class="contrib ${i===0?'top':''}">
       <span class="rank">${i+1}</span>
       <a class="name" href="https://github.com/${c.contributor}" target="_blank" rel="noopener">${c.contributor}</a>
@@ -623,9 +688,10 @@ function renderContributors(allContributors, topContributors){
       <span class="pts">${fmt(c.pointsEarned)} pts</span>
     </li>
   `).join('');
-  // update the panel heading to show the total count
-  const head = document.querySelector('#contrib-list').previousElementSibling;
-  if(head){ head.innerHTML = `All Contributors <span class="hint">${list.length} paid in Wave 11 · sorted by points</span>`; }
+  // Update the "View all" button label and the panel-hint with the full count
+  const total = fullList.length;
+  document.getElementById('contrib-view-all-label').textContent = `View all ${total} contributor${total===1?'':'s'}`;
+  document.getElementById('contrib-panel-hint').textContent = `showing top 8 of ${total} · click to expand`;
 }
 
 function renderNewIssues(sample){
@@ -647,7 +713,7 @@ function renderPerRepo(perRepo){
   const total = perRepo?.totalRepos || 0;
   document.getElementById('repo-total-count').textContent = fmt(total);
   const tbody = document.getElementById('repo-tbody');
-  const repos = (perRepo?.topRepos || []).slice(0, 25);
+  const repos = (perRepo?.topRepos || []).slice(0, 15);   // compact: top 15 in dashboard; full list in modal
   if(!repos.length){ tbody.innerHTML = '<tr><td colspan="11" class="vel-empty">No active repos.</td></tr>'; return; }
   tbody.innerHTML = repos.map((r, i) => {
     const featured = r.isFeatured ? '<span class="featured-tag">★ Featured</span>' : '';
@@ -670,6 +736,9 @@ function renderPerRepo(perRepo){
       </tr>
     `;
   }).join('');
+  // Update the "View all repos" button label
+  const lbl = document.getElementById('repo-view-all-label');
+  if(lbl) lbl.textContent = `View all ${total} repos`;
 }
 
 // ─── NEW: wave economics ───
@@ -815,6 +884,122 @@ function renderQuality(iq){
   `;
 }
 
+// ─── NEW: Modal open/close + full-table renderers ───
+let _snap = null;   // cached snapshot for modal rendering
+function openModal(title, meta, bodyHTML){
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-meta').textContent  = meta || '';
+  document.getElementById('modal-body').innerHTML   = bodyHTML;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// ESC to close
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+function openContributorsModal(){
+  if(!_snap) return;
+  const all = _snap.allContributors || [];
+  const total = _snap.contributorsCount || all.length;
+  if(!all.length){
+    openModal('All Contributors', '0 contributors — no rewards recorded in Wave ' + WAVE_NUM + ' yet',
+      '<div class="vel-empty" style="padding:48px">No contributor rewards recorded yet. This panel populates once Wave ' + WAVE_NUM + ' starts and issues get closed+rewarded.</div>');
+    return;
+  }
+  // Full table with all stats per contributor
+  const rows = all.map((c, i) => {
+    const cpx = c.complexityBreakdown || {};
+    const cpxS = Object.entries(cpx).map(([k,v]) => `${k}:${v}`).join(' · ') || '—';
+    const repos = c.reposContributedTo || [];
+    const firstC = c.firstClosedAt ? shortDate(c.firstClosedAt) : '—';
+    const lastC  = c.lastClosedAt  ? shortDate(c.lastClosedAt)  : '—';
+    return `
+      <tr>
+        <td>${i+1}</td>
+        <td><a href="https://github.com/${c.contributor}" target="_blank" rel="noopener">${c.contributor}</a></td>
+        <td>${fmt(c.pointsEarned)}</td>
+        <td>${c.issuesClosed}</td>
+        <td>${c.avgPointsPerIssue || '—'}</td>
+        <td>${c.reposCount || (repos ? repos.length : 0)}</td>
+        <td>${cpxS}</td>
+        <td>${firstC}</td>
+        <td>${lastC}</td>
+        <td><a href="https://github.com/${c.contributor}" target="_blank" rel="noopener" style="font-size:10px">profile ↗</a></td>
+      </tr>
+    `;
+  }).join('');
+  const body = `
+    <table class="payout-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Contributor</th>
+          <th>Points</th><th>Issues</th>
+          <th>Avg pts/issue</th><th># Repos</th>
+          <th>Complexity mix</th>
+          <th>First closed</th><th>Last closed</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+  openModal(`All Contributors — Wave ${WAVE_NUM}`,
+            `${total} contributors paid · sorted by points earned · click a username to open GitHub`,
+            body);
+}
+
+function openReposModal(){
+  if(!_snap || !_snap.perRepo) return;
+  const all = _snap.perRepo.topRepos || [];
+  const total = _snap.perRepo.totalRepos || all.length;
+  if(!all.length){
+    openModal('All Repos', '0 repos',
+      '<div class="vel-empty" style="padding:48px">No active repos.</div>');
+    return;
+  }
+  const rows = all.map((r, i) => {
+    const featured = r.isFeatured ? '<span class="featured-tag">★</span>' : '';
+    const tags = (r.tags || []).map(t => `<span class="repo-tag">${t}</span>`).join(' ');
+    const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
+    const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
+    return `
+      <tr>
+        <td>${i+1}</td>
+        <td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${featured}<br><span style="color:var(--text-mute);font-size:10px">${r.org || '—'}</span></td>
+        <td>${fmt(r.openIssues)}</td>
+        <td>${fmt(r.unassignedOpen)}</td>
+        <td>${fmt(r.closedInWave)}</td>
+        <td>${fmt(r.pointsScored)}</td>
+        <td>${fmt(r.distinctContributors)}</td>
+        <td>${ttc}</td>
+        <td>${budget}</td>
+        <td>×${r.pointsMultiplier ?? '—'}</td>
+        <td style="text-align:left">${tags || '—'}</td>
+      </tr>
+    `;
+  }).join('');
+  const body = `
+    <table class="repo-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Repo / Org</th>
+          <th>Open</th><th>Unassigned</th>
+          <th>Closed W${WAVE_NUM}</th><th>Pts scored</th>
+          <th>Contribs</th><th>Avg TTC (h)</th>
+          <th>Used / budget</th><th>Mult</th><th style="text-align:left">Tags</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+  openModal(`All Repos — Wave ${WAVE_NUM}`,
+            `${total} repos active · sorted by points scored then open count · click a repo to open GitHub`,
+            body);
+}
+
 function renderSparkline(history){
   const svg = document.getElementById('spark');
   if(!history || history.length < 2){ svg.innerHTML = '<text x="500" y="70" text-anchor="middle" fill="#5a6378" font-size="12" font-family="monospace">Not enough runs yet — sparkline appears after 2+ runs.</text>'; return; }
@@ -837,6 +1022,8 @@ function renderSparkline(history){
 function render(snap, history){
   document.getElementById('loading').classList.add('hidden');
   document.getElementById('content').classList.remove('hidden');
+
+  _snap = snap;   // cache for modal rendering
 
   const w = snap.wave || {};
   const oi = snap.openIssues || {};
