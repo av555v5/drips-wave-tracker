@@ -774,6 +774,23 @@ def main() -> int:
     else:
         print(f'[0/7] No previous run state found — first run.', flush=True)
 
+    # 0b. Skip if last run was < 15 min ago (avoid double-runs since the workflow
+    # fires at both :00 and :30 — the second fire is a catch-up in case the
+    # first was missed by GitHub Actions, not a true second run).
+    SKIP_THRESHOLD_MIN = int(os.environ.get('WAVE_BOT_SKIP_MIN', '15'))
+    if last_state and last_state.get('runAt'):
+        try:
+            last_ts = parse_iso(last_state['runAt'])
+            elapsed_min = (dt.datetime.now(dt.timezone.utc) - last_ts).total_seconds() / 60
+            if elapsed_min < SKIP_THRESHOLD_MIN:
+                print(f'[0/7] SKIP: last run was {elapsed_min:.1f} min ago '
+                      f'(< {SKIP_THRESHOLD_MIN} min threshold). '
+                      f'This catch-up fire is redundant — exiting cleanly.', flush=True)
+                return 0
+            print(f'[0/7] Last run was {elapsed_min:.1f} min ago — proceeding.', flush=True)
+        except Exception as e:
+            print(f'[0/7] WARN: skip-check failed: {e}', flush=True)
+
     # 1. Wave 11 metadata
     wave11 = fetch_wave_meta()
     if not wave11:
