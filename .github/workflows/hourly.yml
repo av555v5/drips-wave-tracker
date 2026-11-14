@@ -1,9 +1,11 @@
-name: Wave 11 Tracker (hourly)
+name: Wave 11 Tracker (every 2 hours)
 
 on:
   schedule:
-    # Every hour at :00 UTC
-    - cron: '0 * * * *'
+    # Every 2 hours at minute 07 UTC (00:07, 02:07, 04:07 ...).
+    # Minute 00 is when GitHub's scheduler is busiest, so runs there are often
+    # delayed or silently skipped. An offset minute is much more reliable.
+    - cron: '7 */2 * * *'
   # Manual trigger from the Actions tab
   workflow_dispatch:
 
@@ -23,9 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Use a Personal Access Token (stored as PAT_TOKEN secret) if you want
-          # the bot's commits to re-trigger downstream workflows; otherwise the
-          # default GITHUB_TOKEN is fine and won't recurse.
+          # A Personal Access Token (secret PAT_TOKEN) makes the bot's push
+          # trigger a GitHub Pages rebuild reliably. Falls back to GITHUB_TOKEN.
           token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
           fetch-depth: 1
 
@@ -48,17 +49,20 @@ jobs:
         run: |
           git config user.name  "wave-bot[bot]"
           git config user.email "wave-bot@users.noreply.github.com"
-          # add: timestamped run dir (auto-pruned to last 10 by bot.py),
-          # persistent state, the raw log, and the latest.json + history.json
-          # that the GitHub Pages site (index.html) reads on every load.
-          git add runs/ state/ runs_log.txt latest.json history.json 2>/dev/null || true
-          # also `git rm` any run dirs the bot pruned (so deletions actually commit)
-          git add -A runs/ 2>/dev/null || true
+          # Stage each path on its own. A single `git add a b c` aborts and
+          # stages NOTHING if any one path is missing (e.g. no history.json yet).
+          # -A also records files the bot pruned from runs/.
+          for p in runs state runs_log.txt latest.json history.json; do
+            if [ -e "$p" ] || git ls-files --error-unmatch "$p" >/dev/null 2>&1; then
+              git add -A "$p"
+            fi
+          done
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             git commit -m "chore(bot): Wave 11 snapshot $(date -u +'%Y-%m-%dT%H:%MZ')"
-            git push
+            # If someone pushed in the meantime, rebase on top and retry.
+            git push || { git pull --rebase --autostash && git push; }
           fi
 
       - name: Upload full run log as artifact
