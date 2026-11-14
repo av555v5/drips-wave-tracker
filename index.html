@@ -5,1206 +5,478 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Stellar Wave 11 · Analytics</title>
 <style>
-  /* ════════════════════════════════════════════════════════════════
-     Stellar Wave 11 Analytics — minimal dashboard
-     Design principles:
-       1. High-contrast typography (large bold KPIs vs small uppercase labels)
-       2. Intentional whitespace (generous padding & section gaps)
-       3. Restrained palette (dark slate base + ONE accent + 3 status colors)
-       4. Focused cards (max 2-3 data points: label + value + sub)
-     ════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#fff; --ink:#111; --dim:#555; --mute:#8a8a8a; --line:#e4e4e4; --fill:#f5f5f5;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#000;--ink:#f2f2f2;--dim:#a8a8a8;--mute:#707070;--line:#262626;--fill:#141414;color-scheme:dark}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  font:14px/1.5 var(--sans);background:var(--bg);color:var(--ink);
+  font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+a:hover{border-bottom-color:var(--ink)}
+.wrap{max-width:1120px;margin:0 auto;padding:56px 32px 64px}
+@media(max-width:700px){.wrap{padding:32px 20px 48px}}
+.hidden{display:none!important}
 
-  :root{
-    /* Base — dark slates */
-    --bg:           #0d1117;
-    --bg-elevated:  #161b22;
-    --bg-hover:     #1c2129;
-    --border:       #21262d;
-    --border-soft:  #1a1f26;
+/* header */
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+h1{font-size:22px;font-weight:600;letter-spacing:-.01em}
+.meta{color:var(--mute);font-size:13px;margin-top:6px;display:flex;gap:20px;flex-wrap:wrap}
+.meta b{color:var(--dim);font-weight:500}
+#status{font-size:13px;color:var(--dim)}
+#status::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;border:1px solid var(--dim);margin-right:8px}
+#status.active{color:var(--ink)}
+#status.active::before{background:var(--ink);border-color:var(--ink)}
 
-    /* Text — clear hierarchy */
-    --text:         #e6edf3;       /* primary KPIs */
-    --text-dim:     #adbac7;       /* secondary labels */
-    --text-mute:    #6e7681;       /* tertiary hints */
+/* sections */
+section{margin-top:64px}
+h2{font-size:13px;font-weight:600;color:var(--ink);padding-bottom:10px;border-bottom:1px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+h2 small{font-weight:400;color:var(--mute);font-size:12px}
+h3{font-size:13px;font-weight:600;margin:32px 0 4px}
+.sub{color:var(--mute);font-size:12px}
 
-    /* Single accent — used for ALL primary data series */
-    --accent:       #58a6ff;
+/* key figures */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px 24px;margin-top:48px}
+.k .l,.st .l{color:var(--mute);font-size:12px}
+.k .v{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:2px 0}
+.k .s{color:var(--mute);font-size:12px}
 
-    /* Status colors — semantic only, never decorative */
-    --ok:           #3fb950;       /* positive: scored, active */
-    --warn:         #d29922;       /* caution: stale, remaining */
-    --bad:          #f85149;       /* negative: bounce, overdue */
+/* progress */
+.prog{margin-top:48px}
+.prog .row{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:8px}
+.prog .row b{color:var(--ink);font-weight:500}
+.track{height:3px;background:var(--line)}
+.fill{height:100%;background:var(--ink);width:0;transition:width .5s}
+.prog .top{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px}
 
-    /* Typography */
-    --mono: 'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace;
-    --sans: -apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;
+/* secondary stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px 24px;margin-top:20px}
+.st .v{font-size:18px;font-weight:600}
+.st .s{color:var(--mute);font-size:11px}
 
-    /* Spacing scale */
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 24px;
-    --space-6: 32px;
-    --space-7: 48px;
-  }
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media(max-width:900px){.cols{grid-template-columns:1fr;gap:0}}
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    font-family:var(--sans);
-    background:var(--bg);
-    color:var(--text);
-    font-size:14px;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-x:hidden;
-  }
+/* distribution */
+.dist{padding:14px 0;border-bottom:1px solid var(--line)}
+.dist .hd{display:flex;justify-content:space-between}
+.dist .nm{text-transform:capitalize}
+.dist .nm i{font-style:normal;color:var(--mute);font-size:12px;margin-left:8px}
+.dist .bar{height:2px;background:var(--line);margin:8px 0 6px}
+.dist .bar div{height:100%;background:var(--ink);width:0;transition:width .5s}
+.dist .mu{color:var(--mute);font-size:11px}
 
-  /* ═══ Layout: full-width with generous side padding ═══ */
-  .container{
-    width:100%;
-    max-width:none;
-    margin:0;
-    padding:var(--space-7) var(--space-7) var(--space-7);
-  }
-  @media (max-width:768px){
-    .container{padding:var(--space-5) var(--space-4) var(--space-6)}
-  }
+/* tables */
+.tw{overflow-x:auto;max-width:100%}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-weight:400;color:var(--mute);font-size:12px;text-align:right;padding:10px 12px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);color:var(--dim);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;padding-left:0;width:32px;color:var(--mute)}
+th:nth-child(2),td:nth-child(2){text-align:left}
+td:nth-child(2){color:var(--ink)}
+tr:hover td{background:var(--fill)}
+.tx{text-align:left!important}
+.btn{background:none;border:0;border-bottom:1px solid var(--line);font:inherit;font-size:13px;color:var(--ink);cursor:pointer;margin-top:16px;padding:0 0 1px}
+.btn:hover{border-bottom-color:var(--ink)}
+.btn:focus-visible,a:focus-visible,.modal button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-  /* ═══ Header — minimal horizontal bar ═══ */
-  header{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:var(--space-5);flex-wrap:wrap;
-    padding-bottom:var(--space-5);
-    margin-bottom:var(--space-6);
-    border-bottom:1px solid var(--border);
-  }
-  .brand{display:flex;flex-direction:column;gap:var(--space-1)}
-  .brand h1{
-    font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
-  }
-  .brand .sub{
-    font-size:12px;color:var(--text-mute);font-weight:400;letter-spacing:0;
-  }
-  .header-right{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
-  .status-pill{
-    display:inline-flex;align-items:center;gap:var(--space-2);
-    padding:6px 12px;border-radius:4px;
-    background:var(--bg-elevated);border:1px solid var(--border);
-    font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;
-    color:var(--text-dim);
-  }
-  .status-pill .dot{
-    width:6px;height:6px;border-radius:50%;background:var(--warn);
-  }
-  .status-pill.active .dot{background:var(--ok)}
-  .status-pill.ended .dot{background:var(--text-mute)}
-  .status-pill.active{color:var(--ok)}
+/* contributors */
+.li{display:grid;grid-template-columns:24px 1fr auto auto;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.li .r{color:var(--mute);font-size:12px}
+.li .n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li .i{color:var(--mute);font-size:12px}
+.li .p{font-weight:600}
+.empty{color:var(--mute);font-size:13px;padding:20px 0}
 
-  .meta-row{
-    display:flex;gap:var(--space-5);flex-wrap:wrap;
-    color:var(--text-mute);font-size:12px;margin-top:var(--space-3);
-  }
-  .meta-row b{color:var(--text-dim);font-weight:500}
-  .meta-row .countdown{
-    font-family:var(--mono);color:var(--accent);font-weight:500;
-  }
+/* charts */
+#spark{width:100%;height:120px;display:block;margin-top:24px}
+.legend{display:flex;gap:24px;margin-top:10px;font-size:12px;color:var(--mute);flex-wrap:wrap}
+.legend i{display:inline-block;width:18px;border-top:1.5px solid var(--ink);vertical-align:middle;margin-right:8px}
+.legend i.d{border-top-style:dotted;border-color:var(--mute)}
+.legend i.m{border-color:var(--mute)}
+.vel{display:flex;align-items:flex-end;height:120px;gap:2px;border-bottom:1px solid var(--ink);margin-top:20px}
+.vb{flex:1;min-width:3px;background:var(--mute);position:relative}
+.vb:hover{background:var(--ink)}
+.vb:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:11px;padding:4px 8px;white-space:nowrap;margin-bottom:6px;pointer-events:none;z-index:2}
+.seg{display:flex;height:3px;margin:8px 0 0;gap:2px}
+.seg div{height:100%}
 
-  /* ═══ Section heading — high-contrast kicker pattern ═══ */
-  .section{
-    margin-top:var(--space-7);
-  }
-  .section-head{
-    display:flex;align-items:baseline;justify-content:space-between;
-    gap:var(--space-4);flex-wrap:wrap;
-    margin-bottom:var(--space-4);
-  }
-  .section-head h2{
-    font-size:11px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--text-dim);
-  }
-  .section-head .kicker{
-    font-size:11px;color:var(--text-mute);font-weight:400;letter-spacing:0.02em;
-  }
+/* lists */
+.mi{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;align-items:baseline}
+.mi .n{color:var(--mute);font-size:12px}
+.mi .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mi .m{color:var(--dim);font-size:12px}
+.sl{max-height:260px;overflow-y:auto}
 
-  /* ═══ KPI cards — focused, max 2-3 data points ═══ */
-  .kpi-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:var(--space-3);
-  }
-  .kpi{
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:var(--space-5);
-    display:flex;flex-direction:column;gap:var(--space-2);
-    transition:border-color .15s;
-  }
-  .kpi:hover{border-color:#30363d}
-  .kpi .label{
-    font-size:10px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--text-mute);
-  }
-  .kpi .value{
-    font-family:var(--mono);font-size:32px;font-weight:600;
-    letter-spacing:-0.02em;color:var(--text);
-    font-variant-numeric:tabular-nums;line-height:1.1;
-  }
-  .kpi .value.accent{color:var(--accent)}
-  .kpi .value.ok{color:var(--ok)}
-  .kpi .value.warn{color:var(--warn)}
-  .kpi .sub{
-    font-size:12px;color:var(--text-mute);font-weight:400;
-  }
-  .kpi .sub b{color:var(--text-dim);font-weight:500}
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:none;background:rgba(0,0,0,.55);padding:32px;overflow-y:auto}
+.modal.open{display:block}
+.mc{background:var(--bg);border:1px solid var(--ink);max-width:1200px;margin:0 auto}
+.mh{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg)}
+.mh h3{margin:0}
+.mb{padding:0 24px 16px;max-height:calc(100vh - 160px);overflow:auto}
 
-  /* ═══ Progress bar — clean horizontal ═══ */
-  .progress{
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:var(--space-5);
-    margin-top:var(--space-7);
-  }
-  .progress-head{
-    display:flex;justify-content:space-between;align-items:baseline;
-    margin-bottom:var(--space-3);flex-wrap:wrap;gap:var(--space-2);
-  }
-  .progress-head .title{
-    font-size:11px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--text-dim);
-  }
-  .progress-head .pct{
-    font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ok);
-  }
-  .progress-track{
-    height:8px;background:var(--bg);border-radius:2px;overflow:hidden;
-  }
-  .progress-fill{
-    height:100%;background:var(--ok);border-radius:2px;
-    transition:width .6s cubic-bezier(.2,.8,.2,1);width:0;
-  }
-  .progress-meta{
-    display:flex;justify-content:space-between;
-    margin-top:var(--space-3);font-size:12px;color:var(--text-mute);
-    font-family:var(--mono);
-  }
-  .progress-meta b{color:var(--text-dim);font-weight:500}
-
-  /* ═══ Generic panel — used for distribution, contributors, etc. ═══ */
-  .panel{
-    background:var(--bg-elevated);
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:var(--space-5);
-  }
-  .panel.clickable{cursor:pointer;transition:border-color .15s}
-  .panel.clickable:hover{border-color:#30363d}
-  .panel-title{
-    font-size:11px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--text-dim);
-    margin-bottom:var(--space-4);
-    display:flex;align-items:center;gap:var(--space-2);
-  }
-  .panel-title .hint{
-    font-size:10px;color:var(--text-mute);font-weight:400;
-    letter-spacing:0.02em;text-transform:none;
-  }
-  .panel.clickable .panel-title::after{
-    content:'View all →';
-    margin-left:auto;
-    font-size:10px;color:var(--accent);font-weight:500;
-    letter-spacing:0.04em;text-transform:uppercase;
-    padding:3px 8px;border:1px solid var(--border);border-radius:3px;
-    transition:all .15s;
-  }
-  .panel.clickable:hover .panel-title::after{
-    background:rgba(88,166,255,0.08);border-color:rgba(88,166,255,0.3);
-  }
-
-  /* ═══ Grid layouts ═══ */
-  .grid-2{
-    display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);
-    margin-top:var(--space-7);
-  }
-  @media (max-width:1100px){.grid-2{grid-template-columns:1fr}}
-
-  .grid-stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:var(--space-2);
-  }
-  .stat-cell{
-    background:var(--bg);
-    border:1px solid var(--border-soft);
-    border-radius:4px;
-    padding:var(--space-4);
-    display:flex;flex-direction:column;gap:var(--space-1);
-  }
-  .stat-cell .l{
-    font-size:10px;font-weight:600;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--text-mute);
-  }
-  .stat-cell .v{
-    font-family:var(--mono);font-size:18px;font-weight:600;
-    color:var(--text);font-variant-numeric:tabular-nums;line-height:1.2;
-  }
-  .stat-cell .v.accent{color:var(--accent)}
-  .stat-cell .v.ok{color:var(--ok)}
-  .stat-cell .v.warn{color:var(--warn)}
-  .stat-cell .v.bad{color:var(--bad)}
-  .stat-cell .s{font-size:11px;color:var(--text-mute)}
-
-  /* ═══ Distribution bars ═══ */
-  .dist-row{margin-bottom:var(--space-5)}
-  .dist-row:last-child{margin-bottom:0}
-  .dist-head{
-    display:flex;justify-content:space-between;align-items:baseline;
-    margin-bottom:var(--space-2);
-  }
-  .dist-head .name{
-    font-size:13px;font-weight:500;color:var(--text);text-transform:capitalize;
-  }
-  .dist-head .name .base{
-    color:var(--text-mute);font-weight:400;margin-left:var(--space-2);
-    font-family:var(--mono);font-size:11px;
-  }
-  .dist-head .num{
-    font-family:var(--mono);font-size:12px;color:var(--text-mute);
-  }
-  .dist-head .num b{color:var(--text);font-weight:500}
-  .dist-bar{
-    height:6px;background:var(--bg);border-radius:2px;overflow:hidden;
-  }
-  .dist-fill{
-    height:100%;background:var(--accent);border-radius:2px;
-    transition:width .6s cubic-bezier(.2,.8,.2,1);width:0;
-  }
-  .dist-mults{
-    font-family:var(--mono);font-size:10.5px;color:var(--text-mute);
-    margin-top:var(--space-2);letter-spacing:0;
-  }
-
-  /* ═══ Contributors list — compact ═══ */
-  .contributors{list-style:none;display:flex;flex-direction:column;gap:var(--space-1)}
-  .contrib{
-    display:grid;grid-template-columns:24px 1fr auto auto;
-    gap:var(--space-3);align-items:center;
-    padding:var(--space-2) var(--space-3);
-    border-radius:4px;
-    transition:background .12s;
-  }
-  .contrib:hover{background:var(--bg-hover)}
-  .contrib .rank{
-    font-family:var(--mono);font-size:11px;color:var(--text-mute);
-    text-align:right;
-  }
-  .contrib .name{
-    font-size:13px;font-weight:500;color:var(--text);
-    text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  }
-  .contrib .name:hover{color:var(--accent)}
-  .contrib .issues{
-    font-family:var(--mono);font-size:11px;color:var(--text-mute);
-  }
-  .contrib .pts{
-    font-family:var(--mono);font-size:13px;font-weight:600;
-    color:var(--ok);font-variant-numeric:tabular-nums;
-  }
-  .contrib.top .rank{color:var(--accent)}
-  .contrib.top .pts{color:var(--accent)}
-
-  /* ═══ View-all button ═══ */
-  .view-all-btn{
-    display:block;width:100%;margin-top:var(--space-3);
-    padding:var(--space-3) var(--space-4);
-    background:transparent;border:1px solid var(--border);border-radius:4px;
-    color:var(--accent);font-family:var(--sans);font-size:12px;font-weight:500;
-    cursor:pointer;transition:all .15s;text-align:center;
-  }
-  .view-all-btn:hover{
-    background:var(--bg-hover);border-color:rgba(88,166,255,0.3);
-  }
-
-  /* ═══ Tables — dense, data-analysis style ═══ */
-  .data-table{
-    width:100%;border-collapse:collapse;font-size:12px;
-  }
-  .data-table th{
-    text-align:right;padding:var(--space-2) var(--space-3);
-    color:var(--text-mute);font-weight:600;
-    font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
-    border-bottom:1px solid var(--border);
-    position:sticky;top:0;background:var(--bg-elevated);z-index:1;
-  }
-  .data-table th:first-child,.data-table th:nth-child(2){text-align:left}
-  .data-table td{
-    padding:var(--space-2) var(--space-3);text-align:right;
-    border-bottom:1px solid var(--border-soft);
-    color:var(--text-dim);font-family:var(--mono);
-    font-variant-numeric:tabular-nums;
-  }
-  .data-table td:first-child{color:var(--text-mute);width:36px;text-align:right}
-  .data-table td:nth-child(2){text-align:left;color:var(--text);font-family:var(--sans)}
-  .data-table td:nth-child(2) a{
-    color:var(--accent);text-decoration:none;font-weight:500;
-  }
-  .data-table td:nth-child(2) a:hover{text-decoration:underline}
-  .data-table tr:hover td{background:var(--bg-hover)}
-  .tag{
-    display:inline-block;padding:1px 6px;border-radius:3px;
-    font-size:10px;font-weight:500;
-    background:rgba(88,166,255,0.1);color:var(--accent);
-    margin-left:var(--space-1);letter-spacing:0.02em;
-  }
-  .tag.featured{background:rgba(210,153,34,0.12);color:var(--warn)}
-
-  /* ═══ Sparkline ═══ */
-  .spark-svg{width:100%;height:120px;display:block}
-  .spark-legend{
-    display:flex;gap:var(--space-5);margin-top:var(--space-3);
-    font-size:11px;color:var(--text-mute);font-family:var(--mono);
-    flex-wrap:wrap;
-  }
-  .spark-legend .dot{
-    display:inline-block;width:10px;height:2px;margin-right:var(--space-2);
-    vertical-align:middle;
-  }
-
-  /* ═══ Velocity chart ═══ */
-  .vel-chart{
-    display:flex;align-items:flex-end;height:140px;gap:2px;
-    padding:var(--space-3) 0;border-bottom:1px solid var(--border);
-    margin-bottom:var(--space-2);
-  }
-  .vel-bar{
-    flex:1;min-width:3px;background:var(--accent);
-    border-radius:1px 1px 0 0;opacity:0.7;
-    transition:height .5s cubic-bezier(.2,.8,.2,1), opacity .15s;
-    position:relative;
-  }
-  .vel-bar:hover{opacity:1}
-  .vel-bar:hover::after{
-    content:attr(data-tip);
-    position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
-    background:var(--bg);color:var(--text);font-size:10.5px;
-    padding:5px 9px;border-radius:3px;white-space:nowrap;
-    font-family:var(--mono);pointer-events:none;margin-bottom:6px;
-    border:1px solid var(--border);
-  }
-  .vel-empty{
-    color:var(--text-mute);font-size:13px;text-align:center;
-    padding:var(--space-6) var(--space-4);font-style:italic;
-  }
-
-  /* ═══ Pipeline proportional bar ═══ */
-  .pipeline-bar{
-    display:flex;height:24px;border-radius:3px;overflow:hidden;
-    border:1px solid var(--border);margin:var(--space-3) 0 var(--space-2);
-  }
-  .pipeline-bar > div{
-    display:flex;align-items:center;justify-content:center;
-    font-size:10px;font-weight:600;font-family:var(--mono);
-    color:rgba(0,0,0,0.7);
-  }
-
-  /* ═══ Mini-lists (competition / stale) ═══ */
-  .mini-list{
-    list-style:none;display:flex;flex-direction:column;gap:var(--space-1);
-    max-height:240px;overflow-y:auto;margin-top:var(--space-3);
-  }
-  .mini-list::-webkit-scrollbar{width:6px}
-  .mini-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-  .mini-item{
-    display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);
-    align-items:center;padding:var(--space-2) var(--space-3);
-    border-radius:3px;background:var(--bg);
-    border:1px solid var(--border-soft);font-size:12px;
-  }
-  .mini-item .n{font-family:var(--mono);color:var(--text-mute);font-size:11px}
-  .mini-item .t{
-    color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  }
-  .mini-item .t a{color:var(--accent);text-decoration:none}
-  .mini-item .t a:hover{text-decoration:underline}
-  .mini-item .m{
-    font-family:var(--mono);color:var(--ok);font-size:11px;font-weight:600;
-  }
-
-  /* ═══ New-issues list ═══ */
-  .new-issue{
-    display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);
-    align-items:center;padding:var(--space-2) var(--space-3);
-    border-radius:3px;background:var(--bg);
-    border:1px solid var(--border-soft);margin-bottom:var(--space-1);
-    font-size:12px;transition:border-color .12s;
-  }
-  .new-issue:hover{border-color:var(--border)}
-  .new-issue .repo{
-    color:var(--accent);font-family:var(--mono);font-size:11px;
-    text-decoration:none;
-  }
-  .new-issue .repo:hover{text-decoration:underline}
-  .new-issue .title{
-    color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  }
-  .new-issue .pts{
-    font-family:var(--mono);font-size:11px;color:var(--text-mute);
-  }
-
-  /* ═══ Modal ═══ */
-  .modal{
-    position:fixed;inset:0;z-index:1000;display:none;
-    align-items:flex-start;justify-content:center;
-    background:rgba(1,4,9,0.8);
-    padding:var(--space-6);overflow-y:auto;
-  }
-  .modal.open{display:flex}
-  .modal-content{
-    background:var(--bg-elevated);border:1px solid var(--border);border-radius:6px;
-    width:100%;max-width:1400px;margin:0 auto;
-  }
-  .modal-header{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:var(--space-4) var(--space-5);
-    border-bottom:1px solid var(--border);
-    position:sticky;top:0;background:var(--bg-elevated);z-index:1;
-  }
-  .modal-header h3{font-size:14px;font-weight:600;color:var(--text)}
-  .modal-header .meta{
-    font-size:11px;color:var(--text-mute);font-family:var(--mono);margin-top:2px;
-  }
-  .modal-close{
-    background:transparent;border:1px solid var(--border);
-    color:var(--text-dim);width:28px;height:28px;border-radius:4px;
-    cursor:pointer;font-size:16px;line-height:1;transition:all .15s;
-  }
-  .modal-close:hover{
-    background:var(--bad);color:#fff;border-color:var(--bad);
-  }
-  .modal-body{
-    padding:0;max-height:calc(100vh - 120px);overflow-y:auto;
-  }
-  .modal-body::-webkit-scrollbar{width:8px}
-  .modal-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
-
-  /* ═══ Footer ═══ */
-  footer{
-    text-align:center;padding:var(--space-6) 0 0;
-    border-top:1px solid var(--border);
-    color:var(--text-mute);font-size:11px;letter-spacing:0;
-    margin-top:var(--space-7);
-  }
-  footer a{
-    color:var(--text-dim);text-decoration:none;
-    border-bottom:1px solid var(--border);padding-bottom:1px;
-  }
-  footer a:hover{color:var(--accent)}
-
-  /* ═══ Loading + error states ═══ */
-  .loading{
-    display:flex;align-items:center;justify-content:center;
-    min-height:60vh;color:var(--text-mute);font-size:13px;
-  }
-  .loading .ring{
-    width:24px;height:24px;
-    border:2px solid var(--border);
-    border-top-color:var(--accent);
-    border-radius:50%;animation:spin 1s linear infinite;
-    margin-right:var(--space-3);
-  }
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .err{
-    color:var(--bad);font-size:13px;text-align:center;
-    padding:var(--space-7) var(--space-5);
-  }
-  .hidden{display:none}
+footer{margin-top:72px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.err{color:var(--ink);padding:80px 0;text-align:center}
+.load{min-height:60vh;display:flex;align-items:center;justify-content:center;color:var(--mute)}
 </style>
 </head>
 <body>
-<div class="container" id="app">
-  <div class="loading" id="loading">
-    <div class="ring"></div>
-    <span>Fetching latest Wave 11 snapshot…</span>
-  </div>
+<div class="wrap">
+  <div class="load" id="loading">Loading latest snapshot…</div>
 
   <div id="content" class="hidden">
-    <!-- ═══ Header ═══ -->
     <header>
-      <div class="brand">
+      <div>
         <h1>Stellar Wave 11</h1>
-        <div class="sub">Live analytics · auto-updated hourly</div>
-        <div class="meta-row">
-          <span>Window: <b id="m-window">—</b></span>
-          <span>Budget: <b id="m-budget">—</b></span>
-          <span>Next refresh: <b id="m-next" class="countdown">—</b></span>
+        <div class="meta">
+          <span>Window <b id="m-window">—</b></span>
+          <span>Budget <b id="m-budget">—</b></span>
+          <span>Next refresh <b id="m-next">—</b></span>
         </div>
       </div>
-      <div class="header-right">
-        <div class="status-pill" id="status">
-          <span class="dot"></span>
-          <span id="status-text">—</span>
-        </div>
-      </div>
+      <div id="status"><span id="status-text">—</span></div>
     </header>
 
-    <!-- ═══ Hero KPIs — focused cards, max 2-3 data points each ═══ -->
-    <div class="kpi-grid">
-      <div class="kpi">
-        <div class="label">Open Issues</div>
-        <div class="value" id="s-open">—</div>
-        <div class="sub" id="s-open-sub">—</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Max Total Points</div>
-        <div class="value accent" id="s-max">—</div>
-        <div class="sub">open + closed-in-wave · precise</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Scored So Far</div>
-        <div class="value ok" id="s-scored">—</div>
-        <div class="sub" id="s-scored-sub">Σ pointsEarned</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Remaining</div>
-        <div class="value warn" id="s-remaining">—</div>
-        <div class="sub">claimable points</div>
-      </div>
-      <div class="kpi">
-        <div class="label">New Since Last Run</div>
-        <div class="value" id="s-new">—</div>
-        <div class="sub">opened in last hour</div>
-      </div>
-      <div class="kpi">
-        <div class="label">Contributors Paid</div>
-        <div class="value" id="s-contrib">—</div>
-        <div class="sub" id="s-top-contrib">—</div>
-      </div>
+    <div class="kpis">
+      <div class="k"><div class="l">Open issues</div><div class="v" id="s-open">—</div><div class="s">Wave issues</div></div>
+      <div class="k"><div class="l">Max points</div><div class="v" id="s-max">—</div><div class="s">open + closed in wave</div></div>
+      <div class="k"><div class="l">Scored</div><div class="v" id="s-scored">—</div><div class="s" id="s-scored-sub">—</div></div>
+      <div class="k"><div class="l">Remaining</div><div class="v" id="s-remaining">—</div><div class="s">claimable</div></div>
+      <div class="k"><div class="l">New this hour</div><div class="v" id="s-new">—</div><div class="s">since last run</div></div>
+      <div class="k"><div class="l">Contributors</div><div class="v" id="s-contrib">—</div><div class="s" id="s-top-contrib">—</div></div>
     </div>
 
-    <!-- ═══ Progress: scored vs max ═══ -->
-    <div class="progress">
-      <div class="progress-head">
-        <span class="title">Wave 11 · Scored vs Max</span>
-        <span class="pct" id="prog-pct">— %</span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="prog-fill"></div>
-      </div>
-      <div class="progress-meta">
-        <span><b id="prog-scored">—</b> / <b id="prog-max">—</b> pts scored</span>
-        <span><b id="prog-remaining">—</b> remaining</span>
-      </div>
+    <div class="prog">
+      <div class="top"><span>Scored vs max</span><span id="prog-pct">—</span></div>
+      <div class="track"><div class="fill" id="prog-fill"></div></div>
+      <div class="row"><span><b id="prog-scored">—</b> of <b id="prog-max">—</b> points</span><span><b id="prog-remaining">—</b> remaining</span></div>
     </div>
 
-    <!-- ═══ Distribution + Contributors ═══ -->
-    <div class="grid-2">
-      <div class="panel">
-        <div class="panel-title">Distribution by Complexity <span class="hint">precise Σ points × mult</span></div>
-        <div id="dist"></div>
-      </div>
-      <div class="panel clickable" id="contributors-panel" onclick="openContributorsModal()">
-        <div class="panel-title">All Contributors <span class="hint" id="contrib-panel-hint">click to expand</span></div>
-        <ul class="contributors" id="contrib-list" onclick="event.stopPropagation()"></ul>
-        <button class="view-all-btn" onclick="event.stopPropagation(); openContributorsModal()">
-          <span id="contrib-view-all-label">View all</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ═══ Sparkline ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Points Over Time</h2>
-        <span class="kicker">each point = one bot run · hourly cadence</span>
-      </div>
-      <div class="panel">
-        <svg class="spark-svg" id="spark" viewBox="0 0 1000 120" preserveAspectRatio="none"></svg>
-        <div class="spark-legend">
-          <span><span class="dot" style="background:#58a6ff"></span>Open total pts</span>
-          <span><span class="dot" style="background:#adbac7"></span>Max total pts</span>
-          <span><span class="dot" style="background:#3fb950"></span>Scored pts</span>
+    <section>
+      <div class="cols">
+        <div>
+          <h2>Complexity <small>points × multiplier</small></h2>
+          <div id="dist"></div>
+        </div>
+        <div>
+          <h2>Contributors <small id="contrib-hint"></small></h2>
+          <div id="contrib-list"></div>
+          <button class="btn" id="contrib-btn" onclick="openContributorsModal()">View all</button>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ═══ New issues ═══ -->
-    <div class="section" id="new-issues-section">
-      <div class="section-head">
-        <h2>Newly Opened Issues</h2>
-        <span class="kicker">since last run</span>
+    <section>
+      <h2>Points over time <small>one point per hourly run</small></h2>
+      <svg id="spark" viewBox="0 0 1000 120" preserveAspectRatio="none"></svg>
+      <div class="legend">
+        <span><i class="d"></i>Max</span><span><i class="m"></i>Open</span><span><i></i>Scored</span>
       </div>
-      <div class="panel">
-        <div id="new-issues"></div>
-      </div>
-    </div>
+    </section>
 
-    <!-- ═══ Per-Repo Analytics ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Per-Repo Analytics</h2>
-        <span class="kicker">Wave 11 · top 15 of <span id="repo-total-count">—</span> · click panel to expand full table</span>
-      </div>
-      <div class="panel clickable" onclick="openReposModal()">
-        <table class="data-table" onclick="event.stopPropagation()">
-          <thead>
-            <tr>
-              <th>#</th><th>Repo</th>
-              <th>Open</th><th>Unassigned</th>
-              <th>Closed W11</th><th>Pts scored</th>
-              <th>Contribs</th><th>Avg TTC (h)</th>
-              <th>Used / budget</th><th>Mult</th>
-            </tr>
-          </thead>
+    <section id="new-issues-section">
+      <h2>New issues <small>since last run</small></h2>
+      <div id="new-issues"></div>
+    </section>
+
+    <section>
+      <h2>Repositories <small>top 15 of <span id="repo-total-count">—</span></small></h2>
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Repo</th><th>Open</th><th>Unassigned</th><th>Closed</th><th>Scored</th><th>People</th><th>Avg hrs</th><th>Used / budget</th><th>Mult</th></tr></thead>
           <tbody id="repo-tbody"></tbody>
         </table>
-        <button class="view-all-btn" onclick="event.stopPropagation(); openReposModal()">
-          <span id="repo-view-all-label">View all</span>
-        </button>
       </div>
-    </div>
+      <button class="btn" id="repo-btn" onclick="openReposModal()">View all</button>
+    </section>
 
-    <!-- ═══ Wave Economics ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Wave Economics &amp; Payout Modeling</h2>
-        <span class="kicker">precise USD per point · proportional projection</span>
-      </div>
-      <div class="panel">
-        <div class="grid-stats" id="econ-stats"></div>
-        <div class="section-head" style="margin-top:var(--space-6)">
-          <h2>Concentration / Fairness</h2>
-          <span class="kicker">top-N % of total points held</span>
-        </div>
-        <div class="grid-stats" id="concentration-stats"></div>
-        <div class="section-head" style="margin-top:var(--space-6)">
-          <h2>Top 20 Estimated Payouts</h2>
-          <span class="kicker">if Wave ended now</span>
-        </div>
-        <table class="data-table">
-          <thead>
-            <tr><th>#</th><th>Contributor</th><th>Points</th><th>Est. USD</th></tr>
-          </thead>
+    <section>
+      <h2>Economics <small>USD per point · proportional projection</small></h2>
+      <div class="stats" id="econ-stats"></div>
+      <h3>Concentration</h3>
+      <div class="sub">Share of total points held</div>
+      <div class="stats" id="concentration-stats"></div>
+      <h3>Top 20 estimated payouts</h3>
+      <div class="sub">If the wave ended now</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>#</th><th>Contributor</th><th>Points</th><th>Est. USD</th></tr></thead>
           <tbody id="payout-tbody"></tbody>
         </table>
       </div>
-    </div>
+    </section>
 
-    <!-- ═══ Issue-Flow Velocity ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Issue-Flow Velocity</h2>
-        <span class="kicker">hourly buckets within Wave window</span>
-      </div>
-      <div class="panel">
-        <div class="grid-stats" id="velocity-stats" style="margin-bottom:var(--space-5)"></div>
-        <div style="font-size:11px;color:var(--text-mute);margin-bottom:var(--space-2);font-family:var(--mono)">
-          points scored per hour — hover for details
-        </div>
-        <div class="vel-chart" id="vel-chart"></div>
-        <div id="vel-empty" class="vel-empty hidden">No in-Wave activity yet — Wave 11 hasn't started.</div>
-      </div>
-    </div>
+    <section>
+      <h2>Velocity <small>hourly buckets</small></h2>
+      <div class="stats" id="velocity-stats"></div>
+      <div class="vel" id="vel-chart"></div>
+      <div class="empty hidden" id="vel-empty">No in-wave activity yet.</div>
+      <div class="sub" style="margin-top:8px">Points scored per hour</div>
+    </section>
 
-    <!-- ═══ Application Pipeline ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Application &amp; Assignment Pipeline</h2>
-        <span class="kicker">maintainer review backlog · competition · stale</span>
+    <section>
+      <h2>Pipeline <small>review backlog · competition · stale</small></h2>
+      <div class="stats" id="pipeline-stats"></div>
+      <div class="seg" id="pipeline-bar"></div>
+      <div class="sub" style="margin-top:8px" id="pipeline-legend"></div>
+      <div class="cols" style="margin-top:8px">
+        <div><h3>Most competition</h3><div class="sl" id="competition-list"></div></div>
+        <div><h3>Stale assignments</h3><div class="sl" id="stale-list"></div></div>
       </div>
-      <div class="panel">
-        <div class="grid-stats" id="pipeline-stats"></div>
-        <div style="font-size:11px;color:var(--text-mute);margin-top:var(--space-5);margin-bottom:var(--space-1);font-family:var(--mono)">
-          open issues by assignment state (proportional)
-        </div>
-        <div class="pipeline-bar" id="pipeline-bar"></div>
-        <div class="grid-2" style="margin-top:var(--space-5);grid-template-columns:1fr 1fr">
-          <div>
-            <div class="panel-title" style="margin-bottom:var(--space-2)">Most-Competition Open Issues</div>
-            <ul class="mini-list" id="competition-list"></ul>
-          </div>
-          <div>
-            <div class="panel-title" style="margin-bottom:var(--space-2)">Stale Assignments <span class="hint">dueDate &lt; now</span></div>
-            <ul class="mini-list" id="stale-list"></ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- ═══ Issue Quality ═══ -->
-    <div class="section">
-      <div class="section-head">
-        <h2>Issue Quality &amp; Engagement</h2>
-        <span class="kicker">resolution quality · freshness signals</span>
-      </div>
-      <div class="panel">
-        <div class="grid-stats" id="quality-stats"></div>
-        <div style="font-size:11px;color:var(--text-mute);margin-top:var(--space-4);font-family:var(--mono);line-height:1.6">
-          PR ratio = closed+PR ÷ all-closed · bounce = closed−PR ÷ all-closed<br>
-          stale = open &amp; not updated in <span id="stale-days">7</span> days · recently-active = updated within 1h
-        </div>
-      </div>
-    </div>
+    <section>
+      <h2>Quality <small>resolution · freshness</small></h2>
+      <div class="stats" id="quality-stats"></div>
+      <p class="sub" style="margin-top:20px">PR ratio = closed with PR ÷ all closed. Bounce = closed without PR ÷ all closed. Stale = open and not updated in <span id="stale-days">7</span> days. Recently active = updated within 1 hour.</p>
+    </section>
 
     <footer>
-      <span id="last-run">—</span> ·
-      <a href="https://www.drips.network/wave/stellar/issues" target="_blank" rel="noopener">View on Drips ↗</a>
+      <span id="last-run">—</span>
+      <a href="https://www.drips.network/wave/stellar/issues" target="_blank" rel="noopener">View on Drips</a>
     </footer>
-  </div>
-
-  <!-- Modal for full contributor / repo lists -->
-  <div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div>
-          <h3 id="modal-title">—</h3>
-          <div class="meta" id="modal-meta"></div>
-        </div>
-        <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
-      </div>
-      <div class="modal-body" id="modal-body"></div>
-    </div>
   </div>
 
   <div class="err hidden" id="err"></div>
 </div>
 
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="mc">
+    <div class="mh">
+      <div><h3 id="modal-title">—</h3><div class="sub" id="modal-meta"></div></div>
+      <button class="btn" style="margin:0" onclick="closeModal()" aria-label="Close">Close</button>
+    </div>
+    <div class="mb" id="modal-body"></div>
+  </div>
+</div>
+
 <script>
 'use strict';
 const WAVE_NUM = 11;
+const $ = id => document.getElementById(id);
 const fmt = n => (n||0).toLocaleString('en-US');
-const usd = n => '$' + (n||0).toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:2});
+const usd = n => '$' + (n||0).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2});
 const shortDate = s => s ? new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}) : '—';
+const st = (l,v,s) => `<div class="st"><div class="l">${l}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:''}</div>`;
+const gh = u => `<a href="https://github.com/${u}" target="_blank" rel="noopener">${u}</a>`;
 
-async function fetchJSON(path){
-  const r = await fetch(path, {cache:'no-store'});
-  if(!r.ok) throw new Error(`HTTP ${r.status} for ${path}`);
+async function fetchJSON(p){
+  const r = await fetch(p,{cache:'no-store'});
+  if(!r.ok) throw new Error(`HTTP ${r.status} for ${p}`);
   return r.json();
 }
-
-function setStatus(s, inWave){
-  const pill = document.getElementById('status');
-  const txt  = document.getElementById('status-text');
-  pill.classList.remove('active','ended');
-  if(inWave){ pill.classList.add('active'); txt.textContent = 'Wave Live'; }
-  else if(s === 'ended'){ pill.classList.add('ended'); txt.textContent = 'Ended'; }
-  else if(s === 'upcoming') txt.textContent = 'Upcoming';
-  else txt.textContent = s || '—';
-}
-
-function timeUntilNextHourlyRun(){
-  const now = new Date();
-  const next = new Date(now);
-  next.setUTCMinutes(0, 0, 0);
-  next.setUTCHours(next.getUTCHours() + 1);
-  const diff = next.getTime() - now.getTime();
-  const m = Math.floor(diff / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
+function nextRun(){
+  const n = new Date(), x = new Date(n);
+  x.setUTCMinutes(0,0,0); x.setUTCHours(x.getUTCHours()+1);
+  const d = x - n, m = Math.floor(d/60000), s = Math.floor(d%60000/1000);
   return m > 0 ? `${m}m ${s}s` : `${s}s`;
 }
+function setStatus(s, live){
+  const p = $('status');
+  p.classList.toggle('active', !!live);
+  $('status-text').textContent = live ? 'Wave live' : s === 'ended' ? 'Ended' : s === 'upcoming' ? 'Upcoming' : (s || '—');
+}
 
-// ─── Renderers ───
-function renderDist(distribution){
-  const el = document.getElementById('dist');
-  if(!distribution || !distribution.length){ el.innerHTML = '<div class="vel-empty">No distribution data.</div>'; return; }
-  const maxCount = Math.max(...distribution.map(d => d.count));
-  el.innerHTML = distribution.map(d => {
-    const mults = d.multiplierBreakdown || {};
-    const multS = Object.entries(mults).map(([k,v]) => `×${k}=${v}`).join(', ');
-    const pb = d.actualPointsBreakdown || {};
-    const pbS = Object.entries(pb).map(([k,v]) => `${k}p×${v}`).join('  ');
-    const w = (d.count / Math.max(maxCount,1)) * 100;
-    return `
-      <div class="dist-row">
-        <div class="dist-head">
-          <span class="name">${d.complexity}<span class="base">base ${d.basePoints ?? '—'}</span></span>
-          <span class="num"><b>${fmt(d.count)}</b> · ${fmt(d.currentContribution)} pts</span>
-        </div>
-        <div class="dist-bar"><div class="dist-fill" style="width:${w}%"></div></div>
-        <div class="dist-mults">${multS || '—'}  ·  ${pbS || '—'}</div>
-      </div>
-    `;
+function renderDist(d){
+  const el = $('dist');
+  if(!d || !d.length){ el.innerHTML = '<div class="empty">No distribution data.</div>'; return; }
+  const max = Math.max(...d.map(x => x.count), 1);
+  el.innerHTML = d.map(x => {
+    const m = Object.entries(x.multiplierBreakdown||{}).map(([k,v]) => `×${k}=${v}`).join(', ');
+    const p = Object.entries(x.actualPointsBreakdown||{}).map(([k,v]) => `${k}p×${v}`).join('  ');
+    return `<div class="dist">
+      <div class="hd"><span class="nm">${x.complexity}<i>base ${x.basePoints ?? '—'}</i></span><span>${fmt(x.count)} <span class="sub">· ${fmt(x.currentContribution)} pts</span></span></div>
+      <div class="bar"><div style="width:${x.count/max*100}%"></div></div>
+      <div class="mu">${m || '—'}  ·  ${p || '—'}</div></div>`;
   }).join('');
 }
 
-function renderContributors(allContributors, topContributors){
-  const el = document.getElementById('contrib-list');
-  const fullList = (allContributors && allContributors.length) ? allContributors : (topContributors || []);
-  const compact = fullList.slice(0, 8);
-  if(!compact.length){
-    el.innerHTML = '<div class="vel-empty">No contributor rewards recorded in Wave ' + WAVE_NUM + ' yet.</div>';
-    document.getElementById('contrib-view-all-label').textContent = 'No contributors yet';
-    document.getElementById('contrib-panel-hint').textContent = 'populates once Wave ' + WAVE_NUM + ' starts';
-    return;
+function renderContributors(all, top){
+  const list = (all && all.length) ? all : (top || []);
+  if(!list.length){
+    $('contrib-list').innerHTML = `<div class="empty">No rewards recorded in Wave ${WAVE_NUM} yet.</div>`;
+    $('contrib-btn').classList.add('hidden'); return;
   }
-  el.innerHTML = compact.map((c, i) => `
-    <li class="contrib ${i===0?'top':''}">
-      <span class="rank">${i+1}</span>
-      <a class="name" href="https://github.com/${c.contributor}" target="_blank" rel="noopener">${c.contributor}</a>
-      <span class="issues">${c.issuesClosed} issue${c.issuesClosed===1?'':'s'}</span>
-      <span class="pts">${fmt(c.pointsEarned)} pts</span>
-    </li>
-  `).join('');
-  const total = fullList.length;
-  document.getElementById('contrib-view-all-label').textContent = `View all ${total} contributor${total===1?'':'s'}`;
-  document.getElementById('contrib-panel-hint').textContent = `top 8 of ${total} · click to expand`;
+  $('contrib-list').innerHTML = list.slice(0,8).map((c,i) => `
+    <div class="li"><span class="r">${i+1}</span><span class="n">${gh(c.contributor)}</span>
+    <span class="i">${c.issuesClosed} issue${c.issuesClosed===1?'':'s'}</span><span class="p">${fmt(c.pointsEarned)}</span></div>`).join('');
+  $('contrib-hint').textContent = `top 8 of ${list.length}`;
+  $('contrib-btn').textContent = `View all ${list.length}`;
 }
 
-function renderPerRepo(perRepo){
-  const total = perRepo?.totalRepos || 0;
-  document.getElementById('repo-total-count').textContent = fmt(total);
-  const tbody = document.getElementById('repo-tbody');
-  const repos = (perRepo?.topRepos || []).slice(0, 15);
-  if(!repos.length){ tbody.innerHTML = '<tr><td colspan="10" class="vel-empty">No active repos.</td></tr>'; return; }
-  tbody.innerHTML = repos.map((r, i) => {
-    const featured = r.isFeatured ? '<span class="tag featured">★</span>' : '';
-    const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
-    const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
-    return `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${featured}</td>
-        <td>${fmt(r.openIssues)}</td>
-        <td>${fmt(r.unassignedOpen)}</td>
-        <td>${fmt(r.closedInWave)}</td>
-        <td>${fmt(r.pointsScored)}</td>
-        <td>${fmt(r.distinctContributors)}</td>
-        <td>${ttc}</td>
-        <td>${budget}</td>
-        <td>×${r.pointsMultiplier ?? '—'}</td>
-      </tr>
-    `;
-  }).join('');
-  const lbl = document.getElementById('repo-view-all-label');
-  if(lbl) lbl.textContent = `View all ${total} repos`;
+function repoRow(r, i, full){
+  const star = r.isFeatured ? ' ★' : '';
+  const bud = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
+  const org = full ? `<br><span class="sub">${r.org || '—'}</span>` : '';
+  const tags = full ? `<td class="tx">${(r.tags||[]).join(', ') || '—'}</td>` : '';
+  return `<tr><td>${i+1}</td><td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${star}${org}</td>
+    <td>${fmt(r.openIssues)}</td><td>${fmt(r.unassignedOpen)}</td><td>${fmt(r.closedInWave)}</td><td>${fmt(r.pointsScored)}</td>
+    <td>${fmt(r.distinctContributors)}</td><td>${r.avgTimeToCloseHours ?? '—'}</td><td>${bud}</td><td>×${r.pointsMultiplier ?? '—'}</td>${tags}</tr>`;
+}
+function renderPerRepo(p){
+  const total = p?.totalRepos || 0, repos = (p?.topRepos || []).slice(0,15);
+  $('repo-total-count').textContent = fmt(total);
+  $('repo-tbody').innerHTML = repos.length ? repos.map((r,i) => repoRow(r,i,false)).join('') : '<tr><td colspan="10" class="empty">No active repos.</td></tr>';
+  $('repo-btn').textContent = `View all ${total} repos`;
 }
 
-function renderEconomics(econ){
-  const econEl = document.getElementById('econ-stats');
-  const concEl = document.getElementById('concentration-stats');
-  const payEl  = document.getElementById('payout-tbody');
-  if(!econ){
-    econEl.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>';
-    return;
-  }
-  econEl.innerHTML = `
-    <div class="stat-cell"><div class="l">Budget</div><div class="v accent">${usd(econ.budgetUSD)}</div><div class="s">Wave ${WAVE_NUM} prize pool</div></div>
-    <div class="stat-cell"><div class="l">USD per point</div><div class="v">$${econ.usdPerPoint.toFixed(6)}</div><div class="s">budget ÷ max points</div></div>
-    <div class="stat-cell"><div class="l">USD paid</div><div class="v ok">${usd(econ.usdPaid)}</div><div class="s">scored × usd/pt</div></div>
-    <div class="stat-cell"><div class="l">USD remaining</div><div class="v warn">${usd(econ.usdRemaining)}</div><div class="s">budget − paid</div></div>
-    <div class="stat-cell"><div class="l">Projected final pts</div><div class="v accent">${fmt(econ.projectedFinalScoredPts)}</div><div class="s">linear extrapolation</div></div>
-    <div class="stat-cell"><div class="l">Wave duration</div><div class="v">${econ.waveDurationHours}h</div><div class="s">elapsed ${econ.elapsedHours}h</div></div>
-  `;
-  const c = econ.concentration || {};
-  if(Object.keys(c).length){
-    concEl.innerHTML = `
-      <div class="stat-cell"><div class="l">Top 1% share</div><div class="v">${c.top1pctShare}%</div></div>
-      <div class="stat-cell"><div class="l">Top 10% share</div><div class="v">${c.top10pctShare}%</div></div>
-      <div class="stat-cell"><div class="l">Top 3 share</div><div class="v">${c.top3Share}%</div></div>
-      <div class="stat-cell"><div class="l">Top 10 share</div><div class="v">${c.top10Share}%</div></div>
-      <div class="stat-cell"><div class="l">Median pts</div><div class="v">${fmt(c.medianPoints)}</div></div>
-      <div class="stat-cell"><div class="l">Mean pts</div><div class="v">${fmt(c.meanPoints)}</div></div>
-      <div class="stat-cell"><div class="l">Long-tail (&lt;100 pts)</div><div class="v warn">${fmt(c.longTailUnder100pts)}</div><div class="s">low-engagement</div></div>
-    `;
-  } else {
-    concEl.innerHTML = '<div class="stat-cell"><div class="l">Concentration</div><div class="v">—</div><div class="s">no scored points yet</div></div>';
-  }
-  const payouts = econ.topPayouts || [];
-  if(!payouts.length){
-    payEl.innerHTML = '<tr><td colspan="4" class="vel-empty">No payouts yet — Wave hasn\'t started.</td></tr>';
-  } else {
-    payEl.innerHTML = payouts.map((p, i) => `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="https://github.com/${p.contributor}" target="_blank" rel="noopener">${p.contributor}</a></td>
-        <td>${fmt(p.pointsEarned)}</td>
-        <td>${usd(p.estimatedUSD)}</td>
-      </tr>
-    `).join('');
-  }
+function renderEconomics(e){
+  if(!e){ $('econ-stats').innerHTML = st('No data','—'); return; }
+  $('econ-stats').innerHTML =
+    st('Budget', usd(e.budgetUSD), `Wave ${WAVE_NUM} prize pool`) +
+    st('USD per point', '$'+e.usdPerPoint.toFixed(6), 'budget ÷ max points') +
+    st('Paid', usd(e.usdPaid), 'scored × usd/pt') +
+    st('Remaining', usd(e.usdRemaining), 'budget − paid') +
+    st('Projected final points', fmt(e.projectedFinalScoredPts), 'linear extrapolation') +
+    st('Duration', e.waveDurationHours+'h', `elapsed ${e.elapsedHours}h`);
+  const c = e.concentration || {};
+  $('concentration-stats').innerHTML = Object.keys(c).length
+    ? st('Top 1%', c.top1pctShare+'%') + st('Top 10%', c.top10pctShare+'%') + st('Top 3', c.top3Share+'%') + st('Top 10', c.top10Share+'%') +
+      st('Median points', fmt(c.medianPoints)) + st('Mean points', fmt(c.meanPoints)) + st('Under 100 points', fmt(c.longTailUnder100pts), 'low engagement')
+    : st('Concentration','—','no scored points yet');
+  const pay = e.topPayouts || [];
+  $('payout-tbody').innerHTML = pay.length
+    ? pay.map((p,i) => `<tr><td>${i+1}</td><td>${gh(p.contributor)}</td><td>${fmt(p.pointsEarned)}</td><td>${usd(p.estimatedUSD)}</td></tr>`).join('')
+    : '<tr><td colspan="4" class="empty">No payouts yet.</td></tr>';
 }
 
-function renderVelocity(vel){
-  const stats = document.getElementById('velocity-stats');
-  const chart = document.getElementById('vel-chart');
-  const empty = document.getElementById('vel-empty');
-  const t = vel?.totals || {};
-  stats.innerHTML = `
-    <div class="stat-cell"><div class="l">Opened in Wave</div><div class="v">${fmt(t.openedInWave)}</div></div>
-    <div class="stat-cell"><div class="l">Closed in Wave</div><div class="v">${fmt(t.closedInWave)}</div></div>
-    <div class="stat-cell"><div class="l">Scored in Wave</div><div class="v ok">${fmt(t.scoredInWave)}p</div></div>
-    <div class="stat-cell"><div class="l">New contribs</div><div class="v accent">${fmt(t.newContributorsInWave)}</div></div>
-    <div class="stat-cell"><div class="l">PRs submitted</div><div class="v">${fmt(t.prsInWave)}</div></div>
-  `;
-  const series = vel?.series || [];
-  if(!series.length){
-    chart.classList.add('hidden');
-    empty.classList.remove('hidden');
-    return;
-  }
-  chart.classList.remove('hidden');
-  empty.classList.add('hidden');
-  const maxV = Math.max(...series.map(s => s.scoredPts), 1);
-  chart.innerHTML = series.map(s => {
-    const h = (s.scoredPts / maxV) * 100;
-    const tip = `${s.hour} · closed ${s.closed}, scored ${s.scoredPts}p, opened ${s.opened}, new ${s.newContributors}, PRs ${s.prs}`;
-    return `<div class="vel-bar" style="height:${h}%" data-tip="${tip}"></div>`;
-  }).join('');
+function renderVelocity(v){
+  const t = v?.totals || {}, series = v?.series || [];
+  $('velocity-stats').innerHTML =
+    st('Opened', fmt(t.openedInWave)) + st('Closed', fmt(t.closedInWave)) + st('Scored', fmt(t.scoredInWave)+'p') +
+    st('New contributors', fmt(t.newContributorsInWave)) + st('PRs submitted', fmt(t.prsInWave));
+  $('vel-chart').classList.toggle('hidden', !series.length);
+  $('vel-empty').classList.toggle('hidden', !!series.length);
+  if(!series.length) return;
+  const max = Math.max(...series.map(s => s.scoredPts), 1);
+  $('vel-chart').innerHTML = series.map(s =>
+    `<div class="vb" style="height:${s.scoredPts/max*100}%" data-tip="${s.hour} · closed ${s.closed}, scored ${s.scoredPts}p, opened ${s.opened}, new ${s.newContributors}, PRs ${s.prs}"></div>`).join('');
 }
 
 function renderPipeline(ap, openTotal){
-  const stats = document.getElementById('pipeline-stats');
-  const bar   = document.getElementById('pipeline-bar');
-  const comp  = document.getElementById('competition-list');
-  const stale = document.getElementById('stale-list');
-  const unassignedClean = (openTotal || 0) - (ap.openAssigned || 0) - (ap.openWithAppsNoAssignment || 0);
-  stats.innerHTML = `
-    <div class="stat-cell"><div class="l">Open + assigned</div><div class="v accent">${fmt(ap.openAssigned)}</div><div class="s">in progress</div></div>
-    <div class="stat-cell"><div class="l">Apps + no assign</div><div class="v warn">${fmt(ap.openWithAppsNoAssignment)}</div><div class="s">review backlog</div></div>
-    <div class="stat-cell"><div class="l">Untouched</div><div class="v">${fmt(unassignedClean)}</div><div class="s">available</div></div>
-    <div class="stat-cell"><div class="l">Avg apps / open</div><div class="v">${ap.avgApplicationsPerOpen}</div><div class="s">competition</div></div>
-    <div class="stat-cell"><div class="l">Stale assignments</div><div class="v bad">${fmt(ap.staleAssignmentsCount)}</div><div class="s">dueDate &lt; now</div></div>
-  `;
-  const tot = (openTotal || 0);
-  if(tot > 0){
-    const segs = [
-      {n: 'assigned', v: ap.openAssigned, c: '#58a6ff'},
-      {n: 'apps+no-assign', v: ap.openWithAppsNoAssignment, c: '#d29922'},
-      {n: 'available', v: unassignedClean, c: '#30363d'},
-    ];
-    bar.innerHTML = segs.map(s => {
-      const pct = (s.v / tot) * 100;
-      return pct > 0 ? `<div style="width:${pct}%;background:${s.c}" title="${s.n}: ${fmt(s.v)}">${pct >= 10 ? fmt(s.v) : ''}</div>` : '';
-    }).join('');
-  } else {
-    bar.innerHTML = '<div style="width:100%;background:var(--border);color:var(--text-mute)">—</div>';
-  }
-  const compItems = ap.mostCompetitionIssues || [];
-  comp.innerHTML = compItems.length
-    ? compItems.map(i => `
-        <li class="mini-item">
-          <span class="n">#${i.issueNumber}</span>
-          <span class="t"><a href="${i.url}" target="_blank" rel="noopener">${i.repo}</a> · ${i.title}</span>
-          <span class="m">${i.apps} apps</span>
-        </li>
-      `).join('')
-    : '<li class="vel-empty">No open issues with pending applications.</li>';
-  const staleItems = (ap.staleAssignments || []).slice(0, 15);
-  stale.innerHTML = staleItems.length
-    ? staleItems.map(i => `
-        <li class="mini-item">
-          <span class="n">#${i.issueNumber}</span>
-          <span class="t">${i.repo} → ${i.assignee}</span>
-          <span class="m" style="color:var(--bad)">overdue</span>
-        </li>
-      `).join('')
-    : '<li class="vel-empty">No stale assignments.</li>';
+  ap = ap || {};
+  const tot = openTotal || 0;
+  const free = tot - (ap.openAssigned||0) - (ap.openWithAppsNoAssignment||0);
+  $('pipeline-stats').innerHTML =
+    st('Assigned', fmt(ap.openAssigned), 'in progress') + st('Applications, unassigned', fmt(ap.openWithAppsNoAssignment), 'review backlog') +
+    st('Untouched', fmt(free), 'available') + st('Avg applications per open', ap.avgApplicationsPerOpen ?? '—', 'competition') +
+    st('Stale assignments', fmt(ap.staleAssignmentsCount), 'past due date');
+  const segs = [['Assigned',ap.openAssigned||0,1],['Applications, unassigned',ap.openWithAppsNoAssignment||0,.5],['Untouched',free,.15]];
+  $('pipeline-bar').innerHTML = tot > 0 ? segs.map(s => `<div style="width:${s[1]/tot*100}%;background:var(--ink);opacity:${s[2]}" title="${s[0]}: ${fmt(s[1])}"></div>`).join('') : '';
+  $('pipeline-legend').textContent = tot > 0 ? 'Open issues by state: assigned, applications without assignment, untouched' : '';
+  const c = ap.mostCompetitionIssues || [];
+  $('competition-list').innerHTML = c.length
+    ? c.map(i => `<div class="mi"><span class="n">#${i.issueNumber}</span><span class="t"><a href="${i.url}" target="_blank" rel="noopener">${i.repo}</a> · ${i.title}</span><span class="m">${i.apps} apps</span></div>`).join('')
+    : '<div class="empty">No open issues with applications.</div>';
+  const s = (ap.staleAssignments || []).slice(0,15);
+  $('stale-list').innerHTML = s.length
+    ? s.map(i => `<div class="mi"><span class="n">#${i.issueNumber}</span><span class="t">${i.repo} → ${i.assignee}</span><span class="m">overdue</span></div>`).join('')
+    : '<div class="empty">No stale assignments.</div>';
 }
 
-function renderQuality(iq){
-  const el = document.getElementById('quality-stats');
-  if(!iq){ el.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>'; return; }
-  document.getElementById('stale-days').textContent = iq.staleThresholdDays;
-  el.innerHTML = `
-    <div class="stat-cell"><div class="l">Closed + PR</div><div class="v ok">${fmt(iq.closedWithPR)}</div><div class="s">resolved with PR</div></div>
-    <div class="stat-cell"><div class="l">Closed − PR</div><div class="v bad">${fmt(iq.closedWithoutPR)}</div><div class="s">bounce</div></div>
-    <div class="stat-cell"><div class="l">PR ratio</div><div class="v accent">${iq.prToIssueRatio}%</div><div class="s">resolution quality</div></div>
-    <div class="stat-cell"><div class="l">Bounce rate</div><div class="v ${iq.bounceRate > 10 ? 'bad' : 'warn'}">${iq.bounceRate}%</div><div class="s">closed w/o resolution</div></div>
-    <div class="stat-cell"><div class="l">Stale open (>${iq.staleThresholdDays}d)</div><div class="v warn">${fmt(iq.staleOpenIssues)}</div><div class="s">not updated</div></div>
-    <div class="stat-cell"><div class="l">Recently active (1h)</div><div class="v ok">${fmt(iq.recentlyActiveOpen)}</div><div class="s">where action is</div></div>
-  `;
+function renderQuality(q){
+  if(!q){ $('quality-stats').innerHTML = st('No data','—'); return; }
+  $('stale-days').textContent = q.staleThresholdDays;
+  $('quality-stats').innerHTML =
+    st('Closed with PR', fmt(q.closedWithPR)) + st('Closed without PR', fmt(q.closedWithoutPR), 'bounce') +
+    st('PR ratio', q.prToIssueRatio+'%') + st('Bounce rate', q.bounceRate+'%') +
+    st(`Stale open (>${q.staleThresholdDays}d)`, fmt(q.staleOpenIssues)) + st('Active in last hour', fmt(q.recentlyActiveOpen));
 }
 
-function renderNewIssues(sample){
-  const sec = document.getElementById('new-issues-section');
-  const el  = document.getElementById('new-issues');
-  if(!sample || !sample.length){ sec.classList.add('hidden'); return; }
+function renderNewIssues(n){
+  const sec = $('new-issues-section');
+  if(!n || !n.length){ sec.classList.add('hidden'); return; }
   sec.classList.remove('hidden');
-  el.innerHTML = sample.map(n => `
-    <div class="new-issue">
-      <a class="repo" href="${n.url}" target="_blank" rel="noopener">${n.repo}</a>
-      <span class="title">${n.title}</span>
-      <span class="pts">×${n.pointsMultiplier} · ${fmt((n.points||0)*(n.pointsMultiplier||0))}p</span>
-    </div>
-  `).join('');
+  $('new-issues').innerHTML = n.map(x =>
+    `<div class="mi"><a href="${x.url}" target="_blank" rel="noopener">${x.repo}</a><span class="t">${x.title}</span><span class="m">×${x.pointsMultiplier} · ${fmt((x.points||0)*(x.pointsMultiplier||0))}p</span></div>`).join('');
 }
 
-function renderSparkline(history){
-  const svg = document.getElementById('spark');
-  if(!history || history.length < 2){
-    svg.innerHTML = '<text x="500" y="60" text-anchor="middle" fill="#6e7681" font-size="11" font-family="monospace">Not enough runs yet — sparkline appears after 2+ runs.</text>';
-    return;
+function renderSparkline(h){
+  const svg = $('spark');
+  if(!h || h.length < 2){
+    svg.innerHTML = '<text x="500" y="60" text-anchor="middle" fill="currentColor" opacity=".5" font-size="12">Needs two or more runs.</text>'; return;
   }
-  const W = 1000, H = 120, pad = 8;
-  const xs = history.map((_,i) => pad + (i/(history.length-1)) * (W - 2*pad));
-  const allVals = history.flatMap(h => [h.openTotalPoints||0, h.maxTotalPoints||0, h.scoredPoints||0]);
-  const maxV = Math.max(...allVals, 1);
-  const ys = v => H - pad - (v / maxV) * (H - 2*pad);
-  const pathFor = (vals, color, width=1.5) => {
-    let d = '';
-    vals.forEach((v,i) => { d += (i===0?'M':'L') + xs[i].toFixed(1) + ',' + ys(v).toFixed(1) + ' '; });
-    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linejoin="round" stroke-linecap="round" />`;
+  const W=1000, H=120, pad=6;
+  const xs = h.map((_,i) => pad + i/(h.length-1)*(W-2*pad));
+  const max = Math.max(...h.flatMap(x => [x.openTotalPoints||0, x.maxTotalPoints||0, x.scoredPoints||0]), 1);
+  const y = v => H - pad - v/max*(H-2*pad);
+  const path = (vals, color, w, dash) => {
+    const d = vals.map((v,i) => (i?'L':'M') + xs[i].toFixed(1) + ',' + y(v).toFixed(1)).join(' ');
+    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" ${dash?`stroke-dasharray="${dash}"`:''} vector-effect="non-scaling-stroke" stroke-linejoin="round"/>`;
   };
-  // Only accent + muted gray + ok green — restrained palette
   svg.innerHTML =
-    pathFor(history.map(h => h.maxTotalPoints||0),  '#adbac7', 1) +    // muted gray
-    pathFor(history.map(h => h.openTotalPoints||0), '#58a6ff', 1.5) +  // accent
-    pathFor(history.map(h => h.scoredPoints||0),    '#3fb950', 1.5);   // ok green
+    path(h.map(x => x.maxTotalPoints||0),  'var(--mute)', 1.2, '2 4') +
+    path(h.map(x => x.openTotalPoints||0), 'var(--mute)', 1.2) +
+    path(h.map(x => x.scoredPoints||0),    'var(--ink)',  1.8);
 }
 
-// ─── Modal ───
 let _snap = null;
-function openModal(title, meta, bodyHTML){
-  document.getElementById('modal-title').textContent = title;
-  document.getElementById('modal-meta').textContent  = meta || '';
-  document.getElementById('modal-body').innerHTML   = bodyHTML;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+function openModal(title, meta, html){
+  $('modal-title').textContent = title; $('modal-meta').textContent = meta || '';
+  $('modal-body').innerHTML = html; $('modal').classList.add('open'); document.body.style.overflow = 'hidden';
 }
-function closeModal(){
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
+function closeModal(){ $('modal').classList.remove('open'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
 function openContributorsModal(){
   if(!_snap) return;
-  const all = _snap.allContributors || [];
-  const total = _snap.contributorsCount || all.length;
-  if(!all.length){
-    openModal('All Contributors', '0 contributors — no rewards recorded in Wave ' + WAVE_NUM + ' yet',
-      '<div class="vel-empty" style="padding:48px">No contributor rewards recorded yet. This panel populates once Wave ' + WAVE_NUM + ' starts and issues get closed+rewarded.</div>');
-    return;
-  }
-  const rows = all.map((c, i) => {
-    const cpx = c.complexityBreakdown || {};
-    const cpxS = Object.entries(cpx).map(([k,v]) => `${k}:${v}`).join(' · ') || '—';
-    const repos = c.reposContributedTo || [];
-    const firstC = c.firstClosedAt ? shortDate(c.firstClosedAt) : '—';
-    const lastC  = c.lastClosedAt  ? shortDate(c.lastClosedAt)  : '—';
-    return `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="https://github.com/${c.contributor}" target="_blank" rel="noopener">${c.contributor}</a></td>
-        <td>${fmt(c.pointsEarned)}</td>
-        <td>${c.issuesClosed}</td>
-        <td>${c.avgPointsPerIssue || '—'}</td>
-        <td>${c.reposCount || (repos ? repos.length : 0)}</td>
-        <td style="text-align:left">${cpxS}</td>
-        <td>${firstC}</td>
-        <td>${lastC}</td>
-      </tr>
-    `;
+  const all = _snap.allContributors || [], total = _snap.contributorsCount || all.length;
+  if(!all.length){ openModal('Contributors','0 contributors','<div class="empty">No rewards recorded yet.</div>'); return; }
+  const rows = all.map((c,i) => {
+    const mix = Object.entries(c.complexityBreakdown||{}).map(([k,v]) => `${k}:${v}`).join(' · ') || '—';
+    return `<tr><td>${i+1}</td><td>${gh(c.contributor)}</td><td>${fmt(c.pointsEarned)}</td><td>${c.issuesClosed}</td>
+      <td>${c.avgPointsPerIssue || '—'}</td><td>${c.reposCount || (c.reposContributedTo||[]).length}</td>
+      <td class="tx">${mix}</td><td>${c.firstClosedAt ? shortDate(c.firstClosedAt) : '—'}</td><td>${c.lastClosedAt ? shortDate(c.lastClosedAt) : '—'}</td></tr>`;
   }).join('');
-  const body = `
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>#</th><th>Contributor</th>
-          <th>Points</th><th>Issues</th>
-          <th>Avg pts/issue</th><th># Repos</th>
-          <th style="text-align:left">Complexity mix</th>
-          <th>First closed</th><th>Last closed</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
-  `;
-  openModal(`All Contributors — Wave ${WAVE_NUM}`,
-            `${total} contributors · sorted by points · click username to open GitHub`,
-            body);
+  openModal(`Contributors · Wave ${WAVE_NUM}`, `${total} contributors, sorted by points`,
+    `<div class="tw"><table><thead><tr><th>#</th><th>Contributor</th><th>Points</th><th>Issues</th><th>Avg / issue</th><th>Repos</th><th class="tx">Complexity mix</th><th>First closed</th><th>Last closed</th></tr></thead><tbody>${rows}</tbody></table></div>`);
 }
-
 function openReposModal(){
   if(!_snap || !_snap.perRepo) return;
-  const all = _snap.perRepo.topRepos || [];
-  const total = _snap.perRepo.totalRepos || all.length;
-  if(!all.length){
-    openModal('All Repos', '0 repos', '<div class="vel-empty" style="padding:48px">No active repos.</div>');
-    return;
-  }
-  const rows = all.map((r, i) => {
-    const featured = r.isFeatured ? '<span class="tag featured">★</span>' : '';
-    const tags = (r.tags || []).map(t => `<span class="tag">${t}</span>`).join(' ');
-    const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
-    const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
-    return `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${featured}<br><span style="color:var(--text-mute);font-size:10px">${r.org || '—'}</span></td>
-        <td>${fmt(r.openIssues)}</td>
-        <td>${fmt(r.unassignedOpen)}</td>
-        <td>${fmt(r.closedInWave)}</td>
-        <td>${fmt(r.pointsScored)}</td>
-        <td>${fmt(r.distinctContributors)}</td>
-        <td>${ttc}</td>
-        <td>${budget}</td>
-        <td>×${r.pointsMultiplier ?? '—'}</td>
-        <td style="text-align:left">${tags || '—'}</td>
-      </tr>
-    `;
-  }).join('');
-  const body = `
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>#</th><th>Repo / Org</th>
-          <th>Open</th><th>Unassigned</th>
-          <th>Closed W${WAVE_NUM}</th><th>Pts scored</th>
-          <th>Contribs</th><th>Avg TTC (h)</th>
-          <th>Used / budget</th><th>Mult</th><th style="text-align:left">Tags</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
-  `;
-  openModal(`All Repos — Wave ${WAVE_NUM}`,
-            `${total} repos · sorted by points scored then open count · click repo to open GitHub`,
-            body);
+  const all = _snap.perRepo.topRepos || [], total = _snap.perRepo.totalRepos || all.length;
+  if(!all.length){ openModal('Repositories','0 repos','<div class="empty">No active repos.</div>'); return; }
+  openModal(`Repositories · Wave ${WAVE_NUM}`, `${total} repos, sorted by points scored then open count`,
+    `<div class="tw"><table><thead><tr><th>#</th><th>Repo</th><th>Open</th><th>Unassigned</th><th>Closed</th><th>Scored</th><th>People</th><th>Avg hrs</th><th>Used / budget</th><th>Mult</th><th class="tx">Tags</th></tr></thead><tbody>${all.map((r,i) => repoRow(r,i,true)).join('')}</tbody></table></div>`);
 }
 
-// ─── Main render ───
 function render(snap, history){
-  document.getElementById('loading').classList.add('hidden');
-  document.getElementById('content').classList.remove('hidden');
+  $('loading').classList.add('hidden'); $('content').classList.remove('hidden');
   _snap = snap;
+  const w = snap.wave || {}, oi = snap.openIssues || {}, cw = snap.closedInWave11 || {}, ni = snap.newIssuesSinceLastRun || {};
 
-  const w = snap.wave || {};
-  const oi = snap.openIssues || {};
-  const cw = snap.closedInWave11 || {};
-  const ni = snap.newIssuesSinceLastRun || {};
-
-  document.getElementById('m-window').textContent = `${shortDate(w.startDate)} → ${shortDate(w.endDate)}`;
-  document.getElementById('m-budget').textContent = w.budgetUSD ? usd(Number(w.budgetUSD)) : '—';
-  document.getElementById('m-next').textContent = timeUntilNextHourlyRun();
+  $('m-window').textContent = `${shortDate(w.startDate)} – ${shortDate(w.endDate)}`;
+  $('m-budget').textContent = w.budgetUSD ? usd(Number(w.budgetUSD)) : '—';
+  $('m-next').textContent = nextRun();
   setStatus(w.status, w.inWaveWindowNow);
 
-  document.getElementById('s-open').textContent = fmt(oi.total);
-  document.getElementById('s-open-sub').textContent = `${fmt(oi.total)} open Wave issues`;
-  document.getElementById('s-max').textContent = fmt(snap.maxTotalPoints);
-  document.getElementById('s-scored').textContent = fmt(snap.scoredPoints);
-  document.getElementById('s-scored-sub').innerHTML = `Σ pointsEarned · <b>${fmt(cw.uniqueIssues)}</b> closed`;
-  document.getElementById('s-remaining').textContent = fmt(snap.remainingPoints);
-  document.getElementById('s-new').textContent = fmt(ni.newSinceLastRun);
-  document.getElementById('s-contrib').textContent = fmt(snap.contributorsCount);
-  if(snap.topContributors && snap.topContributors.length){
-    const tc = snap.topContributors[0];
-    document.getElementById('s-top-contrib').innerHTML = `top: <a href="https://github.com/${tc.contributor}" target="_blank" style="color:var(--accent);text-decoration:none">${tc.contributor}</a> · ${fmt(tc.pointsEarned)} pts`;
-  } else {
-    document.getElementById('s-top-contrib').textContent = 'no rewards yet';
-  }
+  $('s-open').textContent = fmt(oi.total);
+  $('s-max').textContent = fmt(snap.maxTotalPoints);
+  $('s-scored').textContent = fmt(snap.scoredPoints);
+  $('s-scored-sub').textContent = `${fmt(cw.uniqueIssues)} issues closed`;
+  $('s-remaining').textContent = fmt(snap.remainingPoints);
+  $('s-new').textContent = fmt(ni.newSinceLastRun);
+  $('s-contrib').textContent = fmt(snap.contributorsCount);
+  const tc = (snap.topContributors || [])[0];
+  $('s-top-contrib').textContent = tc ? `top: ${tc.contributor} · ${fmt(tc.pointsEarned)}` : 'no rewards yet';
 
-  const pct = snap.maxTotalPoints > 0 ? (snap.scoredPoints / snap.maxTotalPoints * 100) : 0;
-  document.getElementById('prog-pct').textContent = pct.toFixed(2) + ' %';
-  setTimeout(() => { document.getElementById('prog-fill').style.width = pct + '%'; }, 80);
-  document.getElementById('prog-scored').textContent = fmt(snap.scoredPoints);
-  document.getElementById('prog-max').textContent = fmt(snap.maxTotalPoints);
-  document.getElementById('prog-remaining').textContent = fmt(snap.remainingPoints);
+  const pct = snap.maxTotalPoints > 0 ? snap.scoredPoints / snap.maxTotalPoints * 100 : 0;
+  $('prog-pct').textContent = pct.toFixed(2) + '%';
+  setTimeout(() => { $('prog-fill').style.width = pct + '%'; }, 80);
+  $('prog-scored').textContent = fmt(snap.scoredPoints);
+  $('prog-max').textContent = fmt(snap.maxTotalPoints);
+  $('prog-remaining').textContent = fmt(snap.remainingPoints);
 
   renderDist(oi.distribution);
+  document.querySelectorAll('.dist .bar div').forEach(b => { const x = b.style.width; b.style.width = 0; setTimeout(() => b.style.width = x, 80); });
   renderContributors(snap.allContributors, snap.topContributors);
   renderSparkline(history);
   renderNewIssues(ni.newIssuesSample);
@@ -1213,30 +485,20 @@ function render(snap, history){
   renderVelocity(snap.velocity);
   renderPipeline(snap.applicationPipeline, oi.total);
   renderQuality(snap.issueQuality);
-
-  document.getElementById('last-run').textContent = `Last run: ${shortDate(snap.runAt)} UTC`;
+  $('last-run').textContent = `Last run ${shortDate(snap.runAt)} UTC`;
 }
 
-async function main(){
+(async function main(){
   try{
-    const [snap, history] = await Promise.all([
-      fetchJSON('latest.json'),
-      fetchJSON('history.json').catch(() => []),
-    ]);
-    render(snap, Array.isArray(history) ? history : []);
-  } catch(e){
-    document.getElementById('loading').classList.add('hidden');
-    const errEl = document.getElementById('err');
-    errEl.classList.remove('hidden');
-    errEl.textContent = 'Could not load latest.json — has the bot run at least once? (' + e.message + ')';
+    const [snap, hist] = await Promise.all([fetchJSON('latest.json'), fetchJSON('history.json').catch(() => [])]);
+    render(snap, Array.isArray(hist) ? hist : []);
+  }catch(e){
+    $('loading').classList.add('hidden');
+    const el = $('err'); el.classList.remove('hidden');
+    el.textContent = 'Could not load latest.json. Has the bot run at least once? (' + e.message + ')';
   }
-}
-
-main();
-setInterval(() => {
-  const el = document.getElementById('m-next');
-  if(el && !el.closest('.hidden')) el.textContent = timeUntilNextHourlyRun();
-}, 1000);
+})();
+setInterval(() => { const el = $('m-next'); if(el && el.offsetParent) el.textContent = nextRun(); }, 1000);
 setTimeout(() => location.reload(), 10 * 60 * 1000);
 </script>
 </body>
