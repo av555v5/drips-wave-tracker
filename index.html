@@ -3,373 +3,525 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Stellar Wave 11 · Live Tracker</title>
+<title>Stellar Wave 11 · Analytics</title>
 <style>
+  /* ════════════════════════════════════════════════════════════════
+     Stellar Wave 11 Analytics — minimal dashboard
+     Design principles:
+       1. High-contrast typography (large bold KPIs vs small uppercase labels)
+       2. Intentional whitespace (generous padding & section gaps)
+       3. Restrained palette (dark slate base + ONE accent + 3 status colors)
+       4. Focused cards (max 2-3 data points: label + value + sub)
+     ════════════════════════════════════════════════════════════════ */
+
   :root{
-    --bg:#0b0e1a; --bg-2:#0f1424;
-    --panel:rgba(255,255,255,0.025);
-    --panel-border:rgba(255,255,255,0.08);
-    --text:#f5f7fa;
-    --text-dim:#c4ccdb;
-    --text-mute:#8e98b0;
-    --accent:#7dd3fc; --accent-2:#a78bfa; --accent-3:#34d399;
-    --warn:#fbbf24; --bad:#f87171;
-    --row-hover:rgba(125,211,252,0.06);
-    --shadow:0 4px 16px -4px rgba(0,0,0,0.4);
-    --mono:'JetBrains Mono','SF Mono','Cascadia Code',ui-monospace,Menlo,monospace;
-    --sans:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;
+    /* Base — dark slates */
+    --bg:           #0d1117;
+    --bg-elevated:  #161b22;
+    --bg-hover:     #1c2129;
+    --border:       #21262d;
+    --border-soft:  #1a1f26;
+
+    /* Text — clear hierarchy */
+    --text:         #e6edf3;       /* primary KPIs */
+    --text-dim:     #adbac7;       /* secondary labels */
+    --text-mute:    #6e7681;       /* tertiary hints */
+
+    /* Single accent — used for ALL primary data series */
+    --accent:       #58a6ff;
+
+    /* Status colors — semantic only, never decorative */
+    --ok:           #3fb950;       /* positive: scored, active */
+    --warn:         #d29922;       /* caution: stale, remaining */
+    --bad:          #f85149;       /* negative: bounce, overdue */
+
+    /* Typography */
+    --mono: 'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace;
+    --sans: -apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,sans-serif;
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
   }
+
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{
     font-family:var(--sans);
     background:var(--bg);
     color:var(--text);
-    line-height:1.45;
-    min-height:100vh;
+    font-size:14px;
+    line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
-    font-size:13px;
   }
-  /* Full-width dashboard container — uses the whole screen */
-  .container{width:100%;max-width:none;margin:0;padding:20px 28px 56px}
 
-  /* Header — compact, data-dashboard style */
-  header{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--panel-border)}
-  .brand{display:flex;flex-direction:column;gap:2px}
+  /* ═══ Layout: full-width with generous side padding ═══ */
+  .container{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:var(--space-7) var(--space-7) var(--space-7);
+  }
+  @media (max-width:768px){
+    .container{padding:var(--space-5) var(--space-4) var(--space-6)}
+  }
+
+  /* ═══ Header — minimal horizontal bar ═══ */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:var(--space-5);flex-wrap:wrap;
+    padding-bottom:var(--space-5);
+    margin-bottom:var(--space-6);
+    border-bottom:1px solid var(--border);
+  }
+  .brand{display:flex;flex-direction:column;gap:var(--space-1)}
   .brand h1{
-    font-size:20px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
+    font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--text);
   }
-  .brand .sub{color:var(--text-mute);font-size:12px;letter-spacing:0.01em}
+  .brand .sub{
+    font-size:12px;color:var(--text-mute);font-weight:400;letter-spacing:0;
+  }
+  .header-right{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
   .status-pill{
-    display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;
-    background:var(--panel);border:1px solid var(--panel-border);
-    font-size:11px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:var(--space-2);
+    padding:6px 12px;border-radius:4px;
+    background:var(--bg-elevated);border:1px solid var(--border);
+    font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--text-dim);
   }
-  .status-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--warn);box-shadow:0 0 8px var(--warn);animation:pulse 2s infinite}
-  .status-pill.active .dot{background:var(--accent-3);box-shadow:0 0 8px var(--accent-3)}
-  .status-pill.ended .dot{background:var(--text-mute);box-shadow:none;animation:none}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  .status-pill .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--warn);
+  }
+  .status-pill.active .dot{background:var(--ok)}
+  .status-pill.ended .dot{background:var(--text-mute)}
+  .status-pill.active{color:var(--ok)}
 
-  .meta-row{display:flex;gap:20px;flex-wrap:wrap;color:var(--text-dim);font-size:12px;margin-top:10px}
-  .meta-row b{color:var(--text);font-weight:500}
-  .countdown{font-family:var(--mono);color:var(--accent);font-size:12px;font-weight:500}
+  .meta-row{
+    display:flex;gap:var(--space-5);flex-wrap:wrap;
+    color:var(--text-mute);font-size:12px;margin-top:var(--space-3);
+  }
+  .meta-row b{color:var(--text-dim);font-weight:500}
+  .meta-row .countdown{
+    font-family:var(--mono);color:var(--accent);font-weight:500;
+  }
 
-  /* Stat cards — denser, less shadow */
-  .stats{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:10px;margin-bottom:24px;
+  /* ═══ Section heading — high-contrast kicker pattern ═══ */
+  .section{
+    margin-top:var(--space-7);
   }
-  .card{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
-    padding:14px 16px;
-    transition:border-color .2s;
-  }
-  .card:hover{border-color:rgba(125,211,252,0.18)}
-  .card .label{
-    font-size:10px;color:var(--text-mute);letter-spacing:0.08em;text-transform:uppercase;
-    font-weight:500;margin-bottom:8px;
-  }
-  .card .value{
-    font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:-0.02em;
-    color:var(--text);font-variant-numeric:tabular-nums;
-  }
-  .card .value.accent{color:var(--accent)}
-  .card .value.good{color:var(--accent-3)}
-  .card .value.warn{color:var(--warn)}
-  .card .sub{font-size:11px;color:var(--text-mute);margin-top:4px}
-
-  /* Progress bar (scored vs max) */
-  .progress-card{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
-    padding:18px 20px;margin-bottom:24px;
-  }
-  .progress-card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;flex-wrap:wrap;gap:8px}
-  .progress-card h2{font-size:13px;font-weight:600;letter-spacing:0}
-  .progress-card .pct{font-family:var(--mono);font-size:12px;color:var(--accent-3);font-weight:500}
-  .progress-track{
-    height:10px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;
-    border:1px solid var(--panel-border);position:relative;
-  }
-  .progress-fill{
-    height:100%;background:var(--accent-3);
-    border-radius:4px;transition:width .8s cubic-bezier(.2,.8,.2,1);
-    width:0;
-  }
-  .progress-meta{
-    display:flex;justify-content:space-between;margin-top:8px;font-size:11px;
-    color:var(--text-dim);font-family:var(--mono);
-  }
-  .progress-meta b{color:var(--text);font-weight:500}
-
-  /* Grid: distribution + contributors */
-  .grid-2{
-    display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-bottom:24px;
-  }
-  @media (max-width:1100px){.grid-2{grid-template-columns:1fr}}
-  .panel{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:8px;
-    padding:18px 20px;
-  }
-  .panel h2{font-size:13px;font-weight:600;margin-bottom:14px;letter-spacing:0;display:flex;align-items:center;gap:8px}
-  .panel h2 .hint{font-size:10px;color:var(--text-mute);font-weight:400;letter-spacing:0.04em;text-transform:uppercase}
-
-  /* Distribution bars */
-  .dist-row{margin-bottom:22px}
-  .dist-row:last-child{margin-bottom:0}
-  .dist-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-  .dist-head .name{font-size:13px;font-weight:500;text-transform:capitalize}
-  .dist-head .name .base{color:var(--text-mute);font-weight:400;margin-left:8px;font-family:var(--mono);font-size:11px}
-  .dist-head .num{font-family:var(--mono);font-size:12px;color:var(--text-dim)}
-  .dist-head .num b{color:var(--text);font-weight:500}
-  .dist-bar{height:10px;background:rgba(255,255,255,0.04);border-radius:99px;overflow:hidden;position:relative}
-  .dist-fill{
-    height:100%;border-radius:99px;
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    transition:width 1s cubic-bezier(.2,.8,.2,1);width:0;
-  }
-  .dist-mults{font-family:var(--mono);font-size:10.5px;color:var(--text-mute);margin-top:6px;letter-spacing:0.02em}
-
-  /* Contributors */
-  .contributors{list-style:none;display:flex;flex-direction:column;gap:8px;max-height:380px;overflow-y:auto}
-  .contributors::-webkit-scrollbar{width:6px}
-  .contributors::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:99px}
-  .contrib{
-    display:grid;grid-template-columns:28px 1fr auto auto;gap:14px;align-items:center;
-    padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.04);transition:all .25s;
-  }
-  .contrib:hover{background:rgba(255,255,255,0.05);border-color:rgba(125,211,252,0.2)}
-  .contrib .rank{font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:center}
-  .contrib .name{font-size:13.5px;font-weight:500;color:var(--text);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .contrib .name:hover{color:var(--accent)}
-  .contrib .issues{font-family:var(--mono);font-size:11px;color:var(--text-dim)}
-  .contrib .pts{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent-3);font-variant-numeric:tabular-nums}
-  .contrib.top{background:linear-gradient(90deg,rgba(125,211,252,0.10),transparent);border-color:rgba(125,211,252,0.22)}
-  .contrib.top .rank{color:var(--accent)}
-  .contrib.top .pts{color:var(--accent)}
-  .empty{color:var(--text-mute);font-size:13px;text-align:center;padding:32px 8px;font-style:italic}
-
-  /* Sparkline */
-  .sparkline-card{
-    background:var(--panel);border:1px solid var(--panel-border);border-radius:18px;
-    padding:28px;margin-bottom:48px;box-shadow:var(--shadow);
-  }
-  .sparkline-card h2{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em}
-  .sparkline-card .desc{color:var(--text-dim);font-size:12px;margin-bottom:20px}
-  .spark-svg{width:100%;height:140px;display:block}
-  .spark-legend{display:flex;gap:18px;margin-top:14px;font-size:12px;color:var(--text-dim);font-family:var(--mono);flex-wrap:wrap}
-  .spark-legend .dot{display:inline-block;width:10px;height:2px;border-radius:2px;margin-right:6px;vertical-align:middle}
-
-  /* New issues sample */
-  .new-issues{margin-bottom:48px}
-  .new-issues h2{font-size:16px;font-weight:600;margin-bottom:18px;letter-spacing:-0.01em}
-  .new-issue{
-    display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
-    padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.04);margin-bottom:6px;font-size:13px;
-    transition:all .2s;
-  }
-  .new-issue:hover{background:rgba(255,255,255,0.04);border-color:rgba(125,211,252,0.15)}
-  .new-issue .repo{color:var(--accent);font-family:var(--mono);font-size:11.5px;text-decoration:none}
-  .new-issue .repo:hover{text-decoration:underline}
-  .new-issue .title{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .new-issue .pts{font-family:var(--mono);font-size:11.5px;color:var(--text-mute)}
-
-  /* Footer */
-  footer{
-    text-align:center;padding:32px 0 0;border-top:1px solid var(--panel-border);
-    color:var(--text-mute);font-size:12px;letter-spacing:0.02em;
-  }
-  footer a{color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--panel-border);padding-bottom:1px}
-  footer a:hover{color:var(--accent)}
-
-  /* Loading / error states */
-  .loading{display:flex;align-items:center;justify-content:center;min-height:60vh;color:var(--text-dim);font-size:14px}
-  .loading .ring{
-    width:32px;height:32px;border:2px solid rgba(255,255,255,0.1);border-top-color:var(--accent);
-    border-radius:50%;animation:spin 1s linear infinite;margin-right:14px;
-  }
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .err{color:var(--bad);font-size:14px;text-align:center;padding:60px 20px}
-  .hidden{display:none}
-
-  /* NEW: section heading with kicker — compact for dashboard */
   .section-head{
     display:flex;align-items:baseline;justify-content:space-between;
-    margin:24px 0 12px;gap:16px;flex-wrap:wrap;
+    gap:var(--space-4);flex-wrap:wrap;
+    margin-bottom:var(--space-4);
   }
   .section-head h2{
-    font-size:14px;font-weight:600;letter-spacing:0;color:var(--text);
+    font-size:11px;font-weight:600;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--text-dim);
   }
   .section-head .kicker{
-    font-size:10px;color:var(--text-mute);letter-spacing:0.1em;
-    text-transform:uppercase;font-weight:500;
+    font-size:11px;color:var(--text-mute);font-weight:400;letter-spacing:0.02em;
   }
 
-  /* NEW: stat row for economics / pipeline / quality */
-  .stat-row{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:12px;
+  /* ═══ KPI cards — focused, max 2-3 data points ═══ */
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:var(--space-3);
+  }
+  .kpi{
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:var(--space-5);
+    display:flex;flex-direction:column;gap:var(--space-2);
+    transition:border-color .15s;
+  }
+  .kpi:hover{border-color:#30363d}
+  .kpi .label{
+    font-size:10px;font-weight:600;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--text-mute);
+  }
+  .kpi .value{
+    font-family:var(--mono);font-size:32px;font-weight:600;
+    letter-spacing:-0.02em;color:var(--text);
+    font-variant-numeric:tabular-nums;line-height:1.1;
+  }
+  .kpi .value.accent{color:var(--accent)}
+  .kpi .value.ok{color:var(--ok)}
+  .kpi .value.warn{color:var(--warn)}
+  .kpi .sub{
+    font-size:12px;color:var(--text-mute);font-weight:400;
+  }
+  .kpi .sub b{color:var(--text-dim);font-weight:500}
+
+  /* ═══ Progress bar — clean horizontal ═══ */
+  .progress{
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:var(--space-5);
+    margin-top:var(--space-7);
+  }
+  .progress-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:var(--space-3);flex-wrap:wrap;gap:var(--space-2);
+  }
+  .progress-head .title{
+    font-size:11px;font-weight:600;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--text-dim);
+  }
+  .progress-head .pct{
+    font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ok);
+  }
+  .progress-track{
+    height:8px;background:var(--bg);border-radius:2px;overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;background:var(--ok);border-radius:2px;
+    transition:width .6s cubic-bezier(.2,.8,.2,1);width:0;
+  }
+  .progress-meta{
+    display:flex;justify-content:space-between;
+    margin-top:var(--space-3);font-size:12px;color:var(--text-mute);
+    font-family:var(--mono);
+  }
+  .progress-meta b{color:var(--text-dim);font-weight:500}
+
+  /* ═══ Generic panel — used for distribution, contributors, etc. ═══ */
+  .panel{
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:var(--space-5);
+  }
+  .panel.clickable{cursor:pointer;transition:border-color .15s}
+  .panel.clickable:hover{border-color:#30363d}
+  .panel-title{
+    font-size:11px;font-weight:600;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--text-dim);
+    margin-bottom:var(--space-4);
+    display:flex;align-items:center;gap:var(--space-2);
+  }
+  .panel-title .hint{
+    font-size:10px;color:var(--text-mute);font-weight:400;
+    letter-spacing:0.02em;text-transform:none;
+  }
+  .panel.clickable .panel-title::after{
+    content:'View all →';
+    margin-left:auto;
+    font-size:10px;color:var(--accent);font-weight:500;
+    letter-spacing:0.04em;text-transform:uppercase;
+    padding:3px 8px;border:1px solid var(--border);border-radius:3px;
+    transition:all .15s;
+  }
+  .panel.clickable:hover .panel-title::after{
+    background:rgba(88,166,255,0.08);border-color:rgba(88,166,255,0.3);
+  }
+
+  /* ═══ Grid layouts ═══ */
+  .grid-2{
+    display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);
+    margin-top:var(--space-7);
+  }
+  @media (max-width:1100px){.grid-2{grid-template-columns:1fr}}
+
+  .grid-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:var(--space-2);
   }
   .stat-cell{
-    background:rgba(255,255,255,0.03);border:1px solid var(--panel-border);
-    border-radius:12px;padding:16px 18px;
+    background:var(--bg);
+    border:1px solid var(--border-soft);
+    border-radius:4px;
+    padding:var(--space-4);
+    display:flex;flex-direction:column;gap:var(--space-1);
   }
-  .stat-cell .l{font-size:11px;color:var(--text-mute);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
-  .stat-cell .v{font-family:var(--mono);font-size:18px;color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+  .stat-cell .l{
+    font-size:10px;font-weight:600;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--text-mute);
+  }
+  .stat-cell .v{
+    font-family:var(--mono);font-size:18px;font-weight:600;
+    color:var(--text);font-variant-numeric:tabular-nums;line-height:1.2;
+  }
   .stat-cell .v.accent{color:var(--accent)}
-  .stat-cell .v.good{color:var(--accent-3)}
+  .stat-cell .v.ok{color:var(--ok)}
   .stat-cell .v.warn{color:var(--warn)}
   .stat-cell .v.bad{color:var(--bad)}
-  .stat-cell .s{font-size:11px;color:var(--text-dim);margin-top:4px}
+  .stat-cell .s{font-size:11px;color:var(--text-mute)}
 
-  /* NEW: per-repo table */
-  .repo-table{
-    width:100%;border-collapse:collapse;font-size:13px;
+  /* ═══ Distribution bars ═══ */
+  .dist-row{margin-bottom:var(--space-5)}
+  .dist-row:last-child{margin-bottom:0}
+  .dist-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:var(--space-2);
   }
-  .repo-table th{
-    text-align:right;padding:10px 12px;color:var(--text-mute);
-    font-weight:500;text-transform:uppercase;font-size:10.5px;letter-spacing:0.06em;
-    border-bottom:1px solid var(--panel-border);
+  .dist-head .name{
+    font-size:13px;font-weight:500;color:var(--text);text-transform:capitalize;
   }
-  .repo-table th:first-child, .repo-table th:nth-child(2){text-align:left}
-  .repo-table td{
-    padding:11px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.04);
-    color:var(--text-dim);font-family:var(--mono);font-variant-numeric:tabular-nums;
+  .dist-head .name .base{
+    color:var(--text-mute);font-weight:400;margin-left:var(--space-2);
+    font-family:var(--mono);font-size:11px;
   }
-  .repo-table td:first-child{color:var(--text-mute);width:32px}
-  .repo-table td:nth-child(2){text-align:left;color:var(--text);font-family:var(--sans)}
-  .repo-table td:nth-child(2) a{color:var(--accent);text-decoration:none;font-weight:500}
-  .repo-table td:nth-child(2) a:hover{text-decoration:underline}
-  .repo-table tr:hover td{background:rgba(255,255,255,0.02)}
-  .repo-table .featured-tag{
-    display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:600;
-    background:rgba(125,211,252,0.15);color:var(--accent);margin-left:6px;text-transform:uppercase;letter-spacing:0.05em;
+  .dist-head .num{
+    font-family:var(--mono);font-size:12px;color:var(--text-mute);
   }
-  .repo-table .repo-tag{
-    display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;
-    background:rgba(167,139,250,0.12);color:var(--accent-2);margin-left:4px;
+  .dist-head .num b{color:var(--text);font-weight:500}
+  .dist-bar{
+    height:6px;background:var(--bg);border-radius:2px;overflow:hidden;
+  }
+  .dist-fill{
+    height:100%;background:var(--accent);border-radius:2px;
+    transition:width .6s cubic-bezier(.2,.8,.2,1);width:0;
+  }
+  .dist-mults{
+    font-family:var(--mono);font-size:10.5px;color:var(--text-mute);
+    margin-top:var(--space-2);letter-spacing:0;
   }
 
-  /* NEW: velocity chart bars */
+  /* ═══ Contributors list — compact ═══ */
+  .contributors{list-style:none;display:flex;flex-direction:column;gap:var(--space-1)}
+  .contrib{
+    display:grid;grid-template-columns:24px 1fr auto auto;
+    gap:var(--space-3);align-items:center;
+    padding:var(--space-2) var(--space-3);
+    border-radius:4px;
+    transition:background .12s;
+  }
+  .contrib:hover{background:var(--bg-hover)}
+  .contrib .rank{
+    font-family:var(--mono);font-size:11px;color:var(--text-mute);
+    text-align:right;
+  }
+  .contrib .name{
+    font-size:13px;font-weight:500;color:var(--text);
+    text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .contrib .name:hover{color:var(--accent)}
+  .contrib .issues{
+    font-family:var(--mono);font-size:11px;color:var(--text-mute);
+  }
+  .contrib .pts{
+    font-family:var(--mono);font-size:13px;font-weight:600;
+    color:var(--ok);font-variant-numeric:tabular-nums;
+  }
+  .contrib.top .rank{color:var(--accent)}
+  .contrib.top .pts{color:var(--accent)}
+
+  /* ═══ View-all button ═══ */
+  .view-all-btn{
+    display:block;width:100%;margin-top:var(--space-3);
+    padding:var(--space-3) var(--space-4);
+    background:transparent;border:1px solid var(--border);border-radius:4px;
+    color:var(--accent);font-family:var(--sans);font-size:12px;font-weight:500;
+    cursor:pointer;transition:all .15s;text-align:center;
+  }
+  .view-all-btn:hover{
+    background:var(--bg-hover);border-color:rgba(88,166,255,0.3);
+  }
+
+  /* ═══ Tables — dense, data-analysis style ═══ */
+  .data-table{
+    width:100%;border-collapse:collapse;font-size:12px;
+  }
+  .data-table th{
+    text-align:right;padding:var(--space-2) var(--space-3);
+    color:var(--text-mute);font-weight:600;
+    font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+    border-bottom:1px solid var(--border);
+    position:sticky;top:0;background:var(--bg-elevated);z-index:1;
+  }
+  .data-table th:first-child,.data-table th:nth-child(2){text-align:left}
+  .data-table td{
+    padding:var(--space-2) var(--space-3);text-align:right;
+    border-bottom:1px solid var(--border-soft);
+    color:var(--text-dim);font-family:var(--mono);
+    font-variant-numeric:tabular-nums;
+  }
+  .data-table td:first-child{color:var(--text-mute);width:36px;text-align:right}
+  .data-table td:nth-child(2){text-align:left;color:var(--text);font-family:var(--sans)}
+  .data-table td:nth-child(2) a{
+    color:var(--accent);text-decoration:none;font-weight:500;
+  }
+  .data-table td:nth-child(2) a:hover{text-decoration:underline}
+  .data-table tr:hover td{background:var(--bg-hover)}
+  .tag{
+    display:inline-block;padding:1px 6px;border-radius:3px;
+    font-size:10px;font-weight:500;
+    background:rgba(88,166,255,0.1);color:var(--accent);
+    margin-left:var(--space-1);letter-spacing:0.02em;
+  }
+  .tag.featured{background:rgba(210,153,34,0.12);color:var(--warn)}
+
+  /* ═══ Sparkline ═══ */
+  .spark-svg{width:100%;height:120px;display:block}
+  .spark-legend{
+    display:flex;gap:var(--space-5);margin-top:var(--space-3);
+    font-size:11px;color:var(--text-mute);font-family:var(--mono);
+    flex-wrap:wrap;
+  }
+  .spark-legend .dot{
+    display:inline-block;width:10px;height:2px;margin-right:var(--space-2);
+    vertical-align:middle;
+  }
+
+  /* ═══ Velocity chart ═══ */
   .vel-chart{
-    display:flex;align-items:flex-end;height:160px;gap:3px;padding:12px 0;
-    border-bottom:1px solid var(--panel-border);margin-bottom:8px;
+    display:flex;align-items:flex-end;height:140px;gap:2px;
+    padding:var(--space-3) 0;border-bottom:1px solid var(--border);
+    margin-bottom:var(--space-2);
   }
   .vel-bar{
-    flex:1;min-width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2));
-    border-radius:3px 3px 0 0;opacity:0.85;transition:height .6s cubic-bezier(.2,.8,.2,1);
+    flex:1;min-width:3px;background:var(--accent);
+    border-radius:1px 1px 0 0;opacity:0.7;
+    transition:height .5s cubic-bezier(.2,.8,.2,1), opacity .15s;
     position:relative;
   }
   .vel-bar:hover{opacity:1}
   .vel-bar:hover::after{
-    content:attr(data-tip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
-    background:rgba(0,0,0,0.9);color:var(--text);font-size:10.5px;padding:5px 9px;border-radius:6px;
-    white-space:nowrap;font-family:var(--mono);pointer-events:none;margin-bottom:6px;
-    border:1px solid var(--panel-border);
+    content:attr(data-tip);
+    position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+    background:var(--bg);color:var(--text);font-size:10.5px;
+    padding:5px 9px;border-radius:3px;white-space:nowrap;
+    font-family:var(--mono);pointer-events:none;margin-bottom:6px;
+    border:1px solid var(--border);
   }
-  .vel-empty{color:var(--text-mute);font-size:13px;text-align:center;padding:32px;font-style:italic}
+  .vel-empty{
+    color:var(--text-mute);font-size:13px;text-align:center;
+    padding:var(--space-6) var(--space-4);font-style:italic;
+  }
 
-  /* NEW: pipeline bar */
+  /* ═══ Pipeline proportional bar ═══ */
   .pipeline-bar{
-    display:flex;height:36px;border-radius:8px;overflow:hidden;
-    border:1px solid var(--panel-border);margin:12px 0 8px;
+    display:flex;height:24px;border-radius:3px;overflow:hidden;
+    border:1px solid var(--border);margin:var(--space-3) 0 var(--space-2);
   }
   .pipeline-bar > div{
-    display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;
-    font-family:var(--mono);color:rgba(0,0,0,0.7);
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:600;font-family:var(--mono);
+    color:rgba(0,0,0,0.7);
   }
 
-  /* NEW: competition / stale lists */
-  .mini-list{list-style:none;display:flex;flex-direction:column;gap:6px;max-height:240px;overflow-y:auto;margin-top:12px}
+  /* ═══ Mini-lists (competition / stale) ═══ */
+  .mini-list{
+    list-style:none;display:flex;flex-direction:column;gap:var(--space-1);
+    max-height:240px;overflow-y:auto;margin-top:var(--space-3);
+  }
   .mini-list::-webkit-scrollbar{width:6px}
-  .mini-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:99px}
+  .mini-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
   .mini-item{
-    display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
-    padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.02);
-    border:1px solid rgba(255,255,255,0.04);font-size:12.5px;
+    display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);
+    align-items:center;padding:var(--space-2) var(--space-3);
+    border-radius:3px;background:var(--bg);
+    border:1px solid var(--border-soft);font-size:12px;
   }
   .mini-item .n{font-family:var(--mono);color:var(--text-mute);font-size:11px}
-  .mini-item .t{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mini-item .t{
+    color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
   .mini-item .t a{color:var(--accent);text-decoration:none}
   .mini-item .t a:hover{text-decoration:underline}
-  .mini-item .m{font-family:var(--mono);color:var(--accent-3);font-size:11.5px;font-weight:600}
-
-  /* NEW: payout table */
-  .payout-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
-  .payout-table th{
-    text-align:right;padding:8px 10px;color:var(--text-mute);font-weight:500;
-    text-transform:uppercase;font-size:10.5px;letter-spacing:0.06em;border-bottom:1px solid var(--panel-border);
+  .mini-item .m{
+    font-family:var(--mono);color:var(--ok);font-size:11px;font-weight:600;
   }
-  .payout-table th:first-child, .payout-table th:nth-child(2){text-align:left}
-  .payout-table td{
-    padding:9px 10px;text-align:right;color:var(--text-dim);border-bottom:1px solid rgba(255,255,255,0.03);
-    font-family:var(--mono);font-variant-numeric:tabular-nums;
-  }
-  .payout-table td:first-child{color:var(--text-mute);width:32px;text-align:right}
-  .payout-table td:nth-child(2){text-align:left;color:var(--text);font-family:var(--sans)}
-  .payout-table td:nth-child(2) a{color:var(--accent);text-decoration:none;font-weight:500}
-  .payout-table td:nth-child(2) a:hover{text-decoration:underline}
-  .payout-table tr:hover td{background:rgba(255,255,255,0.02)}
 
-  /* NEW: clickable "View all" button */
-  .view-all-btn{
-    display:block;width:100%;margin-top:12px;padding:10px 14px;
-    background:transparent;border:1px dashed var(--panel-border);border-radius:6px;
-    color:var(--accent);font-family:var(--sans);font-size:12px;font-weight:500;
-    cursor:pointer;transition:all .15s;text-align:center;
-    letter-spacing:0.02em;
+  /* ═══ New-issues list ═══ */
+  .new-issue{
+    display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);
+    align-items:center;padding:var(--space-2) var(--space-3);
+    border-radius:3px;background:var(--bg);
+    border:1px solid var(--border-soft);margin-bottom:var(--space-1);
+    font-size:12px;transition:border-color .12s;
   }
-  .view-all-btn:hover{background:var(--row-hover);border-color:rgba(125,211,252,0.3);border-style:solid}
-  .view-all-btn .arrow{margin-left:6px;display:inline-block;transition:transform .15s}
-  .view-all-btn:hover .arrow{transform:translateX(2px)}
+  .new-issue:hover{border-color:var(--border)}
+  .new-issue .repo{
+    color:var(--accent);font-family:var(--mono);font-size:11px;
+    text-decoration:none;
+  }
+  .new-issue .repo:hover{text-decoration:underline}
+  .new-issue .title{
+    color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .new-issue .pts{
+    font-family:var(--mono);font-size:11px;color:var(--text-mute);
+  }
 
-  /* NEW: modal dialog for full contributor / repo lists */
+  /* ═══ Modal ═══ */
   .modal{
     position:fixed;inset:0;z-index:1000;display:none;
     align-items:flex-start;justify-content:center;
-    background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);
-    padding:24px;overflow-y:auto;
+    background:rgba(1,4,9,0.8);
+    padding:var(--space-6);overflow-y:auto;
   }
   .modal.open{display:flex}
   .modal-content{
-    background:var(--bg-2);border:1px solid var(--panel-border);border-radius:8px;
+    background:var(--bg-elevated);border:1px solid var(--border);border-radius:6px;
     width:100%;max-width:1400px;margin:0 auto;
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
   }
   .modal-header{
     display:flex;justify-content:space-between;align-items:center;
-    padding:16px 20px;border-bottom:1px solid var(--panel-border);
-    position:sticky;top:0;background:var(--bg-2);z-index:1;
+    padding:var(--space-4) var(--space-5);
+    border-bottom:1px solid var(--border);
+    position:sticky;top:0;background:var(--bg-elevated);z-index:1;
   }
-  .modal-header h3{font-size:15px;font-weight:600;color:var(--text)}
-  .modal-header .meta{font-size:11px;color:var(--text-mute);font-family:var(--mono);margin-top:2px}
+  .modal-header h3{font-size:14px;font-weight:600;color:var(--text)}
+  .modal-header .meta{
+    font-size:11px;color:var(--text-mute);font-family:var(--mono);margin-top:2px;
+  }
   .modal-close{
-    background:transparent;border:1px solid var(--panel-border);color:var(--text-dim);
-    width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:18px;
-    line-height:1;transition:all .15s;
+    background:transparent;border:1px solid var(--border);
+    color:var(--text-dim);width:28px;height:28px;border-radius:4px;
+    cursor:pointer;font-size:16px;line-height:1;transition:all .15s;
   }
-  .modal-close:hover{background:var(--bad);color:#fff;border-color:var(--bad)}
-  .modal-body{padding:0;max-height:calc(100vh - 100px);overflow-y:auto}
+  .modal-close:hover{
+    background:var(--bad);color:#fff;border-color:var(--bad);
+  }
+  .modal-body{
+    padding:0;max-height:calc(100vh - 120px);overflow-y:auto;
+  }
   .modal-body::-webkit-scrollbar{width:8px}
-  .modal-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:4px}
-  .modal-body table{width:100%;font-size:12px}
-  .modal-body th{
-    position:sticky;top:0;background:var(--bg-2);z-index:1;
-  }
+  .modal-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
 
-  /* NEW: clickable panel heading (whole row is a button to open modal) */
-  .panel.clickable{cursor:pointer;transition:border-color .15s}
-  .panel.clickable:hover{border-color:rgba(125,211,252,0.25)}
-  .panel.clickable h2{cursor:pointer}
-  .panel.clickable h2::after{
-    content:'View all →';margin-left:auto;font-size:10px;color:var(--accent);
-    font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
-    padding:3px 8px;border:1px solid rgba(125,211,252,0.25);border-radius:4px;
-    transition:all .15s;
+  /* ═══ Footer ═══ */
+  footer{
+    text-align:center;padding:var(--space-6) 0 0;
+    border-top:1px solid var(--border);
+    color:var(--text-mute);font-size:11px;letter-spacing:0;
+    margin-top:var(--space-7);
   }
-  .panel.clickable:hover h2::after{background:rgba(125,211,252,0.1);border-color:rgba(125,211,252,0.4)}
+  footer a{
+    color:var(--text-dim);text-decoration:none;
+    border-bottom:1px solid var(--border);padding-bottom:1px;
+  }
+  footer a:hover{color:var(--accent)}
+
+  /* ═══ Loading + error states ═══ */
+  .loading{
+    display:flex;align-items:center;justify-content:center;
+    min-height:60vh;color:var(--text-mute);font-size:13px;
+  }
+  .loading .ring{
+    width:24px;height:24px;
+    border:2px solid var(--border);
+    border-top-color:var(--accent);
+    border-radius:50%;animation:spin 1s linear infinite;
+    margin-right:var(--space-3);
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .err{
+    color:var(--bad);font-size:13px;text-align:center;
+    padding:var(--space-7) var(--space-5);
+  }
+  .hidden{display:none}
 </style>
 </head>
 <body>
@@ -380,60 +532,63 @@
   </div>
 
   <div id="content" class="hidden">
+    <!-- ═══ Header ═══ -->
     <header>
       <div class="brand">
         <h1>Stellar Wave 11</h1>
-        <div class="sub" id="sub">Live tracker · auto-updated every hour</div>
+        <div class="sub">Live analytics · auto-updated hourly</div>
         <div class="meta-row">
           <span>Window: <b id="m-window">—</b></span>
           <span>Budget: <b id="m-budget">—</b></span>
           <span>Next refresh: <b id="m-next" class="countdown">—</b></span>
         </div>
       </div>
-      <div class="status-pill" id="status">
-        <span class="dot"></span>
-        <span id="status-text">—</span>
+      <div class="header-right">
+        <div class="status-pill" id="status">
+          <span class="dot"></span>
+          <span id="status-text">—</span>
+        </div>
       </div>
     </header>
 
-    <!-- Big stat cards -->
-    <section class="stats">
-      <div class="card">
+    <!-- ═══ Hero KPIs — focused cards, max 2-3 data points each ═══ -->
+    <div class="kpi-grid">
+      <div class="kpi">
         <div class="label">Open Issues</div>
         <div class="value" id="s-open">—</div>
-        <div class="sub" id="s-open-sub">— open Wave issues</div>
+        <div class="sub" id="s-open-sub">—</div>
       </div>
-      <div class="card">
+      <div class="kpi">
         <div class="label">Max Total Points</div>
         <div class="value accent" id="s-max">—</div>
-        <div class="sub">open + closed-in-wave · precise Σ points × mult</div>
+        <div class="sub">open + closed-in-wave · precise</div>
       </div>
-      <div class="card">
+      <div class="kpi">
         <div class="label">Scored So Far</div>
-        <div class="value good" id="s-scored">—</div>
-        <div class="sub" id="s-scored-sub">Σ pointsEarned · across <b id="s-closed">—</b> closed issues</div>
+        <div class="value ok" id="s-scored">—</div>
+        <div class="sub" id="s-scored-sub">Σ pointsEarned</div>
       </div>
-      <div class="card">
+      <div class="kpi">
         <div class="label">Remaining</div>
         <div class="value warn" id="s-remaining">—</div>
-        <div class="sub">claimable points still on the table</div>
+        <div class="sub">claimable points</div>
       </div>
-      <div class="card">
+      <div class="kpi">
         <div class="label">New Since Last Run</div>
         <div class="value" id="s-new">—</div>
-        <div class="sub">issues opened in the last ~1h</div>
+        <div class="sub">opened in last hour</div>
       </div>
-      <div class="card">
+      <div class="kpi">
         <div class="label">Contributors Paid</div>
         <div class="value" id="s-contrib">—</div>
         <div class="sub" id="s-top-contrib">—</div>
       </div>
-    </section>
+    </div>
 
-    <!-- Scored vs Max progress -->
-    <section class="progress-card">
-      <div class="head">
-        <h2>Wave 11 · Scored vs Max</h2>
+    <!-- ═══ Progress: scored vs max ═══ -->
+    <div class="progress">
+      <div class="progress-head">
+        <span class="title">Wave 11 · Scored vs Max</span>
         <span class="pct" id="prog-pct">— %</span>
       </div>
       <div class="progress-track">
@@ -443,136 +598,156 @@
         <span><b id="prog-scored">—</b> / <b id="prog-max">—</b> pts scored</span>
         <span><b id="prog-remaining">—</b> remaining</span>
       </div>
-    </section>
+    </div>
 
-    <!-- Distribution + Contributors -->
-    <section class="grid-2">
+    <!-- ═══ Distribution + Contributors ═══ -->
+    <div class="grid-2">
       <div class="panel">
-        <h2>Distribution by Complexity <span class="hint">precise Σ points × mult</span></h2>
+        <div class="panel-title">Distribution by Complexity <span class="hint">precise Σ points × mult</span></div>
         <div id="dist"></div>
       </div>
       <div class="panel clickable" id="contributors-panel" onclick="openContributorsModal()">
-        <h2>All Contributors <span class="hint" id="contrib-panel-hint">click to expand full table</span></h2>
+        <div class="panel-title">All Contributors <span class="hint" id="contrib-panel-hint">click to expand</span></div>
         <ul class="contributors" id="contrib-list" onclick="event.stopPropagation()"></ul>
-        <button class="view-all-btn" id="contrib-view-all-btn" onclick="event.stopPropagation(); openContributorsModal()">
-          <span id="contrib-view-all-label">View all contributors</span><span class="arrow">→</span>
+        <button class="view-all-btn" onclick="event.stopPropagation(); openContributorsModal()">
+          <span id="contrib-view-all-label">View all</span>
         </button>
       </div>
-    </section>
-
-    <!-- Time-series sparkline -->
-    <section class="sparkline-card">
-      <h2>Points Over Time</h2>
-      <div class="desc">Each point = one bot run (~1h cadence). Open points (cyan) · Max points (purple) · Scored (green).</div>
-      <svg class="spark-svg" id="spark" viewBox="0 0 1000 140" preserveAspectRatio="none"></svg>
-      <div class="spark-legend">
-        <span><span class="dot" style="background:#7dd3fc"></span>Open total pts</span>
-        <span><span class="dot" style="background:#a78bfa"></span>Max total pts</span>
-        <span><span class="dot" style="background:#34d399"></span>Scored pts</span>
-      </div>
-    </section>
-
-    <!-- New issues -->
-    <section class="new-issues" id="new-issues-section">
-      <h2>Newly Opened Issues <span class="hint" style="font-size:11px;color:var(--text-mute);font-weight:400;letter-spacing:.04em;text-transform:uppercase;margin-left:10px">since last run</span></h2>
-      <div id="new-issues"></div>
-    </section>
-
-    <!-- ─── NEW: Per-repo analytics ─── -->
-    <div class="section-head">
-      <h2>Per-Repo Analytics</h2>
-      <span class="kicker">Wave 11 · top 25 of <span id="repo-total-count">—</span> active repos · click panel to expand full table</span>
     </div>
-    <section class="panel clickable" style="padding:14px 20px" onclick="openReposModal()">
-      <table class="repo-table" onclick="event.stopPropagation()">
-        <thead>
-          <tr>
-            <th>#</th><th>Repo</th>
-            <th>Open</th><th>Unassigned</th>
-            <th>Closed in W11</th><th>Pts scored</th>
-            <th>Contribs</th><th>Avg TTC (h)</th>
-            <th>Pts used / budget</th><th>Mult</th><th>Tags</th>
-          </tr>
-        </thead>
-        <tbody id="repo-tbody"></tbody>
-      </table>
-      <button class="view-all-btn" onclick="event.stopPropagation(); openReposModal()">
-        <span id="repo-view-all-label">View all repos</span><span class="arrow">→</span>
-      </button>
-    </section>
 
-    <!-- ─── NEW: Wave economics / payout modeling ─── -->
-    <div class="section-head">
-      <h2>Wave Economics &amp; Payout Modeling</h2>
-      <span class="kicker">precise USD-per-point · proportional payout projection</span>
-    </div>
-    <section class="panel" style="padding:24px">
-      <div class="stat-row" id="econ-stats"></div>
-      <div class="section-head" style="margin:32px 0 16px">
-        <h2 style="font-size:15px">Concentration / fairness</h2>
-        <span class="kicker">top-N % of total points held</span>
+    <!-- ═══ Sparkline ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Points Over Time</h2>
+        <span class="kicker">each point = one bot run · hourly cadence</span>
       </div>
-      <div class="stat-row" id="concentration-stats"></div>
-      <div class="section-head" style="margin:32px 0 16px">
-        <h2 style="font-size:15px">Top 20 estimated payouts</h2>
-        <span class="kicker">if Wave ended now · proportional</span>
-      </div>
-      <table class="payout-table">
-        <thead>
-          <tr><th>#</th><th>Contributor</th><th>Points</th><th>Est. USD</th></tr>
-        </thead>
-        <tbody id="payout-tbody"></tbody>
-      </table>
-    </section>
-
-    <!-- ─── NEW: Issue-flow velocity ─── -->
-    <div class="section-head">
-      <h2>Issue-Flow Velocity</h2>
-      <span class="kicker">hourly buckets within Wave window</span>
-    </div>
-    <section class="panel" style="padding:24px">
-      <div class="stat-row" id="velocity-stats" style="margin-bottom:24px"></div>
-      <div style="font-size:12px;color:var(--text-dim);margin-bottom:8px;font-family:var(--mono)">
-        points scored per hour in Wave window — hover for details
-      </div>
-      <div class="vel-chart" id="vel-chart"></div>
-      <div id="vel-empty" class="vel-empty hidden">No in-Wave activity yet — Wave 11 hasn't started. Velocity metrics populate once the Wave opens.</div>
-    </section>
-
-    <!-- ─── NEW: Application / assignment pipeline ─── -->
-    <div class="section-head">
-      <h2>Application &amp; Assignment Pipeline</h2>
-      <span class="kicker">maintainer review backlog · competition · stale</span>
-    </div>
-    <section class="panel" style="padding:24px">
-      <div class="stat-row" id="pipeline-stats"></div>
-      <div style="font-size:12px;color:var(--text-dim);margin-top:20px;margin-bottom:4px;font-family:var(--mono)">
-        open issues by assignment state (proportional)
-      </div>
-      <div class="pipeline-bar" id="pipeline-bar"></div>
-      <div class="grid-2" style="margin-top:24px">
-        <div>
-          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">Most-Competition Open Issues <span style="color:var(--text-mute);font-weight:400;font-size:11px">by pending applications</span></div>
-          <ul class="mini-list" id="competition-list"></ul>
-        </div>
-        <div>
-          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px">Stale Assignments <span style="color:var(--text-mute);font-weight:400;font-size:11px">dueDate &lt; now</span></div>
-          <ul class="mini-list" id="stale-list"></ul>
+      <div class="panel">
+        <svg class="spark-svg" id="spark" viewBox="0 0 1000 120" preserveAspectRatio="none"></svg>
+        <div class="spark-legend">
+          <span><span class="dot" style="background:#58a6ff"></span>Open total pts</span>
+          <span><span class="dot" style="background:#adbac7"></span>Max total pts</span>
+          <span><span class="dot" style="background:#3fb950"></span>Scored pts</span>
         </div>
       </div>
-    </section>
-
-    <!-- ─── NEW: Issue quality / engagement ─── -->
-    <div class="section-head">
-      <h2>Issue Quality &amp; Engagement</h2>
-      <span class="kicker">resolution quality · freshness signals</span>
     </div>
-    <section class="panel" style="padding:24px">
-      <div class="stat-row" id="quality-stats"></div>
-      <div style="font-size:12px;color:var(--text-dim);margin-top:18px;font-family:var(--mono)">
-        PR-to-issue ratio = closed-with-PR ÷ all-closed · bounce rate = closed-without-PR ÷ all-closed · stale = open &amp; not updated in <span id="stale-days">7</span> days · recently-active = updated in last hour
+
+    <!-- ═══ New issues ═══ -->
+    <div class="section" id="new-issues-section">
+      <div class="section-head">
+        <h2>Newly Opened Issues</h2>
+        <span class="kicker">since last run</span>
       </div>
-    </section>
+      <div class="panel">
+        <div id="new-issues"></div>
+      </div>
+    </div>
+
+    <!-- ═══ Per-Repo Analytics ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Per-Repo Analytics</h2>
+        <span class="kicker">Wave 11 · top 15 of <span id="repo-total-count">—</span> · click panel to expand full table</span>
+      </div>
+      <div class="panel clickable" onclick="openReposModal()">
+        <table class="data-table" onclick="event.stopPropagation()">
+          <thead>
+            <tr>
+              <th>#</th><th>Repo</th>
+              <th>Open</th><th>Unassigned</th>
+              <th>Closed W11</th><th>Pts scored</th>
+              <th>Contribs</th><th>Avg TTC (h)</th>
+              <th>Used / budget</th><th>Mult</th>
+            </tr>
+          </thead>
+          <tbody id="repo-tbody"></tbody>
+        </table>
+        <button class="view-all-btn" onclick="event.stopPropagation(); openReposModal()">
+          <span id="repo-view-all-label">View all</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ Wave Economics ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Wave Economics &amp; Payout Modeling</h2>
+        <span class="kicker">precise USD per point · proportional projection</span>
+      </div>
+      <div class="panel">
+        <div class="grid-stats" id="econ-stats"></div>
+        <div class="section-head" style="margin-top:var(--space-6)">
+          <h2>Concentration / Fairness</h2>
+          <span class="kicker">top-N % of total points held</span>
+        </div>
+        <div class="grid-stats" id="concentration-stats"></div>
+        <div class="section-head" style="margin-top:var(--space-6)">
+          <h2>Top 20 Estimated Payouts</h2>
+          <span class="kicker">if Wave ended now</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr><th>#</th><th>Contributor</th><th>Points</th><th>Est. USD</th></tr>
+          </thead>
+          <tbody id="payout-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ═══ Issue-Flow Velocity ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Issue-Flow Velocity</h2>
+        <span class="kicker">hourly buckets within Wave window</span>
+      </div>
+      <div class="panel">
+        <div class="grid-stats" id="velocity-stats" style="margin-bottom:var(--space-5)"></div>
+        <div style="font-size:11px;color:var(--text-mute);margin-bottom:var(--space-2);font-family:var(--mono)">
+          points scored per hour — hover for details
+        </div>
+        <div class="vel-chart" id="vel-chart"></div>
+        <div id="vel-empty" class="vel-empty hidden">No in-Wave activity yet — Wave 11 hasn't started.</div>
+      </div>
+    </div>
+
+    <!-- ═══ Application Pipeline ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Application &amp; Assignment Pipeline</h2>
+        <span class="kicker">maintainer review backlog · competition · stale</span>
+      </div>
+      <div class="panel">
+        <div class="grid-stats" id="pipeline-stats"></div>
+        <div style="font-size:11px;color:var(--text-mute);margin-top:var(--space-5);margin-bottom:var(--space-1);font-family:var(--mono)">
+          open issues by assignment state (proportional)
+        </div>
+        <div class="pipeline-bar" id="pipeline-bar"></div>
+        <div class="grid-2" style="margin-top:var(--space-5);grid-template-columns:1fr 1fr">
+          <div>
+            <div class="panel-title" style="margin-bottom:var(--space-2)">Most-Competition Open Issues</div>
+            <ul class="mini-list" id="competition-list"></ul>
+          </div>
+          <div>
+            <div class="panel-title" style="margin-bottom:var(--space-2)">Stale Assignments <span class="hint">dueDate &lt; now</span></div>
+            <ul class="mini-list" id="stale-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Issue Quality ═══ -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Issue Quality &amp; Engagement</h2>
+        <span class="kicker">resolution quality · freshness signals</span>
+      </div>
+      <div class="panel">
+        <div class="grid-stats" id="quality-stats"></div>
+        <div style="font-size:11px;color:var(--text-mute);margin-top:var(--space-4);font-family:var(--mono);line-height:1.6">
+          PR ratio = closed+PR ÷ all-closed · bounce = closed−PR ÷ all-closed<br>
+          stale = open &amp; not updated in <span id="stale-days">7</span> days · recently-active = updated within 1h
+        </div>
+      </div>
+    </div>
 
     <footer>
       <span id="last-run">—</span> ·
@@ -599,8 +774,9 @@
 
 <script>
 'use strict';
-const WAVE_NUM = 11;   // mirror of bot.py's WAVE_NUM
+const WAVE_NUM = 11;
 const fmt = n => (n||0).toLocaleString('en-US');
+const usd = n => '$' + (n||0).toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:2});
 const shortDate = s => s ? new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}) : '—';
 
 async function fetchJSON(path){
@@ -619,33 +795,21 @@ function setStatus(s, inWave){
   else txt.textContent = s || '—';
 }
 
-function countdown(targetISO){
-  if(!targetISO) return '—';
-  const tgt = new Date(targetISO).getTime();
-  const now = Date.now();
-  const diff = tgt - now;
-  if(diff <= 0) return 'now';
-  const h = Math.floor(diff/3.6e6);
-  const m = Math.floor((diff%3.6e6)/6e4);
-  return h > 0 ? `${h}h ${m}m` : `${m}m`;
-}
-
-// Time until the next top-of-hour UTC, since the bot runs on cron `0 * * * *`
-// (i.e. at :00 of every hour). This is the next time latest.json will refresh.
 function timeUntilNextHourlyRun(){
   const now = new Date();
   const next = new Date(now);
   next.setUTCMinutes(0, 0, 0);
-  next.setUTCHours(next.getUTCHours() + 1);   // next :00 UTC
+  next.setUTCHours(next.getUTCHours() + 1);
   const diff = next.getTime() - now.getTime();
   const m = Math.floor(diff / 60000);
   const s = Math.floor((diff % 60000) / 1000);
   return m > 0 ? `${m}m ${s}s` : `${s}s`;
 }
 
+// ─── Renderers ───
 function renderDist(distribution){
   const el = document.getElementById('dist');
-  if(!distribution || !distribution.length){ el.innerHTML = '<div class="empty">No distribution data.</div>'; return; }
+  if(!distribution || !distribution.length){ el.innerHTML = '<div class="vel-empty">No distribution data.</div>'; return; }
   const maxCount = Math.max(...distribution.map(d => d.count));
   el.innerHTML = distribution.map(d => {
     const mults = d.multiplierBreakdown || {};
@@ -657,7 +821,7 @@ function renderDist(distribution){
       <div class="dist-row">
         <div class="dist-head">
           <span class="name">${d.complexity}<span class="base">base ${d.basePoints ?? '—'}</span></span>
-          <span class="num"><b>${fmt(d.count)}</b> issues · ${fmt(d.currentContribution)} pts</span>
+          <span class="num"><b>${fmt(d.count)}</b> · ${fmt(d.currentContribution)} pts</span>
         </div>
         <div class="dist-bar"><div class="dist-fill" style="width:${w}%"></div></div>
         <div class="dist-mults">${multS || '—'}  ·  ${pbS || '—'}</div>
@@ -668,14 +832,10 @@ function renderDist(distribution){
 
 function renderContributors(allContributors, topContributors){
   const el = document.getElementById('contrib-list');
-  // Show only top 8 in the compact panel; the modal (openContributorsModal)
-  // shows the full list with all stats.
-  const fullList = (allContributors && allContributors.length)
-    ? allContributors
-    : (topContributors || []);
+  const fullList = (allContributors && allContributors.length) ? allContributors : (topContributors || []);
   const compact = fullList.slice(0, 8);
   if(!compact.length){
-    el.innerHTML = '<div class="empty">No contributor rewards recorded in Wave ' + WAVE_NUM + ' yet.</div>';
+    el.innerHTML = '<div class="vel-empty">No contributor rewards recorded in Wave ' + WAVE_NUM + ' yet.</div>';
     document.getElementById('contrib-view-all-label').textContent = 'No contributors yet';
     document.getElementById('contrib-panel-hint').textContent = 'populates once Wave ' + WAVE_NUM + ' starts';
     return;
@@ -688,10 +848,174 @@ function renderContributors(allContributors, topContributors){
       <span class="pts">${fmt(c.pointsEarned)} pts</span>
     </li>
   `).join('');
-  // Update the "View all" button label and the panel-hint with the full count
   const total = fullList.length;
   document.getElementById('contrib-view-all-label').textContent = `View all ${total} contributor${total===1?'':'s'}`;
-  document.getElementById('contrib-panel-hint').textContent = `showing top 8 of ${total} · click to expand`;
+  document.getElementById('contrib-panel-hint').textContent = `top 8 of ${total} · click to expand`;
+}
+
+function renderPerRepo(perRepo){
+  const total = perRepo?.totalRepos || 0;
+  document.getElementById('repo-total-count').textContent = fmt(total);
+  const tbody = document.getElementById('repo-tbody');
+  const repos = (perRepo?.topRepos || []).slice(0, 15);
+  if(!repos.length){ tbody.innerHTML = '<tr><td colspan="10" class="vel-empty">No active repos.</td></tr>'; return; }
+  tbody.innerHTML = repos.map((r, i) => {
+    const featured = r.isFeatured ? '<span class="tag featured">★</span>' : '';
+    const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
+    const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
+    return `
+      <tr>
+        <td>${i+1}</td>
+        <td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${featured}</td>
+        <td>${fmt(r.openIssues)}</td>
+        <td>${fmt(r.unassignedOpen)}</td>
+        <td>${fmt(r.closedInWave)}</td>
+        <td>${fmt(r.pointsScored)}</td>
+        <td>${fmt(r.distinctContributors)}</td>
+        <td>${ttc}</td>
+        <td>${budget}</td>
+        <td>×${r.pointsMultiplier ?? '—'}</td>
+      </tr>
+    `;
+  }).join('');
+  const lbl = document.getElementById('repo-view-all-label');
+  if(lbl) lbl.textContent = `View all ${total} repos`;
+}
+
+function renderEconomics(econ){
+  const econEl = document.getElementById('econ-stats');
+  const concEl = document.getElementById('concentration-stats');
+  const payEl  = document.getElementById('payout-tbody');
+  if(!econ){
+    econEl.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>';
+    return;
+  }
+  econEl.innerHTML = `
+    <div class="stat-cell"><div class="l">Budget</div><div class="v accent">${usd(econ.budgetUSD)}</div><div class="s">Wave ${WAVE_NUM} prize pool</div></div>
+    <div class="stat-cell"><div class="l">USD per point</div><div class="v">$${econ.usdPerPoint.toFixed(6)}</div><div class="s">budget ÷ max points</div></div>
+    <div class="stat-cell"><div class="l">USD paid</div><div class="v ok">${usd(econ.usdPaid)}</div><div class="s">scored × usd/pt</div></div>
+    <div class="stat-cell"><div class="l">USD remaining</div><div class="v warn">${usd(econ.usdRemaining)}</div><div class="s">budget − paid</div></div>
+    <div class="stat-cell"><div class="l">Projected final pts</div><div class="v accent">${fmt(econ.projectedFinalScoredPts)}</div><div class="s">linear extrapolation</div></div>
+    <div class="stat-cell"><div class="l">Wave duration</div><div class="v">${econ.waveDurationHours}h</div><div class="s">elapsed ${econ.elapsedHours}h</div></div>
+  `;
+  const c = econ.concentration || {};
+  if(Object.keys(c).length){
+    concEl.innerHTML = `
+      <div class="stat-cell"><div class="l">Top 1% share</div><div class="v">${c.top1pctShare}%</div></div>
+      <div class="stat-cell"><div class="l">Top 10% share</div><div class="v">${c.top10pctShare}%</div></div>
+      <div class="stat-cell"><div class="l">Top 3 share</div><div class="v">${c.top3Share}%</div></div>
+      <div class="stat-cell"><div class="l">Top 10 share</div><div class="v">${c.top10Share}%</div></div>
+      <div class="stat-cell"><div class="l">Median pts</div><div class="v">${fmt(c.medianPoints)}</div></div>
+      <div class="stat-cell"><div class="l">Mean pts</div><div class="v">${fmt(c.meanPoints)}</div></div>
+      <div class="stat-cell"><div class="l">Long-tail (&lt;100 pts)</div><div class="v warn">${fmt(c.longTailUnder100pts)}</div><div class="s">low-engagement</div></div>
+    `;
+  } else {
+    concEl.innerHTML = '<div class="stat-cell"><div class="l">Concentration</div><div class="v">—</div><div class="s">no scored points yet</div></div>';
+  }
+  const payouts = econ.topPayouts || [];
+  if(!payouts.length){
+    payEl.innerHTML = '<tr><td colspan="4" class="vel-empty">No payouts yet — Wave hasn\'t started.</td></tr>';
+  } else {
+    payEl.innerHTML = payouts.map((p, i) => `
+      <tr>
+        <td>${i+1}</td>
+        <td><a href="https://github.com/${p.contributor}" target="_blank" rel="noopener">${p.contributor}</a></td>
+        <td>${fmt(p.pointsEarned)}</td>
+        <td>${usd(p.estimatedUSD)}</td>
+      </tr>
+    `).join('');
+  }
+}
+
+function renderVelocity(vel){
+  const stats = document.getElementById('velocity-stats');
+  const chart = document.getElementById('vel-chart');
+  const empty = document.getElementById('vel-empty');
+  const t = vel?.totals || {};
+  stats.innerHTML = `
+    <div class="stat-cell"><div class="l">Opened in Wave</div><div class="v">${fmt(t.openedInWave)}</div></div>
+    <div class="stat-cell"><div class="l">Closed in Wave</div><div class="v">${fmt(t.closedInWave)}</div></div>
+    <div class="stat-cell"><div class="l">Scored in Wave</div><div class="v ok">${fmt(t.scoredInWave)}p</div></div>
+    <div class="stat-cell"><div class="l">New contribs</div><div class="v accent">${fmt(t.newContributorsInWave)}</div></div>
+    <div class="stat-cell"><div class="l">PRs submitted</div><div class="v">${fmt(t.prsInWave)}</div></div>
+  `;
+  const series = vel?.series || [];
+  if(!series.length){
+    chart.classList.add('hidden');
+    empty.classList.remove('hidden');
+    return;
+  }
+  chart.classList.remove('hidden');
+  empty.classList.add('hidden');
+  const maxV = Math.max(...series.map(s => s.scoredPts), 1);
+  chart.innerHTML = series.map(s => {
+    const h = (s.scoredPts / maxV) * 100;
+    const tip = `${s.hour} · closed ${s.closed}, scored ${s.scoredPts}p, opened ${s.opened}, new ${s.newContributors}, PRs ${s.prs}`;
+    return `<div class="vel-bar" style="height:${h}%" data-tip="${tip}"></div>`;
+  }).join('');
+}
+
+function renderPipeline(ap, openTotal){
+  const stats = document.getElementById('pipeline-stats');
+  const bar   = document.getElementById('pipeline-bar');
+  const comp  = document.getElementById('competition-list');
+  const stale = document.getElementById('stale-list');
+  const unassignedClean = (openTotal || 0) - (ap.openAssigned || 0) - (ap.openWithAppsNoAssignment || 0);
+  stats.innerHTML = `
+    <div class="stat-cell"><div class="l">Open + assigned</div><div class="v accent">${fmt(ap.openAssigned)}</div><div class="s">in progress</div></div>
+    <div class="stat-cell"><div class="l">Apps + no assign</div><div class="v warn">${fmt(ap.openWithAppsNoAssignment)}</div><div class="s">review backlog</div></div>
+    <div class="stat-cell"><div class="l">Untouched</div><div class="v">${fmt(unassignedClean)}</div><div class="s">available</div></div>
+    <div class="stat-cell"><div class="l">Avg apps / open</div><div class="v">${ap.avgApplicationsPerOpen}</div><div class="s">competition</div></div>
+    <div class="stat-cell"><div class="l">Stale assignments</div><div class="v bad">${fmt(ap.staleAssignmentsCount)}</div><div class="s">dueDate &lt; now</div></div>
+  `;
+  const tot = (openTotal || 0);
+  if(tot > 0){
+    const segs = [
+      {n: 'assigned', v: ap.openAssigned, c: '#58a6ff'},
+      {n: 'apps+no-assign', v: ap.openWithAppsNoAssignment, c: '#d29922'},
+      {n: 'available', v: unassignedClean, c: '#30363d'},
+    ];
+    bar.innerHTML = segs.map(s => {
+      const pct = (s.v / tot) * 100;
+      return pct > 0 ? `<div style="width:${pct}%;background:${s.c}" title="${s.n}: ${fmt(s.v)}">${pct >= 10 ? fmt(s.v) : ''}</div>` : '';
+    }).join('');
+  } else {
+    bar.innerHTML = '<div style="width:100%;background:var(--border);color:var(--text-mute)">—</div>';
+  }
+  const compItems = ap.mostCompetitionIssues || [];
+  comp.innerHTML = compItems.length
+    ? compItems.map(i => `
+        <li class="mini-item">
+          <span class="n">#${i.issueNumber}</span>
+          <span class="t"><a href="${i.url}" target="_blank" rel="noopener">${i.repo}</a> · ${i.title}</span>
+          <span class="m">${i.apps} apps</span>
+        </li>
+      `).join('')
+    : '<li class="vel-empty">No open issues with pending applications.</li>';
+  const staleItems = (ap.staleAssignments || []).slice(0, 15);
+  stale.innerHTML = staleItems.length
+    ? staleItems.map(i => `
+        <li class="mini-item">
+          <span class="n">#${i.issueNumber}</span>
+          <span class="t">${i.repo} → ${i.assignee}</span>
+          <span class="m" style="color:var(--bad)">overdue</span>
+        </li>
+      `).join('')
+    : '<li class="vel-empty">No stale assignments.</li>';
+}
+
+function renderQuality(iq){
+  const el = document.getElementById('quality-stats');
+  if(!iq){ el.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>'; return; }
+  document.getElementById('stale-days').textContent = iq.staleThresholdDays;
+  el.innerHTML = `
+    <div class="stat-cell"><div class="l">Closed + PR</div><div class="v ok">${fmt(iq.closedWithPR)}</div><div class="s">resolved with PR</div></div>
+    <div class="stat-cell"><div class="l">Closed − PR</div><div class="v bad">${fmt(iq.closedWithoutPR)}</div><div class="s">bounce</div></div>
+    <div class="stat-cell"><div class="l">PR ratio</div><div class="v accent">${iq.prToIssueRatio}%</div><div class="s">resolution quality</div></div>
+    <div class="stat-cell"><div class="l">Bounce rate</div><div class="v ${iq.bounceRate > 10 ? 'bad' : 'warn'}">${iq.bounceRate}%</div><div class="s">closed w/o resolution</div></div>
+    <div class="stat-cell"><div class="l">Stale open (>${iq.staleThresholdDays}d)</div><div class="v warn">${fmt(iq.staleOpenIssues)}</div><div class="s">not updated</div></div>
+    <div class="stat-cell"><div class="l">Recently active (1h)</div><div class="v ok">${fmt(iq.recentlyActiveOpen)}</div><div class="s">where action is</div></div>
+  `;
 }
 
 function renderNewIssues(sample){
@@ -708,184 +1032,31 @@ function renderNewIssues(sample){
   `).join('');
 }
 
-// ─── NEW: per-repo analytics ───
-function renderPerRepo(perRepo){
-  const total = perRepo?.totalRepos || 0;
-  document.getElementById('repo-total-count').textContent = fmt(total);
-  const tbody = document.getElementById('repo-tbody');
-  const repos = (perRepo?.topRepos || []).slice(0, 15);   // compact: top 15 in dashboard; full list in modal
-  if(!repos.length){ tbody.innerHTML = '<tr><td colspan="11" class="vel-empty">No active repos.</td></tr>'; return; }
-  tbody.innerHTML = repos.map((r, i) => {
-    const featured = r.isFeatured ? '<span class="featured-tag">★ Featured</span>' : '';
-    const tags = (r.tags || []).slice(0, 2).map(t => `<span class="repo-tag">${t}</span>`).join('');
-    const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
-    const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
-    return `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="${r.repoUrl}" target="_blank" rel="noopener">${r.repo}</a>${featured}${tags}</td>
-        <td>${fmt(r.openIssues)}</td>
-        <td>${fmt(r.unassignedOpen)}</td>
-        <td>${fmt(r.closedInWave)}</td>
-        <td>${fmt(r.pointsScored)}</td>
-        <td>${fmt(r.distinctContributors)}</td>
-        <td>${ttc}</td>
-        <td>${budget}</td>
-        <td>×${r.pointsMultiplier ?? '—'}</td>
-        <td>${(r.tags||[]).length > 2 ? '…' : ''}</td>
-      </tr>
-    `;
-  }).join('');
-  // Update the "View all repos" button label
-  const lbl = document.getElementById('repo-view-all-label');
-  if(lbl) lbl.textContent = `View all ${total} repos`;
-}
-
-// ─── NEW: wave economics ───
-function renderEconomics(econ){
-  const econEl = document.getElementById('econ-stats');
-  const concEl = document.getElementById('concentration-stats');
-  const payEl  = document.getElementById('payout-tbody');
-  if(!econ){
-    econEl.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>';
+function renderSparkline(history){
+  const svg = document.getElementById('spark');
+  if(!history || history.length < 2){
+    svg.innerHTML = '<text x="500" y="60" text-anchor="middle" fill="#6e7681" font-size="11" font-family="monospace">Not enough runs yet — sparkline appears after 2+ runs.</text>';
     return;
   }
-  econEl.innerHTML = `
-    <div class="stat-cell"><div class="l">Budget</div><div class="v accent">$${fmt(econ.budgetUSD)}</div><div class="s">Wave ${WAVE_NUM} prize pool</div></div>
-    <div class="stat-cell"><div class="l">USD per point</div><div class="v">$${econ.usdPerPoint.toFixed(6)}</div><div class="s">budget ÷ max points</div></div>
-    <div class="stat-cell"><div class="l">USD paid so far</div><div class="v good">$${fmt(econ.usdPaid)}</div><div class="s">scored × usd/pt</div></div>
-    <div class="stat-cell"><div class="l">USD remaining</div><div class="v warn">$${fmt(econ.usdRemaining)}</div><div class="s">budget − paid</div></div>
-    <div class="stat-cell"><div class="l">Projected final pts</div><div class="v accent">${fmt(econ.projectedFinalScoredPts)}</div><div class="s">linear extrapolation</div></div>
-    <div class="stat-cell"><div class="l">Wave duration</div><div class="v">${econ.waveDurationHours}h</div><div class="s">elapsed ${econ.elapsedHours}h</div></div>
-  `;
-  const c = econ.concentration || {};
-  if(Object.keys(c).length){
-    concEl.innerHTML = `
-      <div class="stat-cell"><div class="l">Top 1% share</div><div class="v">${c.top1pctShare}%</div></div>
-      <div class="stat-cell"><div class="l">Top 10% share</div><div class="v">${c.top10pctShare}%</div></div>
-      <div class="stat-cell"><div class="l">Top 3 share</div><div class="v">${c.top3Share}%</div></div>
-      <div class="stat-cell"><div class="l">Top 10 share</div><div class="v">${c.top10Share}%</div></div>
-      <div class="stat-cell"><div class="l">Median pts</div><div class="v">${fmt(c.medianPoints)}</div></div>
-      <div class="stat-cell"><div class="l">Mean pts</div><div class="v">${fmt(c.meanPoints)}</div></div>
-      <div class="stat-cell"><div class="l">Long-tail (&lt;100 pts)</div><div class="v warn">${fmt(c.longTailUnder100pts)}</div><div class="s">low-engagement contribs</div></div>
-    `;
-  } else {
-    concEl.innerHTML = '<div class="stat-cell"><div class="l">Concentration</div><div class="v">—</div><div class="s">no scored points yet</div></div>';
-  }
-  const payouts = econ.topPayouts || [];
-  if(!payouts.length){
-    payEl.innerHTML = '<tr><td colspan="4" class="vel-empty">No payouts yet — Wave hasn\'t started or no issues have been rewarded.</td></tr>';
-  } else {
-    payEl.innerHTML = payouts.map((p, i) => `
-      <tr>
-        <td>${i+1}</td>
-        <td><a href="https://github.com/${p.contributor}" target="_blank" rel="noopener">${p.contributor}</a></td>
-        <td>${fmt(p.pointsEarned)}</td>
-        <td>$${fmt(p.estimatedUSD)}</td>
-      </tr>
-    `).join('');
-  }
+  const W = 1000, H = 120, pad = 8;
+  const xs = history.map((_,i) => pad + (i/(history.length-1)) * (W - 2*pad));
+  const allVals = history.flatMap(h => [h.openTotalPoints||0, h.maxTotalPoints||0, h.scoredPoints||0]);
+  const maxV = Math.max(...allVals, 1);
+  const ys = v => H - pad - (v / maxV) * (H - 2*pad);
+  const pathFor = (vals, color, width=1.5) => {
+    let d = '';
+    vals.forEach((v,i) => { d += (i===0?'M':'L') + xs[i].toFixed(1) + ',' + ys(v).toFixed(1) + ' '; });
+    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linejoin="round" stroke-linecap="round" />`;
+  };
+  // Only accent + muted gray + ok green — restrained palette
+  svg.innerHTML =
+    pathFor(history.map(h => h.maxTotalPoints||0),  '#adbac7', 1) +    // muted gray
+    pathFor(history.map(h => h.openTotalPoints||0), '#58a6ff', 1.5) +  // accent
+    pathFor(history.map(h => h.scoredPoints||0),    '#3fb950', 1.5);   // ok green
 }
 
-// ─── NEW: issue-flow velocity ───
-function renderVelocity(vel){
-  const stats = document.getElementById('velocity-stats');
-  const chart = document.getElementById('vel-chart');
-  const empty = document.getElementById('vel-empty');
-  const t = vel?.totals || {};
-  stats.innerHTML = `
-    <div class="stat-cell"><div class="l">Opened in Wave</div><div class="v">${fmt(t.openedInWave)}</div></div>
-    <div class="stat-cell"><div class="l">Closed in Wave</div><div class="v">${fmt(t.closedInWave)}</div></div>
-    <div class="stat-cell"><div class="l">Scored in Wave</div><div class="v good">${fmt(t.scoredInWave)}p</div></div>
-    <div class="stat-cell"><div class="l">New contribs</div><div class="v accent">${fmt(t.newContributorsInWave)}</div></div>
-    <div class="stat-cell"><div class="l">PRs submitted</div><div class="v">${fmt(t.prsInWave)}</div></div>
-  `;
-  const series = vel?.series || [];
-  if(!series.length){
-    chart.classList.add('hidden');
-    empty.classList.remove('hidden');
-    return;
-  }
-  chart.classList.remove('hidden');
-  empty.classList.add('hidden');
-  const maxV = Math.max(...series.map(s => s.scoredPts), 1);
-  chart.innerHTML = series.map(s => {
-    const h = (s.scoredPts / maxV) * 100;
-    const tip = `${s.hour} · closed ${s.closed}, scored ${s.scoredPts}p, opened ${s.opened}, new contribs ${s.newContributors}, PRs ${s.prs}`;
-    return `<div class="vel-bar" style="height:${h}%" data-tip="${tip}"></div>`;
-  }).join('');
-}
-
-// ─── NEW: application pipeline ───
-function renderPipeline(ap, openTotal){
-  const stats = document.getElementById('pipeline-stats');
-  const bar   = document.getElementById('pipeline-bar');
-  const comp  = document.getElementById('competition-list');
-  const stale = document.getElementById('stale-list');
-  const unassignedClean = (openTotal || 0) - (ap.openAssigned || 0) - (ap.openWithAppsNoAssignment || 0);
-  stats.innerHTML = `
-    <div class="stat-cell"><div class="l">Open + assigned</div><div class="v accent">${fmt(ap.openAssigned)}</div><div class="s">in progress</div></div>
-    <div class="stat-cell"><div class="l">Open + apps + no assign</div><div class="v warn">${fmt(ap.openWithAppsNoAssignment)}</div><div class="s">maintainer review backlog</div></div>
-    <div class="stat-cell"><div class="l">Open + no apps + no assign</div><div class="v">${fmt(unassignedClean)}</div><div class="s">untouched / available</div></div>
-    <div class="stat-cell"><div class="l">Avg apps per open</div><div class="v">${ap.avgApplicationsPerOpen}</div><div class="s">competition level</div></div>
-    <div class="stat-cell"><div class="l">Stale assignments</div><div class="v bad">${fmt(ap.staleAssignmentsCount)}</div><div class="s">dueDate &lt; now</div></div>
-  `;
-  // proportional pipeline bar
-  const tot = (openTotal || 0);
-  if(tot > 0){
-    const segs = [
-      {n: 'assigned', v: ap.openAssigned, c: '#7dd3fc'},
-      {n: 'apps+no-assign', v: ap.openWithAppsNoAssignment, c: '#fbbf24'},
-      {n: 'available', v: unassignedClean, c: '#a78bfa'},
-    ];
-    bar.innerHTML = segs.map(s => {
-      const pct = (s.v / tot) * 100;
-      return pct > 0 ? `<div style="width:${pct}%;background:${s.c}" title="${s.n}: ${fmt(s.v)}">${pct >= 8 ? fmt(s.v) : ''}</div>` : '';
-    }).join('');
-  } else {
-    bar.innerHTML = '<div style="width:100%;background:rgba(255,255,255,0.05);color:var(--text-mute)">—</div>';
-  }
-  // most-competition list
-  const compItems = ap.mostCompetitionIssues || [];
-  comp.innerHTML = compItems.length
-    ? compItems.map(i => `
-        <li class="mini-item">
-          <span class="n">#${i.issueNumber}</span>
-          <span class="t"><a href="${i.url}" target="_blank" rel="noopener">${i.repo}</a> · ${i.title}</span>
-          <span class="m">${i.apps} apps</span>
-        </li>
-      `).join('')
-    : '<li class="vel-empty">No open issues with pending applications.</li>';
-  // stale assignments
-  const staleItems = (ap.staleAssignments || []).slice(0, 15);
-  stale.innerHTML = staleItems.length
-    ? staleItems.map(i => `
-        <li class="mini-item">
-          <span class="n">#${i.issueNumber}</span>
-          <span class="t">${i.repo} → ${i.assignee}</span>
-          <span class="m" style="color:var(--bad)">overdue</span>
-        </li>
-      `).join('')
-    : '<li class="vel-empty">No stale assignments.</li>';
-}
-
-// ─── NEW: issue quality ───
-function renderQuality(iq){
-  const el = document.getElementById('quality-stats');
-  if(!iq){ el.innerHTML = '<div class="stat-cell"><div class="l">No data</div></div>'; return; }
-  document.getElementById('stale-days').textContent = iq.staleThresholdDays;
-  el.innerHTML = `
-    <div class="stat-cell"><div class="l">Closed + PR</div><div class="v good">${fmt(iq.closedWithPR)}</div><div class="s">resolved with PR</div></div>
-    <div class="stat-cell"><div class="l">Closed − PR</div><div class="v bad">${fmt(iq.closedWithoutPR)}</div><div class="s">closed without PR (bounce)</div></div>
-    <div class="stat-cell"><div class="l">PR-to-issue ratio</div><div class="v accent">${iq.prToIssueRatio}%</div><div class="s">resolution quality</div></div>
-    <div class="stat-cell"><div class="l">Bounce rate</div><div class="v ${iq.bounceRate > 10 ? 'bad' : 'warn'}">${iq.bounceRate}%</div><div class="s">closed without resolution</div></div>
-    <div class="stat-cell"><div class="l">Stale open (>${iq.staleThresholdDays}d)</div><div class="v warn">${fmt(iq.staleOpenIssues)}</div><div class="s">not updated recently</div></div>
-    <div class="stat-cell"><div class="l">Recently active (1h)</div><div class="v good">${fmt(iq.recentlyActiveOpen)}</div><div class="s">where action is happening</div></div>
-  `;
-}
-
-// ─── NEW: Modal open/close + full-table renderers ───
-let _snap = null;   // cached snapshot for modal rendering
+// ─── Modal ───
+let _snap = null;
 function openModal(title, meta, bodyHTML){
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-meta').textContent  = meta || '';
@@ -897,7 +1068,6 @@ function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
 }
-// ESC to close
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
 function openContributorsModal(){
@@ -909,7 +1079,6 @@ function openContributorsModal(){
       '<div class="vel-empty" style="padding:48px">No contributor rewards recorded yet. This panel populates once Wave ' + WAVE_NUM + ' starts and issues get closed+rewarded.</div>');
     return;
   }
-  // Full table with all stats per contributor
   const rows = all.map((c, i) => {
     const cpx = c.complexityBreakdown || {};
     const cpxS = Object.entries(cpx).map(([k,v]) => `${k}:${v}`).join(' · ') || '—';
@@ -924,30 +1093,28 @@ function openContributorsModal(){
         <td>${c.issuesClosed}</td>
         <td>${c.avgPointsPerIssue || '—'}</td>
         <td>${c.reposCount || (repos ? repos.length : 0)}</td>
-        <td>${cpxS}</td>
+        <td style="text-align:left">${cpxS}</td>
         <td>${firstC}</td>
         <td>${lastC}</td>
-        <td><a href="https://github.com/${c.contributor}" target="_blank" rel="noopener" style="font-size:10px">profile ↗</a></td>
       </tr>
     `;
   }).join('');
   const body = `
-    <table class="payout-table">
+    <table class="data-table">
       <thead>
         <tr>
           <th>#</th><th>Contributor</th>
           <th>Points</th><th>Issues</th>
           <th>Avg pts/issue</th><th># Repos</th>
-          <th>Complexity mix</th>
+          <th style="text-align:left">Complexity mix</th>
           <th>First closed</th><th>Last closed</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
   `;
   openModal(`All Contributors — Wave ${WAVE_NUM}`,
-            `${total} contributors paid · sorted by points earned · click a username to open GitHub`,
+            `${total} contributors · sorted by points · click username to open GitHub`,
             body);
 }
 
@@ -956,13 +1123,12 @@ function openReposModal(){
   const all = _snap.perRepo.topRepos || [];
   const total = _snap.perRepo.totalRepos || all.length;
   if(!all.length){
-    openModal('All Repos', '0 repos',
-      '<div class="vel-empty" style="padding:48px">No active repos.</div>');
+    openModal('All Repos', '0 repos', '<div class="vel-empty" style="padding:48px">No active repos.</div>');
     return;
   }
   const rows = all.map((r, i) => {
-    const featured = r.isFeatured ? '<span class="featured-tag">★</span>' : '';
-    const tags = (r.tags || []).map(t => `<span class="repo-tag">${t}</span>`).join(' ');
+    const featured = r.isFeatured ? '<span class="tag featured">★</span>' : '';
+    const tags = (r.tags || []).map(t => `<span class="tag">${t}</span>`).join(' ');
     const budget = r.pointsBudget != null ? `${fmt(r.pointsUsed||0)} / ${fmt(r.pointsBudget)}` : '—';
     const ttc = r.avgTimeToCloseHours != null ? r.avgTimeToCloseHours : '—';
     return `
@@ -982,7 +1148,7 @@ function openReposModal(){
     `;
   }).join('');
   const body = `
-    <table class="repo-table">
+    <table class="data-table">
       <thead>
         <tr>
           <th>#</th><th>Repo / Org</th>
@@ -996,55 +1162,31 @@ function openReposModal(){
     </table>
   `;
   openModal(`All Repos — Wave ${WAVE_NUM}`,
-            `${total} repos active · sorted by points scored then open count · click a repo to open GitHub`,
+            `${total} repos · sorted by points scored then open count · click repo to open GitHub`,
             body);
 }
 
-function renderSparkline(history){
-  const svg = document.getElementById('spark');
-  if(!history || history.length < 2){ svg.innerHTML = '<text x="500" y="70" text-anchor="middle" fill="#5a6378" font-size="12" font-family="monospace">Not enough runs yet — sparkline appears after 2+ runs.</text>'; return; }
-  const W = 1000, H = 140, pad = 10;
-  const xs = history.map((_,i) => pad + (i/(history.length-1)) * (W - 2*pad));
-  const allVals = history.flatMap(h => [h.openTotalPoints||0, h.maxTotalPoints||0, h.scoredPoints||0]);
-  const maxV = Math.max(...allVals, 1);
-  const ys = v => H - pad - (v / maxV) * (H - 2*pad);
-  const pathFor = (vals, color) => {
-    let d = '';
-    vals.forEach((v,i) => { d += (i===0?'M':'L') + xs[i].toFixed(1) + ',' + ys(v).toFixed(1) + ' '; });
-    return `<path d="${d}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />`;
-  };
-  svg.innerHTML =
-    pathFor(history.map(h => h.openTotalPoints||0), '#7dd3fc') +
-    pathFor(history.map(h => h.maxTotalPoints||0),  '#a78bfa') +
-    pathFor(history.map(h => h.scoredPoints||0),   '#34d399');
-}
-
+// ─── Main render ───
 function render(snap, history){
   document.getElementById('loading').classList.add('hidden');
   document.getElementById('content').classList.remove('hidden');
-
-  _snap = snap;   // cache for modal rendering
+  _snap = snap;
 
   const w = snap.wave || {};
   const oi = snap.openIssues || {};
   const cw = snap.closedInWave11 || {};
   const ni = snap.newIssuesSinceLastRun || {};
 
-  // header
   document.getElementById('m-window').textContent = `${shortDate(w.startDate)} → ${shortDate(w.endDate)}`;
-  document.getElementById('m-budget').textContent = w.budgetUSD ? '$' + Number(w.budgetUSD).toLocaleString('en-US') : '—';
-  // Next refresh = time until next top-of-hour UTC (the bot's cron schedule).
-  // Updates live every second so the countdown ticks down visibly.
+  document.getElementById('m-budget').textContent = w.budgetUSD ? usd(Number(w.budgetUSD)) : '—';
   document.getElementById('m-next').textContent = timeUntilNextHourlyRun();
-
   setStatus(w.status, w.inWaveWindowNow);
 
-  // stats
   document.getElementById('s-open').textContent = fmt(oi.total);
   document.getElementById('s-open-sub').textContent = `${fmt(oi.total)} open Wave issues`;
   document.getElementById('s-max').textContent = fmt(snap.maxTotalPoints);
   document.getElementById('s-scored').textContent = fmt(snap.scoredPoints);
-  document.getElementById('s-closed').textContent = fmt(cw.uniqueIssues);
+  document.getElementById('s-scored-sub').innerHTML = `Σ pointsEarned · <b>${fmt(cw.uniqueIssues)}</b> closed`;
   document.getElementById('s-remaining').textContent = fmt(snap.remainingPoints);
   document.getElementById('s-new').textContent = fmt(ni.newSinceLastRun);
   document.getElementById('s-contrib').textContent = fmt(snap.contributorsCount);
@@ -1055,7 +1197,6 @@ function render(snap, history){
     document.getElementById('s-top-contrib').textContent = 'no rewards yet';
   }
 
-  // progress bar
   const pct = snap.maxTotalPoints > 0 ? (snap.scoredPoints / snap.maxTotalPoints * 100) : 0;
   document.getElementById('prog-pct').textContent = pct.toFixed(2) + ' %';
   setTimeout(() => { document.getElementById('prog-fill').style.width = pct + '%'; }, 80);
@@ -1063,20 +1204,16 @@ function render(snap, history){
   document.getElementById('prog-max').textContent = fmt(snap.maxTotalPoints);
   document.getElementById('prog-remaining').textContent = fmt(snap.remainingPoints);
 
-  // distribution + contributors + sparkline + new issues
   renderDist(oi.distribution);
   renderContributors(snap.allContributors, snap.topContributors);
   renderSparkline(history);
   renderNewIssues(ni.newIssuesSample);
-
-  // NEW: per-repo + economics + velocity + pipeline + quality
   renderPerRepo(snap.perRepo);
   renderEconomics(snap.waveEconomics);
   renderVelocity(snap.velocity);
   renderPipeline(snap.applicationPipeline, oi.total);
   renderQuality(snap.issueQuality);
 
-  // footer
   document.getElementById('last-run').textContent = `Last run: ${shortDate(snap.runAt)} UTC`;
 }
 
@@ -1096,13 +1233,10 @@ async function main(){
 }
 
 main();
-// Live-tick the "Next refresh" countdown every second, so users see it count
-// down to the next hourly bot run instead of a frozen number.
 setInterval(() => {
   const el = document.getElementById('m-next');
   if(el && !el.closest('.hidden')) el.textContent = timeUntilNextHourlyRun();
 }, 1000);
-// Refresh the page every 10 minutes so the site picks up new commits
 setTimeout(() => location.reload(), 10 * 60 * 1000);
 </script>
 </body>
