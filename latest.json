@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-14T02:39:16+00:00",
+  "runAt": "2026-11-14T10:04:42+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 9637,
-    "totalPoints": 1632150,
+    "total": 9718,
+    "totalPoints": 1651950,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 3616,
-        "sharePct": 37.52,
-        "currentContribution": 417600,
+        "count": 3580,
+        "sharePct": 36.84,
+        "currentContribution": 414000,
         "multiplierBreakdown": {
-          "1": 3110,
+          "1": 3074,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 3110,
+          "100": 3074,
           "200": 479,
           "400": 27
         }
@@ -33,7 +33,7 @@
         "complexity": "medium",
         "basePoints": 150,
         "count": 683,
-        "sharePct": 7.09,
+        "sharePct": 7.03,
         "currentContribution": 111150,
         "multiplierBreakdown": {
           "1": 643,
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5338,
-        "sharePct": 55.39,
-        "currentContribution": 1103400,
+        "count": 5455,
+        "sharePct": 56.13,
+        "currentContribution": 1126800,
         "multiplierBreakdown": {
-          "1": 5171,
+          "1": 5288,
           "2": 161,
           "4": 6
         },
         "actualPointsBreakdown": {
-          "200": 5171,
+          "200": 5288,
           "400": 161,
           "800": 6
         }
@@ -71,20 +71,241 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1632150,
+  "maxTotalPoints": 1651950,
   "scoredPoints": 0,
-  "remainingPoints": 1632150,
+  "remainingPoints": 1651950,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 0,
+    "newSinceLastRun": 40,
     "prevOpenCount": 9637,
-    "currentOpenCount": 9637,
-    "newIssuesSample": []
+    "currentOpenCount": 9718,
+    "newIssuesSample": [
+      {
+        "number": 282,
+        "title": "Docs still say the registry has \"15 unit tests\" and Phase 2 is \"XLM payments only\"",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/282",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:08:03.000Z"
+      },
+      {
+        "number": 281,
+        "title": "Registry `deactivate` succeeds on an already-deactivated agent and re-emits the `deactivated` event",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/281",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:08:00.000Z"
+      },
+      {
+        "number": 280,
+        "title": "CI never runs the repo's own verification scripts \u2014 `test:coverage` and the examples smoke are unwired",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/280",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:57.000Z"
+      },
+      {
+        "number": 279,
+        "title": "Transaction fee is hardcoded to 100000 stroops (100x base fee) in all three builders, with no configuration or surge handling",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/279",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:54.000Z"
+      },
+      {
+        "number": 278,
+        "title": "Simulator never checks the destination account \u2014 payments to unfunded accounts or accounts lacking the trustline pass simulation",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/278",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:51.000Z"
+      },
+      {
+        "number": 277,
+        "title": "Ambiguous direct-path submissions are never reconciled \u2014 a `failed` activity carrying a `txHash` is never re-checked",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/277",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:48.000Z"
+      },
+      {
+        "number": 276,
+        "title": "Reconciler never retires executions stuck in `submitted` \u2014 a `not_found` transaction stays `submitted` forever",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/276",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:46.000Z"
+      },
+      {
+        "number": 275,
+        "title": "Approved intents never execute on the default queue path \u2014 the queue re-runs `pipeline.execute()` instead of `executeApproved()`",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/275",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:43.000Z"
+      },
+      {
+        "number": 274,
+        "title": "`DevAuthProvider` has zero unit tests",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/274",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:40.000Z"
+      },
+      {
+        "number": 273,
+        "title": "Typed client is missing `healthReady()` for the documented `GET /health/ready`",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/273",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:36.000Z"
+      },
+      {
+        "number": 272,
+        "title": "CLI `approval list` has no `--status` / `--limit` filtering",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/272",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:34.000Z"
+      },
+      {
+        "number": 271,
+        "title": "CLI `execution list` silently ignores its declared `limit` argument",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/271",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:31.000Z"
+      },
+      {
+        "number": 270,
+        "title": "Submit page has no `contract_call` intent support (CLI and API already do)",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/270",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:28.000Z"
+      },
+      {
+        "number": 269,
+        "title": "Executions status filter is client-side only and silently wrong across pagination (follow-up to #108)",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/269",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:26.000Z"
+      },
+      {
+        "number": 268,
+        "title": "Replace native `confirm()` with the existing accessible `Modal` for destructive actions",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/268",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:22.000Z"
+      },
+      {
+        "number": 267,
+        "title": "Web dashboard API client has no request timeout \u2014 a hung API hangs the UI forever",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/267",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:20.000Z"
+      },
+      {
+        "number": 266,
+        "title": "`RATE_LIMITED` is missing from the error-code contract \u2014 auth 429s bypass the standard envelope",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/266",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:16.000Z"
+      },
+      {
+        "number": 265,
+        "title": "Expired Stellar challenges and OAuth states are never pruned from memory",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/265",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:14.000Z"
+      },
+      {
+        "number": 264,
+        "title": "Strict amount-string validation \u2014 `parseFloat` accepts `\"10abc\"`, `\"1e2\"`, and trailing junk as valid amounts",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/264",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:10.000Z"
+      },
+      {
+        "number": 263,
+        "title": "Add `?status=` filtering to schedule and activity list endpoints",
+        "repo": "naninu123/4evergent",
+        "url": "https://github.com/naninu123/4evergent/issues/263",
+        "complexity": null,
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-14T06:07:07.000Z"
+      }
+    ]
   },
   "topContributors": [],
   "allContributors": [],
   "contributorsCount": 0,
   "perRepo": {
-    "totalRepos": 567,
+    "totalRepos": 569,
     "topRepos": [
       {
         "repo": "Farm-credit/stellar-app-os",
@@ -824,6 +1045,23 @@
         "tags": []
       },
       {
+        "repo": "naninu123/4evergent",
+        "repoUrl": "https://github.com/naninu123/4evergent",
+        "org": "naninu123",
+        "openIssues": 47,
+        "unassignedOpen": 46,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 1,
+        "avgTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 6400,
+        "pointsRemaining": 18600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Miracle656/wraith",
         "repoUrl": "https://github.com/Miracle656/wraith",
         "org": "Miracle656",
@@ -928,29 +1166,12 @@
         "tags": [
           "Stellar Agentic Hackathon"
         ]
-      },
-      {
-        "repo": "nextellarlabs/nextellar",
-        "repoUrl": "https://github.com/nextellarlabs/nextellar",
-        "org": "nextellarlabs",
-        "openIssues": 45,
-        "unassignedOpen": 3,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 32,
-        "avgTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 7050,
-        "pointsRemaining": 17950,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
       }
     ]
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.045952,
+    "usdPerPoint": 0.045401,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
     "projectedFinalScoredPts": 0,
@@ -971,7 +1192,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4797,
+    "openAssigned": 4796,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -1097,15 +1318,15 @@
         "dueDate": "2026-10-22T13:00:56.198000+00:00"
       }
     ],
-    "staleAssignmentsCount": 4797
+    "staleAssignmentsCount": 4796
   },
   "issueQuality": {
-    "closedWithPR": 348138,
+    "closedWithPR": 348139,
     "closedWithoutPR": 13478,
     "prToIssueRatio": 96.27,
     "bounceRate": 3.73,
-    "staleOpenIssues": 7828,
+    "staleOpenIssues": 7835,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 0
+    "recentlyActiveOpen": 12
   }
 }
