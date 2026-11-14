@@ -1,0 +1,34 @@
+# Drips Stellar Wave 11 — snapshot
+
+**Run at (UTC):** 2026-11-14T11:42:23+00:00  
+**Wave 11 window:** 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  
+**Status:** upcoming  
+**Prize budget:** $75,000  
+**In Wave window right now?** NO
+
+## Max points (PRECISE — `Σ (points × pointsMultiplier)` per issue, NOT ×4)
+
+- **Open issues total points:** 1,651,950 pts (across 9,718 open issues)
+- **Closed-in-Wave-11 total points:** 0 pts (across 0 closed+PR issues in Wave window)
+- **Max total points that can be scored:** **1,651,950 pts**  _(= open + closed-in-wave)_
+- **Scored so far (Σ `pointsEarned`):** **0 pts**
+- **Remaining claimable points:** **1,651,950 pts**
+
+### Distribution by complexity (precise per-issue `points × pointsMultiplier`)
+
+| Complexity | Base pts | # open issues | Share | Multiplier breakdown | Actual-pts breakdown | Current contribution (precise) |
+|:--|--:|--:|--:|---|---|--:|
+| small | 100 | 3,580 | 36.84% | ×1=3074, ×2=479, ×4=27 | 100pts=3074, 200pts=479, 400pts=27 | 414,000 |
+| medium | 150 | 683 | 7.03% | ×1=643, ×2=31, ×4=9 | 150pts=643, 300pts=31, 600pts=9 | 111,150 |
+| large | 200 | 5,455 | 56.13% | ×1=5288, ×2=161, ×4=6 | 200pts=5288, 400pts=161, 800pts=6 | 1,126,800 |
+
+## New issues opened since last run
+
+- **New since last run:** 0
+- **Previous open count:** 9,718
+- **Current open count:** 9,718
+
+
+## Top contributors (by points earned in Wave 11)
+
+_No contributor rewards recorded yet in Wave 11 (either before Wave start, or no issues closed-and-rewarded yet)._

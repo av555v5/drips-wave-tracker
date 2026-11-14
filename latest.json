@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-14T10:04:42+00:00",
+  "runAt": "2026-11-14T11:42:23+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -75,231 +75,10 @@
   "scoredPoints": 0,
   "remainingPoints": 1651950,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 40,
-    "prevOpenCount": 9637,
+    "newSinceLastRun": 0,
+    "prevOpenCount": 9718,
     "currentOpenCount": 9718,
-    "newIssuesSample": [
-      {
-        "number": 282,
-        "title": "Docs still say the registry has \"15 unit tests\" and Phase 2 is \"XLM payments only\"",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/282",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:08:03.000Z"
-      },
-      {
-        "number": 281,
-        "title": "Registry `deactivate` succeeds on an already-deactivated agent and re-emits the `deactivated` event",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/281",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:08:00.000Z"
-      },
-      {
-        "number": 280,
-        "title": "CI never runs the repo's own verification scripts \u2014 `test:coverage` and the examples smoke are unwired",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/280",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:57.000Z"
-      },
-      {
-        "number": 279,
-        "title": "Transaction fee is hardcoded to 100000 stroops (100x base fee) in all three builders, with no configuration or surge handling",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/279",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:54.000Z"
-      },
-      {
-        "number": 278,
-        "title": "Simulator never checks the destination account \u2014 payments to unfunded accounts or accounts lacking the trustline pass simulation",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/278",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:51.000Z"
-      },
-      {
-        "number": 277,
-        "title": "Ambiguous direct-path submissions are never reconciled \u2014 a `failed` activity carrying a `txHash` is never re-checked",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/277",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:48.000Z"
-      },
-      {
-        "number": 276,
-        "title": "Reconciler never retires executions stuck in `submitted` \u2014 a `not_found` transaction stays `submitted` forever",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/276",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:46.000Z"
-      },
-      {
-        "number": 275,
-        "title": "Approved intents never execute on the default queue path \u2014 the queue re-runs `pipeline.execute()` instead of `executeApproved()`",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/275",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:43.000Z"
-      },
-      {
-        "number": 274,
-        "title": "`DevAuthProvider` has zero unit tests",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/274",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:40.000Z"
-      },
-      {
-        "number": 273,
-        "title": "Typed client is missing `healthReady()` for the documented `GET /health/ready`",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/273",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:36.000Z"
-      },
-      {
-        "number": 272,
-        "title": "CLI `approval list` has no `--status` / `--limit` filtering",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/272",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:34.000Z"
-      },
-      {
-        "number": 271,
-        "title": "CLI `execution list` silently ignores its declared `limit` argument",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/271",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:31.000Z"
-      },
-      {
-        "number": 270,
-        "title": "Submit page has no `contract_call` intent support (CLI and API already do)",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/270",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:28.000Z"
-      },
-      {
-        "number": 269,
-        "title": "Executions status filter is client-side only and silently wrong across pagination (follow-up to #108)",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/269",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:26.000Z"
-      },
-      {
-        "number": 268,
-        "title": "Replace native `confirm()` with the existing accessible `Modal` for destructive actions",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/268",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:22.000Z"
-      },
-      {
-        "number": 267,
-        "title": "Web dashboard API client has no request timeout \u2014 a hung API hangs the UI forever",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/267",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:20.000Z"
-      },
-      {
-        "number": 266,
-        "title": "`RATE_LIMITED` is missing from the error-code contract \u2014 auth 429s bypass the standard envelope",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/266",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:16.000Z"
-      },
-      {
-        "number": 265,
-        "title": "Expired Stellar challenges and OAuth states are never pruned from memory",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/265",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:14.000Z"
-      },
-      {
-        "number": 264,
-        "title": "Strict amount-string validation \u2014 `parseFloat` accepts `\"10abc\"`, `\"1e2\"`, and trailing junk as valid amounts",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/264",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:10.000Z"
-      },
-      {
-        "number": 263,
-        "title": "Add `?status=` filtering to schedule and activity list endpoints",
-        "repo": "naninu123/4evergent",
-        "url": "https://github.com/naninu123/4evergent/issues/263",
-        "complexity": null,
-        "points": 100,
-        "pointsMultiplier": 1,
-        "totalPoints": 100,
-        "createdAt": "2026-11-14T06:07:07.000Z"
-      }
-    ]
+    "newIssuesSample": []
   },
   "topContributors": [],
   "allContributors": [],
@@ -1322,11 +1101,11 @@
   },
   "issueQuality": {
     "closedWithPR": 348139,
-    "closedWithoutPR": 13478,
-    "prToIssueRatio": 96.27,
-    "bounceRate": 3.73,
+    "closedWithoutPR": 13602,
+    "prToIssueRatio": 96.24,
+    "bounceRate": 3.76,
     "staleOpenIssues": 7835,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 12
+    "recentlyActiveOpen": 0
   }
 }
