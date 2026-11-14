@@ -1,6 +1,6 @@
-=== Drips Wave 11 hourly bot — run at 2026-11-14T01:23:02.919596+00:00 ===
+=== Drips Wave 11 hourly bot — run at 2026-11-14T02:38:24.905175+00:00 ===
 
-[0/7] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-13T20:55:10+00:00, openIssues=9639)
+[0/7] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-14T01:23:54+00:00, openIssues=9637)
 [1/7] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
 [1/6] Fetching all open Wave issues (state=open only)...
   page 1: got 100, cumulative=100, total=9637, hasNext=True
@@ -34,18 +34,18 @@
   contributors         = 0
   newSinceLastRun      = 0
 
-[6/7] Writing snapshot to runs/2026-11-14T01-23Z/...
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T01-23Z/summary.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T01-23Z/summary.md
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T01-23Z/contributors.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T01-23Z/repos.json
+[6/7] Writing snapshot to runs/2026-11-14T02-39Z/...
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T02-39Z/summary.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T02-39Z/summary.md
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T02-39Z/contributors.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T02-39Z/repos.json
   appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
   updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
   wrote /home/runner/work/drips-wave-tracker/drips-wave-tracker/latest.json + /home/runner/work/drips-wave-tracker/drips-wave-tracker/history.json (for GitHub Pages site)
 [7/7] Pruning runs/ to keep last 10...
 
 === RUN SUMMARY ===
-Run at (UTC)        : 2026-11-14T01:23:54+00:00
+Run at (UTC)        : 2026-11-14T02:39:16+00:00
 Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
 In Wave window now? : False
 Open issues total   : 9,637

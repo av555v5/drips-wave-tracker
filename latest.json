@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-14T01:23:54+00:00",
+  "runAt": "2026-11-14T02:39:16+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -76,7 +76,7 @@
   "remainingPoints": 1632150,
   "newIssuesSinceLastRun": {
     "newSinceLastRun": 0,
-    "prevOpenCount": 9639,
+    "prevOpenCount": 9637,
     "currentOpenCount": 9637,
     "newIssuesSample": []
   },
