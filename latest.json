@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-14T11:42:23+00:00",
+  "runAt": "2026-11-14T17:51:03+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 9718,
-    "totalPoints": 1651950,
+    "total": 9717,
+    "totalPoints": 1651850,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 3580,
-        "sharePct": 36.84,
-        "currentContribution": 414000,
+        "count": 3579,
+        "sharePct": 36.83,
+        "currentContribution": 413900,
         "multiplierBreakdown": {
-          "1": 3074,
+          "1": 3073,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 3074,
+          "100": 3073,
           "200": 479,
           "400": 27
         }
@@ -50,7 +50,7 @@
         "complexity": "large",
         "basePoints": 200,
         "count": 5455,
-        "sharePct": 56.13,
+        "sharePct": 56.14,
         "currentContribution": 1126800,
         "multiplierBreakdown": {
           "1": 5288,
@@ -71,13 +71,13 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1651950,
+  "maxTotalPoints": 1651850,
   "scoredPoints": 0,
-  "remainingPoints": 1651950,
+  "remainingPoints": 1651850,
   "newIssuesSinceLastRun": {
     "newSinceLastRun": 0,
     "prevOpenCount": 9718,
-    "currentOpenCount": 9718,
+    "currentOpenCount": 9717,
     "newIssuesSample": []
   },
   "topContributors": [],
@@ -503,10 +503,10 @@
         "repoUrl": "https://github.com/Hamplard-Hub/Hamplard--contracts",
         "org": "Hamplard-Hub",
         "openIssues": 80,
-        "unassignedOpen": 76,
+        "unassignedOpen": 77,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 3,
+        "distinctContributors": 2,
         "avgTimeToCloseHours": null,
         "pointsBudget": 25000,
         "pointsUsed": 8000,
@@ -950,7 +950,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.045401,
+    "usdPerPoint": 0.045404,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
     "projectedFinalScoredPts": 0,
@@ -971,7 +971,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4796,
+    "openAssigned": 4795,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -1097,14 +1097,14 @@
         "dueDate": "2026-10-22T13:00:56.198000+00:00"
       }
     ],
-    "staleAssignmentsCount": 4796
+    "staleAssignmentsCount": 4795
   },
   "issueQuality": {
     "closedWithPR": 348139,
-    "closedWithoutPR": 13602,
+    "closedWithoutPR": 13603,
     "prToIssueRatio": 96.24,
     "bounceRate": 3.76,
-    "staleOpenIssues": 7835,
+    "staleOpenIssues": 7837,
     "staleThresholdDays": 7,
     "recentlyActiveOpen": 0
   }
