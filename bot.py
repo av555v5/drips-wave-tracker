@@ -609,10 +609,11 @@ def write_summary(run_ts: dt.datetime, wave11: dict | None,
         ],
         'contributorsCount': len(contributors),
 
-        # ─── NEW: per-repo analytics (top 50 in snapshot, full table in repos.json) ───
+        # ─── NEW: per-repo analytics (FULL list in snapshot so the site's
+        # "View all repos" modal can render every repo, not just the top 50) ───
         'perRepo': {
             'totalRepos': len(per_repo),
-            'topRepos':   per_repo[:50],
+            'topRepos':   per_repo,   # full list — ~200 bytes/repo × 569 = ~115KB, fine for latest.json
         },
 
         # ─── NEW: wave economics / payout modeling ───
