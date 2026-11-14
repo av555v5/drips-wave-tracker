@@ -1,7 +1,7 @@
-=== Drips Wave 11 hourly bot — run at 2026-11-14T18:43:37.521035+00:00 ===
+=== Drips Wave 11 hourly bot — run at 2026-11-14T19:11:07.083252+00:00 ===
 
-[0/7] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-14T18:11:47+00:00, openIssues=9717)
-[0/7] Last run was 31.8 min ago — proceeding.
+[0/7] Loaded last run state from /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json (run at 2026-11-14T18:44:24+00:00, openIssues=9717)
+[0/7] Last run was 26.7 min ago — proceeding.
 [1/7] Wave 11: start=2026-11-18T14:00:35.145Z end=2026-11-25T14:00:55.830Z status=upcoming budget=$75000.00
 [1/6] Fetching all open Wave issues (state=open only)...
   page 1: got 100, cumulative=100, total=9717, hasNext=True
@@ -35,19 +35,19 @@
   contributors         = 0
   newSinceLastRun      = 0
 
-[6/7] Writing snapshot to runs/2026-11-14T18-44Z/...
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T18-44Z/summary.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T18-44Z/summary.md
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T18-44Z/contributors.json
-  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T18-44Z/repos.json
+[6/7] Writing snapshot to runs/2026-11-14T19-11Z/...
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/summary.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/summary.md
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/contributors.json
+  → /home/runner/work/drips-wave-tracker/drips-wave-tracker/runs/2026-11-14T19-11Z/repos.json
   appended row to /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/history.jsonl
   updated /home/runner/work/drips-wave-tracker/drips-wave-tracker/state/last_run.json
   wrote /home/runner/work/drips-wave-tracker/drips-wave-tracker/latest.json + /home/runner/work/drips-wave-tracker/drips-wave-tracker/history.json (for GitHub Pages site)
 [7/7] Pruning runs/ to keep last 10...
-  pruned old run: 2026-11-13T20-08Z
+  pruned old run: 2026-11-13T20-21Z
 
 === RUN SUMMARY ===
-Run at (UTC)        : 2026-11-14T18:44:24+00:00
+Run at (UTC)        : 2026-11-14T19:11:54+00:00
 Wave 11 status      : upcoming  (2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z)
 In Wave window now? : False
 Open issues total   : 9,717
