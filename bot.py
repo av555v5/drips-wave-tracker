@@ -725,6 +725,56 @@ def prune_old_runs(keep: int = KEEP_RUNS) -> None:
         log(f'  pruned old run: {old.name}')
 
 
+def build_runs_index() -> None:
+    """runs.json: one compact row per stored run (the last KEEP_RUNS), read from
+    each run's summary.json, so the dashboard can show and compare them with a
+    single fetch. GitHub Pages cannot list a directory, so this index is what
+    tells the page which runs exist. Tolerates summaries written by older
+    versions of this script (missing keys become null)."""
+    def dig(o, *keys):
+        for k in keys:
+            if not isinstance(o, dict):
+                return None
+            o = o.get(k)
+        return o
+
+    rows = []
+    for d in sorted(p for p in RUNS_DIR.iterdir() if p.is_dir()) if RUNS_DIR.exists() else []:
+        f = d / 'summary.json'
+        if not f.exists():
+            continue
+        try:
+            s = json.loads(f.read_text(encoding='utf-8'))
+        except (OSError, json.JSONDecodeError) as e:
+            log(f'  WARN: skipped {d.name} in runs.json: {e}')
+            continue
+        dist = {b.get('complexity'): {'count': b.get('count'), 'points': b.get('currentContribution')}
+                for b in (dig(s, 'openIssues', 'distribution') or [])}
+        rows.append({
+            'dir': d.name, 'runAt': s.get('runAt'),
+            'status': dig(s, 'wave', 'status'), 'inWaveWindowNow': dig(s, 'wave', 'inWaveWindowNow'),
+            'openIssues': dig(s, 'openIssues', 'total'), 'openPoints': dig(s, 'openIssues', 'totalPoints'),
+            'closedIssues': dig(s, 'closedInWave11', 'uniqueIssues'), 'closedPoints': dig(s, 'closedInWave11', 'closedTotalPoints'),
+            'maxPoints': s.get('maxTotalPoints'), 'scoredPoints': s.get('scoredPoints'),
+            'remainingPoints': s.get('remainingPoints'),
+            'newIssues': dig(s, 'newIssuesSinceLastRun', 'newSinceLastRun'),
+            'contributors': s.get('contributorsCount'), 'repos': dig(s, 'perRepo', 'totalRepos'),
+            'usdPaid': dig(s, 'waveEconomics', 'usdPaid'), 'usdPerPoint': dig(s, 'waveEconomics', 'usdPerPoint'),
+            'projectedFinal': dig(s, 'waveEconomics', 'projectedFinalScoredPts'),
+            'assigned': dig(s, 'applicationPipeline', 'openAssigned'),
+            'appsNoAssign': dig(s, 'applicationPipeline', 'openWithAppsNoAssignment'),
+            'stale': dig(s, 'applicationPipeline', 'staleAssignmentsCount'),
+            'prRatio': dig(s, 'issueQuality', 'prToIssueRatio'), 'bounceRate': dig(s, 'issueQuality', 'bounceRate'),
+            'warnings': len(dig(s, 'dataQuality', 'warnings') or []),
+            'basis': dig(s, 'dataQuality', 'reconciliation', 'basisUsed'),
+            'distribution': dist,
+            'top': (s.get('topContributors') or [])[:3],
+        })
+    write_atomic(ROOT / 'runs.json', json.dumps(
+        {'generatedAt': utcnow().replace(microsecond=0).isoformat(), 'keep': KEEP_RUNS, 'runs': rows}, indent=1))
+    log(f'  wrote runs.json ({len(rows)} runs)')
+
+
 # ──────────────────────────── MAIN ────────────────────────────
 def main() -> int:
     started = utcnow().replace(microsecond=0)         # one `now` for every time-based metric
@@ -841,6 +891,7 @@ def main() -> int:
         'closedWithPRCount': with_pr, 'closedWithoutPRCount': without_pr}))
     write_latest_for_site(snap)
     prune_old_runs()
+    build_runs_index()
 
     log('\n=== RUN SUMMARY ===')
     log(f'Run at (UTC)      : {snap["runAt"]}   in window now: {snap["wave"]["inWaveWindowNow"]}')
