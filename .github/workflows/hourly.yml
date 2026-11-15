@@ -87,7 +87,7 @@ jobs:
           git config user.email "wave-bot@users.noreply.github.com"
           # Stage each path on its own: one `git add a b c` stages NOTHING if
           # any single path is missing. -A also records pruned run dirs.
-          for p in runs state runs_log.txt latest.json history.json; do
+          for p in runs state runs_log.txt latest.json history.json runs.json; do
             if [ -e "$p" ] || git ls-files --error-unmatch "$p" >/dev/null 2>&1; then
               git add -A "$p"
             fi
@@ -111,6 +111,7 @@ jobs:
             state/
             latest.json
             history.json
+            runs.json
           retention-days: 30
 
       - name: Send summary to webhook (Slack/Discord/Telegram)
