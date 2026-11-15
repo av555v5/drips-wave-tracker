@@ -1,0 +1,416 @@
+{
+ "generatedAt": "2026-11-15T14:52:16+00:00",
+ "keep": 10,
+ "runs": [
+  {
+   "dir": "2026-11-14T18-44Z",
+   "runAt": "2026-11-14T18:44:24+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9717,
+   "openPoints": 1651850,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1651850,
+   "scoredPoints": 0,
+   "remainingPoints": 1651850,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 569,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045404,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": null,
+   "distribution": {
+    "small": {
+     "count": 3579,
+     "points": 413900
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5455,
+     "points": 1126800
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-14T19-11Z",
+   "runAt": "2026-11-14T19:11:54+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9717,
+   "openPoints": 1651850,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1651850,
+   "scoredPoints": 0,
+   "remainingPoints": 1651850,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 569,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045404,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": null,
+   "distribution": {
+    "small": {
+     "count": 3579,
+     "points": 413900
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5455,
+     "points": 1126800
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-14T19-30Z",
+   "runAt": "2026-11-14T19:30:57+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9739,
+   "openPoints": 1656250,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1656250,
+   "scoredPoints": 0,
+   "remainingPoints": 1656250,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 571,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045283,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": null,
+   "distribution": {
+    "small": {
+     "count": 3579,
+     "points": 413900
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5477,
+     "points": 1131200
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-14T23-51Z",
+   "runAt": "2026-11-14T23:51:37+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9735,
+   "openPoints": 1655550,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1655550,
+   "scoredPoints": 0,
+   "remainingPoints": 1655550,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 571,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045302,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": null,
+   "distribution": {
+    "small": {
+     "count": 3578,
+     "points": 413800
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5474,
+     "points": 1130600
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T06-17Z",
+   "runAt": "2026-11-15T06:17:15+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9735,
+   "openPoints": 1655550,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1655550,
+   "scoredPoints": 0,
+   "remainingPoints": 1655550,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 571,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045302,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": null,
+   "distribution": {
+    "small": {
+     "count": 3578,
+     "points": 413800
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5474,
+     "points": 1130600
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T06-33Z",
+   "runAt": "2026-11-15T06:33:56+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9735,
+   "openPoints": 1655550,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1655550,
+   "scoredPoints": 0,
+   "remainingPoints": 1655550,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 571,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045302,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3578,
+     "points": 413800
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5474,
+     "points": 1130600
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T10-14Z",
+   "runAt": "2026-11-15T10:14:34+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9686,
+   "openPoints": 1645750,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1645750,
+   "scoredPoints": 0,
+   "remainingPoints": 1645750,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 572,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045572,
+   "projectedFinal": 0,
+   "assigned": 4795,
+   "appsNoAssign": 0,
+   "stale": 4795,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3578,
+     "points": 413800
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5425,
+     "points": 1120800
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T11-53Z",
+   "runAt": "2026-11-15T11:53:31+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9682,
+   "openPoints": 1644950,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1644950,
+   "scoredPoints": 0,
+   "remainingPoints": 1644950,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 571,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.045594,
+   "projectedFinal": 0,
+   "assigned": 4791,
+   "appsNoAssign": 0,
+   "stale": 4791,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3578,
+     "points": 413800
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5421,
+     "points": 1120000
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T14-36Z",
+   "runAt": "2026-11-15T14:36:58+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9937,
+   "openPoints": 1675450,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1675450,
+   "scoredPoints": 0,
+   "remainingPoints": 1675450,
+   "newIssues": 191,
+   "contributors": 0,
+   "repos": 573,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.044764,
+   "projectedFinal": 0,
+   "assigned": 4771,
+   "appsNoAssign": 0,
+   "stale": 4771,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3783,
+     "points": 434300
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5471,
+     "points": 1130000
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T14-51Z",
+   "runAt": "2026-11-15T14:51:28+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 9968,
+   "openPoints": 1678550,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1678550,
+   "scoredPoints": 0,
+   "remainingPoints": 1678550,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 573,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.044681,
+   "projectedFinal": 0,
+   "assigned": 4771,
+   "appsNoAssign": 0,
+   "stale": 4771,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3814,
+     "points": 437400
+    },
+    "medium": {
+     "count": 683,
+     "points": 111150
+    },
+    "large": {
+     "count": 5471,
+     "points": 1130000
+    }
+   },
+   "top": []
+  }
+ ]
+}
