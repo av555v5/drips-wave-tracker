@@ -74,6 +74,7 @@ pre{font:inherit;white-space:pre;overflow:hidden;line-height:2}
   <button data-v="repos">[3] repos <span id="n-r"></span></button>
   <button data-v="economics">[4] economics</button>
   <button data-v="pipeline">[5] pipeline</button>
+  <button data-v="data">[6] data <span id="n-w"></span></button>
 </div>
 
 <main id="main">
@@ -115,9 +116,17 @@ pre{font:inherit;white-space:pre;overflow:hidden;line-height:2}
       <div class="blk grow"><h2>stale assignments <small>past due date</small></h2><div class="fit f" id="t-stale"></div></div>
     </div>
   </div>
+
+  <div class="v full hidden" id="v-data">
+    <div class="g g2">
+      <div class="blk"><h2>closed in wave <small id="rc-sub">by definition</small></h2><div id="rc-tbl" style="height:150px"></div><div id="rc-kv" style="margin-top:16px"></div></div>
+      <div class="blk"><h2>fetch checks</h2><div id="dq-kv"></div></div>
+    </div>
+    <div class="blk"><h2>warnings</h2><pre id="dq-warn" style="white-space:pre-wrap"></pre></div>
+  </div>
 </main>
 
-<div id="bar"><span>1-5 view · / filter · r reload · click header to sort</span><span id="last-run">—</span></div>
+<div id="bar"><span>1-6 view · / filter · r reload · click header to sort</span><span id="last-run">—</span></div>
 <span id="cw">0000000000</span>
 
 <script>
@@ -169,7 +178,7 @@ function table(host, cols, rows, o = {}){
 }
 
 /* ── Shell ── */
-const views = ['overview','contributors','repos','economics','pipeline'];
+const views = ['overview','contributors','repos','economics','pipeline','data'];
 let cur = 'overview', _snap = null, _hist = [], _ready = false;
 function show(v){
   if(!views.includes(v)) v = 'overview';
@@ -183,7 +192,7 @@ addEventListener('hashchange', () => { if(_ready) show(location.hash.slice(1)); 
 addEventListener('keydown', e => {
   if(e.target.matches('input')){ if(e.key === 'Escape') e.target.blur(); return; }
   if(e.metaKey || e.ctrlKey || e.altKey) return;
-  const i = '12345'.indexOf(e.key);
+  const i = '123456'.indexOf(e.key);
   if(i >= 0) location.hash = views[i];
   else if(e.key === '/'){ const q = document.querySelector('#v-'+cur+' .q'); if(q){ e.preventDefault(); q.focus(); } }
   else if(e.key === 'r') load();
@@ -253,7 +262,28 @@ function renderPipeline(ap, tot){
 function renderQuality(q){
   if(!q){ $('qual-kv').innerHTML = '<span class="d">no data</span>'; return; }
   $('qual-kv').innerHTML = kv('closed with pr', fmt(q.closedWithPR)) + kv('closed without pr', fmt(q.closedWithoutPR)) + kv('pr ratio', q.prToIssueRatio+'%') + kv('bounce rate', q.bounceRate+'%') +
-    kv(`stale open (>${q.staleThresholdDays}d)`, fmt(q.staleOpenIssues)) + kv('active in last hour', fmt(q.recentlyActiveOpen));
+    kv(`stale open (>${q.staleThresholdDays}d)`, fmt(q.staleOpenIssues)) + kv('active in last ' + (q.recentWindowHours || 1) + 'h', fmt(q.recentlyActiveOpen));
+}
+
+function renderData(dq){
+  dq = dq || {};
+  const rc = dq.reconciliation, w = dq.warnings || [];
+  $('n-w').textContent = w.length ? '!' + w.length : '';
+  if(rc){
+    $('rc-sub').textContent = 'basis used: ' + rc.basisUsed;
+    table($('rc-tbl'), [
+      {l:'definition',k:'def',w:'12ch'}, {l:'issues',k:'issues',n:1,w:'1fr'}, {l:'rewarded',k:'rewarded',n:1,w:'1fr'},
+      {l:'pts scored',k:'scoredPoints',n:1,w:'1fr'}, {l:'total pts',k:'totalPoints',n:1,w:'1fr'}, {l:'used',k:'used',w:'6ch'}
+    ], Object.entries(rc.bases).map(([k,v]) => ({def:k, ...v, used:k === rc.basisUsed ? '●' : ''})), {search:false});
+    $('rc-kv').innerHTML = kv('resolvedInWave values', esc((rc.resolvedInWaveValues||[]).map(x => x[0] + ' ×' + x[1]).join(', ') || 'none'));
+  } else {
+    $('rc-tbl').innerHTML = '<span class="d">not in this snapshot yet: run the updated bot</span>'; $('rc-kv').innerHTML = '';
+  }
+  $('dq-kv').innerHTML = dq.openFetched == null ? '<span class="d">no data</span>' :
+    kv('open fetched / reported', `${fmt(dq.openFetched)} / ${fmt(dq.openReportedTotal)}`) + kv('open duplicates removed', fmt(dq.openDuplicatesRemoved)) +
+    kv('closed scanned', fmt(dq.closedScanned)) + kv('closed pages', fmt(dq.closedPagesScanned)) + kv('closed scan stopped early', String(dq.closedScanStoppedEarly)) +
+    kv('cursor pages used', fmt(dq.paginationCursorPages)) + kv('enrollments', fmt(dq.enrollments)) + kv('pr counts from last run', String(dq.countsStale));
+  $('dq-warn').textContent = w.length ? w.map(x => '! ' + x).join('\n') : 'none';
 }
 
 function renderEconomics(e){
@@ -301,7 +331,7 @@ function render(s, h){
   $('r-sub').textContent = `${fmt(repos.length)} of ${fmt(s.perRepo?.totalRepos ?? repos.length)} repos · click a header to sort`;
 
   renderKpis(s); renderDist(oi.distribution); renderVelocity(s.velocity);
-  renderPipeline(s.applicationPipeline, oi.total); renderQuality(s.issueQuality); renderEconomics(s.waveEconomics);
+  renderPipeline(s.applicationPipeline, oi.total); renderQuality(s.issueQuality); renderEconomics(s.waveEconomics); renderData(s.dataQuality);
   table($('t-c'), contribCols, all.map(x => ({...x})), {sort:2});
   table($('t-r'), repoCols, repos.map(x => ({...x})), {sort:6});
   table($('t-topc'), contribCols.slice(0,4), all.slice(0,10).map(x => ({...x})), {search:false});
