@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-15T18:02:00+00:00",
+ "generatedAt": "2026-11-15T20:02:22+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-14T19-11Z",
-   "runAt": "2026-11-14T19:11:54+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 9717,
-   "openPoints": 1651850,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1651850,
-   "scoredPoints": 0,
-   "remainingPoints": 1651850,
-   "newIssues": 0,
-   "contributors": 0,
-   "repos": 569,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.045404,
-   "projectedFinal": 0,
-   "assigned": 4795,
-   "appsNoAssign": 0,
-   "stale": 4795,
-   "prRatio": 96.24,
-   "bounceRate": 3.76,
-   "warnings": 0,
-   "basis": null,
-   "distribution": {
-    "small": {
-     "count": 3579,
-     "points": 413900
-    },
-    "medium": {
-     "count": 683,
-     "points": 111150
-    },
-    "large": {
-     "count": 5455,
-     "points": 1126800
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-14T19-30Z",
    "runAt": "2026-11-14T19:30:57+00:00",
@@ -384,6 +343,47 @@
    "scoredPoints": 0,
    "remainingPoints": 1713750,
    "newIssues": 239,
+   "contributors": 0,
+   "repos": 573,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.043764,
+   "projectedFinal": 0,
+   "assigned": 4770,
+   "appsNoAssign": 0,
+   "stale": 4770,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3924,
+     "points": 448400
+    },
+    "medium": {
+     "count": 711,
+     "points": 115350
+    },
+    "large": {
+     "count": 5571,
+     "points": 1150000
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-15T20-01Z",
+   "runAt": "2026-11-15T20:01:37+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 10206,
+   "openPoints": 1713750,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1713750,
+   "scoredPoints": 0,
+   "remainingPoints": 1713750,
+   "newIssues": 0,
    "contributors": 0,
    "repos": 573,
    "usdPaid": 0.0,
