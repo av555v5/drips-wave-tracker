@@ -6,6 +6,10 @@ on:
     # Minute 00 is when GitHub's scheduler is busiest, so runs there are often
     # delayed or silently skipped. An offset minute is much more reliable.
     - cron: '7 */2 * * *'
+    # Backup fire 30 min later. If GitHub delayed or dropped the first one, this
+    # catches up; if the first one ran, bot.py sees a recent run and exits in
+    # seconds (no commit, no webhook).
+    - cron: '37 */2 * * *'
   # Manual trigger from the Actions tab
   workflow_dispatch:
 
@@ -42,10 +46,16 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run bot
+        id: bot
+        # `shell: bash` enables pipefail, so a crash in bot.py fails the job
+        # instead of being hidden by `| tee` (the default shell has no pipefail).
+        shell: bash
         run: |
           python bot.py | tee runs_log.txt
+          if grep -q "SKIP:" runs_log.txt; then echo "skipped=true" >> "$GITHUB_OUTPUT"; fi
 
       - name: Commit results, state, and GitHub Pages data
+        if: steps.bot.outputs.skipped != 'true'
         run: |
           git config user.name  "wave-bot[bot]"
           git config user.email "wave-bot@users.noreply.github.com"
@@ -79,6 +89,7 @@ jobs:
           retention-days: 30
 
       - name: Send summary to webhook (Slack/Discord/Telegram)
+        if: steps.bot.outputs.skipped != 'true'
         # NOTE: GitHub Actions does not allow the `secrets` context directly
         # inside a step-level `if:` expression, so we always run this step
         # and bail out inside the script when WAVE_WEBHOOK_URL is empty.
