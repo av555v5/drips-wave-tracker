@@ -39,6 +39,9 @@ pre{font:inherit;white-space:pre;overflow:hidden;line-height:2}
 .kp .n{font-size:28px;font-weight:600;color:var(--hi);line-height:1.3;margin:2px 0}
 .kv{display:flex;justify-content:space-between;gap:3ch;max-width:56ch;padding:4px 0}.kv span{color:var(--dim)}.kv b{color:var(--hi);font-weight:400}
 .empty{color:var(--dim);padding:8px 0}
+select{font:inherit;background:var(--bg);color:var(--hi);border:0;border-bottom:1px solid var(--dim);padding:2px 1ch;border-radius:0}
+select option{background:var(--bg);color:var(--hi)}
+.ctl{display:flex;gap:2ch;align-items:center;flex-wrap:wrap;margin-bottom:16px;color:var(--dim)}
 
 /* data table (virtualised) */
 .fit{height:372px}.fit.f{flex:1;min-height:0;height:auto}
@@ -75,6 +78,7 @@ pre{font:inherit;white-space:pre;overflow:hidden;line-height:2}
   <button data-v="economics">[4] economics</button>
   <button data-v="pipeline">[5] pipeline</button>
   <button data-v="data">[6] data <span id="n-w"></span></button>
+  <button data-v="runs">[7] runs <span id="n-u"></span></button>
 </div>
 
 <main id="main">
@@ -124,9 +128,22 @@ pre{font:inherit;white-space:pre;overflow:hidden;line-height:2}
     </div>
     <div class="blk"><h2>warnings</h2><pre id="dq-warn" style="white-space:pre-wrap"></pre></div>
   </div>
+
+  <div class="v hidden" id="v-runs">
+    <div class="blk"><h2>stored runs <small id="runs-sub"></small></h2><div id="t-runs"></div></div>
+    <div class="blk"><h2>trend across runs <small>first → latest</small></h2><pre id="runs-spark"></pre></div>
+    <div class="blk"><h2>compare two runs <small id="cmp-sub"></small></h2>
+      <div class="ctl"><span>from</span><select id="cmp-a" aria-label="Earlier run"></select><span>to</span><select id="cmp-b" aria-label="Later run"></select></div>
+      <div id="cmp-kv"></div>
+    </div>
+    <div class="g g2">
+      <div class="blk"><h2>contributor changes <small>points between the two runs</small></h2><div class="fit" id="t-cg"></div></div>
+      <div class="blk"><h2>repo changes <small>between the two runs</small></h2><div class="fit" id="t-rg"></div></div>
+    </div>
+  </div>
 </main>
 
-<div id="bar"><span>1-6 view · / filter · r reload · click header to sort</span><span id="last-run">—</span></div>
+<div id="bar"><span>1-7 view · / filter · r reload · click header to sort</span><span id="last-run">—</span></div>
 <span id="cw">0000000000</span>
 
 <script>
@@ -178,7 +195,7 @@ function table(host, cols, rows, o = {}){
 }
 
 /* ── Shell ── */
-const views = ['overview','contributors','repos','economics','pipeline','data'];
+const views = ['overview','contributors','repos','economics','pipeline','data','runs'];
 let cur = 'overview', _snap = null, _hist = [], _ready = false;
 function show(v){
   if(!views.includes(v)) v = 'overview';
@@ -192,7 +209,7 @@ addEventListener('hashchange', () => { if(_ready) show(location.hash.slice(1)); 
 addEventListener('keydown', e => {
   if(e.target.matches('input')){ if(e.key === 'Escape') e.target.blur(); return; }
   if(e.metaKey || e.ctrlKey || e.altKey) return;
-  const i = '123456'.indexOf(e.key);
+  const i = '1234567'.indexOf(e.key);
   if(i >= 0) location.hash = views[i];
   else if(e.key === '/'){ const q = document.querySelector('#v-'+cur+' .q'); if(q){ e.preventDefault(); q.focus(); } }
   else if(e.key === 'r') load();
@@ -300,6 +317,83 @@ function renderEconomics(e){
   ], (e.topPayouts||[]).map(x => ({...x})), {search:false});
 }
 
+/* ── Runs page: the last N stored runs (runs.json) + a two-run comparison read from each run's own files ── */
+let _runs = [], _rcache = {};
+const sgn = n => n == null || isNaN(n) ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '±') + fmt(Math.abs(n));
+async function runFile(dir, name){
+  const key = dir + '/' + name;
+  if(_rcache[key]) return _rcache[key];
+  const r = await fetch(`runs/${dir}/${name}`, {cache:'no-store'});
+  if(!r.ok) throw new Error(`HTTP ${r.status} for runs/${key}`);
+  return _rcache[key] = await r.json();
+}
+function renderRuns(r){
+  _runs = ((r && r.runs) || []).slice().sort((a,b) => String(a.runAt) < String(b.runAt) ? -1 : 1);
+  const n = _runs.length;
+  $('n-u').textContent = n ? n : '';
+  if(!n){
+    $('t-runs').innerHTML = '<div class="empty">no runs.json yet: run the updated bot once</div>';
+    $('runs-spark').textContent = ''; $('cmp-kv').innerHTML = ''; $('cmp-sub').textContent = '';
+    return;
+  }
+  $('runs-sub').textContent = `${n} stored runs · newest first · click a header to sort`;
+  const rows = _runs.map((x,i) => { const p = _runs[i-1];
+    return {...x, dOpen: p ? (x.openIssues ?? 0) - (p.openIssues ?? 0) : null, dScored: p ? (x.scoredPoints ?? 0) - (p.scoredPoints ?? 0) : null}; }).reverse();
+  $('t-runs').style.height = Math.min(520, (n + 1) * RH + 8) + 'px';
+  table($('t-runs'), [
+    {l:'run',k:'runAt',w:'16ch',f:v=>shortDate(v)},
+    {l:'open',k:'openIssues',n:1,w:'8ch'}, {l:'Δ open',k:'dOpen',n:1,w:'8ch',f:v=>sgn(v)}, {l:'open pts',k:'openPoints',n:1,w:'10ch'},
+    {l:'closed',k:'closedIssues',n:1,w:'8ch'}, {l:'max pts',k:'maxPoints',n:1,w:'10ch'},
+    {l:'scored',k:'scoredPoints',n:1,w:'10ch'}, {l:'Δ scored',k:'dScored',n:1,w:'10ch',f:v=>sgn(v)}, {l:'left',k:'remainingPoints',n:1,w:'10ch'},
+    {l:'new',k:'newIssues',n:1,w:'6ch'}, {l:'people',k:'contributors',n:1,w:'8ch'},
+    {l:'paid',k:'usdPaid',n:1,w:'11ch',f:v=>v==null ? '—' : usd(v)}, {l:'warn',k:'warnings',n:1,w:'6ch'},
+    {l:'files',k:'dir',w:'minmax(22ch,1fr)',f:v=>['summary','contributors','repos'].map(f => `<a href="runs/${esc(v)}/${f}.json" target="_blank" rel="noopener">${f}</a>`).join(' · ')}
+  ], rows, {search:false, sort:0});
+  const lines = [['scored','scoredPoints'],['open points','openPoints'],['max points','maxPoints'],['open issues','openIssues'],['closed issues','closedIssues'],['contributors','contributors'],['new issues','newIssues'],['usd paid','usdPaid']];
+  $('runs-spark').innerHTML = lines.map(([l,k]) => {
+    const a = _runs.map(x => x[k] ?? 0), first = a[0], last = a[a.length-1];
+    return `<span class="d">${l.padEnd(14)}</span>${spark(a, a.length).replace(/./gu, c => c.repeat(3))}  <span class="d">${fmt(first)} → </span><span class="h">${fmt(last)}</span> <span class="d">(${sgn(last - first)})</span>`;
+  }).join('\n');
+  const opts = _runs.slice().reverse().map(x => `<option value="${esc(x.dir)}">${shortDate(x.runAt)}</option>`).join('');
+  $('cmp-a').innerHTML = opts; $('cmp-b').innerHTML = opts;
+  $('cmp-a').value = (_runs[n-2] || _runs[n-1]).dir; $('cmp-b').value = _runs[n-1].dir;
+  $('cmp-a').onchange = compareRuns; $('cmp-b').onchange = compareRuns;
+  compareRuns();
+}
+async function compareRuns(){
+  const da = $('cmp-a').value, db = $('cmp-b').value;
+  const A = _runs.find(x => x.dir === da), B = _runs.find(x => x.dir === db);
+  if(!A || !B) return;
+  $('cmp-sub').textContent = `${shortDate(A.runAt)} → ${shortDate(B.runAt)}`;
+  const m = [['open issues','openIssues'],['open points','openPoints'],['closed in wave','closedIssues'],['max points','maxPoints'],['scored','scoredPoints'],['remaining','remainingPoints'],['contributors','contributors'],['repos','repos'],['usd paid','usdPaid'],['pr ratio %','prRatio'],['stale assignments','stale']];
+  $('cmp-kv').innerHTML = m.map(([l,k]) => kv(l, `${fmt(A[k])} → ${fmt(B[k])} <span class="d">(${sgn(A[k] != null && B[k] != null ? Math.round((B[k]-A[k])*100)/100 : null)})</span>`)).join('');
+  $('t-cg').innerHTML = $('t-rg').innerHTML = '<div class="empty">loading…</div>';
+  try{
+    const [ca, cb, ra, rb] = await Promise.all([runFile(da,'contributors.json'), runFile(db,'contributors.json'), runFile(da,'repos.json'), runFile(db,'repos.json')]);
+    if($('cmp-a').value !== da || $('cmp-b').value !== db) return;      // selection changed while loading
+    const cm = new Map(ca.map(c => [c.contributor, c]));
+    const crows = cb.map(c => { const p = cm.get(c.contributor), before = p ? p.pointsEarned : 0;
+      return {contributor:c.contributor, before, after:c.pointsEarned, delta:c.pointsEarned - before, issues:c.issuesClosed - (p ? p.issuesClosed : 0), isNew:p ? '' : 'new'}; })
+      .filter(r => r.delta !== 0 || r.isNew);
+    table($('t-cg'), [
+      {l:'#',k:'#',n:1,w:'5ch',f:v=>v}, {l:'contributor',k:'contributor',w:'2fr',f:v=>gh(v)},
+      {l:'before',k:'before',n:1,w:'1fr'}, {l:'after',k:'after',n:1,w:'1fr'},
+      {l:'Δ pts',k:'delta',n:1,w:'1fr',f:v=>sgn(v)}, {l:'Δ issues',k:'issues',n:1,w:'1fr',f:v=>sgn(v)}, {l:'',k:'isNew',w:'5ch'}
+    ], crows, {sort:4});
+    const rm = new Map(ra.map(x => [x.repo, x]));
+    const rrows = rb.map(x => { const p = rm.get(x.repo) || {};
+      return {repo:x.repo, repoUrl:x.repoUrl, scored:(x.pointsScored||0) - (p.pointsScored||0), closed:(x.closedInWave||0) - (p.closedInWave||0), open:(x.openIssues||0) - (p.openIssues||0), now:x.pointsScored||0}; })
+      .filter(r => r.scored || r.closed || r.open);
+    table($('t-rg'), [
+      {l:'#',k:'#',n:1,w:'5ch',f:v=>v}, {l:'repo',k:'repo',w:'2fr',f:(v,r)=>link(r.repoUrl,v)},
+      {l:'Δ scored',k:'scored',n:1,w:'1fr',f:v=>sgn(v)}, {l:'Δ closed',k:'closed',n:1,w:'1fr',f:v=>sgn(v)}, {l:'Δ open',k:'open',n:1,w:'1fr',f:v=>sgn(v)}
+    ], rrows, {sort:2});
+  }catch(e){
+    const msg = `<div class="empty">could not read run files (${esc(e.message)}). Runs older than the kept 10 are pruned.</div>`;
+    $('t-cg').innerHTML = msg; $('t-rg').innerHTML = '';
+  }
+}
+
 const contribCols = [
   {l:'#',k:'#',w:'5ch',n:1,f:v=>v}, {l:'contributor',k:'contributor',w:'minmax(16ch,2fr)',f:v=>gh(v)},
   {l:'points',k:'pointsEarned',n:1,w:'9ch'}, {l:'issues',k:'issuesClosed',n:1,w:'7ch'},
@@ -316,13 +410,14 @@ const repoCols = [
   {l:'mult',k:'pointsMultiplier',n:1,w:'6ch',f:v=>v==null?'—':'×'+v}, {l:'tags',k:r=>(r.tags||[]).join(', '),w:'1fr'}
 ];
 
-function render(s, h){
+function render(s, h, runs){
   _snap = s; _hist = h; _ready = true;
   $('err').classList.add('hidden');
   const w = s.wave || {}, oi = s.openIssues || {}, all = s.allContributors?.length ? s.allContributors : (s.topContributors||[]), repos = s.perRepo?.topRepos || [];
   $('m-window').textContent = `${shortDate(w.startDate)} – ${shortDate(w.endDate)}`;
   $('m-budget').textContent = w.budgetUSD ? usd(Number(w.budgetUSD)) : '—';
-  $('last-run').textContent = `last run ${shortDate(s.runAt)} UTC`;
+  const ageH = (Date.now() - new Date(s.runAt)) / 36e5, tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  $('last-run').textContent = `last run ${shortDate(s.runAt)} ${tz}` + (ageH > 3 ? ` · STALE ${ageH.toFixed(1)}h old: scheduler not firing` : '');
   const live = !!w.inWaveWindowNow;
   $('status').innerHTML = `<span class="${live?'h':'d'}">${live ? '● live' : '○ ' + esc(w.status === 'ended' ? 'ended' : w.status === 'upcoming' ? 'upcoming' : (w.status || '—'))}</span>`;
   $('n-c').textContent = fmt(s.contributorsCount ?? all.length);
@@ -331,7 +426,7 @@ function render(s, h){
   $('r-sub').textContent = `${fmt(repos.length)} of ${fmt(s.perRepo?.totalRepos ?? repos.length)} repos · click a header to sort`;
 
   renderKpis(s); renderDist(oi.distribution); renderVelocity(s.velocity);
-  renderPipeline(s.applicationPipeline, oi.total); renderQuality(s.issueQuality); renderEconomics(s.waveEconomics); renderData(s.dataQuality);
+  renderPipeline(s.applicationPipeline, oi.total); renderQuality(s.issueQuality); renderEconomics(s.waveEconomics); renderData(s.dataQuality); renderRuns(runs);
   table($('t-c'), contribCols, all.map(x => ({...x})), {sort:2});
   table($('t-r'), repoCols, repos.map(x => ({...x})), {sort:6});
   table($('t-topc'), contribCols.slice(0,4), all.slice(0,10).map(x => ({...x})), {search:false});
@@ -342,8 +437,8 @@ function render(s, h){
 async function load(){
   const get = async p => { const r = await fetch(p,{cache:'no-store'}); if(!r.ok) throw new Error(`HTTP ${r.status} for ${p}`); return r.json(); };
   try{
-    const [s, h] = await Promise.all([get('latest.json'), get('history.json').catch(() => [])]);
-    render(s, Array.isArray(h) ? h : []);
+    const [s, h, r] = await Promise.all([get('latest.json'), get('history.json').catch(() => []), get('runs.json').catch(() => null)]);
+    render(s, Array.isArray(h) ? h : [], r);
   }catch(e){ const el = $('err'); el.classList.remove('hidden'); el.textContent = 'error: could not load latest.json. has the bot run at least once? (' + e.message + ')'; }
 }
 load();
