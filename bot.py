@@ -97,20 +97,45 @@ def _get(url: str, timeout: int = 30, retries: int = 5) -> dict[str, Any]:
 def _fetch_all(url_base: str, extra_params: dict[str, str] | None = None,
                limit: int = 100, max_pages: int = 500,
                early_stop=None) -> tuple[list[dict], dict[str, Any]]:
-    """Paginate `url_base`. Items are de-duplicated by `id` (offset pagination
-    over live data can repeat rows). Returns (items, meta)."""
+    """Paginate `url_base` and de-duplicate by `id`.
+
+    The API returns `pagination.nextCursor`. Cursor paging is stable while rows
+    are being created or updated; page offsets are not (rows shift, so items get
+    skipped or repeated). The cursor is used when the server honours a `cursor`
+    parameter, and the code falls back to page offsets automatically when it
+    does not (an error, or the same page coming back again)."""
     items: list[dict] = []
     seen: set = set()
-    dups = pages = 0
+    dups = pages = cursor_pages = 0
     reported = None
     stopped = truncated = False
     page = 1
+    cursor = None
+    cursor_ok = True
     while True:
-        params = {'page': str(page), 'limit': str(limit)}
+        params = {'limit': str(limit)}
         params.update(extra_params or {})
-        d = _get(f'{url_base}?{urllib.parse.urlencode(params)}')
+        use_cursor = cursor_ok and cursor is not None
+        if use_cursor:
+            params['cursor'] = cursor
+        else:
+            params['page'] = str(page)
+        try:
+            d = _get(f'{url_base}?{urllib.parse.urlencode(params)}')
+        except urllib.error.HTTPError as e:
+            if use_cursor and e.code in (400, 422):
+                log('  cursor rejected by the API: falling back to page offsets')
+                cursor_ok = False
+                continue
+            raise
         page_items = d.get('data') or []
         pag = d.get('pagination') or {}
+        if use_cursor and page_items and all(it.get('id') in seen for it in page_items):
+            log('  cursor ignored by the API (page repeated): falling back to page offsets')
+            cursor_ok = False
+            continue
+        if use_cursor:
+            cursor_pages += 1
         if pag.get('total') is not None:
             reported = pag['total']
         pages += 1
@@ -131,14 +156,15 @@ def _fetch_all(url_base: str, extra_params: dict[str, str] | None = None,
             break
         if not page_items or not pag.get('hasNextPage'):
             break
+        cursor = pag.get('nextCursor')
         page += 1
         if page > max_pages:
             truncated = True
             log('  WARN: max_pages reached, list may be truncated')
             break
         time.sleep(0.04)
-    return items, {'reportedTotal': reported, 'pages': pages, 'duplicatesRemoved': dups,
-                   'stoppedEarly': stopped, 'truncated': truncated}
+    return items, {'reportedTotal': reported, 'pages': pages, 'cursorPages': cursor_pages,
+                   'duplicatesRemoved': dups, 'stoppedEarly': stopped, 'truncated': truncated}
 
 
 # ──────────────────────────── HELPERS ────────────────────────────
@@ -223,22 +249,20 @@ def fetch_counts(params: dict[str, str]) -> int | None:
         return None
 
 
-def fetch_closed_rewarded_in_wave(wave_start: dt.datetime,
-                                  wave_end: dt.datetime) -> tuple[list[dict], dict]:
-    """Closed issues with a linked PR, newest-updated first. Scanning stops only
-    after two consecutive pages in which EVERY issue was last touched before
-    the Wave start: such issues cannot have been closed inside the window, and
-    sorting by updatedAt means later pages are older still. (Judging by
-    closedAt alone, as before, could stop too early because an issue closed
-    before the Wave can be updated after it.)"""
-    log(f'[2/6] Fetching closed+PR issues closed in Wave {WAVE_NUM} window '
+def newest_ts(i: dict) -> dt.datetime | None:
+    vals = [parse_iso(i.get(k)) for k in ('gitHubUpdatedAt', 'updatedAt', 'gitHubClosedAt', 'completedAt')]
+    vals = [v for v in vals if v]
+    return max(vals) if vals else None
+
+
+def fetch_closed_scan(wave_start: dt.datetime, wave_end: dt.datetime) -> tuple[list[dict], dict]:
+    """Scan closed issues with a linked PR, newest-updated first. Scanning stops
+    only after two consecutive pages in which EVERY issue was last touched before
+    the Wave start (such issues cannot belong to the Wave). Classification into
+    "closed in Wave 11" happens afterwards, in select_closed_in_wave()."""
+    log(f'[2/6] Scanning closed+PR issues for Wave {WAVE_NUM} '
         f'({wave_start.isoformat()} → {wave_end.isoformat()})...')
     streak = 0
-
-    def newest_ts(i: dict) -> dt.datetime | None:
-        vals = [parse_iso(i.get(k)) for k in ('gitHubUpdatedAt', 'updatedAt', 'gitHubClosedAt')]
-        vals = [v for v in vals if v]
-        return max(vals) if vals else None
 
     def stop_fn(page_items: list[dict]) -> bool:
         nonlocal streak
@@ -251,14 +275,65 @@ def fetch_closed_rewarded_in_wave(wave_start: dt.datetime,
         {'state': 'closed', 'hasPr': 'true', 'waveProgramId': PID,
          'sortBy': 'updatedAt', 'sortOrder': 'desc'},
         max_pages=600, early_stop=stop_fn)
+    meta['scanned'] = len(items)
+    return items, meta
 
-    in_window = [i for i in items
-                 if (ca := parse_iso(i.get('gitHubClosedAt'))) and wave_start <= ca <= wave_end]
-    rewarded = [i for i in in_window if i.get('pointsEarned')]
-    rewarded.sort(key=lambda i: parse_iso(i.get('gitHubClosedAt')))      # chronological
-    log(f'  → {len(in_window)} closed+PR in window, {len(rewarded)} rewarded')
-    meta.update({'closedPrInWindow': len(in_window), 'scanned': len(items)})
-    return rewarded, meta
+
+def resolved_in_wave(i: dict, wave: dict) -> bool | None:
+    """The API's own `resolvedInWave` field. True/False when it names a wave,
+    None when empty. Accepts a wave id, a wave number, or an object holding
+    either, because the exact shape is not documented."""
+    v = i.get('resolvedInWave')
+    if v in (None, '', False):
+        return None
+    wid, wnum = wave.get('id'), wave.get('waveNumber')
+    if isinstance(v, dict):
+        return (wid is not None and wid in v.values()) or \
+               any(v.get(k) == wnum for k in ('waveNumber', 'number', 'wave'))
+    return v == wid or v == wnum or str(v) == str(wnum)
+
+
+def select_closed_in_wave(items: list[dict], wave: dict, ws, we) -> tuple[list[dict], dict]:
+    """Decide which scanned issues count as "closed in Wave 11" and report the
+    result under every plausible definition, so the numbers can be compared with
+    the Drips site and the right definition pinned (env WAVE_CLOSED_BASIS =
+    resolved | closed | completed | auto)."""
+    inwin = lambda ts: ts is not None and ws <= ts <= we
+    bases = {
+        'resolved':  [i for i in items if resolved_in_wave(i, wave) is True],            # API field resolvedInWave
+        'closed':    [i for i in items if inwin(parse_iso(i.get('gitHubClosedAt')))],    # GitHub close time in window
+        'completed': [i for i in items if inwin(parse_iso(i.get('completedAt')))],       # Drips completedAt in window
+    }
+
+    def stats(lst: list[dict]) -> dict:
+        rw = [i for i in lst if i.get('pointsEarned')]
+        return {'issues': len(lst), 'rewarded': len(rw),
+                'scoredPoints': sum(i['pointsEarned'] for i in rw),
+                'totalPoints': sum(points_of(i) for i in rw)}
+
+    st = {k: stats(v) for k, v in bases.items()}
+    requested = os.environ.get('WAVE_CLOSED_BASIS', 'auto').lower()
+    if requested not in bases:
+        has_field = any(i.get('resolvedInWave') is not None for i in items)
+        used = 'resolved' if has_field and st['resolved']['rewarded'] else 'closed'
+    else:
+        used = requested
+    chosen = [i for i in bases[used] if i.get('pointsEarned')]
+    far = dt.datetime.max.replace(tzinfo=dt.timezone.utc)
+    chosen.sort(key=lambda i: parse_iso(i.get('gitHubClosedAt')) or parse_iso(i.get('completedAt')) or far)
+    vals = Counter(repr(i.get('resolvedInWave'))[:80] for i in items if i.get('resolvedInWave') is not None)
+    sample = next((i for i in chosen), None) or {}
+    recon = {
+        'basisUsed': used, 'basisRequested': requested, 'bases': st,
+        'resolvedInWaveValues': vals.most_common(6),
+        'schemaProbe': {'resolvedInWave': repr(sample.get('resolvedInWave'))[:80],
+                        'completedAt': sample.get('completedAt'),
+                        'assignedApplicantKeys': sorted((sample.get('assignedApplicant') or {}).keys())},
+    }
+    log(f'  closed-in-wave by definition (rewarded issues / points scored):')
+    for k, v in st.items():
+        log(f'    {k:9s}: {v["rewarded"]:>6,} issues  {v["scoredPoints"]:>10,} pts{"   <-- used" if k == used else ""}')
+    return chosen, recon
 
 
 def fetch_enrollments() -> list[dict]:
@@ -593,7 +668,13 @@ def write_markdown(run_dir: Path, snap: dict) -> None:
     else:
         md.append('_No rewards recorded yet._')
     md += ['', '## Data quality\n']
-    md += [f'- {k}: {v}' for k, v in dq.items() if k != 'warnings']
+    rc = dq.get('reconciliation') or {}
+    if rc:
+        md += [f'Closed-in-wave basis used: **{rc["basisUsed"]}** (requested: {rc["basisRequested"]})\n',
+               '| Definition | Issues | Rewarded | Points scored | Total points |', '|:--|--:|--:|--:|--:|']
+        md += [f'| {k} | {v["issues"]:,} | {v["rewarded"]:,} | {v["scoredPoints"]:,} | {v["totalPoints"]:,} |' for k, v in rc['bases'].items()]
+        md += ['', f'resolvedInWave values seen: {rc["resolvedInWaveValues"]}', '']
+    md += [f'- {k}: {v}' for k, v in dq.items() if k not in ('warnings', 'reconciliation')]
     md += [f'- ⚠ {x}' for x in dq.get('warnings', [])]
     write_atomic(run_dir / 'summary.md', '\n'.join(md))
 
@@ -681,7 +762,9 @@ def main() -> int:
         log('ERROR: fetched 0 open issues but the previous run had some. Aborting so good data is not overwritten.')
         return 1
 
-    closed, closed_meta = fetch_closed_rewarded_in_wave(ws, we)
+    closed_items, closed_meta = fetch_closed_scan(ws, we)
+    closed, recon = select_closed_in_wave(closed_items, wave11, ws, we)
+    closed_meta['closedPrInWindow'] = recon['bases']['closed']['issues']
 
     log('[4/6] Fetching enrollments + filter counts...')
     enrollments = fetch_enrollments()
@@ -723,7 +806,12 @@ def main() -> int:
         warnings.append('closed with/without PR counts are from the previous run')
     if last_state and last_state.get('openIssuesTotal') and len(open_issues) < 0.5 * last_state['openIssuesTotal']:
         warnings.append(f'open issues fell from {last_state["openIssuesTotal"]:,} to {len(open_issues):,}')
-    dq = {'openFetched': len(open_issues), 'openReportedTotal': open_meta['reportedTotal'],
+    sc = {k: v['scoredPoints'] for k, v in recon['bases'].items() if v['issues']}
+    if len(set(sc.values())) > 1:
+        warnings.append('scored points differ by definition of "closed in wave": '
+                        + ', '.join(f'{k}={v:,}' for k, v in sc.items()) + f'; using {recon["basisUsed"]}')
+    dq = {'reconciliation': recon, 'paginationCursorPages': closed_meta.get('cursorPages', 0),
+          'openFetched': len(open_issues), 'openReportedTotal': open_meta['reportedTotal'],
           'openDuplicatesRemoved': open_meta['duplicatesRemoved'], 'closedScanned': closed_meta['scanned'],
           'closedPagesScanned': closed_meta['pages'], 'closedScanStoppedEarly': closed_meta['stoppedEarly'],
           'enrollments': len(enrollments), 'countsStale': counts_stale, 'warnings': warnings}
