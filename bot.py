@@ -50,7 +50,7 @@ STALE_DAYS          = 7
 # "recently active" window; match it to the schedule interval (2 h) so no
 # update between two runs is missed.
 RECENT_ACTIVE_HOURS = int(os.environ.get('WAVE_RECENT_HOURS', '2'))
-SKIP_THRESHOLD_MIN  = int(os.environ.get('WAVE_BOT_SKIP_MIN', '90'))   # scheduled runs only
+SKIP_THRESHOLD_MIN  = int(os.environ.get('WAVE_BOT_SKIP_MIN', '100'))   # scheduled + dispatch runs only
 KEEP_RUNS           = 10
 
 HEADERS = {
@@ -744,7 +744,7 @@ def main() -> int:
     # skip when the previous run is recent: the workflow fires at :07 and :37 of
     # every even hour so a late or dropped first fire is caught up by the second,
     # and the second must not run twice.
-    if os.environ.get('GITHUB_EVENT_NAME') == 'schedule' and last_state and last_state.get('runAt'):
+    if os.environ.get('GITHUB_EVENT_NAME') in ('schedule', 'repository_dispatch') and last_state and last_state.get('runAt'):
         last_ts = parse_iso(last_state['runAt'])
         if last_ts:
             mins = (started - last_ts).total_seconds() / 60
