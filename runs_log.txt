@@ -1,17 +1,34 @@
-=== Drips Wave 11 bot — run at 2026-11-16T06:01:26+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-16T08:01:31+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-16T04:01:23+00:00, open=10221)
+[0] Loaded last run state (run at 2026-11-16T06:01:26+00:00, open=10220)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=10220, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=10220, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=10220, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=10220, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=10220, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=10220, hasNext=True
-  page 103: got 20, unique so far=10220, reported total=10220, hasNext=False
-  open issues: 10220
+  page 1: got 100, unique so far=100, reported total=10243, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=10243, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=10243, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=10243, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=10243, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=10249, hasNext=True
+  page 103: got 43, unique so far=10243, reported total=10249, hasNext=False
+  WARN: fetched 10243 but API reports 10249; retrying (1/3)
+  page 1: got 100, unique so far=100, reported total=10249, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=10249, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=10249, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=10254, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=10254, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=10254, hasNext=True
+  page 103: got 50, unique so far=10250, reported total=10254, hasNext=False
+  WARN: fetched 10250 but API reports 10254; retrying (2/3)
+  page 1: got 100, unique so far=100, reported total=10254, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=10260, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=10260, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=10260, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=10260, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=10260, hasNext=True
+  page 103: got 58, unique so far=10258, reported total=10265, hasNext=False
+  WARN: fetched 10258 but API reports 10265; retrying (3/3)
+  open issues: 10250
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
   page 1: got 100, unique so far=100, reported total=348144, hasNext=True
@@ -26,16 +43,17 @@ Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming 
   page 10: got 68, unique so far=968, reported total=968, hasNext=False
   → 968 enrollments
 [5/6] Computing metrics...
+  WARN: open issues: fetched 10250 but API reported 10254
 [6/6] Writing outputs...
-  pruned old run: 2026-11-15T10-14Z
+  pruned old run: 2026-11-15T11-53Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-16T06:01:26+00:00   in window now: False
-Open issues       : 10,220  (1,718,350 pts)
+Run at (UTC)      : 2026-11-16T08:01:31+00:00   in window now: False
+Open issues       : 10,250  (1,721,350 pts)
 Closed in wave    : 0  (0 pts)
-Max / scored / left: 1,718,350 / 0 / 1,718,350
-USD per point     : $0.043647   paid $0.00   remaining $75,000.00
-Contributors      : 0   new issues: 0   repos: 573
-Warnings          : 0
+Max / scored / left: 1,721,350 / 0 / 1,721,350
+USD per point     : $0.043570   paid $0.00   remaining $75,000.00
+Contributors      : 0   new issues: 30   repos: 574
+Warnings          : 1
 === END ===
