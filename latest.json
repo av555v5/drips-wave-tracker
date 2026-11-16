@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-16T10:01:28+00:00",
+  "runAt": "2026-11-16T12:01:43+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 10355,
-    "totalPoints": 1732800,
+    "total": 10700,
+    "totalPoints": 1767900,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 4062,
-        "sharePct": 39.23,
-        "currentContribution": 467300,
+        "count": 4399,
+        "sharePct": 41.11,
+        "currentContribution": 501000,
         "multiplierBreakdown": {
-          "1": 3539,
+          "1": 3876,
           "2": 479,
           "4": 44
         },
         "actualPointsBreakdown": {
-          "100": 3539,
+          "100": 3876,
           "200": 479,
           "400": 44
         }
@@ -32,16 +32,16 @@
       {
         "complexity": "medium",
         "basePoints": 150,
-        "count": 719,
-        "sharePct": 6.94,
-        "currentContribution": 116100,
+        "count": 723,
+        "sharePct": 6.76,
+        "currentContribution": 116700,
         "multiplierBreakdown": {
-          "1": 680,
+          "1": 684,
           "2": 31,
           "4": 8
         },
         "actualPointsBreakdown": {
-          "150": 680,
+          "150": 684,
           "300": 31,
           "600": 8
         }
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5574,
-        "sharePct": 53.83,
-        "currentContribution": 1149400,
+        "count": 5578,
+        "sharePct": 52.13,
+        "currentContribution": 1150200,
         "multiplierBreakdown": {
-          "1": 5409,
+          "1": 5413,
           "2": 161,
           "4": 4
         },
         "actualPointsBreakdown": {
-          "200": 5409,
+          "200": 5413,
           "400": 161,
           "800": 4
         }
@@ -71,234 +71,234 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1732800,
+  "maxTotalPoints": 1767900,
   "scoredPoints": 0,
-  "remainingPoints": 1732800,
+  "remainingPoints": 1767900,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 104,
-    "prevOpenCount": 10250,
-    "currentOpenCount": 10355,
+    "newSinceLastRun": 337,
+    "prevOpenCount": 10355,
+    "currentOpenCount": 10700,
     "newIssuesSample": [
       {
-        "number": 41,
-        "title": "W24 [Feature] Add a backend release rehearsal for restart and recovery",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/41",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-16T08:31:36.000Z"
-      },
-      {
-        "number": 40,
-        "title": "W23 [Feature] Create publication intents from approved market revisions",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/40",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-16T08:29:46.000Z"
-      },
-      {
-        "number": 39,
-        "title": "W22 [Feature] Serve verified wallet activity separately from client reports",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/39",
-        "complexity": "medium",
-        "points": 150,
-        "pointsMultiplier": 1,
-        "totalPoints": 150,
-        "createdAt": "2026-11-16T08:28:01.000Z"
-      },
-      {
-        "number": 38,
-        "title": "W21 [Feature] Index confirmed market events with a durable checkpoint",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/38",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-16T08:26:07.000Z"
-      },
-      {
-        "number": 37,
-        "title": "W20 [Feature] Bound AI provider cost and handle provider failures",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/37",
-        "complexity": "medium",
-        "points": 150,
-        "pointsMultiplier": 1,
-        "totalPoints": 150,
-        "createdAt": "2026-11-16T08:24:46.000Z"
-      },
-      {
-        "number": 36,
-        "title": "W19 [Feature] Make draft and AI request limits work behind a trusted proxy",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/36",
+        "number": 909,
+        "title": "Write a mainnet readiness checklist for the frontend",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/909",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:23:30.000Z"
+        "createdAt": "2026-11-16T10:44:54.000Z"
       },
       {
-        "number": 35,
-        "title": "W18 [Feature] Add backend startup validation and a staging deployment recipe",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/35",
-        "complexity": "medium",
-        "points": 150,
-        "pointsMultiplier": 1,
-        "totalPoints": 150,
-        "createdAt": "2026-11-16T08:22:05.000Z"
-      },
-      {
-        "number": 34,
-        "title": "W17 [Feature] Add readiness checks and structured backend logs",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/34",
-        "complexity": "medium",
-        "points": 150,
-        "pointsMultiplier": 1,
-        "totalPoints": 150,
-        "createdAt": "2026-11-16T08:19:22.000Z"
-      },
-      {
-        "number": 33,
-        "title": "W16 [Feature] Export settlement evidence by its recorded digest",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/33",
-        "complexity": "medium",
-        "points": 150,
-        "pointsMultiplier": 1,
-        "totalPoints": 150,
-        "createdAt": "2026-11-16T08:17:48.000Z"
-      },
-      {
-        "number": 32,
-        "title": "W15 [Feature] Schedule settlement retries with deadlines and backoff",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/32",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-16T08:15:27.000Z"
-      },
-      {
-        "number": 31,
-        "title": "W14 [Feature] Persist and reconcile settlement transaction attempts",
-        "repo": "Altacon-Labs/RevMarket",
-        "url": "https://github.com/Altacon-Labs/RevMarket/issues/31",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-16T08:12:43.000Z"
-      },
-      {
-        "number": 178,
-        "title": "docs(trust-tiers): worked example of the undeclared gap",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/178",
+        "number": 908,
+        "title": "Add Lighthouse CI for performance, accessibility and SEO on the static export",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/908",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:10:03.000Z"
+        "createdAt": "2026-11-16T10:44:49.000Z"
       },
       {
-        "number": 177,
-        "title": "docs(api): document cursor lifetime",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/177",
+        "number": 907,
+        "title": "Build contract arguments from the generated TypeScript bindings instead of hand-written {type, value} arrays",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/907",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:59.000Z"
+        "createdAt": "2026-11-16T10:44:44.000Z"
       },
       {
-        "number": 176,
-        "title": "test(cli): every command accepts -h",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/176",
+        "number": 906,
+        "title": "Add notification settings for opt-in email alerts",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/906",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:54.000Z"
+        "createdAt": "2026-11-16T10:44:40.000Z"
       },
       {
-        "number": 175,
-        "title": "docs(contract-authors): multi-crate projects",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/175",
+        "number": 905,
+        "title": "Sign in with the wallet (SEP-10-style challenge) for per-user backend features",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/905",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:50.000Z"
+        "createdAt": "2026-11-16T10:44:35.000Z"
       },
       {
-        "number": 174,
-        "title": "chore(repo): add .gitattributes for binary fixtures and generated reports",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/174",
+        "number": 904,
+        "title": "Replace polling with the backend's Server-Sent Events stream for job updates",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/904",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:45.000Z"
+        "createdAt": "2026-11-16T10:44:30.000Z"
       },
       {
-        "number": 173,
-        "title": "chore(repo): add CODEOWNERS for rules and migrations",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/173",
+        "number": 903,
+        "title": "Move frontend requests to /api/v1; the backend marks unversioned /api as deprecated",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/903",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:40.000Z"
+        "createdAt": "2026-11-16T10:44:25.000Z"
       },
       {
-        "number": 172,
-        "title": "docs(api): capture real error responses",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/172",
+        "number": 902,
+        "title": "Add an npm run check script that runs format, lint, types and tests like CI",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/902",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:36.000Z"
+        "createdAt": "2026-11-16T10:44:21.000Z"
       },
       {
-        "number": 171,
-        "title": "docs(mkdocs): add the changelog to the docs site",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/171",
+        "number": 901,
+        "title": "Add SECURITY.md, CODEOWNERS and a pull request template",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/901",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:32.000Z"
+        "createdAt": "2026-11-16T10:44:15.000Z"
       },
       {
-        "number": 170,
-        "title": "docs(cli): capture a real stats --lag run",
-        "repo": "Soroban-CII/soroindex",
-        "url": "https://github.com/Soroban-CII/soroindex/issues/170",
+        "number": 900,
+        "title": "Show the arbiter what each side receives, after the arbiter fee, before resolving",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/900",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-16T08:09:27.000Z"
+        "createdAt": "2026-11-16T10:44:10.000Z"
+      },
+      {
+        "number": 899,
+        "title": "Add batch approval for several delivered milestones",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/899",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:44:04.000Z"
+      },
+      {
+        "number": 898,
+        "title": "Let the client recover stray tokens with sweep_excess",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/898",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:58.000Z"
+      },
+      {
+        "number": 897,
+        "title": "Add a two-signature flow for actions that need both the client and the freelancer",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/897",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:54.000Z"
+      },
+      {
+        "number": 896,
+        "title": "Show a banner and disable actions when an escrow is paused or cancel-locked",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/896",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:49.000Z"
+      },
+      {
+        "number": 895,
+        "title": "Read job state from the contract when the indexer is behind or down",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/895",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:44.000Z"
+      },
+      {
+        "number": 894,
+        "title": "Update the nginx base image from 1.27 and pin it by digest",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/894",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:40.000Z"
+      },
+      {
+        "number": 893,
+        "title": "CI doesn't check that generated_tokens.ts matches globals.css",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/893",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:35.000Z"
+      },
+      {
+        "number": 892,
+        "title": "The job activity timeline never refreshes after an action or on the dashboard poll",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/892",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:30.000Z"
+      },
+      {
+        "number": 891,
+        "title": "Action state keys aren't scoped to the job, so one job's pending or failed action shows on another",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/891",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:25.000Z"
+      },
+      {
+        "number": 890,
+        "title": "Enforcing the CSP as written will break the app: Next's inline scripts aren't allowed by script-src 'self'",
+        "repo": "Goldii-locks/escrow-frontend",
+        "url": "https://github.com/Goldii-locks/escrow-frontend/issues/890",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-16T10:43:20.000Z"
       }
     ]
   },
@@ -548,6 +548,24 @@
         "tags": []
       },
       {
+        "repo": "Goldii-locks/escrow-contract",
+        "repoUrl": "https://github.com/Goldii-locks/escrow-contract",
+        "org": "Goldii-locks",
+        "openIssues": 125,
+        "unassignedOpen": 125,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 13100,
+        "pointsRemaining": 11900,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "StellarHyperion/stellarhyperion-backend",
         "repoUrl": "https://github.com/StellarHyperion/stellarhyperion-backend",
         "org": "StellarHyperion",
@@ -597,6 +615,42 @@
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Goldii-locks/escrow-frontend",
+        "repoUrl": "https://github.com/Goldii-locks/escrow-frontend",
+        "org": "Goldii-locks",
+        "openIssues": 124,
+        "unassignedOpen": 116,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 6,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 11800,
+        "pointsRemaining": 13200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Goldii-locks/escrow-backend",
+        "repoUrl": "https://github.com/Goldii-locks/escrow-backend",
+        "org": "Goldii-locks",
+        "openIssues": 123,
+        "unassignedOpen": 123,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 12300,
+        "pointsRemaining": 12700,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2798,24 +2852,6 @@
         "tags": []
       },
       {
-        "repo": "Goldii-locks/escrow-contract",
-        "repoUrl": "https://github.com/Goldii-locks/escrow-contract",
-        "org": "Goldii-locks",
-        "openIssues": 18,
-        "unassignedOpen": 18,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2400,
-        "pointsRemaining": 22600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Inferara/soroban-security-portal",
         "repoUrl": "https://github.com/Inferara/soroban-security-portal",
         "org": "Inferara",
@@ -3063,24 +3099,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 3200,
         "pointsRemaining": 21800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Goldii-locks/escrow-frontend",
-        "repoUrl": "https://github.com/Goldii-locks/escrow-frontend",
-        "org": "Goldii-locks",
-        "openIssues": 16,
-        "unassignedOpen": 8,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 6,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1000,
-        "pointsRemaining": 24000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3353,6 +3371,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 2800,
         "pointsRemaining": 22200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "AidTraceHQ/AidTraceLabs",
+        "repoUrl": "https://github.com/AidTraceHQ/AidTraceLabs",
+        "org": "AidTraceHQ",
+        "openIssues": 14,
+        "unassignedOpen": 14,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2350,
+        "pointsRemaining": 22650,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -5759,24 +5795,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 1400,
         "pointsRemaining": 23600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "AidTraceHQ/AidTraceLabs",
-        "repoUrl": "https://github.com/AidTraceHQ/AidTraceLabs",
-        "org": "AidTraceHQ",
-        "openIssues": 6,
-        "unassignedOpen": 6,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 950,
-        "pointsRemaining": 24050,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -9766,24 +9784,6 @@
         "tags": []
       },
       {
-        "repo": "Goldii-locks/escrow-backend",
-        "repoUrl": "https://github.com/Goldii-locks/escrow-backend",
-        "org": "Goldii-locks",
-        "openIssues": 1,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 100,
-        "pointsRemaining": 24900,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Hel-Phone/HelPhone",
         "repoUrl": "https://github.com/Hel-Phone/HelPhone",
         "org": "Hel-Phone",
@@ -10691,7 +10691,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.043283,
+    "usdPerPoint": 0.042423,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10724,7 +10724,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10732,7 +10732,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10740,7 +10740,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10748,7 +10748,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10756,7 +10756,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10764,7 +10764,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10772,7 +10772,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10780,7 +10780,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10788,7 +10788,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10796,7 +10796,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10804,7 +10804,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10812,7 +10812,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10820,7 +10820,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10828,7 +10828,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10836,7 +10836,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10844,7 +10844,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10852,7 +10852,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6933.0,
+        "overdueHours": 6935.0,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -10860,7 +10860,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -10868,7 +10868,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -10876,7 +10876,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -10884,7 +10884,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -10892,7 +10892,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -10900,7 +10900,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -10908,7 +10908,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -10916,7 +10916,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -10924,7 +10924,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -10932,7 +10932,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -10940,7 +10940,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6309.0,
+        "overdueHours": 6311.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -10948,7 +10948,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -10956,7 +10956,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -10964,7 +10964,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -10972,7 +10972,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -10980,7 +10980,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -10988,7 +10988,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -10996,7 +10996,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -11004,7 +11004,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -11012,7 +11012,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -11020,7 +11020,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -11028,7 +11028,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -11036,7 +11036,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -11044,7 +11044,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -11052,7 +11052,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -11060,7 +11060,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -11068,7 +11068,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -11076,7 +11076,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -11084,7 +11084,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -11092,7 +11092,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -11100,7 +11100,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -11108,7 +11108,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -11116,7 +11116,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5541.0,
+        "overdueHours": 5543.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
@@ -11133,7 +11133,7 @@
     "rewardedInWave": 0,
     "staleOpenIssues": 8092,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 112,
+    "recentlyActiveOpen": 351,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -11173,8 +11173,8 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 10355,
-    "openReportedTotal": 10355,
+    "openFetched": 10700,
+    "openReportedTotal": 10700,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
@@ -11183,5 +11183,5 @@
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-16T10:02:03+00:00"
+  "finishedAt": "2026-11-16T12:02:33+00:00"
 }
