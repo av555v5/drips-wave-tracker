@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-15T22:02:00+00:00",
+ "generatedAt": "2026-11-16T00:02:10+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-14T23-51Z",
-   "runAt": "2026-11-14T23:51:37+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 9735,
-   "openPoints": 1655550,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1655550,
-   "scoredPoints": 0,
-   "remainingPoints": 1655550,
-   "newIssues": 0,
-   "contributors": 0,
-   "repos": 571,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.045302,
-   "projectedFinal": 0,
-   "assigned": 4795,
-   "appsNoAssign": 0,
-   "stale": 4795,
-   "prRatio": 96.24,
-   "bounceRate": 3.76,
-   "warnings": 0,
-   "basis": null,
-   "distribution": {
-    "small": {
-     "count": 3578,
-     "points": 413800
-    },
-    "medium": {
-     "count": 683,
-     "points": 111150
-    },
-    "large": {
-     "count": 5474,
-     "points": 1130600
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-15T06-17Z",
    "runAt": "2026-11-15T06:17:15+00:00",
@@ -384,6 +343,47 @@
    "scoredPoints": 0,
    "remainingPoints": 1718350,
    "newIssues": 17,
+   "contributors": 0,
+   "repos": 573,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.043647,
+   "projectedFinal": 0,
+   "assigned": 4765,
+   "appsNoAssign": 0,
+   "stale": 4765,
+   "prRatio": 96.24,
+   "bounceRate": 3.76,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 3941,
+     "points": 455200
+    },
+    "medium": {
+     "count": 710,
+     "points": 114750
+    },
+    "large": {
+     "count": 5569,
+     "points": 1148400
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-16T00-01Z",
+   "runAt": "2026-11-16T00:01:33+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 10220,
+   "openPoints": 1718350,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 1718350,
+   "scoredPoints": 0,
+   "remainingPoints": 1718350,
+   "newIssues": 0,
    "contributors": 0,
    "repos": 573,
    "usdPaid": 0.0,
