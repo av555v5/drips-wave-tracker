@@ -413,5 +413,20 @@
     "newIssuesSinceLastRun": 0,
     "contributorsCount": 0,
     "topContributor": null
+  },
+  {
+    "runAt": "2026-11-16T04:01:23+00:00",
+    "waveStatus": "upcoming",
+    "inWaveWindowNow": false,
+    "openIssuesTotal": 10221,
+    "openTotalPoints": 1718450,
+    "closedInWave11": 0,
+    "closedTotalPoints": 0,
+    "maxTotalPoints": 1718450,
+    "scoredPoints": 0,
+    "remainingPoints": 1718450,
+    "newIssuesSinceLastRun": 0,
+    "contributorsCount": 0,
+    "topContributor": null
   }
 ]
