@@ -1,24 +1,24 @@
 # Drips Stellar Wave 11 — snapshot
 
-**Run at (UTC):** 2026-11-15T20:01:37+00:00  
+**Run at (UTC):** 2026-11-16T16:01:37+00:00  
 **Window:** 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  
 **Status:** upcoming  **Budget:** $75,000  
 **In window now?** NO
 
 ## Points (Σ points × pointsMultiplier per issue)
 
-- Open issues: 1,713,750 pts across 10,206 issues
+- Open issues: 1,810,500 pts across 11,112 issues
 - Closed in Wave 11: 0 pts across 0 rewarded issues
-- **Max total:** 1,713,750   **Scored:** 0   **Remaining claimable:** 1,713,750
+- **Max total:** 1,810,500   **Scored:** 0   **Remaining claimable:** 1,810,500
 - Closed but paid below full value: 0
 
 ## Distribution
 
 | Complexity | Base | Open | Share | Multipliers | Contribution |
 |:--|--:|--:|--:|---|--:|
-| small | 100 | 3,924 | 38.45% | ×1=3418, ×2=479, ×4=27 | 448,400 |
-| medium | 150 | 711 | 6.97% | ×1=671, ×2=31, ×4=9 | 115,350 |
-| large | 200 | 5,571 | 54.59% | ×1=5404, ×2=161, ×4=6 | 1,150,000 |
+| small | 100 | 4,780 | 43.02% | ×1=4257, ×2=479, ×4=44 | 539,100 |
+| medium | 150 | 748 | 6.73% | ×1=710, ×2=31, ×4=7 | 120,000 |
+| large | 200 | 5,584 | 50.25% | ×1=5419, ×2=161, ×4=4 | 1,151,400 |
 
 ## New issues since last run: 0
 
@@ -37,11 +37,11 @@ Closed-in-wave basis used: **closed** (requested: auto)
 | closed | 0 | 0 | 0 | 0 |
 | completed | 0 | 0 | 0 | 0 |
 
-resolvedInWave values seen: [("{'id': '4927b67c-6bfc-4bad-8cee-bf29702b16ee', 'waveProgramId': 'fdc01c95-806f-4", 198)]
+resolvedInWave values seen: [("{'id': '4927b67c-6bfc-4bad-8cee-bf29702b16ee', 'waveProgramId': 'fdc01c95-806f-4", 192)]
 
 - paginationCursorPages: 1
-- openFetched: 10206
-- openReportedTotal: 10206
+- openFetched: 11112
+- openReportedTotal: 11112
 - openDuplicatesRemoved: 0
 - closedScanned: 200
 - closedPagesScanned: 2
