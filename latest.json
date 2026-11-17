@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-17T04:01:29+00:00",
+  "runAt": "2026-11-17T06:01:31+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,14 +9,14 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 11070,
-    "totalPoints": 1809400,
+    "total": 11067,
+    "totalPoints": 1808800,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
         "count": 4744,
-        "sharePct": 42.85,
+        "sharePct": 42.87,
         "currentContribution": 530400,
         "multiplierBreakdown": {
           "1": 4238,
@@ -33,7 +33,7 @@
         "complexity": "medium",
         "basePoints": 150,
         "count": 740,
-        "sharePct": 6.68,
+        "sharePct": 6.69,
         "currentContribution": 124200,
         "multiplierBreakdown": {
           "1": 690,
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5586,
-        "sharePct": 50.46,
-        "currentContribution": 1154800,
+        "count": 5583,
+        "sharePct": 50.45,
+        "currentContribution": 1154200,
         "multiplierBreakdown": {
-          "1": 5416,
+          "1": 5413,
           "2": 161,
           "4": 9
         },
         "actualPointsBreakdown": {
-          "200": 5416,
+          "200": 5413,
           "400": 161,
           "800": 9
         }
@@ -71,22 +71,22 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1809400,
+  "maxTotalPoints": 1808800,
   "scoredPoints": 0,
-  "remainingPoints": 1809400,
+  "remainingPoints": 1808800,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
     "newSinceLastRun": 0,
     "prevOpenCount": 11070,
-    "currentOpenCount": 11070,
+    "currentOpenCount": 11067,
     "newIssuesSample": []
   },
   "topContributors": [],
   "allContributors": [],
   "contributorsCount": 0,
   "perRepo": {
-    "totalRepos": 575,
-    "enrolledRepos": 968,
+    "totalRepos": 574,
+    "enrolledRepos": 967,
     "topRepos": [
       {
         "repo": "Farm-credit/stellar-app-os",
@@ -601,10 +601,10 @@
         "repoUrl": "https://github.com/Ledger-Lenz/Ledgerlens-contract",
         "org": "Ledger-Lenz",
         "openIssues": 108,
-        "unassignedOpen": 8,
+        "unassignedOpen": 12,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 25,
+        "distinctContributors": 24,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -7687,24 +7687,6 @@
         "tags": []
       },
       {
-        "repo": "ezedike-evan/corridor-in-a-box",
-        "repoUrl": "https://github.com/ezedike-evan/corridor-in-a-box",
-        "org": "ezedike-evan",
-        "openIssues": 3,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 3,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 600,
-        "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Farm-credit/soroban-contracts",
         "repoUrl": "https://github.com/Farm-credit/soroban-contracts",
         "org": "Farm-credit",
@@ -10488,7 +10470,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.04145,
+    "usdPerPoint": 0.041464,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10511,7 +10493,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4722,
+    "openAssigned": 4715,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -10521,7 +10503,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10529,7 +10511,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10537,7 +10519,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10545,7 +10527,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10553,7 +10535,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10561,7 +10543,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10569,7 +10551,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10577,7 +10559,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10585,7 +10567,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10593,7 +10575,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10601,7 +10583,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10609,7 +10591,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10617,7 +10599,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10625,7 +10607,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10633,7 +10615,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10641,7 +10623,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10649,7 +10631,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6951.0,
+        "overdueHours": 6953.0,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -10657,7 +10639,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -10665,7 +10647,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -10673,7 +10655,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -10681,7 +10663,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -10689,7 +10671,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -10697,7 +10679,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -10705,7 +10687,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -10713,7 +10695,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -10721,7 +10703,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -10729,7 +10711,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -10737,7 +10719,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6327.0,
+        "overdueHours": 6329.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -10745,7 +10727,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -10753,7 +10735,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -10761,7 +10743,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -10769,7 +10751,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -10777,7 +10759,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -10785,7 +10767,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -10793,7 +10775,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -10801,7 +10783,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -10809,7 +10791,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -10817,7 +10799,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -10825,7 +10807,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -10833,7 +10815,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -10841,7 +10823,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -10849,7 +10831,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -10857,7 +10839,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -10865,7 +10847,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -10873,7 +10855,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -10881,7 +10863,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -10889,7 +10871,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -10897,7 +10879,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -10905,7 +10887,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -10913,22 +10895,22 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5559.0,
+        "overdueHours": 5561.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
-    "staleAssignmentsCount": 4722
+    "staleAssignmentsCount": 4715
   },
   "issueQuality": {
-    "closedWithPR": 348036,
-    "closedWithoutPR": 13605,
+    "closedWithPR": 347837,
+    "closedWithoutPR": 13596,
     "prToIssueRatio": 96.24,
     "bounceRate": 3.76,
     "countsScope": "program, all time",
     "countsStale": false,
     "closedPrInWave": 0,
     "rewardedInWave": 0,
-    "staleOpenIssues": 8016,
+    "staleOpenIssues": 8013,
     "staleThresholdDays": 7,
     "recentlyActiveOpen": 0,
     "recentWindowHours": 2
@@ -10970,15 +10952,15 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 11070,
-    "openReportedTotal": 11070,
+    "openFetched": 11067,
+    "openReportedTotal": 11067,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
     "closedScanStoppedEarly": true,
-    "enrollments": 968,
+    "enrollments": 967,
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-17T04:02:15+00:00"
+  "finishedAt": "2026-11-17T06:02:21+00:00"
 }

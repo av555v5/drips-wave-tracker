@@ -1,20 +1,20 @@
-=== Drips Wave 11 bot — run at 2026-11-17T04:01:29+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-17T06:01:31+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-17T02:01:27+00:00, open=11070)
+[0] Loaded last run state (run at 2026-11-17T04:01:29+00:00, open=11070)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=11070, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=11070, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=11070, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=11070, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=11070, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=11070, hasNext=True
-  page 111: got 70, unique so far=11070, reported total=11070, hasNext=False
-  open issues: 11070
+  page 1: got 100, unique so far=100, reported total=11067, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=11067, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=11067, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=11067, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=11067, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=11067, hasNext=True
+  page 111: got 67, unique so far=11067, reported total=11067, hasNext=False
+  open issues: 11067
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
-  page 1: got 100, unique so far=100, reported total=348036, hasNext=True
+  page 1: got 100, unique so far=100, reported total=347837, hasNext=True
   early stop at page 2 (unique=200)
   closed-in-wave by definition (rewarded issues / points scored):
     resolved :      0 issues           0 pts
@@ -22,20 +22,20 @@ Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming 
     completed:      0 issues           0 pts
 [4/6] Fetching enrollments + filter counts...
   fetching enrollments...
-  page 1: got 100, unique so far=100, reported total=968, hasNext=True
-  page 10: got 68, unique so far=968, reported total=968, hasNext=False
-  → 968 enrollments
+  page 1: got 100, unique so far=100, reported total=967, hasNext=True
+  page 10: got 67, unique so far=967, reported total=967, hasNext=False
+  → 967 enrollments
 [5/6] Computing metrics...
 [6/6] Writing outputs...
-  pruned old run: 2026-11-16T08-01Z
+  pruned old run: 2026-11-16T10-01Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-17T04:01:29+00:00   in window now: False
-Open issues       : 11,070  (1,809,400 pts)
+Run at (UTC)      : 2026-11-17T06:01:31+00:00   in window now: False
+Open issues       : 11,067  (1,808,800 pts)
 Closed in wave    : 0  (0 pts)
-Max / scored / left: 1,809,400 / 0 / 1,809,400
-USD per point     : $0.041450   paid $0.00   remaining $75,000.00
-Contributors      : 0   new issues: 0   repos: 575
+Max / scored / left: 1,808,800 / 0 / 1,808,800
+USD per point     : $0.041464   paid $0.00   remaining $75,000.00
+Contributors      : 0   new issues: 0   repos: 574
 Warnings          : 0
 === END ===
