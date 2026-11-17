@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-17T14:01:34+00:00",
+  "runAt": "2026-11-17T16:01:39+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 11586,
-    "totalPoints": 1906200,
+    "total": 11705,
+    "totalPoints": 1930600,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 4808,
-        "sharePct": 41.5,
-        "currentContribution": 536800,
+        "count": 4802,
+        "sharePct": 41.03,
+        "currentContribution": 536200,
         "multiplierBreakdown": {
-          "1": 4302,
+          "1": 4296,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 4302,
+          "100": 4296,
           "200": 479,
           "400": 27
         }
@@ -33,7 +33,7 @@
         "complexity": "medium",
         "basePoints": 150,
         "count": 740,
-        "sharePct": 6.39,
+        "sharePct": 6.32,
         "currentContribution": 124200,
         "multiplierBreakdown": {
           "1": 690,
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 6038,
-        "sharePct": 52.11,
-        "currentContribution": 1245200,
+        "count": 6163,
+        "sharePct": 52.65,
+        "currentContribution": 1270200,
         "multiplierBreakdown": {
-          "1": 5868,
+          "1": 5993,
           "2": 161,
           "4": 9
         },
         "actualPointsBreakdown": {
-          "200": 5868,
+          "200": 5993,
           "400": 161,
           "800": 9
         }
@@ -71,234 +71,234 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1906200,
+  "maxTotalPoints": 1930600,
   "scoredPoints": 0,
-  "remainingPoints": 1906200,
+  "remainingPoints": 1930600,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 45,
-    "prevOpenCount": 11470,
-    "currentOpenCount": 11586,
+    "newSinceLastRun": 119,
+    "prevOpenCount": 11586,
+    "currentOpenCount": 11705,
     "newIssuesSample": [
       {
-        "number": 1500,
-        "title": "Validate SEP-24 requests against anchor-required fields",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1500",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:46.000Z"
-      },
-      {
-        "number": 1499,
-        "title": "Negotiate anchor capabilities for SEP-24 flows",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1499",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:45.000Z"
-      },
-      {
-        "number": 1498,
-        "title": "Expose SEP-24 quote and fee components",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1498",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:44.000Z"
-      },
-      {
-        "number": 1497,
-        "title": "Normalize anchor error codes in SEP-24 API responses",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1497",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:43.000Z"
-      },
-      {
-        "number": 1495,
-        "title": "Reconcile SEP-24 transaction status with the anchor",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1495",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:42.000Z"
-      },
-      {
-        "number": 1496,
-        "title": "Enforce expiry and resume rules for SEP-24 interactive flows",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1496",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:42.000Z"
-      },
-      {
-        "number": 1494,
-        "title": "Make SLA breach alerts idempotent across worker retries",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1494",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:41.000Z"
-      },
-      {
-        "number": 1493,
-        "title": "Expose SLA compliance aggregates by service and period",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1493",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:40.000Z"
-      },
-      {
-        "number": 1492,
-        "title": "Add an SLA policy simulation endpoint",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1492",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:40.000Z"
-      },
-      {
-        "number": 1491,
-        "title": "Track SLA pause reasons and elapsed-time segments",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1491",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:39.000Z"
-      },
-      {
-        "number": 1490,
-        "title": "Add business calendars to SLA deadline calculation",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1490",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:38.000Z"
-      },
-      {
-        "number": 1488,
-        "title": "Backfill activity-feed entries from audit history",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1488",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:37.000Z"
-      },
-      {
-        "number": 1489,
-        "title": "Include safe actor display snapshots in activity-feed events",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1489",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:37.000Z"
-      },
-      {
-        "number": 1487,
-        "title": "Add bounded activity-feed search by actor and entity",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1487",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:36.000Z"
-      },
-      {
-        "number": 1486,
-        "title": "Add bulk archive for activity-feed entries",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1486",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-17T13:42:35.000Z"
-      },
-      {
-        "number": 1485,
-        "title": "Add per-user activity-feed category preferences",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1485",
+        "number": 122,
+        "title": "[Feature] Exportar historial de escrows (CSV)",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/122",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T13:42:34.000Z"
+        "createdAt": "2026-11-17T15:28:37.000Z"
       },
       {
-        "number": 1484,
-        "title": "Define a typed activity-feed event registry",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1484",
+        "number": 121,
+        "title": "[Feature] PWA y deep link de Freighter en m\u00f3vil",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/121",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T13:42:34.000Z"
+        "createdAt": "2026-11-17T15:28:36.000Z"
       },
       {
-        "number": 1483,
-        "title": "Add an admin preview for achievement eligibility",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1483",
+        "number": 120,
+        "title": "[Feature] Recibo compartible del escrow (Stellar Expert + roles + monto)",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/120",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T13:42:33.000Z"
+        "createdAt": "2026-11-17T15:28:33.000Z"
       },
       {
-        "number": 1481,
-        "title": "Add time-window snapshots to achievement leaderboards",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1481",
+        "number": 119,
+        "title": "[Feature] Expiraci\u00f3n y countdown en ofertas de compra",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/119",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T13:42:32.000Z"
+        "createdAt": "2026-11-17T15:28:31.000Z"
       },
       {
-        "number": 1482,
-        "title": "Add user controls for achievement progress visibility",
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "url": "https://github.com/AgesEmpire/StellarSwipe-Backends/issues/1482",
+        "number": 118,
+        "title": "[Feature] Plantillas de escrow para ventas recurrentes",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/118",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T13:42:32.000Z"
+        "createdAt": "2026-11-17T15:28:29.000Z"
+      },
+      {
+        "number": 117,
+        "title": "[Feature] Reputaci\u00f3n b\u00e1sica de comprador y vendedor",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/117",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:28.000Z"
+      },
+      {
+        "number": 116,
+        "title": "[Feature] Notificaciones in-app de estado (escrow y ramp)",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/116",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:26.000Z"
+      },
+      {
+        "number": 115,
+        "title": "[Product] Panel de vendedor: ofertas, escrows y cobros",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/115",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:24.000Z"
+      },
+      {
+        "number": 114,
+        "title": "[Security] Anclar evidencia Trustless Work (IDs, WASM, tabla payload) en main",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/114",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:23.000Z"
+      },
+      {
+        "number": 113,
+        "title": "[Feature] UI de disputa o quitar el rol de \u00e1rbitro del formulario",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/113",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:21.000Z"
+      },
+      {
+        "number": 112,
+        "title": "[Docs] LICENSE, .env.example y README sin Supabase activo",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/112",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:19.000Z"
+      },
+      {
+        "number": 111,
+        "title": "[Security] Headers CSP, HSTS y frame-ancestors en Vercel",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/111",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:18.000Z"
+      },
+      {
+        "number": 110,
+        "title": "[Chore] Eliminar la copia anidada Kivo/Kivo de main",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/110",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:16.000Z"
+      },
+      {
+        "number": 109,
+        "title": "[Bug] useMyEscrows debe listar receiver, \u00e1rbitro y dem\u00e1s roles",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/109",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:14.000Z"
+      },
+      {
+        "number": 108,
+        "title": "[Bug] try/catch en fund, approve, release y buy",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/108",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:12.000Z"
+      },
+      {
+        "number": 107,
+        "title": "[Security] simulateFiatReceived solo en sandbox local expl\u00edcito",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/107",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:11.000Z"
+      },
+      {
+        "number": 106,
+        "title": "[Feature] Ramp: CLABE/cuenta bancaria del usuario, no la primera de la org",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/106",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:09.000Z"
+      },
+      {
+        "number": 105,
+        "title": "[Bug] El TTL de cotizaci\u00f3n no debe matar el polling de una orden ramp ya creada",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/105",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:07.000Z"
+      },
+      {
+        "number": 104,
+        "title": "[Security] Validar public keys Stellar en EscrowModal y BuyPage",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/104",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:05.000Z"
+      },
+      {
+        "number": 103,
+        "title": "[Bug] Comprar debe fondear y no mostrar \u00e9xito sin contractId real",
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "url": "https://github.com/DonCervantes/MP-Drips-Kivo/issues/103",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T15:28:04.000Z"
       }
     ]
   },
@@ -307,7 +307,7 @@
   "contributorsCount": 0,
   "perRepo": {
     "totalRepos": 575,
-    "enrolledRepos": 962,
+    "enrolledRepos": 964,
     "topRepos": [
       {
         "repo": "Farm-credit/stellar-app-os",
@@ -1063,8 +1063,26 @@
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
-        "pointsUsed": 12400,
-        "pointsRemaining": 12600,
+        "pointsUsed": 15400,
+        "pointsRemaining": 9600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "AgesEmpire/StellarSwipe-Contract",
+        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Contract",
+        "org": "AgesEmpire",
+        "openIssues": 75,
+        "unassignedOpen": 75,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 15000,
+        "pointsRemaining": 10000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1119,6 +1137,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 13400,
         "pointsRemaining": 11600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "AgesEmpire/StellarSwipe-FrontEnd",
+        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-FrontEnd",
+        "org": "AgesEmpire",
+        "openIssues": 65,
+        "unassignedOpen": 65,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 13000,
+        "pointsRemaining": 12000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2074,10 +2110,10 @@
         "repoUrl": "https://github.com/mericcintosun/alvinmunk",
         "org": "mericcintosun",
         "openIssues": 31,
-        "unassignedOpen": 5,
+        "unassignedOpen": 7,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 19,
+        "distinctContributors": 18,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -2101,24 +2137,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 6200,
         "pointsRemaining": 18800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "AgesEmpire/StellarSwipe-Contract",
-        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Contract",
-        "org": "AgesEmpire",
-        "openIssues": 30,
-        "unassignedOpen": 30,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 6000,
-        "pointsRemaining": 19000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2353,6 +2371,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 5150,
         "pointsRemaining": 19850,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "repoUrl": "https://github.com/DonCervantes/MP-Drips-Kivo",
+        "org": "DonCervantes",
+        "openIssues": 26,
+        "unassignedOpen": 26,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2600,
+        "pointsRemaining": 22400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3333,24 +3369,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 600,
         "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "AgesEmpire/StellarSwipe-FrontEnd",
-        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-FrontEnd",
-        "org": "AgesEmpire",
-        "openIssues": 15,
-        "unassignedOpen": 15,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 3000,
-        "pointsRemaining": 22000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -4830,10 +4848,10 @@
         "repoUrl": "https://github.com/Veritasor/Veritasor-Frontend",
         "org": "Veritasor",
         "openIssues": 10,
-        "unassignedOpen": 1,
+        "unassignedOpen": 2,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 5,
+        "distinctContributors": 4,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -8290,10 +8308,10 @@
         "repoUrl": "https://github.com/Stellabill/stellabill-frontend",
         "org": "Stellabill",
         "openIssues": 3,
-        "unassignedOpen": 0,
+        "unassignedOpen": 1,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 3,
+        "distinctContributors": 2,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -8569,24 +8587,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 400,
         "pointsRemaining": 24600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "DonCervantes/MP-Drips-Kivo",
-        "repoUrl": "https://github.com/DonCervantes/MP-Drips-Kivo",
-        "org": "DonCervantes",
-        "openIssues": 2,
-        "unassignedOpen": 2,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 200,
-        "pointsRemaining": 24800,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -10709,7 +10709,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.039345,
+    "usdPerPoint": 0.038848,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10732,7 +10732,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4697,
+    "openAssigned": 4693,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -10742,7 +10742,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10750,7 +10750,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10758,7 +10758,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10766,7 +10766,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10774,7 +10774,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10782,7 +10782,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10790,7 +10790,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10798,7 +10798,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10806,7 +10806,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10814,7 +10814,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10822,7 +10822,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10830,7 +10830,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10838,7 +10838,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10846,7 +10846,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10854,7 +10854,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10862,7 +10862,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10870,7 +10870,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6961.0,
+        "overdueHours": 6963.0,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -10878,7 +10878,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -10886,7 +10886,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -10894,7 +10894,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -10902,7 +10902,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -10910,7 +10910,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -10918,7 +10918,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -10926,7 +10926,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -10934,7 +10934,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -10942,7 +10942,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -10950,7 +10950,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -10958,7 +10958,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6337.0,
+        "overdueHours": 6339.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -10966,7 +10966,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -10974,7 +10974,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -10982,7 +10982,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -10990,7 +10990,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -10998,7 +10998,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -11006,7 +11006,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -11014,7 +11014,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -11022,7 +11022,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -11030,7 +11030,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -11038,7 +11038,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -11046,7 +11046,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -11054,7 +11054,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -11062,7 +11062,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -11070,7 +11070,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -11078,7 +11078,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -11086,7 +11086,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -11094,7 +11094,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -11102,7 +11102,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -11110,7 +11110,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -11118,7 +11118,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -11126,7 +11126,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -11134,11 +11134,11 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5569.0,
+        "overdueHours": 5571.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
-    "staleAssignmentsCount": 4697
+    "staleAssignmentsCount": 4693
   },
   "issueQuality": {
     "closedWithPR": 347843,
@@ -11149,9 +11149,9 @@
     "countsStale": false,
     "closedPrInWave": 0,
     "rewardedInWave": 0,
-    "staleOpenIssues": 7960,
+    "staleOpenIssues": 7957,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 142,
+    "recentlyActiveOpen": 123,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -11191,15 +11191,15 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 11586,
-    "openReportedTotal": 11586,
+    "openFetched": 11705,
+    "openReportedTotal": 11705,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
     "closedScanStoppedEarly": true,
-    "enrollments": 962,
+    "enrollments": 964,
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-17T14:02:24+00:00"
+  "finishedAt": "2026-11-17T16:02:47+00:00"
 }
