@@ -1,17 +1,17 @@
-=== Drips Wave 11 bot — run at 2026-11-17T08:01:43+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-17T10:01:29+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-17T06:01:31+00:00, open=11067)
+[0] Loaded last run state (run at 2026-11-17T08:01:43+00:00, open=11081)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=11081, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=11081, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=11081, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=11081, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=11081, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=11081, hasNext=True
-  page 111: got 81, unique so far=11081, reported total=11081, hasNext=False
-  open issues: 11081
+  page 1: got 100, unique so far=100, reported total=11308, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=11308, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=11308, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=11308, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=11308, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=11308, hasNext=True
+  page 114: got 8, unique so far=11308, reported total=11308, hasNext=False
+  open issues: 11308
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
   page 1: got 100, unique so far=100, reported total=347837, hasNext=True
@@ -27,15 +27,15 @@ Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming 
   → 967 enrollments
 [5/6] Computing metrics...
 [6/6] Writing outputs...
-  pruned old run: 2026-11-16T12-01Z
+  pruned old run: 2026-11-16T14-01Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-17T08:01:43+00:00   in window now: False
-Open issues       : 11,081  (1,811,600 pts)
+Run at (UTC)      : 2026-11-17T10:01:29+00:00   in window now: False
+Open issues       : 11,308  (1,853,600 pts)
 Closed in wave    : 0  (0 pts)
-Max / scored / left: 1,811,600 / 0 / 1,811,600
-USD per point     : $0.041400   paid $0.00   remaining $75,000.00
-Contributors      : 0   new issues: 0   repos: 574
+Max / scored / left: 1,853,600 / 0 / 1,853,600
+USD per point     : $0.040462   paid $0.00   remaining $75,000.00
+Contributors      : 0   new issues: 33   repos: 575
 Warnings          : 0
 === END ===

@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-17T08:01:43+00:00",
+  "runAt": "2026-11-17T10:01:29+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 11081,
-    "totalPoints": 1811600,
+    "total": 11308,
+    "totalPoints": 1853600,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 4744,
-        "sharePct": 42.81,
-        "currentContribution": 530400,
+        "count": 4778,
+        "sharePct": 42.25,
+        "currentContribution": 533800,
         "multiplierBreakdown": {
-          "1": 4238,
+          "1": 4272,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 4238,
+          "100": 4272,
           "200": 479,
           "400": 27
         }
@@ -33,7 +33,7 @@
         "complexity": "medium",
         "basePoints": 150,
         "count": 740,
-        "sharePct": 6.68,
+        "sharePct": 6.54,
         "currentContribution": 124200,
         "multiplierBreakdown": {
           "1": 690,
@@ -49,16 +49,16 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5597,
-        "sharePct": 50.51,
-        "currentContribution": 1157000,
+        "count": 5790,
+        "sharePct": 51.2,
+        "currentContribution": 1195600,
         "multiplierBreakdown": {
-          "1": 5427,
+          "1": 5620,
           "2": 161,
           "4": 9
         },
         "actualPointsBreakdown": {
-          "200": 5427,
+          "200": 5620,
           "400": 161,
           "800": 9
         }
@@ -71,21 +71,242 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1811600,
+  "maxTotalPoints": 1853600,
   "scoredPoints": 0,
-  "remainingPoints": 1811600,
+  "remainingPoints": 1853600,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 0,
-    "prevOpenCount": 11067,
-    "currentOpenCount": 11081,
-    "newIssuesSample": []
+    "newSinceLastRun": 33,
+    "prevOpenCount": 11081,
+    "currentOpenCount": 11308,
+    "newIssuesSample": [
+      {
+        "number": 776,
+        "title": "Clear the remaining type-only compile errors: duplicate declarations, audit type gaps, and server.ts Fastify typing",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/776",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:35:21.000Z"
+      },
+      {
+        "number": 775,
+        "title": "Restore IP-based auth-failure blocking, which was left unwired when the dead code in auth.controller was removed",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/775",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:34:49.000Z"
+      },
+      {
+        "number": 774,
+        "title": "Guard the request-timeout 408 path against already-streaming replies to stop the process crash",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/774",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:34:36.000Z"
+      },
+      {
+        "number": 773,
+        "title": "Finish removing the leftover class-validator DTOs and the broken Prisma deductCredits from the rewards module",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/773",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:34:14.000Z"
+      },
+      {
+        "number": 772,
+        "title": "Unify the three conflicting validation error codes into one documented contract",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/772",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:34:01.000Z"
+      },
+      {
+        "number": 771,
+        "title": "Fix idempotency key handling so transient failures and in-flight requests are retryable and keys are scoped correctly",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/771",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:33:38.000Z"
+      },
+      {
+        "number": 770,
+        "title": "Fix the invalid grouped SQL in the course publish-readiness check so publishing works for courses with modules",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/770",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:33:19.000Z"
+      },
+      {
+        "number": 769,
+        "title": "Clear rewardFailed when transitioning to rewardPending so a retry cannot violate the chk_reward_mutex constraint",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/769",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:32:59.000Z"
+      },
+      {
+        "number": 768,
+        "title": "Reject reward claims for superseded quiz submissions to close the quiz-retry reward farming loop",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/768",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:32:48.000Z"
+      },
+      {
+        "number": 767,
+        "title": "Block IPv4-mapped IPv6 literals in the SSRF guard to close the loopback and cloud-metadata bypass",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/767",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:32:24.000Z"
+      },
+      {
+        "number": 766,
+        "title": "Move per-route bodyLimit out of the Fastify config object so the limits are actually enforced",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/766",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:32:10.000Z"
+      },
+      {
+        "number": 765,
+        "title": "Remove duplicated getModuleQuizHistory/getQuizAnalytics implementations and reconcile conflicting quiz.types interfaces",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/765",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:31:45.000Z"
+      },
+      {
+        "number": 764,
+        "title": "Stop re-executing claim_reward/mint_credential on-chain after a lost response or bad_seq",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/764",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:31:30.000Z"
+      },
+      {
+        "number": 763,
+        "title": "Reject duplicate questionIds in quiz submissions to stop score inflation and reward farming",
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/763",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:31:04.000Z"
+      },
+      {
+        "number": 713,
+        "title": "Retake can raise the tracker score after a credential is minted",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/713",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:48.000Z"
+      },
+      {
+        "number": 712,
+        "title": "renew_credential accepts an expiry in the past",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/712",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:46.000Z"
+      },
+      {
+        "number": 711,
+        "title": "README API Reference names a nonexistent function and omits 23 public ones",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/711",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:43.000Z"
+      },
+      {
+        "number": 710,
+        "title": "ProgressTracker address in credential-nft is unvalidated and immutable",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/710",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:41.000Z"
+      },
+      {
+        "number": 709,
+        "title": "Achievements are order-dependent and several types are never awarded",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/709",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:38.000Z"
+      },
+      {
+        "number": 708,
+        "title": "upgrade.sh documents a two-step multisig flow the contract cannot support",
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/708",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-17T08:30:36.000Z"
+      }
+    ]
   },
   "topContributors": [],
   "allContributors": [],
   "contributorsCount": 0,
   "perRepo": {
-    "totalRepos": 574,
+    "totalRepos": 575,
     "enrolledRepos": 967,
     "topRepos": [
       {
@@ -646,6 +867,42 @@
         "pointsBudget": 25000,
         "pointsUsed": 10100,
         "pointsRemaining": 14900,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "SynapsVault/deploy",
+        "repoUrl": "https://github.com/SynapsVault/deploy",
+        "org": "SynapsVault",
+        "openIssues": 93,
+        "unassignedOpen": 93,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 18600,
+        "pointsRemaining": 6400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "SynapsVault/frontend",
+        "repoUrl": "https://github.com/SynapsVault/frontend",
+        "org": "SynapsVault",
+        "openIssues": 93,
+        "unassignedOpen": 93,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 18600,
+        "pointsRemaining": 6400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1687,6 +1944,24 @@
         "tags": []
       },
       {
+        "repo": "ChainLearnOfficial/chainlearn-contracts",
+        "repoUrl": "https://github.com/ChainLearnOfficial/chainlearn-contracts",
+        "org": "ChainLearnOfficial",
+        "openIssues": 31,
+        "unassignedOpen": 27,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 1,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 4300,
+        "pointsRemaining": 20700,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "DevTobis/ballast",
         "repoUrl": "https://github.com/DevTobis/ballast",
         "org": "DevTobis",
@@ -1700,6 +1975,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 6200,
         "pointsRemaining": 18800,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "drydocs/meridian",
+        "repoUrl": "https://github.com/drydocs/meridian",
+        "org": "drydocs",
+        "openIssues": 31,
+        "unassignedOpen": 24,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 7,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 6050,
+        "pointsRemaining": 18950,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2168,24 +2461,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 1600,
         "pointsRemaining": 23400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "drydocs/meridian",
-        "repoUrl": "https://github.com/drydocs/meridian",
-        "org": "drydocs",
-        "openIssues": 22,
-        "unassignedOpen": 15,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 7,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 4350,
-        "pointsRemaining": 20650,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3027,6 +3302,24 @@
         "tags": []
       },
       {
+        "repo": "ChainLearnOfficial/chainlearn-api",
+        "repoUrl": "https://github.com/ChainLearnOfficial/chainlearn-api",
+        "org": "ChainLearnOfficial",
+        "openIssues": 15,
+        "unassignedOpen": 15,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 1500,
+        "pointsRemaining": 23500,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "cocor-tech/moistello-backend",
         "repoUrl": "https://github.com/cocor-tech/moistello-backend",
         "org": "cocor-tech",
@@ -3669,24 +3962,6 @@
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 3,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2400,
-        "pointsRemaining": 22600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "repoUrl": "https://github.com/ChainLearnOfficial/chainlearn-contracts",
-        "org": "ChainLearnOfficial",
-        "openIssues": 12,
-        "unassignedOpen": 8,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 1,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -9271,24 +9546,6 @@
         "tags": []
       },
       {
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "repoUrl": "https://github.com/ChainLearnOfficial/chainlearn-api",
-        "org": "ChainLearnOfficial",
-        "openIssues": 1,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 100,
-        "pointsRemaining": 24900,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "chioma-housing-protocol-I/chioma",
         "repoUrl": "https://github.com/chioma-housing-protocol-I/chioma",
         "org": "chioma-housing-protocol-I",
@@ -10431,24 +10688,6 @@
         "tags": []
       },
       {
-        "repo": "Zenith-options/frontend",
-        "repoUrl": "https://github.com/Zenith-options/frontend",
-        "org": "Zenith-options",
-        "openIssues": 1,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 200,
-        "pointsRemaining": 24800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "ZK-VOTE/ZK-VOTE",
         "repoUrl": "https://github.com/ZK-VOTE/ZK-VOTE",
         "org": "ZK-VOTE",
@@ -10470,7 +10709,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.0414,
+    "usdPerPoint": 0.040462,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10503,7 +10742,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10511,7 +10750,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10519,7 +10758,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10527,7 +10766,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10535,7 +10774,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10543,7 +10782,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10551,7 +10790,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10559,7 +10798,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10567,7 +10806,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10575,7 +10814,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10583,7 +10822,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10591,7 +10830,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10599,7 +10838,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10607,7 +10846,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10615,7 +10854,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10623,7 +10862,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10631,7 +10870,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6955.0,
+        "overdueHours": 6957.0,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -10639,7 +10878,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -10647,7 +10886,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -10655,7 +10894,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -10663,7 +10902,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -10671,7 +10910,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -10679,7 +10918,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -10687,7 +10926,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -10695,7 +10934,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -10703,7 +10942,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -10711,7 +10950,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -10719,7 +10958,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6331.0,
+        "overdueHours": 6333.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -10727,7 +10966,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -10735,7 +10974,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -10743,7 +10982,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -10751,7 +10990,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -10759,7 +10998,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -10767,7 +11006,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -10775,7 +11014,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -10783,7 +11022,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -10791,7 +11030,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -10799,7 +11038,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -10807,7 +11046,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -10815,7 +11054,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -10823,7 +11062,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -10831,7 +11070,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -10839,7 +11078,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -10847,7 +11086,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -10855,7 +11094,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -10863,7 +11102,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -10871,7 +11110,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -10879,7 +11118,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -10887,7 +11126,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -10895,7 +11134,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5563.0,
+        "overdueHours": 5565.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
@@ -10910,9 +11149,9 @@
     "countsStale": false,
     "closedPrInWave": 0,
     "rewardedInWave": 0,
-    "staleOpenIssues": 8009,
+    "staleOpenIssues": 8008,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 18,
+    "recentlyActiveOpen": 228,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -10952,8 +11191,8 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 11081,
-    "openReportedTotal": 11081,
+    "openFetched": 11308,
+    "openReportedTotal": 11308,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
@@ -10962,5 +11201,5 @@
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-17T08:02:32+00:00"
+  "finishedAt": "2026-11-17T10:02:08+00:00"
 }
