@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T20:06:37+00:00",
+ "generatedAt": "2026-11-18T22:06:01+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T01-38Z",
-   "runAt": "2026-11-18T01:38:34+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 12483,
-   "openPoints": 2018450,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 2018450,
-   "scoredPoints": 0,
-   "remainingPoints": 2018450,
-   "newIssues": 336,
-   "contributors": 0,
-   "repos": 582,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.037157,
-   "projectedFinal": 0,
-   "assigned": 4677,
-   "appsNoAssign": 0,
-   "stale": 4677,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 5470,
-     "points": 603000
-    },
-    "medium": {
-     "count": 759,
-     "points": 127050
-    },
-    "large": {
-     "count": 6254,
-     "points": 1288400
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T03-37Z",
    "runAt": "2026-11-18T03:37:02+00:00",
@@ -457,6 +416,63 @@
      "contributor": "Mordy7",
      "pointsEarned": 4000,
      "issuesClosed": 20
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-18T22-01Z",
+   "runAt": "2026-11-18T22:01:28+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 22298,
+   "openPoints": 3980600,
+   "closedIssues": 1814,
+   "closedPoints": 362550,
+   "maxPoints": 4343150,
+   "scoredPoints": 362550,
+   "remainingPoints": 3980600,
+   "newIssues": 533,
+   "contributors": 254,
+   "repos": 658,
+   "usdPaid": 6260.72,
+   "usdPerPoint": 0.017269,
+   "projectedFinal": 7599862,
+   "assigned": 9051,
+   "appsNoAssign": 5321,
+   "stale": 0,
+   "prRatio": 96.19,
+   "bounceRate": 3.81,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5480,
+     "points": 602700
+    },
+    "medium": {
+     "count": 973,
+     "points": 169500
+    },
+    "large": {
+     "count": 15845,
+     "points": 3208400
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 7200,
+     "issuesClosed": 36
+    },
+    {
+     "contributor": "Emmanuellsensai",
+     "pointsEarned": 6400,
+     "issuesClosed": 32
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 6400,
+     "issuesClosed": 32
     }
    ]
   }
