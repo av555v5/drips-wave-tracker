@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T17:03:42+00:00",
+ "generatedAt": "2026-11-18T20:06:37+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T00-01Z",
-   "runAt": "2026-11-18T00:01:40+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 12147,
-   "openPoints": 1984850,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1984850,
-   "scoredPoints": 0,
-   "remainingPoints": 1984850,
-   "newIssues": 195,
-   "contributors": 0,
-   "repos": 582,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.037786,
-   "projectedFinal": 0,
-   "assigned": 4685,
-   "appsNoAssign": 0,
-   "stale": 4685,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 5134,
-     "points": 569400
-    },
-    "medium": {
-     "count": 759,
-     "points": 127050
-    },
-    "large": {
-     "count": 6254,
-     "points": 1288400
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T01-38Z",
    "runAt": "2026-11-18T01:38:34+00:00",
@@ -441,6 +400,63 @@
      "contributor": "Mosimi25",
      "pointsEarned": 3200,
      "issuesClosed": 16
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-18T20-01Z",
+   "runAt": "2026-11-18T20:01:38+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 21164,
+   "openPoints": 3735400,
+   "closedIssues": 1157,
+   "closedPoints": 231300,
+   "maxPoints": 3966700,
+   "scoredPoints": 231300,
+   "remainingPoints": 3735400,
+   "newIssues": 516,
+   "contributors": 188,
+   "repos": 649,
+   "usdPaid": 4373.28,
+   "usdPerPoint": 0.018907,
+   "projectedFinal": 6457829,
+   "assigned": 8253,
+   "appsNoAssign": 5309,
+   "stale": 0,
+   "prRatio": 96.2,
+   "bounceRate": 3.8,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5645,
+     "points": 618900
+    },
+    "medium": {
+     "count": 978,
+     "points": 168900
+    },
+    "large": {
+     "count": 14541,
+     "points": 2947600
+    }
+   },
+   "top": [
+    {
+     "contributor": "Emmanuellsensai",
+     "pointsEarned": 5600,
+     "issuesClosed": 28
+    },
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 4800,
+     "issuesClosed": 24
+    },
+    {
+     "contributor": "Mordy7",
+     "pointsEarned": 4000,
+     "issuesClosed": 20
     }
    ]
   }
