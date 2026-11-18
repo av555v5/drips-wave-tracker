@@ -848,5 +848,24 @@
     "newIssuesSinceLastRun": 290,
     "contributorsCount": 0,
     "topContributor": null
+  },
+  {
+    "runAt": "2026-11-18T16:01:40+00:00",
+    "waveStatus": "active",
+    "inWaveWindowNow": true,
+    "openIssuesTotal": 19238,
+    "openTotalPoints": 3343050,
+    "closedInWave11": 57,
+    "closedTotalPoints": 11400,
+    "maxTotalPoints": 3354450,
+    "scoredPoints": 11400,
+    "remainingPoints": 3343050,
+    "newIssuesSinceLastRun": 1149,
+    "contributorsCount": 19,
+    "topContributor": {
+      "contributor": "Emmanuellsensai",
+      "pointsEarned": 1400,
+      "issuesClosed": 7
+    }
   }
 ]

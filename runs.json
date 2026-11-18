@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T14:05:00+00:00",
+ "generatedAt": "2026-11-18T16:04:55+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-17T18-47Z",
-   "runAt": "2026-11-17T18:47:32+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 11838,
-   "openPoints": 1944150,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1944150,
-   "scoredPoints": 0,
-   "remainingPoints": 1944150,
-   "newIssues": 101,
-   "contributors": 0,
-   "repos": 578,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.038577,
-   "projectedFinal": 0,
-   "assigned": 4693,
-   "appsNoAssign": 0,
-   "stale": 4693,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 4930,
-     "points": 549000
-    },
-    "medium": {
-     "count": 745,
-     "points": 124950
-    },
-    "large": {
-     "count": 6163,
-     "points": 1270200
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-17T21-43Z",
    "runAt": "2026-11-17T21:43:22+00:00",
@@ -411,6 +370,63 @@
     }
    },
    "top": []
+  },
+  {
+   "dir": "2026-11-18T16-01Z",
+   "runAt": "2026-11-18T16:01:40+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 19238,
+   "openPoints": 3343050,
+   "closedIssues": 57,
+   "closedPoints": 11400,
+   "maxPoints": 3354450,
+   "scoredPoints": 11400,
+   "remainingPoints": 3343050,
+   "newIssues": 1149,
+   "contributors": 19,
+   "repos": 620,
+   "usdPaid": 254.89,
+   "usdPerPoint": 0.022358,
+   "projectedFinal": 949083,
+   "assigned": 6332,
+   "appsNoAssign": 4325,
+   "stale": 0,
+   "prRatio": 96.2,
+   "bounceRate": 3.8,
+   "warnings": 1,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5682,
+     "points": 623000
+    },
+    "medium": {
+     "count": 875,
+     "points": 144450
+    },
+    "large": {
+     "count": 12681,
+     "points": 2575600
+    }
+   },
+   "top": [
+    {
+     "contributor": "Emmanuellsensai",
+     "pointsEarned": 1400,
+     "issuesClosed": 7
+    },
+    {
+     "contributor": "aladeislam30",
+     "pointsEarned": 800,
+     "issuesClosed": 4
+    },
+    {
+     "contributor": "Fidelis900",
+     "pointsEarned": 800,
+     "issuesClosed": 4
+    }
+   ]
   }
  ]
 }
