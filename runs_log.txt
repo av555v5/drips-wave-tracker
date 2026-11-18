@@ -1,6 +1,6 @@
-=== Drips Wave 11 bot — run at 2026-11-18T01:38:34+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-18T03:37:02+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-18T00:01:40+00:00, open=12147)
+[0] Loaded last run state (run at 2026-11-18T01:38:34+00:00, open=12483)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
@@ -28,15 +28,15 @@ Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming 
   → 963 enrollments
 [5/6] Computing metrics...
 [6/6] Writing outputs...
-  pruned old run: 2026-11-17T04-01Z
+  pruned old run: 2026-11-17T06-01Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-18T01:38:34+00:00   in window now: False
+Run at (UTC)      : 2026-11-18T03:37:02+00:00   in window now: False
 Open issues       : 12,483  (2,018,450 pts)
 Closed in wave    : 0  (0 pts)
 Max / scored / left: 2,018,450 / 0 / 2,018,450
 USD per point     : $0.037157   paid $0.00   remaining $75,000.00
-Contributors      : 0   new issues: 336   repos: 582
+Contributors      : 0   new issues: 0   repos: 582
 Warnings          : 0
 === END ===

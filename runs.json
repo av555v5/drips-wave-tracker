@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T01:39:18+00:00",
+ "generatedAt": "2026-11-18T03:38:23+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-17T06-01Z",
-   "runAt": "2026-11-17T06:01:31+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 11067,
-   "openPoints": 1808800,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1808800,
-   "scoredPoints": 0,
-   "remainingPoints": 1808800,
-   "newIssues": 0,
-   "contributors": 0,
-   "repos": 574,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.041464,
-   "projectedFinal": 0,
-   "assigned": 4715,
-   "appsNoAssign": 0,
-   "stale": 4715,
-   "prRatio": 96.24,
-   "bounceRate": 3.76,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 4744,
-     "points": 530400
-    },
-    "medium": {
-     "count": 740,
-     "points": 124200
-    },
-    "large": {
-     "count": 5583,
-     "points": 1154200
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-17T08-01Z",
    "runAt": "2026-11-17T08:01:43+00:00",
@@ -392,6 +351,47 @@
    "assigned": 4677,
    "appsNoAssign": 0,
    "stale": 4677,
+   "prRatio": 96.23,
+   "bounceRate": 3.77,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 5470,
+     "points": 603000
+    },
+    "medium": {
+     "count": 759,
+     "points": 127050
+    },
+    "large": {
+     "count": 6254,
+     "points": 1288400
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-18T03-37Z",
+   "runAt": "2026-11-18T03:37:02+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 12483,
+   "openPoints": 2018450,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 2018450,
+   "scoredPoints": 0,
+   "remainingPoints": 2018450,
+   "newIssues": 0,
+   "contributors": 0,
+   "repos": 582,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.037157,
+   "projectedFinal": 0,
+   "assigned": 4667,
+   "appsNoAssign": 0,
+   "stale": 4667,
    "prRatio": 96.23,
    "bounceRate": 3.77,
    "warnings": 0,
