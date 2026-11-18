@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T10:03:57+00:00",
+ "generatedAt": "2026-11-18T12:03:09+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-17T14-01Z",
-   "runAt": "2026-11-17T14:01:34+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 11586,
-   "openPoints": 1906200,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1906200,
-   "scoredPoints": 0,
-   "remainingPoints": 1906200,
-   "newIssues": 45,
-   "contributors": 0,
-   "repos": 575,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.039345,
-   "projectedFinal": 0,
-   "assigned": 4697,
-   "appsNoAssign": 0,
-   "stale": 4697,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 4808,
-     "points": 536800
-    },
-    "medium": {
-     "count": 740,
-     "points": 124200
-    },
-    "large": {
-     "count": 6038,
-     "points": 1245200
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-17T16-01Z",
    "runAt": "2026-11-17T16:01:39+00:00",
@@ -408,6 +367,47 @@
     "large": {
      "count": 8004,
      "points": 1640200
+    }
+   },
+   "top": []
+  },
+  {
+   "dir": "2026-11-18T12-01Z",
+   "runAt": "2026-11-18T12:01:32+00:00",
+   "status": "upcoming",
+   "inWaveWindowNow": false,
+   "openIssues": 15549,
+   "openPoints": 2528100,
+   "closedIssues": 0,
+   "closedPoints": 0,
+   "maxPoints": 2528100,
+   "scoredPoints": 0,
+   "remainingPoints": 2528100,
+   "newIssues": 557,
+   "contributors": 0,
+   "repos": 603,
+   "usdPaid": 0.0,
+   "usdPerPoint": 0.029667,
+   "projectedFinal": 0,
+   "assigned": 4565,
+   "appsNoAssign": 0,
+   "stale": 4565,
+   "prRatio": 96.23,
+   "bounceRate": 3.77,
+   "warnings": 0,
+   "basis": "closed",
+   "distribution": {
+    "small": {
+     "count": 6507,
+     "points": 706700
+    },
+    "medium": {
+     "count": 792,
+     "points": 132000
+    },
+    "large": {
+     "count": 8250,
+     "points": 1689400
     }
    },
    "top": []
