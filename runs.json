@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T16:04:55+00:00",
+ "generatedAt": "2026-11-18T17:03:42+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-17T21-43Z",
-   "runAt": "2026-11-17T21:43:22+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 11935,
-   "openPoints": 1962850,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 1962850,
-   "scoredPoints": 0,
-   "remainingPoints": 1962850,
-   "newIssues": 4,
-   "contributors": 0,
-   "repos": 582,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.03821,
-   "projectedFinal": 0,
-   "assigned": 4685,
-   "appsNoAssign": 0,
-   "stale": 4685,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 4937,
-     "points": 549700
-    },
-    "medium": {
-     "count": 745,
-     "points": 124950
-    },
-    "large": {
-     "count": 6253,
-     "points": 1288200
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T00-01Z",
    "runAt": "2026-11-18T00:01:40+00:00",
@@ -425,6 +384,63 @@
      "contributor": "Fidelis900",
      "pointsEarned": 800,
      "issuesClosed": 4
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-18T17-02Z",
+   "runAt": "2026-11-18T17:02:06+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 20067,
+   "openPoints": 3496050,
+   "closedIssues": 336,
+   "closedPoints": 67100,
+   "maxPoints": 3563150,
+   "scoredPoints": 67100,
+   "remainingPoints": 3496050,
+   "newIssues": 226,
+   "contributors": 72,
+   "repos": 631,
+   "usdPaid": 1412.37,
+   "usdPerPoint": 0.021049,
+   "projectedFinal": 3726380,
+   "assigned": 7138,
+   "appsNoAssign": 4740,
+   "stale": 0,
+   "prRatio": 96.2,
+   "bounceRate": 3.8,
+   "warnings": 1,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5770,
+     "points": 631800
+    },
+    "medium": {
+     "count": 955,
+     "points": 156450
+    },
+    "large": {
+     "count": 13342,
+     "points": 2707800
+    }
+   },
+   "top": [
+    {
+     "contributor": "Novastrum1",
+     "pointsEarned": 4000,
+     "issuesClosed": 20
+    },
+    {
+     "contributor": "Busiii-adetiba",
+     "pointsEarned": 3200,
+     "issuesClosed": 16
+    },
+    {
+     "contributor": "Mosimi25",
+     "pointsEarned": 3200,
+     "issuesClosed": 16
     }
    ]
   }

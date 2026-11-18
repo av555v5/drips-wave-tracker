@@ -1,70 +1,47 @@
-=== Drips Wave 11 bot — run at 2026-11-18T16:01:40+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-18T17:02:06+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-18T14:01:34+00:00, open=16578)
+[0] Loaded last run state (run at 2026-11-18T16:01:40+00:00, open=19238)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=active  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=19167, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=19167, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=19167, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=19181, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=19181, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=19181, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=19181, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=19181, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=19199, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=19199, hasNext=True
-  page 192: got 79, unique so far=19179, reported total=19199, hasNext=False
-  WARN: fetched 19179 but API reports 19199; retrying (1/3)
-  page 1: got 100, unique so far=100, reported total=19199, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=19199, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=19225, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=19225, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=19225, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=19225, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=19225, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=19234, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=19234, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=19234, hasNext=True
-  page 193: got 23, unique so far=19223, reported total=19234, hasNext=False
-  WARN: fetched 19223 but API reports 19234; retrying (2/3)
-  page 1: got 100, unique so far=100, reported total=19234, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=19234, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=19238, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=19238, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=19238, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=19238, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=19238, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=19238, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=19238, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=19238, hasNext=True
-  page 193: got 38, unique so far=19238, reported total=19238, hasNext=False
-  open issues: 19238
+  page 1: got 100, unique so far=100, reported total=20063, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=20063, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=20063, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=20067, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=20067, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=20067, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=20067, hasNext=True
+  page 140: got 100, unique so far=14000, reported total=20064, hasNext=True
+  page 160: got 100, unique so far=16000, reported total=20064, hasNext=True
+  page 180: got 100, unique so far=18000, reported total=20064, hasNext=True
+  page 200: got 100, unique so far=20000, reported total=20067, hasNext=True
+  page 201: got 67, unique so far=20067, reported total=20067, hasNext=False
+  open issues: 20067
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
-  page 1: got 100, unique so far=100, reported total=348102, hasNext=True
-  early stop at page 4 (unique=400)
+  page 1: got 100, unique so far=100, reported total=348381, hasNext=True
+  early stop at page 7 (unique=700)
   closed-in-wave by definition (rewarded issues / points scored):
-    resolved :     57 issues      11,400 pts   <-- used
-    closed   :    179 issues      35,650 pts
-    completed:     57 issues      11,400 pts
+    resolved :    336 issues      67,100 pts   <-- used
+    closed   :    458 issues      91,350 pts
+    completed:    336 issues      67,100 pts
 [4/6] Fetching enrollments + filter counts...
   fetching enrollments...
   page 1: got 100, unique so far=100, reported total=964, hasNext=True
   page 10: got 64, unique so far=964, reported total=964, hasNext=False
   → 964 enrollments
 [5/6] Computing metrics...
-  WARN: scored points differ by definition of "closed in wave": resolved=11,400, closed=35,650, completed=11,400; using resolved
+  WARN: scored points differ by definition of "closed in wave": resolved=67,100, closed=91,350, completed=67,100; using resolved
 [6/6] Writing outputs...
-  pruned old run: 2026-11-17T18-47Z
+  pruned old run: 2026-11-17T21-43Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-18T16:01:40+00:00   in window now: True
-Open issues       : 19,238  (3,343,050 pts)
-Closed in wave    : 57  (11,400 pts)
-Max / scored / left: 3,354,450 / 11,400 / 3,343,050
-USD per point     : $0.022358   paid $254.89   remaining $74,745.11
-Contributors      : 19   new issues: 1,149   repos: 620
+Run at (UTC)      : 2026-11-18T17:02:06+00:00   in window now: True
+Open issues       : 20,067  (3,496,050 pts)
+Closed in wave    : 336  (67,100 pts)
+Max / scored / left: 3,563,150 / 67,100 / 3,496,050
+USD per point     : $0.021049   paid $1,412.37   remaining $73,587.63
+Contributors      : 72   new issues: 226   repos: 631
 Warnings          : 1
 === END ===

@@ -867,5 +867,24 @@
       "pointsEarned": 1400,
       "issuesClosed": 7
     }
+  },
+  {
+    "runAt": "2026-11-18T17:02:06+00:00",
+    "waveStatus": "active",
+    "inWaveWindowNow": true,
+    "openIssuesTotal": 20067,
+    "openTotalPoints": 3496050,
+    "closedInWave11": 336,
+    "closedTotalPoints": 67100,
+    "maxTotalPoints": 3563150,
+    "scoredPoints": 67100,
+    "remainingPoints": 3496050,
+    "newIssuesSinceLastRun": 226,
+    "contributorsCount": 72,
+    "topContributor": {
+      "contributor": "Novastrum1",
+      "pointsEarned": 4000,
+      "issuesClosed": 20
+    }
   }
 ]
