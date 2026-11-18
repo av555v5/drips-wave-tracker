@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-17T10:01:29+00:00",
+  "runAt": "2026-11-18T08:01:30+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 11308,
-    "totalPoints": 1853600,
+    "total": 13336,
+    "totalPoints": 2164050,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 4778,
-        "sharePct": 42.25,
-        "currentContribution": 533800,
+        "count": 5738,
+        "sharePct": 43.03,
+        "currentContribution": 629800,
         "multiplierBreakdown": {
-          "1": 4272,
+          "1": 5232,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 4272,
+          "100": 5232,
           "200": 479,
           "400": 27
         }
@@ -32,16 +32,16 @@
       {
         "complexity": "medium",
         "basePoints": 150,
-        "count": 740,
-        "sharePct": 6.54,
-        "currentContribution": 124200,
+        "count": 759,
+        "sharePct": 5.69,
+        "currentContribution": 127050,
         "multiplierBreakdown": {
-          "1": 690,
+          "1": 709,
           "2": 31,
           "4": 19
         },
         "actualPointsBreakdown": {
-          "150": 690,
+          "150": 709,
           "300": 31,
           "600": 19
         }
@@ -49,18 +49,18 @@
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 5790,
-        "sharePct": 51.2,
-        "currentContribution": 1195600,
+        "count": 6839,
+        "sharePct": 51.28,
+        "currentContribution": 1407200,
         "multiplierBreakdown": {
-          "1": 5620,
+          "1": 6666,
           "2": 161,
-          "4": 9
+          "4": 12
         },
         "actualPointsBreakdown": {
-          "200": 5620,
+          "200": 6666,
           "400": 161,
-          "800": 9
+          "800": 12
         }
       }
     ]
@@ -71,234 +71,234 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1853600,
+  "maxTotalPoints": 2164050,
   "scoredPoints": 0,
-  "remainingPoints": 1853600,
+  "remainingPoints": 2164050,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 33,
-    "prevOpenCount": 11081,
-    "currentOpenCount": 11308,
+    "newSinceLastRun": 176,
+    "prevOpenCount": 12586,
+    "currentOpenCount": 13336,
     "newIssuesSample": [
       {
-        "number": 776,
-        "title": "Clear the remaining type-only compile errors: duplicate declarations, audit type gaps, and server.ts Fastify typing",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/776",
+        "number": 1125,
+        "title": "[medical-claims] Line-level adjudication isn't validated \u2014 lines can be both approved and denied, out of range or skipped, and approved_amount isn't tied to approved lines",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1125",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:35:21.000Z"
+        "createdAt": "2026-11-18T06:36:30.000Z"
       },
       {
-        "number": 775,
-        "title": "Restore IP-based auth-failure blocking, which was left unwired when the dead code in auth.controller was removed",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/775",
+        "number": 1124,
+        "title": "[access-control] Anyone can fill a victim's AccessList (200) or a resource's authorized-party list (200) with junk grants, blocking every legitimate grant",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1124",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:34:49.000Z"
+        "createdAt": "2026-11-18T06:36:24.000Z"
       },
       {
-        "number": 774,
-        "title": "Guard the request-timeout 408 path against already-streaming replies to stop the process crash",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/774",
+        "number": 1123,
+        "title": "[access-control] deactivate_entity leaves every grant the entity issued active, and deactivation is permanent with no reactivate path",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1123",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:34:36.000Z"
+        "createdAt": "2026-11-18T06:36:18.000Z"
       },
       {
-        "number": 773,
-        "title": "Finish removing the leftover class-validator DTOs and the broken Prisma deductCredits from the rewards module",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/773",
+        "number": 1122,
+        "title": "[care-plan] Any care-team member can add any address to the team with full edit rights \u2014 access grows transitively, members can never be removed, and the patient never consents",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1122",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:34:14.000Z"
+        "createdAt": "2026-11-18T06:36:12.000Z"
       },
       {
-        "number": 772,
-        "title": "Unify the three conflicting validation error codes into one documented contract",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/772",
+        "number": 1121,
+        "title": "[patient-vitals] trigger_vital_alert accepts any alert_time and value string, has no cooldown, and appends to an unbounded Vec \u2014 alerts can be spammed or backdated",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1121",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:34:01.000Z"
+        "createdAt": "2026-11-18T06:36:06.000Z"
       },
       {
-        "number": 771,
-        "title": "Fix idempotency key handling so transient failures and in-flight requests are retryable and keys are scoped correctly",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/771",
+        "number": 1120,
+        "title": "[health-records] deregister_patient only drops consents \u2014 records, version history and category-index entries stay on-chain and remain readable by the patient's former admin and analytics roles",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1120",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:33:38.000Z"
+        "createdAt": "2026-11-18T06:36:01.000Z"
       },
       {
-        "number": 770,
-        "title": "Fix the invalid grouped SQL in the course publish-readiness check so publishing works for courses with modules",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/770",
+        "number": 1119,
+        "title": "[patient-registry] get_authorized_doctors reveals any patient's care team to anyone, and grant_access / revoke_access emit no events",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1119",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:33:19.000Z"
+        "createdAt": "2026-11-18T06:35:55.000Z"
       },
       {
-        "number": 769,
-        "title": "Clear rewardFailed when transitioning to rewardPending so a retry cannot violate the chk_reward_mutex constraint",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/769",
+        "number": 1118,
+        "title": "[access-control] Consent checks are weak \u2014 scope 0 matches any consent, grant_consent accepts already-expired consents, and callers pass the wrong purpose and scope",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1118",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:32:59.000Z"
+        "createdAt": "2026-11-18T06:35:49.000Z"
       },
       {
-        "number": 768,
-        "title": "Reject reward claims for superseded quiz submissions to close the quiz-retry reward farming loop",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/768",
+        "number": 1117,
+        "title": "[multisig-governance] The threshold can never change \u2014 adding signers turns 2-of-3 into 2-of-10, and the threshold can't be raised or lowered",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1117",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:32:48.000Z"
+        "createdAt": "2026-11-18T06:35:44.000Z"
       },
       {
-        "number": 767,
-        "title": "Block IPv4-mapped IPv6 literals in the SSRF guard to close the loopback and cloud-metadata bypass",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/767",
+        "number": 1116,
+        "title": "[liquidity-pool] set_paused blocks remove_liquidity, so a single admin key can freeze every LP's funds indefinitely",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1116",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:32:24.000Z"
+        "createdAt": "2026-11-18T06:35:38.000Z"
       },
       {
-        "number": 766,
-        "title": "Move per-route bodyLimit out of the Fastify config object so the limits are actually enforced",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/766",
+        "number": 1115,
+        "title": "[telemedicine] The session \"token\" is sha256 of public values and is returned in the public transaction result \u2014 anyone can derive or read it",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1115",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:32:10.000Z"
+        "createdAt": "2026-11-18T06:35:32.000Z"
       },
       {
-        "number": 765,
-        "title": "Remove duplicated getModuleQuizHistory/getQuizAnalytics implementations and reconcile conflicting quiz.types interfaces",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/765",
+        "number": 1114,
+        "title": "[hospital-registry] Every config update emits the entire old and new HospitalConfig, including the billing tax_id \u2014 large configs exceed the event size limit and updates start failing",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1114",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:31:45.000Z"
+        "createdAt": "2026-11-18T06:35:26.000Z"
       },
       {
-        "number": 764,
-        "title": "Stop re-executing claim_reward/mint_credential on-chain after a lost response or bad_seq",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/764",
+        "number": 1113,
+        "title": "[prenatal-pediatric] Newborns get a keyless contract-derived address as patient_id \u2014 no parent or guardian can ever read, share or manage the child's pediatric records",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1113",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:31:30.000Z"
+        "createdAt": "2026-11-18T06:35:20.000Z"
       },
       {
-        "number": 763,
-        "title": "Reject duplicate questionIds in quiz submissions to stop score inflation and reward farming",
-        "repo": "ChainLearnOfficial/chainlearn-api",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-api/issues/763",
+        "number": 1112,
+        "title": "[immunization-registry] The per-lot index is a single Vec \u2014 a vaccine lot with a few thousand doses stops accepting records and breaks lot recall; duplicate and out-of-sequence doses are accepted",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1112",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:31:04.000Z"
+        "createdAt": "2026-11-18T06:35:14.000Z"
       },
       {
-        "number": 713,
-        "title": "Retake can raise the tracker score after a credential is minted",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/713",
+        "number": 1111,
+        "title": "[pacs-integration] Anyone can append to a study's hash-chained view log, and the log is one unbounded Vec \u2014 the audit trail can be flooded until record_study_view stops working",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1111",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:48.000Z"
+        "createdAt": "2026-11-18T06:26:58.000Z"
       },
       {
-        "number": 712,
-        "title": "renew_credential accepts an expiry in the past",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/712",
+        "number": 1110,
+        "title": "[dental-records] Tooth conditions are keyed without the surface \u2014 each new finding on a tooth overwrites the previous one, and tooth numbers aren't validated",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1110",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:46.000Z"
+        "createdAt": "2026-11-18T06:26:52.000Z"
       },
       {
-        "number": 711,
-        "title": "README API Reference names a nonexistent function and omits 23 public ones",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/711",
+        "number": 1109,
+        "title": "[clinical-guideline] evaluate_guideline, assess_risk_score, suggest_care_pathway and check_preventive_care return hard-coded stub output",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1109",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:43.000Z"
+        "createdAt": "2026-11-18T06:26:46.000Z"
       },
       {
-        "number": 710,
-        "title": "ProgressTracker address in credential-nft is unvalidated and immutable",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/710",
+        "number": 1108,
+        "title": "[clinical-guideline] calculate_drug_dosage ignores the medication and returns \"10+mg TID oral \u00d7 7 days\" for every adult \u2014 placeholder dosing exposed as a public API",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1108",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:41.000Z"
+        "createdAt": "2026-11-18T06:26:40.000Z"
       },
       {
-        "number": 709,
-        "title": "Achievements are order-dependent and several types are never awarded",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/709",
+        "number": 1107,
+        "title": "[architecture] The root `Contracts` crate is a #[contract] with its own #[contractimpl], so 10 contracts that use it for safe_increment ship its API \u2014 health-records and prenatal-pediatric lose their constructor",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1107",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:38.000Z"
+        "createdAt": "2026-11-18T06:26:35.000Z"
       },
       {
-        "number": 708,
-        "title": "upgrade.sh documents a two-step multisig flow the contract cannot support",
-        "repo": "ChainLearnOfficial/chainlearn-contracts",
-        "url": "https://github.com/ChainLearnOfficial/chainlearn-contracts/issues/708",
+        "number": 1106,
+        "title": "[ttl] Almost no contract extends its instance TTL \u2014 admin, counters and registry pointers (and the contract instance itself) will be archived; ttl-config has no instance helper",
+        "repo": "Healthy-Stellar/contracts",
+        "url": "https://github.com/Healthy-Stellar/contracts/issues/1106",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T08:30:36.000Z"
+        "createdAt": "2026-11-18T06:26:29.000Z"
       }
     ]
   },
@@ -306,8 +306,8 @@
   "allContributors": [],
   "contributorsCount": 0,
   "perRepo": {
-    "totalRepos": 575,
-    "enrolledRepos": 967,
+    "totalRepos": 589,
+    "enrolledRepos": 963,
     "topRepos": [
       {
         "repo": "Farm-credit/stellar-app-os",
@@ -438,6 +438,24 @@
         "tags": []
       },
       {
+        "repo": "StellarDevHub/Web3-Student-Lab",
+        "repoUrl": "https://github.com/StellarDevHub/Web3-Student-Lab",
+        "org": "StellarDevHub",
+        "openIssues": 162,
+        "unassignedOpen": 162,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 17400,
+        "pointsRemaining": 7600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Kevin737866/stellar-asset-tokenization-suite",
         "repoUrl": "https://github.com/Kevin737866/stellar-asset-tokenization-suite",
         "org": "Kevin737866",
@@ -451,6 +469,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 16700,
         "pointsRemaining": 8300,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "StellarDevHub/soroban-playground",
+        "repoUrl": "https://github.com/StellarDevHub/soroban-playground",
+        "org": "StellarDevHub",
+        "openIssues": 155,
+        "unassignedOpen": 150,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 4,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 16000,
+        "pointsRemaining": 9000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -494,6 +530,24 @@
         "tags": []
       },
       {
+        "repo": "nextellarlabs/nextellar-docs",
+        "repoUrl": "https://github.com/nextellarlabs/nextellar-docs",
+        "org": "nextellarlabs",
+        "openIssues": 136,
+        "unassignedOpen": 87,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "sorolens/sorolens",
         "repoUrl": "https://github.com/sorolens/sorolens",
         "org": "sorolens",
@@ -507,6 +561,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "astera-hq/Astera",
+        "repoUrl": "https://github.com/astera-hq/Astera",
+        "org": "astera-hq",
+        "openIssues": 133,
+        "unassignedOpen": 130,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 3,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 13550,
+        "pointsRemaining": 11450,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -597,6 +669,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 12500,
         "pointsRemaining": 12500,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "posture-sec/guage",
+        "repoUrl": "https://github.com/posture-sec/guage",
+        "org": "posture-sec",
+        "openIssues": 125,
+        "unassignedOpen": 125,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -800,6 +890,24 @@
         "tags": []
       },
       {
+        "repo": "Agrisettle/HarvestLock-Contracts",
+        "repoUrl": "https://github.com/Agrisettle/HarvestLock-Contracts",
+        "org": "Agrisettle",
+        "openIssues": 115,
+        "unassignedOpen": 112,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 1,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 11800,
+        "pointsRemaining": 13200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "SorobanForge/stellar-streams",
         "repoUrl": "https://github.com/SorobanForge/stellar-streams",
         "org": "SorobanForge",
@@ -836,6 +944,24 @@
         "tags": []
       },
       {
+        "repo": "StellarSettle/stellarsettle",
+        "repoUrl": "https://github.com/StellarSettle/stellarsettle",
+        "org": "StellarSettle",
+        "openIssues": 105,
+        "unassignedOpen": 105,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 11900,
+        "pointsRemaining": 13100,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "soroworks/soroforge",
         "repoUrl": "https://github.com/soroworks/soroforge",
         "org": "soroworks",
@@ -854,6 +980,24 @@
         "tags": []
       },
       {
+        "repo": "posture-sec/airlock",
+        "repoUrl": "https://github.com/posture-sec/airlock",
+        "org": "posture-sec",
+        "openIssues": 100,
+        "unassignedOpen": 100,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 20000,
+        "pointsRemaining": 5000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "soroworks/sorovault",
         "repoUrl": "https://github.com/soroworks/sorovault",
         "org": "soroworks",
@@ -867,6 +1011,42 @@
         "pointsBudget": 25000,
         "pointsUsed": 10100,
         "pointsRemaining": 14900,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "SynapsVault/backend",
+        "repoUrl": "https://github.com/SynapsVault/backend",
+        "org": "SynapsVault",
+        "openIssues": 94,
+        "unassignedOpen": 94,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 18800,
+        "pointsRemaining": 6200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "SynapsVault/contracts",
+        "repoUrl": "https://github.com/SynapsVault/contracts",
+        "org": "SynapsVault",
+        "openIssues": 93,
+        "unassignedOpen": 93,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 18600,
+        "pointsRemaining": 6400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -962,6 +1142,60 @@
         "tags": []
       },
       {
+        "repo": "Open-Hub-Tec/yucu-protocol",
+        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
+        "org": "Open-Hub-Tec",
+        "openIssues": 87,
+        "unassignedOpen": 87,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 9500,
+        "pointsRemaining": 15500,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
+        "repoUrl": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend",
+        "org": "Healthy-Stellar",
+        "openIssues": 86,
+        "unassignedOpen": 80,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 6,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 9800,
+        "pointsRemaining": 15200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Healthy-Stellar/contracts",
+        "repoUrl": "https://github.com/Healthy-Stellar/contracts",
+        "org": "Healthy-Stellar",
+        "openIssues": 82,
+        "unassignedOpen": 80,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 2,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 8400,
+        "pointsRemaining": 16600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Stellar-Agent-Guard/stellar-agent-guard-contracts",
         "repoUrl": "https://github.com/Stellar-Agent-Guard/stellar-agent-guard-contracts",
         "org": "Stellar-Agent-Guard",
@@ -1016,6 +1250,78 @@
         "tags": []
       },
       {
+        "repo": "AgesEmpire/StellarSwipe-Backends",
+        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Backends",
+        "org": "AgesEmpire",
+        "openIssues": 77,
+        "unassignedOpen": 77,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 15400,
+        "pointsRemaining": 9600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "AgesEmpire/StellarSwipe-Contract",
+        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Contract",
+        "org": "AgesEmpire",
+        "openIssues": 75,
+        "unassignedOpen": 75,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 15000,
+        "pointsRemaining": 10000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "posture-sec/stellar-account-fixtures",
+        "repoUrl": "https://github.com/posture-sec/stellar-account-fixtures",
+        "org": "posture-sec",
+        "openIssues": 75,
+        "unassignedOpen": 75,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 15000,
+        "pointsRemaining": 10000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "posture-sec/stellar-posture-watch",
+        "repoUrl": "https://github.com/posture-sec/stellar-posture-watch",
+        "org": "posture-sec",
+        "openIssues": 75,
+        "unassignedOpen": 75,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 15000,
+        "pointsRemaining": 10000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Telocel-Labs/Trident",
         "repoUrl": "https://github.com/Telocel-Labs/Trident",
         "org": "Telocel-Labs",
@@ -1065,6 +1371,42 @@
         "pointsBudget": 25000,
         "pointsUsed": 13400,
         "pointsRemaining": 11600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "StreamFi-x/streamfi-frontend",
+        "repoUrl": "https://github.com/StreamFi-x/streamfi-frontend",
+        "org": "StreamFi-x",
+        "openIssues": 68,
+        "unassignedOpen": 63,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 4,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 13550,
+        "pointsRemaining": 11450,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "AgesEmpire/StellarSwipe-FrontEnd",
+        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-FrontEnd",
+        "org": "AgesEmpire",
+        "openIssues": 65,
+        "unassignedOpen": 65,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 13000,
+        "pointsRemaining": 12000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1164,10 +1506,10 @@
         "repoUrl": "https://github.com/Stellar-Uzima/Uzima-Backend",
         "org": "Stellar-Uzima",
         "openIssues": 61,
-        "unassignedOpen": 0,
+        "unassignedOpen": 4,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 32,
+        "distinctContributors": 31,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -1209,6 +1551,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 9000,
         "pointsRemaining": 16000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "nextellarlabs/nextellar",
+        "repoUrl": "https://github.com/nextellarlabs/nextellar",
+        "org": "nextellarlabs",
+        "openIssues": 55,
+        "unassignedOpen": 13,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 32,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 9050,
+        "pointsRemaining": 15950,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1304,24 +1664,6 @@
         "tags": []
       },
       {
-        "repo": "nextellarlabs/nextellar-docs",
-        "repoUrl": "https://github.com/nextellarlabs/nextellar-docs",
-        "org": "nextellarlabs",
-        "openIssues": 50,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 7800,
-        "pointsRemaining": 17200,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Emmy123222/Stellar-MicroPay",
         "repoUrl": "https://github.com/Emmy123222/Stellar-MicroPay",
         "org": "Emmy123222",
@@ -1355,6 +1697,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 6300,
         "pointsRemaining": 18700,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "LumenRoute/lumenbazaar-backend",
+        "repoUrl": "https://github.com/LumenRoute/lumenbazaar-backend",
+        "org": "LumenRoute",
+        "openIssues": 47,
+        "unassignedOpen": 47,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 9400,
+        "pointsRemaining": 15600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1434,24 +1794,6 @@
         ]
       },
       {
-        "repo": "nextellarlabs/nextellar",
-        "repoUrl": "https://github.com/nextellarlabs/nextellar",
-        "org": "nextellarlabs",
-        "openIssues": 45,
-        "unassignedOpen": 3,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 32,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 7050,
-        "pointsRemaining": 17950,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Samuel1-ona/Hunty-contract",
         "repoUrl": "https://github.com/Samuel1-ona/Hunty-contract",
         "org": "Samuel1-ona",
@@ -1521,6 +1863,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 5400,
         "pointsRemaining": 19600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "LumenRoute/lumenbazaar-frontend",
+        "repoUrl": "https://github.com/LumenRoute/lumenbazaar-frontend",
+        "org": "LumenRoute",
+        "openIssues": 44,
+        "unassignedOpen": 44,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 8800,
+        "pointsRemaining": 16200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1836,19 +2196,19 @@
         "tags": []
       },
       {
-        "repo": "AgesEmpire/StellarSwipe-Backends",
-        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Backends",
-        "org": "AgesEmpire",
-        "openIssues": 32,
-        "unassignedOpen": 32,
+        "repo": "nebgov/nebgov",
+        "repoUrl": "https://github.com/nebgov/nebgov",
+        "org": "nebgov",
+        "openIssues": 34,
+        "unassignedOpen": 30,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 0,
+        "distinctContributors": 1,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
-        "pointsUsed": 6400,
-        "pointsRemaining": 18600,
+        "pointsUsed": 3800,
+        "pointsRemaining": 21200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2002,10 +2362,10 @@
         "repoUrl": "https://github.com/mericcintosun/alvinmunk",
         "org": "mericcintosun",
         "openIssues": 31,
-        "unassignedOpen": 5,
+        "unassignedOpen": 7,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 19,
+        "distinctContributors": 18,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -2029,24 +2389,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 6200,
         "pointsRemaining": 18800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "AgesEmpire/StellarSwipe-Contract",
-        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-Contract",
-        "org": "AgesEmpire",
-        "openIssues": 30,
-        "unassignedOpen": 30,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 6000,
-        "pointsRemaining": 19000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2286,6 +2628,24 @@
         "tags": []
       },
       {
+        "repo": "DonCervantes/MP-Drips-Kivo",
+        "repoUrl": "https://github.com/DonCervantes/MP-Drips-Kivo",
+        "org": "DonCervantes",
+        "openIssues": 26,
+        "unassignedOpen": 26,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2600,
+        "pointsRemaining": 22400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Dorisio/backend",
         "repoUrl": "https://github.com/Dorisio/backend",
         "org": "Dorisio",
@@ -2394,6 +2754,60 @@
         "tags": []
       },
       {
+        "repo": "ramspec-labs/rampspec-backend",
+        "repoUrl": "https://github.com/ramspec-labs/rampspec-backend",
+        "org": "ramspec-labs",
+        "openIssues": 24,
+        "unassignedOpen": 24,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 4800,
+        "pointsRemaining": 20200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "ramspec-labs/rampspec-contracts",
+        "repoUrl": "https://github.com/ramspec-labs/rampspec-contracts",
+        "org": "ramspec-labs",
+        "openIssues": 24,
+        "unassignedOpen": 24,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 4800,
+        "pointsRemaining": 20200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "ramspec-labs/rampspec-frontend",
+        "repoUrl": "https://github.com/ramspec-labs/rampspec-frontend",
+        "org": "ramspec-labs",
+        "openIssues": 24,
+        "unassignedOpen": 24,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 4800,
+        "pointsRemaining": 20200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "SorobanLard/SLBackend",
         "repoUrl": "https://github.com/SorobanLard/SLBackend",
         "org": "SorobanLard",
@@ -2461,6 +2875,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 1600,
         "pointsRemaining": 23400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "DonCervantes/x402-Handle",
+        "repoUrl": "https://github.com/DonCervantes/x402-Handle",
+        "org": "DonCervantes",
+        "openIssues": 22,
+        "unassignedOpen": 22,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2200,
+        "pointsRemaining": 22800,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3014,6 +3446,24 @@
         "tags": []
       },
       {
+        "repo": "Agrisettle/HarvestLock",
+        "repoUrl": "https://github.com/Agrisettle/HarvestLock",
+        "org": "Agrisettle",
+        "openIssues": 17,
+        "unassignedOpen": 13,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 4,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2100,
+        "pointsRemaining": 22900,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "augustina-jpg/scoopdope",
         "repoUrl": "https://github.com/augustina-jpg/scoopdope",
         "org": "augustina-jpg",
@@ -3063,6 +3513,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 3000,
         "pointsRemaining": 22000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "davedumto/LancePay",
+        "repoUrl": "https://github.com/davedumto/LancePay",
+        "org": "davedumto",
+        "openIssues": 17,
+        "unassignedOpen": 16,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 1,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 3400,
+        "pointsRemaining": 21600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3230,42 +3698,6 @@
         "tags": []
       },
       {
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "repoUrl": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend",
-        "org": "Healthy-Stellar",
-        "openIssues": 16,
-        "unassignedOpen": 10,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 6,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2800,
-        "pointsRemaining": 22200,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Vatix-Protocol/vatix-contract",
-        "repoUrl": "https://github.com/Vatix-Protocol/vatix-contract",
-        "org": "Vatix-Protocol",
-        "openIssues": 16,
-        "unassignedOpen": 12,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 3200,
-        "pointsRemaining": 21800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Web3Novalabs/Nevo",
         "repoUrl": "https://github.com/Web3Novalabs/Nevo",
         "org": "Web3Novalabs",
@@ -3279,24 +3711,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 600,
         "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "AgesEmpire/StellarSwipe-FrontEnd",
-        "repoUrl": "https://github.com/AgesEmpire/StellarSwipe-FrontEnd",
-        "org": "AgesEmpire",
-        "openIssues": 15,
-        "unassignedOpen": 15,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 3000,
-        "pointsRemaining": 22000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3520,6 +3934,24 @@
         "tags": []
       },
       {
+        "repo": "Vellar-Wallet/vellar-dapp",
+        "repoUrl": "https://github.com/Vellar-Wallet/vellar-dapp",
+        "org": "Vellar-Wallet",
+        "openIssues": 15,
+        "unassignedOpen": 9,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 2,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 3000,
+        "pointsRemaining": 22000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "CalloraOrg/Callora-Contracts",
         "repoUrl": "https://github.com/CalloraOrg/Callora-Contracts",
         "org": "CalloraOrg",
@@ -3623,24 +4055,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 2500,
         "pointsRemaining": 22500,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "StellarSettle/stellarsettle",
-        "repoUrl": "https://github.com/StellarSettle/stellarsettle",
-        "org": "StellarSettle",
-        "openIssues": 14,
-        "unassignedOpen": 14,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2800,
-        "pointsRemaining": 22200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3751,24 +4165,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 2400,
         "pointsRemaining": 22600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "mux-labs/mux-frontend",
-        "repoUrl": "https://github.com/mux-labs/mux-frontend",
-        "org": "mux-labs",
-        "openIssues": 13,
-        "unassignedOpen": 13,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2600,
-        "pointsRemaining": 22400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -3940,10 +4336,10 @@
         "repoUrl": "https://github.com/Alien-Protocol/Alien-Protocol",
         "org": "Alien-Protocol",
         "openIssues": 12,
-        "unassignedOpen": 1,
+        "unassignedOpen": 8,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 10,
+        "distinctContributors": 4,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -3962,6 +4358,42 @@
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 3,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2400,
+        "pointsRemaining": 22600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Dfunder/stellarAid-api",
+        "repoUrl": "https://github.com/Dfunder/stellarAid-api",
+        "org": "Dfunder",
+        "openIssues": 12,
+        "unassignedOpen": 12,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2400,
+        "pointsRemaining": 22600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Dfunder/stellarAid-web",
+        "repoUrl": "https://github.com/Dfunder/stellarAid-web",
+        "org": "Dfunder",
+        "openIssues": 12,
+        "unassignedOpen": 12,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -4030,28 +4462,10 @@
         "repoUrl": "https://github.com/Lumina-eX/AnonChat",
         "org": "Lumina-eX",
         "openIssues": 12,
-        "unassignedOpen": 2,
+        "unassignedOpen": 12,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 8,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2200,
-        "pointsRemaining": 22800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "mergepay/mergepay-web",
-        "repoUrl": "https://github.com/mergepay/mergepay-web",
-        "org": "mergepay",
-        "openIssues": 12,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 8,
+        "distinctContributors": 0,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -4134,24 +4548,6 @@
         "tags": []
       },
       {
-        "repo": "StellarDevHub/Web3-Student-Lab",
-        "repoUrl": "https://github.com/StellarDevHub/Web3-Student-Lab",
-        "org": "StellarDevHub",
-        "openIssues": 12,
-        "unassignedOpen": 12,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2400,
-        "pointsRemaining": 22600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "TrustHire/hiresettle-backend",
         "repoUrl": "https://github.com/TrustHire/hiresettle-backend",
         "org": "TrustHire",
@@ -4165,6 +4561,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 800,
         "pointsRemaining": 24200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Vellar-Wallet/vellar-sdk",
+        "repoUrl": "https://github.com/Vellar-Wallet/vellar-sdk",
+        "org": "Vellar-Wallet",
+        "openIssues": 12,
+        "unassignedOpen": 7,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 2,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2200,
+        "pointsRemaining": 22800,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -4608,6 +5022,24 @@
         "tags": []
       },
       {
+        "repo": "DelegoLabs/Delego-backend",
+        "repoUrl": "https://github.com/DelegoLabs/Delego-backend",
+        "org": "DelegoLabs",
+        "openIssues": 10,
+        "unassignedOpen": 10,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 2000,
+        "pointsRemaining": 23000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "DogStark/petChain-Frontend",
         "repoUrl": "https://github.com/DogStark/petChain-Frontend",
         "org": "DogStark",
@@ -4646,6 +5078,24 @@
         ]
       },
       {
+        "repo": "eogenyi23-creator/soroban-merkle-airdrop",
+        "repoUrl": "https://github.com/eogenyi23-creator/soroban-merkle-airdrop",
+        "org": "eogenyi23-creator",
+        "openIssues": 10,
+        "unassignedOpen": 10,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 1250,
+        "pointsRemaining": 23750,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Galaxy-KJ/Galaxy-DevKit",
         "repoUrl": "https://github.com/Galaxy-KJ/Galaxy-DevKit",
         "org": "Galaxy-KJ",
@@ -4677,6 +5127,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 2000,
         "pointsRemaining": 23000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "mergepay/mergepay-web",
+        "repoUrl": "https://github.com/mergepay/mergepay-web",
+        "org": "mergepay",
+        "openIssues": 10,
+        "unassignedOpen": 0,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 7,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 1800,
+        "pointsRemaining": 23200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -4772,6 +5240,24 @@
         "tags": []
       },
       {
+        "repo": "thisisouvik/autopilot",
+        "repoUrl": "https://github.com/thisisouvik/autopilot",
+        "org": "thisisouvik",
+        "openIssues": 10,
+        "unassignedOpen": 10,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 1000,
+        "pointsRemaining": 24000,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "unajiogenyi05-hub/soroban-vesting-platform",
         "repoUrl": "https://github.com/unajiogenyi05-hub/soroban-vesting-platform",
         "org": "unajiogenyi05-hub",
@@ -4794,10 +5280,10 @@
         "repoUrl": "https://github.com/Veritasor/Veritasor-Frontend",
         "org": "Veritasor",
         "openIssues": 10,
-        "unassignedOpen": 1,
+        "unassignedOpen": 2,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 5,
+        "distinctContributors": 4,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -5190,10 +5676,10 @@
         "repoUrl": "https://github.com/Novatip/novatip-contracts",
         "org": "Novatip",
         "openIssues": 8,
-        "unassignedOpen": 0,
+        "unassignedOpen": 8,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 2,
+        "distinctContributors": 0,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -5207,6 +5693,24 @@
         "repo": "RetinaX-Org/RetinaX",
         "repoUrl": "https://github.com/RetinaX-Org/RetinaX",
         "org": "RetinaX-Org",
+        "openIssues": 8,
+        "unassignedOpen": 8,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 1600,
+        "pointsRemaining": 23400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "safetrustcr/dApp-SafeTrust",
+        "repoUrl": "https://github.com/safetrustcr/dApp-SafeTrust",
+        "org": "safetrustcr",
         "openIssues": 8,
         "unassignedOpen": 8,
         "closedInWave": 0,
@@ -5397,24 +5901,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 1400,
         "pointsRemaining": 23600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Vatix-Protocol/Swyft",
-        "repoUrl": "https://github.com/Vatix-Protocol/Swyft",
-        "org": "Vatix-Protocol",
-        "openIssues": 8,
-        "unassignedOpen": 8,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1600,
-        "pointsRemaining": 23400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -5872,24 +6358,6 @@
         "tags": []
       },
       {
-        "repo": "Vellar-Wallet/vellar-dapp",
-        "repoUrl": "https://github.com/Vellar-Wallet/vellar-dapp",
-        "org": "Vellar-Wallet",
-        "openIssues": 7,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 2,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1400,
-        "pointsRemaining": 23600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "C-Address-Onboarding-Bridge/C-Address-Onboarding-Bridge--Contract",
         "repoUrl": "https://github.com/C-Address-Onboarding-Bridge/C-Address-Onboarding-Bridge--Contract",
         "org": "C-Address-Onboarding-Bridge",
@@ -6070,24 +6538,6 @@
         "tags": []
       },
       {
-        "repo": "LumenRoute/lumenbazaar-backend",
-        "repoUrl": "https://github.com/LumenRoute/lumenbazaar-backend",
-        "org": "LumenRoute",
-        "openIssues": 6,
-        "unassignedOpen": 6,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1200,
-        "pointsRemaining": 23800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "MergeFi/backend",
         "repoUrl": "https://github.com/MergeFi/backend",
         "org": "MergeFi",
@@ -6165,24 +6615,6 @@
         "org": "Stellar-split",
         "openIssues": 6,
         "unassignedOpen": 4,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 2,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1000,
-        "pointsRemaining": 24000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Vellar-Wallet/vellar-sdk",
-        "repoUrl": "https://github.com/Vellar-Wallet/vellar-sdk",
-        "org": "Vellar-Wallet",
-        "openIssues": 6,
-        "unassignedOpen": 1,
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 2,
@@ -6630,42 +7062,6 @@
         "tags": []
       },
       {
-        "repo": "StellarDevHub/soroban-playground",
-        "repoUrl": "https://github.com/StellarDevHub/soroban-playground",
-        "org": "StellarDevHub",
-        "openIssues": 5,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 4,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1000,
-        "pointsRemaining": 24000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "StreamFi-x/streamfi-frontend",
-        "repoUrl": "https://github.com/StreamFi-x/streamfi-frontend",
-        "org": "StreamFi-x",
-        "openIssues": 5,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 4,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 950,
-        "pointsRemaining": 24050,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "TevaLabs/Xelma-Frontend",
         "repoUrl": "https://github.com/TevaLabs/Xelma-Frontend",
         "org": "TevaLabs",
@@ -6738,24 +7134,6 @@
         "tags": []
       },
       {
-        "repo": "Agrisettle/HarvestLock",
-        "repoUrl": "https://github.com/Agrisettle/HarvestLock",
-        "org": "Agrisettle",
-        "openIssues": 4,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 4,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 800,
-        "pointsRemaining": 24200,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "AnnabelJoe/solarproof",
         "repoUrl": "https://github.com/AnnabelJoe/solarproof",
         "org": "AnnabelJoe",
@@ -6778,10 +7156,10 @@
         "repoUrl": "https://github.com/Arena1X/InsightArena",
         "org": "Arena1X",
         "openIssues": 4,
-        "unassignedOpen": 2,
+        "unassignedOpen": 3,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 2,
+        "distinctContributors": 1,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -6859,6 +7237,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 600,
         "pointsRemaining": 24400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "corridor-in-a-box/corridor-in-a-box",
+        "repoUrl": "https://github.com/corridor-in-a-box/corridor-in-a-box",
+        "org": "corridor-in-a-box",
+        "openIssues": 4,
+        "unassignedOpen": 4,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 400,
+        "pointsRemaining": 24600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -7309,24 +7705,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 650,
         "pointsRemaining": 24350,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "nebgov/nebgov",
-        "repoUrl": "https://github.com/nebgov/nebgov",
-        "org": "nebgov",
-        "openIssues": 4,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 800,
-        "pointsRemaining": 24200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -7818,42 +8196,6 @@
         "tags": []
       },
       {
-        "repo": "Agrisettle/HarvestLock-Contracts",
-        "repoUrl": "https://github.com/Agrisettle/HarvestLock-Contracts",
-        "org": "Agrisettle",
-        "openIssues": 3,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 600,
-        "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "astera-hq/Astera",
-        "repoUrl": "https://github.com/astera-hq/Astera",
-        "org": "astera-hq",
-        "openIssues": 3,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 3,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 550,
-        "pointsRemaining": 24450,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "BuidlZone-Labs/zicket-web",
         "repoUrl": "https://github.com/BuidlZone-Labs/zicket-web",
         "org": "BuidlZone-Labs",
@@ -7898,42 +8240,6 @@
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 600,
-        "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Dfunder/stellarAid-api",
-        "repoUrl": "https://github.com/Dfunder/stellarAid-api",
-        "org": "Dfunder",
-        "openIssues": 3,
-        "unassignedOpen": 3,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 600,
-        "pointsRemaining": 24400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "doradenise-jpg/BANKERCHANGER",
-        "repoUrl": "https://github.com/doradenise-jpg/BANKERCHANGER",
-        "org": "doradenise-jpg",
-        "openIssues": 3,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 2,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -8160,24 +8466,6 @@
         "tags": []
       },
       {
-        "repo": "Open-Hub-Tec/yucu-protocol",
-        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
-        "org": "Open-Hub-Tec",
-        "openIssues": 3,
-        "unassignedOpen": 3,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 300,
-        "pointsRemaining": 24700,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Perihelion-Protocol/Perihelion",
         "repoUrl": "https://github.com/Perihelion-Protocol/Perihelion",
         "org": "Perihelion-Protocol",
@@ -8250,6 +8538,24 @@
         "tags": []
       },
       {
+        "repo": "safetrustcr/backend-SafeTrust",
+        "repoUrl": "https://github.com/safetrustcr/backend-SafeTrust",
+        "org": "safetrustcr",
+        "openIssues": 3,
+        "unassignedOpen": 3,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 600,
+        "pointsRemaining": 24400,
+        "pointsMultiplier": 4,
+        "isFeatured": true,
+        "tags": []
+      },
+      {
         "repo": "ShadeProtocol/shade-stellar-contract",
         "repoUrl": "https://github.com/ShadeProtocol/shade-stellar-contract",
         "org": "ShadeProtocol",
@@ -8290,10 +8596,10 @@
         "repoUrl": "https://github.com/Stellabill/stellabill-frontend",
         "org": "Stellabill",
         "openIssues": 3,
-        "unassignedOpen": 0,
+        "unassignedOpen": 1,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 3,
+        "distinctContributors": 2,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -8574,24 +8880,6 @@
         "tags": []
       },
       {
-        "repo": "DonCervantes/MP-Drips-Kivo",
-        "repoUrl": "https://github.com/DonCervantes/MP-Drips-Kivo",
-        "org": "DonCervantes",
-        "openIssues": 2,
-        "unassignedOpen": 2,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 200,
-        "pointsRemaining": 24800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Epta-Node/Linkora-social",
         "repoUrl": "https://github.com/Epta-Node/Linkora-social",
         "org": "Epta-Node",
@@ -8690,24 +8978,6 @@
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 400,
-        "pointsRemaining": 24600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Healthy-Stellar/contracts",
-        "repoUrl": "https://github.com/Healthy-Stellar/contracts",
-        "org": "Healthy-Stellar",
-        "openIssues": 2,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 2,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -8956,10 +9226,10 @@
         "repoUrl": "https://github.com/OpenLedger-Foundation/Kora-Frontend",
         "org": "OpenLedger-Foundation",
         "openIssues": 2,
-        "unassignedOpen": 1,
+        "unassignedOpen": 2,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 1,
+        "distinctContributors": 0,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -9420,6 +9690,24 @@
         "tags": []
       },
       {
+        "repo": "accensa/accensa-app",
+        "repoUrl": "https://github.com/accensa/accensa-app",
+        "org": "accensa",
+        "openIssues": 1,
+        "unassignedOpen": 1,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 200,
+        "pointsRemaining": 24800,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "ANYTECHS/clips-contract",
         "repoUrl": "https://github.com/ANYTECHS/clips-contract",
         "org": "ANYTECHS",
@@ -9631,24 +9919,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 0,
         "pointsRemaining": 25000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "davedumto/LancePay",
-        "repoUrl": "https://github.com/davedumto/LancePay",
-        "org": "davedumto",
-        "openIssues": 1,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 1,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 200,
-        "pointsRemaining": 24800,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -9966,24 +10236,6 @@
       {
         "repo": "LumenRoute/lumenbazaar-contracts",
         "repoUrl": "https://github.com/LumenRoute/lumenbazaar-contracts",
-        "org": "LumenRoute",
-        "openIssues": 1,
-        "unassignedOpen": 1,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 200,
-        "pointsRemaining": 24800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "LumenRoute/lumenbazaar-frontend",
-        "repoUrl": "https://github.com/LumenRoute/lumenbazaar-frontend",
         "org": "LumenRoute",
         "openIssues": 1,
         "unassignedOpen": 1,
@@ -10709,7 +10961,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.040462,
+    "usdPerPoint": 0.034657,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10732,7 +10984,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4711,
+    "openAssigned": 4667,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -10742,7 +10994,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10750,7 +11002,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10758,7 +11010,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10766,7 +11018,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10774,7 +11026,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10782,7 +11034,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10790,7 +11042,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10798,7 +11050,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10806,7 +11058,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10814,7 +11066,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10822,7 +11074,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10830,7 +11082,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10838,7 +11090,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10846,7 +11098,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10854,7 +11106,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10862,7 +11114,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10870,7 +11122,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6957.0,
+        "overdueHours": 6979.0,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -10878,7 +11130,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -10886,7 +11138,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -10894,7 +11146,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -10902,7 +11154,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -10910,7 +11162,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -10918,7 +11170,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -10926,7 +11178,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -10934,7 +11186,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -10942,7 +11194,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -10950,7 +11202,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -10958,7 +11210,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6333.0,
+        "overdueHours": 6355.0,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -10966,7 +11218,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -10974,7 +11226,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -10982,7 +11234,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -10990,7 +11242,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -10998,7 +11250,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -11006,7 +11258,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -11014,7 +11266,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -11022,7 +11274,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -11030,7 +11282,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -11038,7 +11290,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -11046,7 +11298,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -11054,7 +11306,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -11062,7 +11314,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -11070,7 +11322,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -11078,7 +11330,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -11086,7 +11338,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -11094,7 +11346,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -11102,7 +11354,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -11110,7 +11362,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -11118,7 +11370,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -11126,7 +11378,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -11134,24 +11386,24 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5565.0,
+        "overdueHours": 5587.0,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
-    "staleAssignmentsCount": 4711
+    "staleAssignmentsCount": 4667
   },
   "issueQuality": {
-    "closedWithPR": 347837,
-    "closedWithoutPR": 13596,
-    "prToIssueRatio": 96.24,
-    "bounceRate": 3.76,
+    "closedWithPR": 347844,
+    "closedWithoutPR": 13631,
+    "prToIssueRatio": 96.23,
+    "bounceRate": 3.77,
     "countsScope": "program, all time",
     "countsStale": false,
     "closedPrInWave": 0,
     "rewardedInWave": 0,
-    "staleOpenIssues": 8008,
+    "staleOpenIssues": 7977,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 228,
+    "recentlyActiveOpen": 751,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -11181,7 +11433,7 @@
       "resolvedInWaveValues": [
         [
           "{'id': '4927b67c-6bfc-4bad-8cee-bf29702b16ee', 'waveProgramId': 'fdc01c95-806f-4",
-          186
+          179
         ]
       ],
       "schemaProbe": {
@@ -11191,15 +11443,15 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 11308,
-    "openReportedTotal": 11308,
+    "openFetched": 13336,
+    "openReportedTotal": 13336,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
     "closedScanStoppedEarly": true,
-    "enrollments": 967,
+    "enrollments": 963,
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-17T10:02:08+00:00"
+  "finishedAt": "2026-11-18T08:02:13+00:00"
 }
