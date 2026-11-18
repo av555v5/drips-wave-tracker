@@ -1,18 +1,37 @@
-=== Drips Wave 11 bot — run at 2026-11-18T03:37:02+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-18T06:01:29+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-18T01:38:34+00:00, open=12483)
+[0] Loaded last run state (run at 2026-11-18T03:37:02+00:00, open=12483)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=12483, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=12483, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=12483, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=12483, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=12483, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=12483, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=12483, hasNext=True
-  page 125: got 83, unique so far=12483, reported total=12483, hasNext=False
-  open issues: 12483
+  page 1: got 100, unique so far=100, reported total=12572, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=12572, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=12578, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=12578, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=12578, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=12578, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=12584, hasNext=True
+  page 126: got 76, unique so far=12576, reported total=12584, hasNext=False
+  WARN: fetched 12576 but API reports 12584; retrying (1/3)
+  page 1: got 100, unique so far=100, reported total=12584, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=12584, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=12584, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=12589, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=12589, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=12589, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=12589, hasNext=True
+  page 126: got 86, unique so far=12586, reported total=12589, hasNext=False
+  WARN: fetched 12586 but API reports 12589; retrying (2/3)
+  page 1: got 100, unique so far=100, reported total=12595, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=12595, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=12595, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=12595, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=12595, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=12601, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=12601, hasNext=True
+  page 126: got 96, unique so far=12596, reported total=12601, hasNext=False
+  WARN: fetched 12596 but API reports 12601; retrying (3/3)
+  open issues: 12586
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
   page 1: got 100, unique so far=100, reported total=347844, hasNext=True
@@ -27,16 +46,17 @@ Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=upcoming 
   page 10: got 63, unique so far=963, reported total=963, hasNext=False
   → 963 enrollments
 [5/6] Computing metrics...
+  WARN: open issues: fetched 12586 but API reported 12589
 [6/6] Writing outputs...
-  pruned old run: 2026-11-17T06-01Z
+  pruned old run: 2026-11-17T08-01Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-18T03:37:02+00:00   in window now: False
-Open issues       : 12,483  (2,018,450 pts)
+Run at (UTC)      : 2026-11-18T06:01:29+00:00   in window now: False
+Open issues       : 12,586  (2,031,650 pts)
 Closed in wave    : 0  (0 pts)
-Max / scored / left: 2,018,450 / 0 / 2,018,450
-USD per point     : $0.037157   paid $0.00   remaining $75,000.00
-Contributors      : 0   new issues: 0   repos: 582
-Warnings          : 0
+Max / scored / left: 2,031,650 / 0 / 2,031,650
+USD per point     : $0.036916   paid $0.00   remaining $75,000.00
+Contributors      : 0   new issues: 94   repos: 584
+Warnings          : 1
 === END ===
