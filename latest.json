@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-18T00:01:40+00:00",
+  "runAt": "2026-11-18T01:38:34+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": false
   },
   "openIssues": {
-    "total": 12147,
-    "totalPoints": 1984850,
+    "total": 12483,
+    "totalPoints": 2018450,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 5134,
-        "sharePct": 42.27,
-        "currentContribution": 569400,
+        "count": 5470,
+        "sharePct": 43.82,
+        "currentContribution": 603000,
         "multiplierBreakdown": {
-          "1": 4628,
+          "1": 4964,
           "2": 479,
           "4": 27
         },
         "actualPointsBreakdown": {
-          "100": 4628,
+          "100": 4964,
           "200": 479,
           "400": 27
         }
@@ -33,7 +33,7 @@
         "complexity": "medium",
         "basePoints": 150,
         "count": 759,
-        "sharePct": 6.25,
+        "sharePct": 6.08,
         "currentContribution": 127050,
         "multiplierBreakdown": {
           "1": 709,
@@ -50,7 +50,7 @@
         "complexity": "large",
         "basePoints": 200,
         "count": 6254,
-        "sharePct": 51.49,
+        "sharePct": 50.1,
         "currentContribution": 1288400,
         "multiplierBreakdown": {
           "1": 6084,
@@ -71,234 +71,234 @@
     "scoredPoints": 0,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 1984850,
+  "maxTotalPoints": 2018450,
   "scoredPoints": 0,
-  "remainingPoints": 1984850,
+  "remainingPoints": 2018450,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 195,
-    "prevOpenCount": 11935,
-    "currentOpenCount": 12147,
+    "newSinceLastRun": 336,
+    "prevOpenCount": 12147,
+    "currentOpenCount": 12483,
     "newIssuesSample": [
       {
-        "number": 1386,
-        "title": "[Medium] `SorobanQueueService` env vars aren't validated at startup, and the network passphrase silently defaults to TESTNET on mainnet",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1386",
+        "number": 2080,
+        "title": "[FRONTEND-310] Production Global Error Boundary with One-Click Anonymized Crash Report Generation",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2080",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:01:07.000Z"
+        "createdAt": "2026-11-18T00:48:32.000Z"
       },
       {
-        "number": 1385,
-        "title": "[Medium] `src/common/filters/http-exception.filter.ts` is a broken merge that doesn't parse, and it breaks `tsc` even though nothing imports it",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1385",
+        "number": 2079,
+        "title": "[FRONTEND-309] In-Browser Rust Code Formatter with Configurable Heuristics and rustfmt Engine",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2079",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:01:02.000Z"
+        "createdAt": "2026-11-18T00:48:24.000Z"
       },
       {
-        "number": 1384,
-        "title": "[Medium] `DataEncryptionService` runs synchronous `scryptSync` on every encrypt and decrypt, blocking the event loop",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1384",
+        "number": 2078,
+        "title": "[FRONTEND-308] Network Switcher with Live RPC Latency Ping and Automatic Network Reconfiguration",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2078",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:57.000Z"
+        "createdAt": "2026-11-18T00:48:15.000Z"
       },
       {
-        "number": 1383,
-        "title": "[Medium] Feature flags are platform-wide, but any tenant admin can create, change or roll them back, and the audit actor is always `'system'`",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1383",
+        "number": 2077,
+        "title": "[FRONTEND-307] Keyboard Shortcut Customizer with Preset Bindings for VSCode, Vim, and Sublime",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2077",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:52.000Z"
+        "createdAt": "2026-11-18T00:48:07.000Z"
       },
       {
-        "number": 1382,
-        "title": "[Medium] Bull Board (`/admin/queues`) is open to every tenant admin and exposes all tenants' job payloads",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1382",
+        "number": 2076,
+        "title": "[FRONTEND-306] User Session Timeout Warning Modal with Secure Re-Authentication Handshake",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2076",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:47.000Z"
+        "createdAt": "2026-11-18T00:47:57.000Z"
       },
       {
-        "number": 1381,
-        "title": "[Medium] `MetricsAuthGuard` is bypassed with `X-Forwarded-For: 127.0.0.1`, and behind a proxy every caller counts as internal",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1381",
+        "number": 2075,
+        "title": "[FRONTEND-305] WASM Heap Memory Profiler with Dynamic Allocation Heatmap",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2075",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:42.000Z"
+        "createdAt": "2026-11-18T00:47:49.000Z"
       },
       {
-        "number": 1380,
-        "title": "[Medium] Inter-hospital transfer receipts are a fabricated `sim-\u2026` hash stored as if anchored on Stellar",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1380",
+        "number": 2074,
+        "title": "[FRONTEND-304] Contract Verification Status Badge with Reproducible Build Inspector",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2074",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:37.000Z"
+        "createdAt": "2026-11-18T00:47:41.000Z"
       },
       {
-        "number": 1379,
-        "title": "[Medium] `/jobs/:jobId`, `/jobs/:jobId/stream` and `/jobs/correlation/:id` show any job's data and result to any authenticated user",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1379",
+        "number": 2073,
+        "title": "[FRONTEND-303] Multi-Currency Value Display with Real-Time Fiat Conversion and Stroop Formatting",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2073",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:32.000Z"
+        "createdAt": "2026-11-18T00:47:35.000Z"
       },
       {
-        "number": 1378,
-        "title": "[Medium] `TenantService.provisionTenantSchema()` takes a session-level advisory lock through the pool, so the lock can leak and block that slug forever",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1378",
+        "number": 2072,
+        "title": "[FRONTEND-302] API Rate Limit Status Banner with Proactive Cooldown Timer and Quota Gauge",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2072",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:27.000Z"
+        "createdAt": "2026-11-18T00:47:25.000Z"
       },
       {
-        "number": 1377,
-        "title": "[Medium] `PkceService` keeps authorization codes in process memory, so OAuth breaks across replicas and codes are never purged",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1377",
+        "number": 2071,
+        "title": "[FRONTEND-301] Storage Browser for Live On-Chain Contract State and Key Deserialization",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2071",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:21.000Z"
+        "createdAt": "2026-11-18T00:47:19.000Z"
       },
       {
-        "number": 1376,
-        "title": "[Medium] OAuth2 `refresh_token` grant accepts expired tokens and doesn't bind the token to the client that received it",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1376",
+        "number": 2070,
+        "title": "[FRONTEND-300] Template Library Explorer with One-Click Forking and Community Rating System",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2070",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:17.000Z"
+        "createdAt": "2026-11-18T00:47:13.000Z"
       },
       {
-        "number": 1375,
-        "title": "[Medium] Notifications WebSocket allows any origin with credentials, and sockets stay connected after logout or session revocation",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1375",
+        "number": 2069,
+        "title": "[FRONTEND-299] Security Audit Scanner Banner with Real-Time Static Analysis Lint Hints",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2069",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:12.000Z"
+        "createdAt": "2026-11-18T00:47:05.000Z"
       },
       {
-        "number": 1374,
-        "title": "[Medium] Webhook signatures with future timestamps stay valid forever, and over-long signatures are truncated before comparison",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1374",
+        "number": 2068,
+        "title": "[FRONTEND-298] Interactive Wasm Disassembly Side-by-Side Diff Viewer",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2068",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:07.000Z"
+        "createdAt": "2026-11-18T00:46:57.000Z"
       },
       {
-        "number": 1373,
-        "title": "[Medium] `CreateErasureRequestDto` trusts client-supplied `patientId`, `tenantId` and `requestorIdentity` for the GDPR compliance log",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1373",
+        "number": 2067,
+        "title": "[FRONTEND-297] Toast Notification Manager with Priority Queuing and Sound Cue Accessibility",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2067",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T23:00:02.000Z"
+        "createdAt": "2026-11-18T00:46:48.000Z"
       },
       {
-        "number": 1372,
-        "title": "[Medium] 68 compiled `.js` files are still committed under `src/`, and Jest resolves them ahead of the `.ts` sources",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1372",
+        "number": 2066,
+        "title": "[FRONTEND-296] Transaction History Ledger Inspector with Infinite Scroll and State Diff View",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2066",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:56.000Z"
+        "createdAt": "2026-11-18T00:46:38.000Z"
       },
       {
-        "number": 1371,
-        "title": "[Medium] HIPAA password expiry is not enforced \u2014 expired passwords still get full tokens",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1371",
+        "number": 2065,
+        "title": "[FRONTEND-295] Automated Smart Contract Deployment Wizard with Multi-Network Presets",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2065",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:52.000Z"
+        "createdAt": "2026-11-18T00:46:28.000Z"
       },
       {
-        "number": 1370,
-        "title": "[Medium] TOTP codes can be replayed within the \u00b160 s window, and one recovery code can be consumed twice concurrently",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1370",
+        "number": 2064,
+        "title": "[FRONTEND-294] Parametric Insurance Claim Simulator with Satellite Weather Map Layer",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2064",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:47.000Z"
+        "createdAt": "2026-11-18T00:46:19.000Z"
       },
       {
-        "number": 1369,
-        "title": "[Medium] `MfaService.setupMfa()` returns backup codes that are never stored",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1369",
+        "number": 2063,
+        "title": "[FRONTEND-293] Prediction Market Odds Calculator with Parimutuel Probability Slider",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2063",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:42.000Z"
+        "createdAt": "2026-11-18T00:46:11.000Z"
       },
       {
-        "number": 1368,
-        "title": "[Medium] Record download wipes the plaintext buffer on `setImmediate`, which can race the lazy stream and send zeroed bytes",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1368",
+        "number": 2062,
+        "title": "[FRONTEND-292] Decentralized Identity Credential Card Designer with QR Code Generator",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2062",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:38.000Z"
+        "createdAt": "2026-11-18T00:46:03.000Z"
       },
       {
-        "number": 1367,
-        "title": "[Medium] `GET /records/recent` always returns 403, and `findRecent()` is cross-tenant and includes soft-deleted records",
-        "repo": "Healthy-Stellar/Healthy-Stellar-backend",
-        "url": "https://github.com/Healthy-Stellar/Healthy-Stellar-backend/issues/1367",
+        "number": 2061,
+        "title": "[FRONTEND-291] Real-Time Oracle Data Feed Latency and Price Deviation Monitor",
+        "repo": "StellarDevHub/soroban-playground",
+        "url": "https://github.com/StellarDevHub/soroban-playground/issues/2061",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-17T22:59:33.000Z"
+        "createdAt": "2026-11-18T00:45:54.000Z"
       }
     ]
   },
@@ -438,6 +438,24 @@
         "tags": []
       },
       {
+        "repo": "StellarDevHub/Web3-Student-Lab",
+        "repoUrl": "https://github.com/StellarDevHub/Web3-Student-Lab",
+        "org": "StellarDevHub",
+        "openIssues": 162,
+        "unassignedOpen": 162,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 17400,
+        "pointsRemaining": 7600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Kevin737866/stellar-asset-tokenization-suite",
         "repoUrl": "https://github.com/Kevin737866/stellar-asset-tokenization-suite",
         "org": "Kevin737866",
@@ -451,6 +469,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 16700,
         "pointsRemaining": 8300,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "StellarDevHub/soroban-playground",
+        "repoUrl": "https://github.com/StellarDevHub/soroban-playground",
+        "org": "StellarDevHub",
+        "openIssues": 155,
+        "unassignedOpen": 150,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 4,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 16000,
+        "pointsRemaining": 9000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -1317,6 +1353,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 10800,
         "pointsRemaining": 14200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Open-Hub-Tec/yucu-protocol",
+        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
+        "org": "Open-Hub-Tec",
+        "openIssues": 59,
+        "unassignedOpen": 59,
+        "closedInWave": 0,
+        "pointsScored": 0,
+        "distinctContributors": 0,
+        "avgTimeToCloseHours": null,
+        "medianTimeToCloseHours": null,
+        "pointsBudget": 25000,
+        "pointsUsed": 6700,
+        "pointsRemaining": 18300,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -2659,24 +2713,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 3450,
         "pointsRemaining": 21550,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Open-Hub-Tec/yucu-protocol",
-        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
-        "org": "Open-Hub-Tec",
-        "openIssues": 23,
-        "unassignedOpen": 23,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 3100,
-        "pointsRemaining": 21900,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -4332,24 +4368,6 @@
         "tags": []
       },
       {
-        "repo": "StellarDevHub/Web3-Student-Lab",
-        "repoUrl": "https://github.com/StellarDevHub/Web3-Student-Lab",
-        "org": "StellarDevHub",
-        "openIssues": 12,
-        "unassignedOpen": 12,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 0,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 2400,
-        "pointsRemaining": 22600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "TrustHire/hiresettle-backend",
         "repoUrl": "https://github.com/TrustHire/hiresettle-backend",
         "org": "TrustHire",
@@ -5442,10 +5460,10 @@
         "repoUrl": "https://github.com/Novatip/novatip-contracts",
         "org": "Novatip",
         "openIssues": 8,
-        "unassignedOpen": 0,
+        "unassignedOpen": 8,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 2,
+        "distinctContributors": 0,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -6836,24 +6854,6 @@
         "closedInWave": 0,
         "pointsScored": 0,
         "distinctContributors": 3,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1000,
-        "pointsRemaining": 24000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "StellarDevHub/soroban-playground",
-        "repoUrl": "https://github.com/StellarDevHub/soroban-playground",
-        "org": "StellarDevHub",
-        "openIssues": 5,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 4,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -10835,7 +10835,7 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.037786,
+    "usdPerPoint": 0.037157,
     "usdPerScoredPoint": 0,
     "usdPaid": 0.0,
     "usdRemaining": 75000.0,
@@ -10858,7 +10858,7 @@
     }
   },
   "applicationPipeline": {
-    "openAssigned": 4685,
+    "openAssigned": 4677,
     "openWithAppsNoAssignment": 0,
     "avgApplicationsPerOpen": 0.0,
     "mostCompetitionIssues": [],
@@ -10868,7 +10868,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "jobbykings",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/gear5labs/chenpilot/issues/21"
       },
       {
@@ -10876,7 +10876,7 @@
         "repo": "gear5labs/chenpilot",
         "assignee": "uracles",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/gear5labs/chenpilot/issues/18"
       },
       {
@@ -10884,7 +10884,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Bosun-Josh121",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/101"
       },
       {
@@ -10892,7 +10892,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/98"
       },
       {
@@ -10900,7 +10900,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "jerrygeorge360",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/96"
       },
       {
@@ -10908,7 +10908,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/94"
       },
       {
@@ -10916,7 +10916,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "EmmanuelOloke",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/84"
       },
       {
@@ -10924,7 +10924,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/67"
       },
       {
@@ -10932,7 +10932,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "gaius01",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/64"
       },
       {
@@ -10940,7 +10940,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "ikemHood",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/56"
       },
       {
@@ -10948,7 +10948,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Lynndabel",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/87"
       },
       {
@@ -10956,7 +10956,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "FabianSanchezD",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/86"
       },
       {
@@ -10964,7 +10964,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "MUFTIATBAKARE",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/85"
       },
       {
@@ -10972,7 +10972,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Henrichy",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/84"
       },
       {
@@ -10980,7 +10980,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Tybravo",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/83"
       },
       {
@@ -10988,7 +10988,7 @@
         "repo": "MesaChain/MesaChain",
         "assignee": "Allenade",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/MesaChain/MesaChain/issues/74"
       },
       {
@@ -10996,7 +10996,7 @@
         "repo": "PayStell/paystell-website",
         "assignee": "Benjtalkshow",
         "dueDate": "2026-01-31T13:00:00+00:00",
-        "overdueHours": 6971.0,
+        "overdueHours": 6972.6,
         "url": "https://github.com/PayStell/paystell-website/issues/114"
       },
       {
@@ -11004,7 +11004,7 @@
         "repo": "Gildado/PayD",
         "assignee": "Godbrand0",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/Gildado/PayD/issues/158"
       },
       {
@@ -11012,7 +11012,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/24"
       },
       {
@@ -11020,7 +11020,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/18"
       },
       {
@@ -11028,7 +11028,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/17"
       },
       {
@@ -11036,7 +11036,7 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/15"
       },
       {
@@ -11044,7 +11044,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/9"
       },
       {
@@ -11052,7 +11052,7 @@
         "repo": "zkpayroll/zk-payroll-sdk",
         "assignee": "Romeo-speck",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/zkpayroll/zk-payroll-sdk/issues/5"
       },
       {
@@ -11060,7 +11060,7 @@
         "repo": "parkerwinner/kor-AssetForge",
         "assignee": "Kevin737866",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/parkerwinner/kor-AssetForge/issues/9"
       },
       {
@@ -11068,7 +11068,7 @@
         "repo": "Gildado/PayD",
         "assignee": "EA10-lite",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/Gildado/PayD/issues/70"
       },
       {
@@ -11076,7 +11076,7 @@
         "repo": "Gildado/PayD",
         "assignee": "dadadave80",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/Gildado/PayD/issues/66"
       },
       {
@@ -11084,7 +11084,7 @@
         "repo": "Inferara/soroban-security-portal",
         "assignee": "Rajkoli145",
         "dueDate": "2026-02-26T13:00:00+00:00",
-        "overdueHours": 6347.0,
+        "overdueHours": 6348.6,
         "url": "https://github.com/Inferara/soroban-security-portal/issues/149"
       },
       {
@@ -11092,7 +11092,7 @@
         "repo": "accesslayerorg/accesslayer-client",
         "assignee": "Belzabeem",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/accesslayerorg/accesslayer-client/issues/81"
       },
       {
@@ -11100,7 +11100,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/80"
       },
       {
@@ -11108,7 +11108,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/79"
       },
       {
@@ -11116,7 +11116,7 @@
         "repo": "Space-Nebula/stellar-nebula-nomad",
         "assignee": "Nanle-code",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Space-Nebula/stellar-nebula-nomad/issues/78"
       },
       {
@@ -11124,7 +11124,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/361"
       },
       {
@@ -11132,7 +11132,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/357"
       },
       {
@@ -11140,7 +11140,7 @@
         "repo": "leojay-net/Stellar-Dex-Chat",
         "assignee": "chimav-90",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/leojay-net/Stellar-Dex-Chat/issues/351"
       },
       {
@@ -11148,7 +11148,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "JojoFlex1",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/49"
       },
       {
@@ -11156,7 +11156,7 @@
         "repo": "Farm-credit/soroban-contracts",
         "assignee": "Babigdk",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Farm-credit/soroban-contracts/issues/41"
       },
       {
@@ -11164,7 +11164,7 @@
         "repo": "accesslayerorg/accesslayer-server",
         "assignee": "okekefrancis112",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/accesslayerorg/accesslayer-server/issues/41"
       },
       {
@@ -11172,7 +11172,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "She-ge",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/30"
       },
       {
@@ -11180,7 +11180,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "Favourof",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/28"
       },
       {
@@ -11188,7 +11188,7 @@
         "repo": "gear5labs/chenpilot-client",
         "assignee": "EDOHWARES",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/gear5labs/chenpilot-client/issues/20"
       },
       {
@@ -11196,7 +11196,7 @@
         "repo": "Quid-proquo/Quid",
         "assignee": "OWK50GA",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Quid-proquo/Quid/issues/98"
       },
       {
@@ -11204,7 +11204,7 @@
         "repo": "LightForgeHub/SkillSphere-Contracts",
         "assignee": "clintjeff2",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/LightForgeHub/SkillSphere-Contracts/issues/31"
       },
       {
@@ -11212,7 +11212,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Onyinyechi-Gift",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Calebux/SYNCRO/issues/126"
       },
       {
@@ -11220,7 +11220,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Calebux/SYNCRO/issues/119"
       },
       {
@@ -11228,7 +11228,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "Cofez",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Calebux/SYNCRO/issues/117"
       },
       {
@@ -11236,7 +11236,7 @@
         "repo": "Calebux/SYNCRO",
         "assignee": "CharlesChinedum",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Calebux/SYNCRO/issues/115"
       },
       {
@@ -11244,7 +11244,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/28"
       },
       {
@@ -11252,7 +11252,7 @@
         "repo": "Emmy123222/Stellar-MarketPay-",
         "assignee": "Danto1606",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/Emmy123222/Stellar-MarketPay-/issues/9"
       },
       {
@@ -11260,11 +11260,11 @@
         "repo": "zkpayroll/zk-payroll-contracts",
         "assignee": "samieazubike",
         "dueDate": "2026-03-30T13:00:00+00:00",
-        "overdueHours": 5579.0,
+        "overdueHours": 5580.6,
         "url": "https://github.com/zkpayroll/zk-payroll-contracts/issues/26"
       }
     ],
-    "staleAssignmentsCount": 4685
+    "staleAssignmentsCount": 4677
   },
   "issueQuality": {
     "closedWithPR": 347844,
@@ -11275,9 +11275,9 @@
     "countsStale": false,
     "closedPrInWave": 0,
     "rewardedInWave": 0,
-    "staleOpenIssues": 7949,
+    "staleOpenIssues": 7941,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 186,
+    "recentlyActiveOpen": 344,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -11317,8 +11317,8 @@
       }
     },
     "paginationCursorPages": 1,
-    "openFetched": 12147,
-    "openReportedTotal": 12147,
+    "openFetched": 12483,
+    "openReportedTotal": 12483,
     "openDuplicatesRemoved": 0,
     "closedScanned": 200,
     "closedPagesScanned": 2,
@@ -11327,5 +11327,5 @@
     "countsStale": false,
     "warnings": []
   },
-  "finishedAt": "2026-11-18T00:02:33+00:00"
+  "finishedAt": "2026-11-18T01:39:18+00:00"
 }
