@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-19T06:02:55+00:00",
+ "generatedAt": "2026-11-19T08:07:02+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T12-01Z",
-   "runAt": "2026-11-18T12:01:32+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 15549,
-   "openPoints": 2528100,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 2528100,
-   "scoredPoints": 0,
-   "remainingPoints": 2528100,
-   "newIssues": 557,
-   "contributors": 0,
-   "repos": 603,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.029667,
-   "projectedFinal": 0,
-   "assigned": 4565,
-   "appsNoAssign": 0,
-   "stale": 4565,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 0,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 6507,
-     "points": 706700
-    },
-    "medium": {
-     "count": 792,
-     "points": 132000
-    },
-    "large": {
-     "count": 8250,
-     "points": 1689400
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T14-01Z",
    "runAt": "2026-11-18T14:01:34+00:00",
@@ -535,6 +494,63 @@
     },
     {
      "contributor": "Essther77-git",
+     "pointsEarned": 8000,
+     "issuesClosed": 40
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-19T08-01Z",
+   "runAt": "2026-11-19T08:01:34+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 23567,
+   "openPoints": 4266000,
+   "closedIssues": 3230,
+   "closedPoints": 645000,
+   "maxPoints": 4911000,
+   "scoredPoints": 645000,
+   "remainingPoints": 4266000,
+   "newIssues": 140,
+   "contributors": 404,
+   "repos": 680,
+   "usdPaid": 9850.34,
+   "usdPerPoint": 0.015272,
+   "projectedFinal": 6014742,
+   "assigned": 10625,
+   "appsNoAssign": 6525,
+   "stale": 0,
+   "prRatio": 96.15,
+   "bounceRate": 3.85,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5221,
+     "points": 577000
+    },
+    "medium": {
+     "count": 980,
+     "points": 174600
+    },
+    "large": {
+     "count": 17366,
+     "points": 3514400
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 10400,
+     "issuesClosed": 52
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 8800,
+     "issuesClosed": 44
+    },
+    {
+     "contributor": "BigBen-7",
      "pointsEarned": 8000,
      "issuesClosed": 40
     }
