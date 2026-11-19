@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-18T23:12:51+00:00",
+ "generatedAt": "2026-11-19T02:03:42+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T06-01Z",
-   "runAt": "2026-11-18T06:01:29+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 12586,
-   "openPoints": 2031650,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 2031650,
-   "scoredPoints": 0,
-   "remainingPoints": 2031650,
-   "newIssues": 94,
-   "contributors": 0,
-   "repos": 584,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.036916,
-   "projectedFinal": 0,
-   "assigned": 4667,
-   "appsNoAssign": 0,
-   "stale": 4667,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 1,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 5562,
-     "points": 612200
-    },
-    "medium": {
-     "count": 759,
-     "points": 127050
-    },
-    "large": {
-     "count": 6265,
-     "points": 1292400
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T08-01Z",
    "runAt": "2026-11-18T08:01:30+00:00",
@@ -489,6 +448,63 @@
      "contributor": "NteinPrecious",
      "pointsEarned": 6400,
      "issuesClosed": 32
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-19T02-01Z",
+   "runAt": "2026-11-19T02:01:32+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 22838,
+   "openPoints": 4085600,
+   "closedIssues": 2677,
+   "closedPoints": 534750,
+   "maxPoints": 4620350,
+   "scoredPoints": 534750,
+   "remainingPoints": 4085600,
+   "newIssues": 395,
+   "contributors": 320,
+   "repos": 665,
+   "usdPaid": 8680.35,
+   "usdPerPoint": 0.016233,
+   "projectedFinal": 7476915,
+   "assigned": 9789,
+   "appsNoAssign": 5628,
+   "stale": 0,
+   "prRatio": 96.17,
+   "bounceRate": 3.83,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5533,
+     "points": 608300
+    },
+    "medium": {
+     "count": 966,
+     "points": 168900
+    },
+    "large": {
+     "count": 16339,
+     "points": 3308400
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 9600,
+     "issuesClosed": 48
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 8800,
+     "issuesClosed": 44
+    },
+    {
+     "contributor": "Essther77-git",
+     "pointsEarned": 8000,
+     "issuesClosed": 40
     }
    ]
   }
