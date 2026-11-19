@@ -1,64 +1,7 @@
 {
- "generatedAt": "2026-11-19T10:06:49+00:00",
+ "generatedAt": "2026-11-19T12:03:58+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T16-01Z",
-   "runAt": "2026-11-18T16:01:40+00:00",
-   "status": "active",
-   "inWaveWindowNow": true,
-   "openIssues": 19238,
-   "openPoints": 3343050,
-   "closedIssues": 57,
-   "closedPoints": 11400,
-   "maxPoints": 3354450,
-   "scoredPoints": 11400,
-   "remainingPoints": 3343050,
-   "newIssues": 1149,
-   "contributors": 19,
-   "repos": 620,
-   "usdPaid": 254.89,
-   "usdPerPoint": 0.022358,
-   "projectedFinal": 949083,
-   "assigned": 6332,
-   "appsNoAssign": 4325,
-   "stale": 0,
-   "prRatio": 96.2,
-   "bounceRate": 3.8,
-   "warnings": 1,
-   "basis": "resolved",
-   "distribution": {
-    "small": {
-     "count": 5682,
-     "points": 623000
-    },
-    "medium": {
-     "count": 875,
-     "points": 144450
-    },
-    "large": {
-     "count": 12681,
-     "points": 2575600
-    }
-   },
-   "top": [
-    {
-     "contributor": "Emmanuellsensai",
-     "pointsEarned": 1400,
-     "issuesClosed": 7
-    },
-    {
-     "contributor": "aladeislam30",
-     "pointsEarned": 800,
-     "issuesClosed": 4
-    },
-    {
-     "contributor": "Fidelis900",
-     "pointsEarned": 800,
-     "issuesClosed": 4
-    }
-   ]
-  },
   {
    "dir": "2026-11-18T17-02Z",
    "runAt": "2026-11-18T17:02:06+00:00",
@@ -569,6 +512,63 @@
      "contributor": "LGTM-ButItsBroken",
      "pointsEarned": 10400,
      "issuesClosed": 52
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-19T12-01Z",
+   "runAt": "2026-11-19T12:01:34+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 26148,
+   "openPoints": 4797350,
+   "closedIssues": 4989,
+   "closedPoints": 996150,
+   "maxPoints": 5793500,
+   "scoredPoints": 996150,
+   "remainingPoints": 4797350,
+   "newIssues": 86,
+   "contributors": 546,
+   "repos": 709,
+   "usdPaid": 12895.7,
+   "usdPerPoint": 0.012946,
+   "projectedFinal": 7601574,
+   "assigned": 13153,
+   "appsNoAssign": 6672,
+   "stale": 0,
+   "prRatio": 96.17,
+   "bounceRate": 3.83,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5060,
+     "points": 560900
+    },
+    "medium": {
+     "count": 999,
+     "points": 177450
+    },
+    "large": {
+     "count": 20089,
+     "points": 4059000
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 12800,
+     "issuesClosed": 64
+    },
+    {
+     "contributor": "Essther77-git",
+     "pointsEarned": 11200,
+     "issuesClosed": 56
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 11200,
+     "issuesClosed": 56
     }
    ]
   }
