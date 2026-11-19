@@ -1,64 +1,7 @@
 {
- "generatedAt": "2026-11-19T18:07:25+00:00",
+ "generatedAt": "2026-11-19T22:08:37+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T23-11Z",
-   "runAt": "2026-11-18T23:11:12+00:00",
-   "status": "active",
-   "inWaveWindowNow": true,
-   "openIssues": 22479,
-   "openPoints": 4026050,
-   "closedIssues": 2065,
-   "closedPoints": 412600,
-   "maxPoints": 4438650,
-   "scoredPoints": 412600,
-   "remainingPoints": 4026050,
-   "newIssues": 163,
-   "contributors": 283,
-   "repos": 659,
-   "usdPaid": 6971.71,
-   "usdPerPoint": 0.016897,
-   "projectedFinal": 7553655,
-   "assigned": 9410,
-   "appsNoAssign": 5405,
-   "stale": 0,
-   "prRatio": 96.19,
-   "bounceRate": 3.81,
-   "warnings": 1,
-   "basis": "resolved",
-   "distribution": {
-    "small": {
-     "count": 5389,
-     "points": 593600
-    },
-    "medium": {
-     "count": 970,
-     "points": 169050
-    },
-    "large": {
-     "count": 16120,
-     "points": 3263400
-    }
-   },
-   "top": [
-    {
-     "contributor": "monique-7arch",
-     "pointsEarned": 7200,
-     "issuesClosed": 36
-    },
-    {
-     "contributor": "Emmanuellsensai",
-     "pointsEarned": 6400,
-     "issuesClosed": 32
-    },
-    {
-     "contributor": "NteinPrecious",
-     "pointsEarned": 6400,
-     "issuesClosed": 32
-    }
-   ]
-  },
   {
    "dir": "2026-11-19T02-01Z",
    "runAt": "2026-11-19T02:01:32+00:00",
@@ -559,6 +502,63 @@
      "contributor": "monique-7arch",
      "pointsEarned": 14400,
      "issuesClosed": 72
+    },
+    {
+     "contributor": "Essther77-git",
+     "pointsEarned": 12800,
+     "issuesClosed": 64
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 12800,
+     "issuesClosed": 64
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-19T22-01Z",
+   "runAt": "2026-11-19T22:01:37+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 32061,
+   "openPoints": 5943600,
+   "closedIssues": 9257,
+   "closedPoints": 1851100,
+   "maxPoints": 7794700,
+   "scoredPoints": 1851100,
+   "remainingPoints": 5943600,
+   "newIssues": 861,
+   "contributors": 939,
+   "repos": 777,
+   "usdPaid": 17811.14,
+   "usdPerPoint": 0.009622,
+   "projectedFinal": 9713391,
+   "assigned": 19248,
+   "appsNoAssign": 6499,
+   "stale": 0,
+   "prRatio": 96.17,
+   "bounceRate": 3.83,
+   "warnings": 3,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5414,
+     "points": 597500
+    },
+    "medium": {
+     "count": 1137,
+     "points": 198900
+    },
+    "large": {
+     "count": 25510,
+     "points": 5147200
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 15200,
+     "issuesClosed": 76
     },
     {
      "contributor": "Essther77-git",
