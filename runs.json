@@ -1,48 +1,7 @@
 {
- "generatedAt": "2026-11-19T04:03:13+00:00",
+ "generatedAt": "2026-11-19T06:02:55+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-18T10-01Z",
-   "runAt": "2026-11-18T10:01:27+00:00",
-   "status": "upcoming",
-   "inWaveWindowNow": false,
-   "openIssues": 14825,
-   "openPoints": 2431050,
-   "closedIssues": 0,
-   "closedPoints": 0,
-   "maxPoints": 2431050,
-   "scoredPoints": 0,
-   "remainingPoints": 2431050,
-   "newIssues": 567,
-   "contributors": 0,
-   "repos": 599,
-   "usdPaid": 0.0,
-   "usdPerPoint": 0.030851,
-   "projectedFinal": 0,
-   "assigned": 4655,
-   "appsNoAssign": 0,
-   "stale": 4655,
-   "prRatio": 96.23,
-   "bounceRate": 3.77,
-   "warnings": 1,
-   "basis": "closed",
-   "distribution": {
-    "small": {
-     "count": 6030,
-     "points": 659000
-    },
-    "medium": {
-     "count": 791,
-     "points": 131850
-    },
-    "large": {
-     "count": 8004,
-     "points": 1640200
-    }
-   },
-   "top": []
-  },
   {
    "dir": "2026-11-18T12-01Z",
    "runAt": "2026-11-18T12:01:32+00:00",
@@ -504,6 +463,63 @@
     "large": {
      "count": 16416,
      "points": 3323800
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 9600,
+     "issuesClosed": 48
+    },
+    {
+     "contributor": "NteinPrecious",
+     "pointsEarned": 8800,
+     "issuesClosed": 44
+    },
+    {
+     "contributor": "Essther77-git",
+     "pointsEarned": 8000,
+     "issuesClosed": 40
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-19T06-01Z",
+   "runAt": "2026-11-19T06:01:32+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 22793,
+   "openPoints": 4096900,
+   "closedIssues": 2854,
+   "closedPoints": 570100,
+   "maxPoints": 4667000,
+   "scoredPoints": 570100,
+   "remainingPoints": 4096900,
+   "newIssues": 115,
+   "contributors": 353,
+   "repos": 668,
+   "usdPaid": 9161.67,
+   "usdPerPoint": 0.01607,
+   "projectedFinal": 5980351,
+   "assigned": 10096,
+   "appsNoAssign": 6169,
+   "stale": 0,
+   "prRatio": 96.16,
+   "bounceRate": 3.84,
+   "warnings": 2,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5337,
+     "points": 588600
+    },
+    "medium": {
+     "count": 995,
+     "points": 175500
+    },
+    "large": {
+     "count": 16461,
+     "points": 3332800
     }
    },
    "top": [
