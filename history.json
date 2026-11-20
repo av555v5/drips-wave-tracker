@@ -1152,5 +1152,24 @@
       "pointsEarned": 15200,
       "issuesClosed": 76
     }
+  },
+  {
+    "runAt": "2026-11-20T02:01:26+00:00",
+    "waveStatus": "active",
+    "inWaveWindowNow": true,
+    "openIssuesTotal": 32097,
+    "openTotalPoints": 5952800,
+    "closedInWave11": 10162,
+    "closedTotalPoints": 2032900,
+    "maxTotalPoints": 7985700,
+    "scoredPoints": 2032900,
+    "remainingPoints": 5952800,
+    "newIssuesSinceLastRun": 1,
+    "contributorsCount": 1014,
+    "topContributor": {
+      "contributor": "monique-7arch",
+      "pointsEarned": 15200,
+      "issuesClosed": 76
+    }
   }
 ]
