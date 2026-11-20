@@ -1,64 +1,7 @@
 {
- "generatedAt": "2026-11-20T06:08:56+00:00",
+ "generatedAt": "2026-11-20T08:08:50+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-19T10-01Z",
-   "runAt": "2026-11-19T10:01:34+00:00",
-   "status": "active",
-   "inWaveWindowNow": true,
-   "openIssues": 24863,
-   "openPoints": 4513150,
-   "closedIssues": 4142,
-   "closedPoints": 827000,
-   "maxPoints": 5340150,
-   "scoredPoints": 827000,
-   "remainingPoints": 4513150,
-   "newIssues": 191,
-   "contributors": 467,
-   "repos": 696,
-   "usdPaid": 11614.84,
-   "usdPerPoint": 0.014045,
-   "projectedFinal": 6941363,
-   "assigned": 11330,
-   "appsNoAssign": 6884,
-   "stale": 0,
-   "prRatio": 96.16,
-   "bounceRate": 3.84,
-   "warnings": 2,
-   "basis": "resolved",
-   "distribution": {
-    "small": {
-     "count": 5334,
-     "points": 588300
-    },
-    "medium": {
-     "count": 995,
-     "points": 176850
-    },
-    "large": {
-     "count": 18534,
-     "points": 3748000
-    }
-   },
-   "top": [
-    {
-     "contributor": "monique-7arch",
-     "pointsEarned": 12800,
-     "issuesClosed": 64
-    },
-    {
-     "contributor": "Essther77-git",
-     "pointsEarned": 10400,
-     "issuesClosed": 52
-    },
-    {
-     "contributor": "LGTM-ButItsBroken",
-     "pointsEarned": 10400,
-     "issuesClosed": 52
-    }
-   ]
-  },
   {
    "dir": "2026-11-19T12-01Z",
    "runAt": "2026-11-19T12:01:34+00:00",
@@ -569,6 +512,63 @@
      "contributor": "NteinPrecious",
      "pointsEarned": 12800,
      "issuesClosed": 64
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-20T08-01Z",
+   "runAt": "2026-11-20T08:01:32+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 32848,
+   "openPoints": 6113350,
+   "closedIssues": 11703,
+   "closedPoints": 2340600,
+   "maxPoints": 8453950,
+   "scoredPoints": 2340600,
+   "remainingPoints": 6113350,
+   "newIssues": 43,
+   "contributors": 1115,
+   "repos": 792,
+   "usdPaid": 20764.85,
+   "usdPerPoint": 0.008872,
+   "projectedFinal": 9359200,
+   "assigned": 19539,
+   "appsNoAssign": 7286,
+   "stale": 0,
+   "prRatio": 96.17,
+   "bounceRate": 3.83,
+   "warnings": 3,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5566,
+     "points": 616100
+    },
+    "medium": {
+     "count": 1131,
+     "points": 198450
+    },
+    "large": {
+     "count": 26151,
+     "points": 5298800
+    }
+   },
+   "top": [
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 16600,
+     "issuesClosed": 83
+    },
+    {
+     "contributor": "Essther77-git",
+     "pointsEarned": 15200,
+     "issuesClosed": 76
+    },
+    {
+     "contributor": "LGTM-ButItsBroken",
+     "pointsEarned": 14400,
+     "issuesClosed": 72
     }
    ]
   }
