@@ -2007,5 +2007,24 @@
       "pointsEarned": 20750,
       "issuesClosed": 104
     }
+  },
+  {
+    "runAt": "2026-11-23T16:01:46+00:00",
+    "waveStatus": "active",
+    "inWaveWindowNow": true,
+    "openIssuesTotal": 36202,
+    "openTotalPoints": 6897350,
+    "closedInWave11": 46472,
+    "closedTotalPoints": 9153900,
+    "maxTotalPoints": 16051250,
+    "scoredPoints": 9153900,
+    "remainingPoints": 6897350,
+    "newIssuesSinceLastRun": 151,
+    "contributorsCount": 2837,
+    "topContributor": {
+      "contributor": "Georgechisom",
+      "pointsEarned": 22350,
+      "issuesClosed": 112
+    }
   }
 ]
