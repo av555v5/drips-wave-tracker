@@ -1,120 +1,76 @@
-=== Drips Wave 11 bot — run at 2026-11-23T04:01:25+00:00 ===
+=== Drips Wave 11 bot — run at 2026-11-23T05:41:35+00:00 ===
 
-[0] Loaded last run state (run at 2026-11-23T02:01:30+00:00, open=37394)
+[0] Loaded last run state (run at 2026-11-23T04:01:25+00:00, open=37132)
 Wave 11: 2026-11-18T14:00:35.145Z → 2026-11-25T14:00:55.830Z  status=active  budget=$75,000
 
 [1/6] Fetching all open Wave issues...
-  page 1: got 100, unique so far=100, reported total=37139, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=37139, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=37139, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=37139, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=37139, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=37139, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=37139, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=37139, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=37139, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=37139, hasNext=True
-  page 200: got 100, unique so far=20000, reported total=37139, hasNext=True
-  page 220: got 100, unique so far=22000, reported total=37139, hasNext=True
-  page 240: got 100, unique so far=24000, reported total=37139, hasNext=True
-  page 260: got 100, unique so far=26000, reported total=37139, hasNext=True
-  page 280: got 100, unique so far=28000, reported total=37139, hasNext=True
-  page 300: got 100, unique so far=30000, reported total=37139, hasNext=True
-  page 320: got 100, unique so far=32000, reported total=37139, hasNext=True
-  page 340: got 100, unique so far=34000, reported total=37139, hasNext=True
-  page 360: got 100, unique so far=36000, reported total=37135, hasNext=True
-  page 372: got 39, unique so far=37139, reported total=37135, hasNext=False
-  WARN: fetched 37139 but API reports 37135; retrying (1/3)
-  page 1: got 100, unique so far=100, reported total=37135, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=37135, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=37135, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=37135, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=37135, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=37135, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=37135, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=37135, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=37133, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=37133, hasNext=True
-  page 200: got 100, unique so far=20000, reported total=37133, hasNext=True
-  page 220: got 100, unique so far=22000, reported total=37133, hasNext=True
-  page 240: got 100, unique so far=24000, reported total=37133, hasNext=True
-  page 260: got 100, unique so far=26000, reported total=37133, hasNext=True
-  page 280: got 100, unique so far=28000, reported total=37131, hasNext=True
-  page 300: got 100, unique so far=30000, reported total=37131, hasNext=True
-  page 320: got 100, unique so far=32000, reported total=37131, hasNext=True
-  page 340: got 100, unique so far=34000, reported total=37131, hasNext=True
-  page 360: got 100, unique so far=36000, reported total=37131, hasNext=True
-  page 372: got 32, unique so far=37132, reported total=37130, hasNext=False
-  WARN: fetched 37132 but API reports 37130; retrying (2/3)
-  page 1: got 100, unique so far=100, reported total=37130, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=37130, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=37130, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=37130, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=37125, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=37125, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=37125, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=37125, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=37125, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=37125, hasNext=True
-  page 200: got 100, unique so far=20000, reported total=37120, hasNext=True
-  page 220: got 100, unique so far=22000, reported total=37120, hasNext=True
-  page 240: got 100, unique so far=24000, reported total=37120, hasNext=True
-  page 260: got 100, unique so far=26000, reported total=37120, hasNext=True
-  page 280: got 100, unique so far=28000, reported total=37120, hasNext=True
-  page 300: got 100, unique so far=30000, reported total=37118, hasNext=True
-  page 320: got 100, unique so far=32000, reported total=37118, hasNext=True
-  page 340: got 100, unique so far=34000, reported total=37118, hasNext=True
-  page 360: got 100, unique so far=36000, reported total=37118, hasNext=True
-  page 372: got 23, unique so far=37123, reported total=37118, hasNext=False
-  WARN: fetched 37123 but API reports 37118; retrying (3/3)
-  open issues: 37132
+  page 1: got 100, unique so far=100, reported total=37055, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=37055, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=37055, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=37055, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=37054, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=37054, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=37054, hasNext=True
+  page 140: got 100, unique so far=14000, reported total=37054, hasNext=True
+  page 160: got 100, unique so far=16000, reported total=37054, hasNext=True
+  page 180: got 100, unique so far=18000, reported total=37054, hasNext=True
+  page 200: got 100, unique so far=20000, reported total=37054, hasNext=True
+  page 220: got 100, unique so far=22000, reported total=37054, hasNext=True
+  page 240: got 100, unique so far=24000, reported total=37054, hasNext=True
+  page 260: got 100, unique so far=26000, reported total=37054, hasNext=True
+  page 280: got 100, unique so far=28000, reported total=37054, hasNext=True
+  page 300: got 100, unique so far=30000, reported total=37054, hasNext=True
+  page 320: got 100, unique so far=32000, reported total=37054, hasNext=True
+  page 340: got 100, unique so far=34000, reported total=37054, hasNext=True
+  page 360: got 100, unique so far=36000, reported total=37054, hasNext=True
+  page 371: got 54, unique so far=37054, reported total=37054, hasNext=False
+  open issues: 37054
 
 [2/6] Scanning closed+PR issues for Wave 11 (2026-11-18T14:00:35.145000+00:00 → 2026-11-25T14:00:55.830000+00:00)...
-  page 1: got 100, unique so far=100, reported total=385837, hasNext=True
-  page 20: got 100, unique so far=2000, reported total=385837, hasNext=True
-  page 40: got 100, unique so far=4000, reported total=385837, hasNext=True
-  page 60: got 100, unique so far=6000, reported total=385837, hasNext=True
-  page 80: got 100, unique so far=8000, reported total=385837, hasNext=True
-  page 100: got 100, unique so far=10000, reported total=385837, hasNext=True
-  page 120: got 100, unique so far=12000, reported total=385837, hasNext=True
-  page 140: got 100, unique so far=14000, reported total=385837, hasNext=True
-  page 160: got 100, unique so far=16000, reported total=385837, hasNext=True
-  page 180: got 100, unique so far=18000, reported total=385837, hasNext=True
-  page 200: got 100, unique so far=20000, reported total=385837, hasNext=True
-  page 220: got 100, unique so far=22000, reported total=385837, hasNext=True
-  page 240: got 100, unique so far=24000, reported total=385837, hasNext=True
-  page 260: got 100, unique so far=26000, reported total=385837, hasNext=True
-  page 280: got 100, unique so far=28000, reported total=385837, hasNext=True
-  page 300: got 100, unique so far=30000, reported total=385837, hasNext=True
-  page 320: got 100, unique so far=32000, reported total=385837, hasNext=True
-  page 340: got 100, unique so far=34000, reported total=385837, hasNext=True
-  page 360: got 100, unique so far=36000, reported total=385837, hasNext=True
-  page 380: got 100, unique so far=38000, reported total=385837, hasNext=True
-  page 400: got 100, unique so far=40000, reported total=385837, hasNext=True
-  early stop at page 415 (unique=41500)
+  page 1: got 100, unique so far=100, reported total=386063, hasNext=True
+  page 20: got 100, unique so far=2000, reported total=386063, hasNext=True
+  page 40: got 100, unique so far=4000, reported total=386063, hasNext=True
+  page 60: got 100, unique so far=6000, reported total=386063, hasNext=True
+  page 80: got 100, unique so far=8000, reported total=386063, hasNext=True
+  page 100: got 100, unique so far=10000, reported total=386063, hasNext=True
+  page 120: got 100, unique so far=12000, reported total=386063, hasNext=True
+  page 140: got 100, unique so far=14000, reported total=386063, hasNext=True
+  page 160: got 100, unique so far=16000, reported total=386063, hasNext=True
+  page 180: got 100, unique so far=18000, reported total=386063, hasNext=True
+  page 200: got 100, unique so far=20000, reported total=386063, hasNext=True
+  page 220: got 100, unique so far=22000, reported total=386063, hasNext=True
+  page 240: got 100, unique so far=24000, reported total=386063, hasNext=True
+  page 260: got 100, unique so far=26000, reported total=386063, hasNext=True
+  page 280: got 100, unique so far=28000, reported total=386063, hasNext=True
+  page 300: got 100, unique so far=30000, reported total=386063, hasNext=True
+  page 320: got 100, unique so far=32000, reported total=386063, hasNext=True
+  page 340: got 100, unique so far=34000, reported total=386063, hasNext=True
+  page 360: got 100, unique so far=36000, reported total=386063, hasNext=True
+  page 380: got 100, unique so far=38000, reported total=386063, hasNext=True
+  page 400: got 100, unique so far=40000, reported total=386064, hasNext=True
+  early stop at page 417 (unique=41700)
   closed-in-wave by definition (rewarded issues / points scored):
-    resolved : 40,344 issues   8,003,400 pts   <-- used
-    closed   : 40,490 issues   8,032,200 pts
-    completed: 40,344 issues   8,003,400 pts
+    resolved : 40,570 issues   8,048,450 pts   <-- used
+    closed   : 40,716 issues   8,077,250 pts
+    completed: 40,570 issues   8,048,450 pts
 [4/6] Fetching enrollments + filter counts...
   fetching enrollments...
   page 1: got 100, unique so far=100, reported total=962, hasNext=True
   page 10: got 62, unique so far=962, reported total=962, hasNext=False
   → 962 enrollments
 [5/6] Computing metrics...
-  WARN: open issues: fetched 37132 but API reported 37130
   WARN: 6 rewarded issues (1,200 pts) have no assignee and are excluded from contributor tables
-  WARN: scored points differ by definition of "closed in wave": resolved=8,003,400, closed=8,032,200, completed=8,003,400; using resolved
+  WARN: scored points differ by definition of "closed in wave": resolved=8,048,450, closed=8,077,250, completed=8,048,450; using resolved
 [6/6] Writing outputs...
-  pruned old run: 2026-11-22T08-01Z
+  pruned old run: 2026-11-22T10-01Z
   wrote runs.json (10 runs)
 
 === RUN SUMMARY ===
-Run at (UTC)      : 2026-11-23T04:01:25+00:00   in window now: True
-Open issues       : 37,132  (6,991,650 pts)
-Closed in wave    : 40,344  (8,003,400 pts)
-Max / scored / left: 14,995,050 / 8,003,400 / 6,991,650
-USD per point     : $0.005002   paid $40,030.21   remaining $34,969.79
-Contributors      : 2601   new issues: 0   repos: 873
-Warnings          : 3
+Run at (UTC)      : 2026-11-23T05:41:35+00:00   in window now: True
+Open issues       : 37,054  (6,979,100 pts)
+Closed in wave    : 40,570  (8,048,450 pts)
+Max / scored / left: 15,027,550 / 8,048,450 / 6,979,100
+USD per point     : $0.004991   paid $40,168.47   remaining $34,831.53
+Contributors      : 2614   new issues: 11   repos: 873
+Warnings          : 2
 === END ===
