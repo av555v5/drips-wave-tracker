@@ -1,64 +1,7 @@
 {
- "generatedAt": "2026-11-23T10:12:08+00:00",
+ "generatedAt": "2026-11-23T10:40:35+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-22T16-01Z",
-   "runAt": "2026-11-22T16:01:26+00:00",
-   "status": "active",
-   "inWaveWindowNow": true,
-   "openIssues": 37231,
-   "openPoints": 7085800,
-   "closedIssues": 36402,
-   "closedPoints": 7262250,
-   "maxPoints": 14348050,
-   "scoredPoints": 7262250,
-   "remainingPoints": 7085800,
-   "newIssues": 89,
-   "contributors": 2443,
-   "repos": 858,
-   "usdPaid": 37961.17,
-   "usdPerPoint": 0.005227,
-   "projectedFinal": 12448202,
-   "assigned": 27720,
-   "appsNoAssign": 5671,
-   "stale": 0,
-   "prRatio": 96.25,
-   "bounceRate": 3.75,
-   "warnings": 3,
-   "basis": "resolved",
-   "distribution": {
-    "small": {
-     "count": 4830,
-     "points": 551700
-    },
-    "medium": {
-     "count": 1329,
-     "points": 225300
-    },
-    "large": {
-     "count": 31072,
-     "points": 6308800
-    }
-   },
-   "top": [
-    {
-     "contributor": "monique-7arch",
-     "pointsEarned": 20600,
-     "issuesClosed": 103
-    },
-    {
-     "contributor": "NteinPrecious",
-     "pointsEarned": 19200,
-     "issuesClosed": 96
-    },
-    {
-     "contributor": "Georgechisom",
-     "pointsEarned": 19150,
-     "issuesClosed": 96
-    }
-   ]
-  },
   {
    "dir": "2026-11-22T18-01Z",
    "runAt": "2026-11-22T18:01:21+00:00",
@@ -569,6 +512,63 @@
      "contributor": "NteinPrecious",
      "pointsEarned": 19200,
      "issuesClosed": 96
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-23T10-32Z",
+   "runAt": "2026-11-23T10:32:43+00:00",
+   "status": "active",
+   "inWaveWindowNow": true,
+   "openIssues": 36983,
+   "openPoints": 6958300,
+   "closedIssues": 42642,
+   "closedPoints": 8445800,
+   "maxPoints": 15404100,
+   "scoredPoints": 8445800,
+   "remainingPoints": 6958300,
+   "newIssues": 14,
+   "contributors": 2715,
+   "repos": 876,
+   "usdPaid": 41121.2,
+   "usdPerPoint": 0.004869,
+   "projectedFinal": 12176055,
+   "assigned": 28709,
+   "appsNoAssign": 5349,
+   "stale": 0,
+   "prRatio": 96.25,
+   "bounceRate": 3.75,
+   "warnings": 3,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 5581,
+     "points": 630600
+    },
+    "medium": {
+     "count": 1315,
+     "points": 220500
+    },
+    "large": {
+     "count": 30087,
+     "points": 6107200
+    }
+   },
+   "top": [
+    {
+     "contributor": "Georgechisom",
+     "pointsEarned": 20750,
+     "issuesClosed": 104
+    },
+    {
+     "contributor": "monique-7arch",
+     "pointsEarned": 20600,
+     "issuesClosed": 103
+    },
+    {
+     "contributor": "greyforreal",
+     "pointsEarned": 19900,
+     "issuesClosed": 100
     }
    ]
   }
