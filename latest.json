@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-24T00:01:27+00:00",
+  "runAt": "2026-11-24T02:01:25+00:00",
   "wave": {
     "waveNumber": 11,
     "startDate": "2026-11-18T14:00:35.145Z",
@@ -9,22 +9,22 @@
     "inWaveWindowNow": true
   },
   "openIssues": {
-    "total": 35908,
-    "totalPoints": 6856800,
+    "total": 35876,
+    "totalPoints": 6852050,
     "distribution": [
       {
         "complexity": "small",
         "basePoints": 100,
-        "count": 4619,
-        "sharePct": 12.86,
-        "currentContribution": 528200,
+        "count": 4633,
+        "sharePct": 12.91,
+        "currentContribution": 529600,
         "multiplierBreakdown": {
-          "1": 4188,
+          "1": 4202,
           "2": 315,
           "4": 116
         },
         "actualPointsBreakdown": {
-          "100": 4188,
+          "100": 4202,
           "200": 315,
           "400": 116
         }
@@ -32,33 +32,33 @@
       {
         "complexity": "medium",
         "basePoints": 150,
-        "count": 1451,
-        "sharePct": 4.04,
-        "currentContribution": 240600,
+        "count": 1426,
+        "sharePct": 3.97,
+        "currentContribution": 238650,
         "multiplierBreakdown": {
-          "1": 1382,
+          "1": 1353,
           "2": 27,
-          "4": 42
+          "4": 46
         },
         "actualPointsBreakdown": {
-          "150": 1382,
+          "150": 1353,
           "300": 27,
-          "600": 42
+          "600": 46
         }
       },
       {
         "complexity": "large",
         "basePoints": 200,
-        "count": 29838,
-        "sharePct": 83.1,
-        "currentContribution": 6088000,
+        "count": 29817,
+        "sharePct": 83.11,
+        "currentContribution": 6083800,
         "multiplierBreakdown": {
-          "1": 29404,
+          "1": 29383,
           "2": 350,
           "4": 84
         },
         "actualPointsBreakdown": {
-          "200": 29404,
+          "200": 29383,
           "400": 350,
           "800": 84
         }
@@ -66,239 +66,239 @@
     ]
   },
   "closedInWave11": {
-    "uniqueIssues": 49113,
-    "closedTotalPoints": 9683450,
-    "scoredPoints": 9683450,
+    "uniqueIssues": 49275,
+    "closedTotalPoints": 9713700,
+    "scoredPoints": 9713700,
     "remainingClosedPoints": 0
   },
-  "maxTotalPoints": 16540250,
-  "scoredPoints": 9683450,
-  "remainingPoints": 6856800,
+  "maxTotalPoints": 16565750,
+  "scoredPoints": 9713700,
+  "remainingPoints": 6852050,
   "unawardedOnClosedPoints": 0,
   "newIssuesSinceLastRun": {
-    "newSinceLastRun": 192,
-    "prevOpenCount": 35593,
-    "currentOpenCount": 35908,
+    "newSinceLastRun": 43,
+    "prevOpenCount": 35908,
+    "currentOpenCount": 35876,
     "newIssuesSample": [
       {
-        "number": 1783,
-        "title": "feat(ui): remove decorative glow and node backgrounds site-wide and tighten hero spacing, light and dark",
-        "repo": "OFFER-HUB/offer-hub-monorepo",
-        "url": "https://github.com/OFFER-HUB/offer-hub-monorepo/issues/1783",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 4,
-        "totalPoints": 800,
-        "createdAt": "2026-11-23T23:59:00.000Z"
-      },
-      {
-        "number": 1782,
-        "title": "fix(use-cases): redesign the /use-cases hero and sections, remove the node network background, light and dark",
-        "repo": "OFFER-HUB/offer-hub-monorepo",
-        "url": "https://github.com/OFFER-HUB/offer-hub-monorepo/issues/1782",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 4,
-        "totalPoints": 800,
-        "createdAt": "2026-11-23T23:58:57.000Z"
-      },
-      {
-        "number": 1781,
-        "title": "feat(site): remove every \"Join Waitlist\" call to action from the header and the rest of the website",
-        "repo": "OFFER-HUB/offer-hub-monorepo",
-        "url": "https://github.com/OFFER-HUB/offer-hub-monorepo/issues/1781",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 4,
-        "totalPoints": 800,
-        "createdAt": "2026-11-23T23:58:55.000Z"
-      },
-      {
-        "number": 1780,
-        "title": "feat(brand): one official logo set for the app header, footer and browser tab (light and dark)",
-        "repo": "OFFER-HUB/offer-hub-monorepo",
-        "url": "https://github.com/OFFER-HUB/offer-hub-monorepo/issues/1780",
-        "complexity": "large",
-        "points": 200,
-        "pointsMultiplier": 4,
-        "totalPoints": 800,
-        "createdAt": "2026-11-23T23:58:52.000Z"
-      },
-      {
-        "number": 30,
-        "title": "CAFE-6 \u00b7 A producer's payment history to take to a bank or lender",
-        "repo": "Micopay/micopay-cafe",
-        "url": "https://github.com/Micopay/micopay-cafe/issues/30",
+        "number": 85,
+        "title": "W48 [Feature] Reconcile reviewed factory receipts into the creator UI and market listings",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/85",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-23T22:49:59.000Z"
+        "createdAt": "2026-11-24T01:56:41.000Z"
       },
       {
-        "number": 29,
-        "title": "CAFE-5 \u00b7 Verify a payment record against Stellar",
-        "repo": "Micopay/micopay-cafe",
-        "url": "https://github.com/Micopay/micopay-cafe/issues/29",
+        "number": 84,
+        "title": "W47 [Feature] Add the reviewed Testnet factory deployment operation behind publication intents",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/84",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-23T22:49:56.000Z"
+        "createdAt": "2026-11-24T01:56:34.000Z"
       },
       {
-        "number": 25,
-        "title": "RENT-8 \u00b7 Payment link for stays arranged outside the platform",
-        "repo": "Micopay/micopay-rentas",
-        "url": "https://github.com/Micopay/micopay-rentas/issues/25",
+        "number": 83,
+        "title": "W46 [Testing] Exercise Settings, creator review and a complete legacy market lifecycle through the browser",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/83",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-23T22:49:54.000Z"
+        "createdAt": "2026-11-24T01:56:26.000Z"
       },
       {
-        "number": 24,
-        "title": "RENT-7 \u00b7 Stay paid after check-in: API, booking page and README",
-        "repo": "Micopay/micopay-rentas",
-        "url": "https://github.com/Micopay/micopay-rentas/issues/24",
+        "number": 82,
+        "title": "W45 [Bug] Wire staging ingestion to the API database and persist the settlement worker\u2019s state",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/82",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-23T22:49:52.000Z"
+        "createdAt": "2026-11-24T01:56:20.000Z"
       },
       {
-        "number": 23,
-        "title": "RENT-6 \u00b7 Escrow: pay the stay after check-in, hold only the deposit",
-        "repo": "Micopay/micopay-rentas",
-        "url": "https://github.com/Micopay/micopay-rentas/issues/23",
+        "number": 81,
+        "title": "W44 [Feature] Serve the built React app and wallet API on one Testnet staging origin",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/81",
         "complexity": "small",
         "points": 100,
         "pointsMultiplier": 1,
         "totalPoints": 100,
-        "createdAt": "2026-11-23T22:49:50.000Z"
+        "createdAt": "2026-11-24T01:56:14.000Z"
       },
       {
-        "number": 557,
-        "title": "Add accessibility checks for chat and agent status views",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/557",
-        "complexity": "large",
-        "points": 200,
+        "number": 80,
+        "title": "W43 [Testing] Run RevMarket JavaScript, Vite and Soroban checks on pull requests",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/80",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:31.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:56:09.000Z"
       },
       {
-        "number": 556,
-        "title": "Add end-to-end coverage for account export and deletion safeguards",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/556",
-        "complexity": "large",
-        "points": 200,
+        "number": 79,
+        "title": "W42 [Bug] Repair the staging rehearsal against the current draft API",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/79",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:29.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:56:03.000Z"
       },
       {
-        "number": 555,
-        "title": "Add a browser-level test for payment form keyboard flow",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/555",
-        "complexity": "large",
-        "points": 200,
+        "number": 78,
+        "title": "W41 [Bug] Find wallet positions beyond the latest 50 markets",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/78",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:27.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:54.000Z"
       },
       {
-        "number": 554,
-        "title": "Test service-worker upgrade and cache cleanup across releases",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/554",
-        "complexity": "large",
-        "points": 200,
+        "number": 77,
+        "title": "W40 [Feature] Read verified wallet events and indexer freshness on the Activity page",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/77",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:24.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:47.000Z"
       },
       {
-        "number": 553,
-        "title": "Add offline route guidance for unsupported protected pages",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/553",
-        "complexity": "large",
-        "points": 200,
+        "number": 76,
+        "title": "W39 [Feature] Show approved publication intents and their actual status to creators",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/76",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:22.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:38.000Z"
       },
       {
-        "number": 552,
-        "title": "Prompt users when a new service worker update is ready",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/552",
-        "complexity": "large",
-        "points": 200,
+        "number": 75,
+        "title": "W38 [Bug] Use the canonical reviewed-rules digest in publication intents",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/75",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:20.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:25.000Z"
       },
       {
-        "number": 551,
-        "title": "Report offline storage usage and quota failures accessibly",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/551",
-        "complexity": "large",
-        "points": 200,
+        "number": 74,
+        "title": "W37 [Bug] Handle slow or unavailable AI without losing a manual draft",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/74",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:18.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:15.000Z"
       },
       {
-        "number": 550,
-        "title": "Resolve duplicate offline message replay after reconnect",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/550",
-        "complexity": "large",
-        "points": 200,
+        "number": 73,
+        "title": "W36 [Feature] Connect the reviewer queue and exact-revision decisions to the web app",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/73",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:16.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:55:00.000Z"
       },
       {
-        "number": 549,
-        "title": "Prevent stale offline queue entries from crossing account changes",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/549",
-        "complexity": "large",
-        "points": 200,
+        "number": 72,
+        "title": "W35 [Feature] Submit complete resolution rules and withdraw proposals from the creator UI",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/72",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:13.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:54:54.000Z"
       },
       {
-        "number": 548,
-        "title": "Let users remove a single unsent item from the offline queue",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/548",
-        "complexity": "large",
-        "points": 200,
+        "number": 71,
+        "title": "W34 [Feature] Let creators save, reopen and edit their own drafts without AI",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/71",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:11.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:54:48.000Z"
       },
       {
-        "number": 547,
-        "title": "Show queued offline messages and their delivery state",
-        "repo": "gear5labs/chenpilot-client",
-        "url": "https://github.com/gear5labs/chenpilot-client/issues/547",
-        "complexity": "large",
-        "points": 200,
+        "number": 70,
+        "title": "W33 [Bug] Restore settlement outcomes and local evidence verification on market detail",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/70",
+        "complexity": "small",
+        "points": 100,
         "pointsMultiplier": 1,
-        "totalPoints": 200,
-        "createdAt": "2026-11-23T22:04:09.000Z"
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:54:41.000Z"
+      },
+      {
+        "number": 69,
+        "title": "W32 [Bug] Use real pool amounts and confirmed activity on market cards and details",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/69",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:54:33.000Z"
+      },
+      {
+        "number": 68,
+        "title": "W31 [Bug] Validate legacy market creation against the contract before opening Freighter",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/68",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:54:23.000Z"
+      },
+      {
+        "number": 67,
+        "title": "W30 [Bug] Restore prediction, settlement request and claim actions on market detail",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/67",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:53:59.000Z"
+      },
+      {
+        "number": 66,
+        "title": "W29 [Bug] Expose off-chain profile and privacy controls even when activity is empty",
+        "repo": "Altacon-Labs/RevMarket",
+        "url": "https://github.com/Altacon-Labs/RevMarket/issues/66",
+        "complexity": "small",
+        "points": 100,
+        "pointsMultiplier": 1,
+        "totalPoints": 100,
+        "createdAt": "2026-11-24T01:53:41.000Z"
       }
     ]
   },
@@ -1614,6 +1614,38 @@
       "lastClosedAt": "2026-11-23T12:33:09.000Z"
     },
     {
+      "contributor": "Akanimoh12",
+      "profileUrl": "https://github.com/Akanimoh12",
+      "pointsEarned": 13600,
+      "issuesClosed": 68,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 17,
+      "reposContributedTo": [
+        "Ay-obami/soro-mutants",
+        "Epta-Node/Linkora-social",
+        "HitEmPoka/StellPoker",
+        "INVERSEARENA/inversearena-frontend",
+        "Invoice-Liquidity-Network/ILN-Smart-Contract",
+        "Iris-IV/ProofOfHeart-stellar",
+        "JSE-ORG/trust-link-backend",
+        "OlaGreat/NovaSupport",
+        "PhasoraLabs/StellarGrantProtocol",
+        "RetinaX-Org/RetinaX",
+        "ScholarMarket/scholarmarket",
+        "SorobanLard/SLBackend",
+        "StellaBridge/Bridge-Watch",
+        "StellarQuorum/StellarQuorum",
+        "StellarState/SS-frontend",
+        "chunks-labz/predinex-stellar",
+        "soroban-testkit/testkit-interface"
+      ],
+      "complexityBreakdown": {
+        "large": 68
+      },
+      "firstClosedAt": "2026-11-18T20:01:06.000Z",
+      "lastClosedAt": "2026-11-24T00:15:44.000Z"
+    },
+    {
       "contributor": "edehvictor",
       "profileUrl": "https://github.com/edehvictor",
       "pointsEarned": 13600,
@@ -1932,37 +1964,6 @@
       },
       "firstClosedAt": "2026-11-19T23:04:10.000Z",
       "lastClosedAt": "2026-11-23T16:54:30.000Z"
-    },
-    {
-      "contributor": "Akanimoh12",
-      "profileUrl": "https://github.com/Akanimoh12",
-      "pointsEarned": 12800,
-      "issuesClosed": 64,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 16,
-      "reposContributedTo": [
-        "Ay-obami/soro-mutants",
-        "Epta-Node/Linkora-social",
-        "HitEmPoka/StellPoker",
-        "INVERSEARENA/inversearena-frontend",
-        "Invoice-Liquidity-Network/ILN-Smart-Contract",
-        "Iris-IV/ProofOfHeart-stellar",
-        "JSE-ORG/trust-link-backend",
-        "OlaGreat/NovaSupport",
-        "PhasoraLabs/StellarGrantProtocol",
-        "RetinaX-Org/RetinaX",
-        "ScholarMarket/scholarmarket",
-        "SorobanLard/SLBackend",
-        "StellaBridge/Bridge-Watch",
-        "StellarQuorum/StellarQuorum",
-        "chunks-labz/predinex-stellar",
-        "soroban-testkit/testkit-interface"
-      ],
-      "complexityBreakdown": {
-        "large": 64
-      },
-      "firstClosedAt": "2026-11-18T20:01:06.000Z",
-      "lastClosedAt": "2026-11-23T11:36:01.000Z"
     },
     {
       "contributor": "Chidubemkingsley",
@@ -5398,6 +5399,33 @@
       "lastClosedAt": "2026-11-23T07:31:08.000Z"
     },
     {
+      "contributor": "aniokedianne",
+      "profileUrl": "https://github.com/aniokedianne",
+      "pointsEarned": 9400,
+      "issuesClosed": 47,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 12,
+      "reposContributedTo": [
+        "Agri-fund/agri-fi",
+        "Akanimoh12/Stellar-iPredict",
+        "Just-Bamford/Stellar-Royalty-Splitter",
+        "MentorsMind/MentorsMind-Contract",
+        "Neurowealth/NeuroWealth-Frontend",
+        "SoroStream/sorostream-sdk",
+        "Soroban-escrow/escrow-app",
+        "Sorokit/core",
+        "Space-Nebula/stellar-nebula-frontend",
+        "Vellar-Wallet/vellar-dapp",
+        "emdevelopa/Stellar_Payment_API",
+        "nextellarlabs/nextellar-docs"
+      ],
+      "complexityBreakdown": {
+        "large": 47
+      },
+      "firstClosedAt": "2026-11-20T17:26:52.000Z",
+      "lastClosedAt": "2026-11-24T00:17:15.000Z"
+    },
+    {
       "contributor": "kodegreen70",
       "profileUrl": "https://github.com/kodegreen70",
       "pointsEarned": 9400,
@@ -6531,32 +6559,6 @@
       },
       "firstClosedAt": "2026-11-18T17:53:08.000Z",
       "lastClosedAt": "2026-11-22T05:34:00.000Z"
-    },
-    {
-      "contributor": "aniokedianne",
-      "profileUrl": "https://github.com/aniokedianne",
-      "pointsEarned": 8600,
-      "issuesClosed": 43,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 11,
-      "reposContributedTo": [
-        "Agri-fund/agri-fi",
-        "Just-Bamford/Stellar-Royalty-Splitter",
-        "MentorsMind/MentorsMind-Contract",
-        "Neurowealth/NeuroWealth-Frontend",
-        "SoroStream/sorostream-sdk",
-        "Soroban-escrow/escrow-app",
-        "Sorokit/core",
-        "Space-Nebula/stellar-nebula-frontend",
-        "Vellar-Wallet/vellar-dapp",
-        "emdevelopa/Stellar_Payment_API",
-        "nextellarlabs/nextellar-docs"
-      ],
-      "complexityBreakdown": {
-        "large": 43
-      },
-      "firstClosedAt": "2026-11-20T17:26:52.000Z",
-      "lastClosedAt": "2026-11-23T17:01:41.000Z"
     },
     {
       "contributor": "gideononiru",
@@ -10521,6 +10523,31 @@
       "lastClosedAt": "2026-11-23T11:45:12.000Z"
     },
     {
+      "contributor": "Chigozie8876",
+      "profileUrl": "https://github.com/Chigozie8876",
+      "pointsEarned": 7000,
+      "issuesClosed": 36,
+      "avgPointsPerIssue": 194.4,
+      "reposCount": 9,
+      "reposContributedTo": [
+        "Akanimoh12/Stellar-Tipz",
+        "HitEmPoka/StellPoker",
+        "Orbit-xyz/Orbit",
+        "StellaBridge/Bridge-Watch",
+        "StellarState/SS-backend",
+        "conduit-protocol/streamFi-sdk",
+        "ourdao/ourdao-contracts",
+        "vjuliaife/TariffShield",
+        "zkpayroll/zk-payroll-sdk"
+      ],
+      "complexityBreakdown": {
+        "large": 34,
+        "small": 2
+      },
+      "firstClosedAt": "2026-11-21T14:25:36.000Z",
+      "lastClosedAt": "2026-11-24T00:16:55.000Z"
+    },
+    {
       "contributor": "Chinenye1-png",
       "profileUrl": "https://github.com/Chinenye1-png",
       "pointsEarned": 7000,
@@ -13156,28 +13183,27 @@
       "lastClosedAt": "2026-11-23T10:47:20.000Z"
     },
     {
-      "contributor": "Chigozie8876",
-      "profileUrl": "https://github.com/Chigozie8876",
+      "contributor": "BigMick03",
+      "profileUrl": "https://github.com/BigMick03",
       "pointsEarned": 6200,
-      "issuesClosed": 32,
-      "avgPointsPerIssue": 193.8,
+      "issuesClosed": 28,
+      "avgPointsPerIssue": 221.4,
       "reposCount": 8,
       "reposContributedTo": [
-        "Akanimoh12/Stellar-Tipz",
-        "HitEmPoka/StellPoker",
-        "Orbit-xyz/Orbit",
-        "StellaBridge/Bridge-Watch",
-        "conduit-protocol/streamFi-sdk",
-        "ourdao/ourdao-contracts",
-        "vjuliaife/TariffShield",
-        "zkpayroll/zk-payroll-sdk"
+        "CemAyyildiz/Quittance",
+        "Godgift-care/sci-healthcare-frontend",
+        "Kitewell-lab/Kitewell",
+        "MMM-pay/payflow-backend",
+        "OGRoute/openajo-contract",
+        "plimsoll-protocol/plimsoll-app",
+        "sorotrail/SoroVista",
+        "stellar-optics/stellar-focus"
       ],
       "complexityBreakdown": {
-        "large": 30,
-        "small": 2
+        "large": 28
       },
-      "firstClosedAt": "2026-11-21T14:25:36.000Z",
-      "lastClosedAt": "2026-11-23T22:49:13.000Z"
+      "firstClosedAt": "2026-11-19T10:53:41.000Z",
+      "lastClosedAt": "2026-11-24T00:35:40.000Z"
     },
     {
       "contributor": "chimeizebright23-ui",
@@ -13480,6 +13506,47 @@
       "lastClosedAt": "2026-11-23T16:12:01.000Z"
     },
     {
+      "contributor": "praizeD10",
+      "profileUrl": "https://github.com/praizeD10",
+      "pointsEarned": 6050,
+      "issuesClosed": 44,
+      "avgPointsPerIssue": 137.5,
+      "reposCount": 24,
+      "reposContributedTo": [
+        "CalloraOrg/Callora-Backend",
+        "CalloraOrg/Callora-Frontend",
+        "Chronopay-Org/ChronoPay-Backend",
+        "Chronopay-Org/ChronoPay-Frontend",
+        "Commitlabs-Org/Commitlabs-Frontend",
+        "Disciplr-Org/Disciplr-Frontend",
+        "Liquifact/Liquifact-backend",
+        "Liquifact/Liquifact-frontend",
+        "LumenRoute/lumenbazaar-frontend",
+        "Neziahtech/streampay",
+        "Predictify-org/predictify-frontend",
+        "StellarLend/Stellarlend-frontend",
+        "StormSale/StormSale",
+        "Streampay-Org/StreamPay-Frontend",
+        "Talenttrust/Talenttrust-Contracts",
+        "Talenttrust/Talenttrust-Frontend",
+        "Veritasor/Veritasor-Backend",
+        "Veritasor/Veritasor-Frontend",
+        "accesslayerorg/accesslayer-client",
+        "accesslayerorg/accesslayer-server",
+        "edehvictor/StellarYield",
+        "enliven17/talos-stellar",
+        "mimir-stellar/mimir-markets",
+        "zkpayroll/zk-payroll-dashboard"
+      ],
+      "complexityBreakdown": {
+        "large": 11,
+        "medium": 3,
+        "small": 30
+      },
+      "firstClosedAt": "2026-11-18T22:57:26.000Z",
+      "lastClosedAt": "2026-11-24T00:54:46.000Z"
+    },
+    {
       "contributor": "floraispretty",
       "profileUrl": "https://github.com/floraispretty",
       "pointsEarned": 6000,
@@ -13594,46 +13661,6 @@
       },
       "firstClosedAt": "2026-11-19T19:41:09.000Z",
       "lastClosedAt": "2026-11-23T15:05:52.000Z"
-    },
-    {
-      "contributor": "praizeD10",
-      "profileUrl": "https://github.com/praizeD10",
-      "pointsEarned": 5900,
-      "issuesClosed": 43,
-      "avgPointsPerIssue": 137.2,
-      "reposCount": 23,
-      "reposContributedTo": [
-        "CalloraOrg/Callora-Backend",
-        "CalloraOrg/Callora-Frontend",
-        "Chronopay-Org/ChronoPay-Backend",
-        "Chronopay-Org/ChronoPay-Frontend",
-        "Commitlabs-Org/Commitlabs-Frontend",
-        "Disciplr-Org/Disciplr-Frontend",
-        "Liquifact/Liquifact-backend",
-        "Liquifact/Liquifact-frontend",
-        "LumenRoute/lumenbazaar-frontend",
-        "Neziahtech/streampay",
-        "Predictify-org/predictify-frontend",
-        "StellarLend/Stellarlend-frontend",
-        "Streampay-Org/StreamPay-Frontend",
-        "Talenttrust/Talenttrust-Contracts",
-        "Talenttrust/Talenttrust-Frontend",
-        "Veritasor/Veritasor-Backend",
-        "Veritasor/Veritasor-Frontend",
-        "accesslayerorg/accesslayer-client",
-        "accesslayerorg/accesslayer-server",
-        "edehvictor/StellarYield",
-        "enliven17/talos-stellar",
-        "mimir-stellar/mimir-markets",
-        "zkpayroll/zk-payroll-dashboard"
-      ],
-      "complexityBreakdown": {
-        "large": 11,
-        "medium": 2,
-        "small": 30
-      },
-      "firstClosedAt": "2026-11-18T22:57:26.000Z",
-      "lastClosedAt": "2026-11-23T18:18:28.000Z"
     },
     {
       "contributor": "Escelit",
@@ -16362,6 +16389,32 @@
       "lastClosedAt": "2026-11-23T18:28:29.000Z"
     },
     {
+      "contributor": "Pythagoras-x",
+      "profileUrl": "https://github.com/Pythagoras-x",
+      "pointsEarned": 5500,
+      "issuesClosed": 32,
+      "avgPointsPerIssue": 171.9,
+      "reposCount": 10,
+      "reposContributedTo": [
+        "Hamplard-Hub/Hamplard--contracts",
+        "Kevin737866/stellar-web3-toolkit",
+        "Mossad-esc/stellar-footprint-engine",
+        "SoroStream/sorostream-app",
+        "SoroStream/sorostream-sdk",
+        "SoroWill/sorowill-sdk",
+        "Stellabill/stellabill-frontend",
+        "StellarHyperion/stellarhyperion-contracts",
+        "legend-esc/carbonchain",
+        "releaseken/Perpetua-Contracts"
+      ],
+      "complexityBreakdown": {
+        "large": 23,
+        "small": 9
+      },
+      "firstClosedAt": "2026-11-19T18:16:53.000Z",
+      "lastClosedAt": "2026-11-24T00:26:44.000Z"
+    },
+    {
       "contributor": "Temi-suwa18",
       "profileUrl": "https://github.com/Temi-suwa18",
       "pointsEarned": 5500,
@@ -16383,28 +16436,6 @@
       },
       "firstClosedAt": "2026-11-18T19:53:43.000Z",
       "lastClosedAt": "2026-11-21T17:20:15.000Z"
-    },
-    {
-      "contributor": "BigMick03",
-      "profileUrl": "https://github.com/BigMick03",
-      "pointsEarned": 5400,
-      "issuesClosed": 24,
-      "avgPointsPerIssue": 225.0,
-      "reposCount": 7,
-      "reposContributedTo": [
-        "CemAyyildiz/Quittance",
-        "Godgift-care/sci-healthcare-frontend",
-        "Kitewell-lab/Kitewell",
-        "MMM-pay/payflow-backend",
-        "OGRoute/openajo-contract",
-        "sorotrail/SoroVista",
-        "stellar-optics/stellar-focus"
-      ],
-      "complexityBreakdown": {
-        "large": 24
-      },
-      "firstClosedAt": "2026-11-19T10:53:41.000Z",
-      "lastClosedAt": "2026-11-23T09:13:11.000Z"
     },
     {
       "contributor": "brightpedrofr-gif",
@@ -16583,31 +16614,6 @@
       "lastClosedAt": "2026-11-22T15:09:38.000Z"
     },
     {
-      "contributor": "Pythagoras-x",
-      "profileUrl": "https://github.com/Pythagoras-x",
-      "pointsEarned": 5400,
-      "issuesClosed": 31,
-      "avgPointsPerIssue": 174.2,
-      "reposCount": 9,
-      "reposContributedTo": [
-        "Hamplard-Hub/Hamplard--contracts",
-        "Mossad-esc/stellar-footprint-engine",
-        "SoroStream/sorostream-app",
-        "SoroStream/sorostream-sdk",
-        "SoroWill/sorowill-sdk",
-        "Stellabill/stellabill-frontend",
-        "StellarHyperion/stellarhyperion-contracts",
-        "legend-esc/carbonchain",
-        "releaseken/Perpetua-Contracts"
-      ],
-      "complexityBreakdown": {
-        "large": 23,
-        "small": 8
-      },
-      "firstClosedAt": "2026-11-19T18:16:53.000Z",
-      "lastClosedAt": "2026-11-23T19:49:45.000Z"
-    },
-    {
       "contributor": "rahmanabimbs",
       "profileUrl": "https://github.com/rahmanabimbs",
       "pointsEarned": 5400,
@@ -16761,6 +16767,37 @@
       },
       "firstClosedAt": "2026-11-20T08:10:49.000Z",
       "lastClosedAt": "2026-11-22T16:13:26.000Z"
+    },
+    {
+      "contributor": "solaawojobi00-bit",
+      "profileUrl": "https://github.com/solaawojobi00-bit",
+      "pointsEarned": 5300,
+      "issuesClosed": 29,
+      "avgPointsPerIssue": 182.8,
+      "reposCount": 14,
+      "reposContributedTo": [
+        "Boxkit-Labs/stellar-address-kit",
+        "Neurowealth/NeuroWealth-Frontend",
+        "Neziahtech/streampay",
+        "StormSale/StormSale",
+        "ToluLabs/StellarCred",
+        "accesslayerorg/accesslayer-client",
+        "accesslayerorg/accesslayer-server",
+        "corridor-in-a-box/corridor-in-a-box",
+        "drydocs/meridian",
+        "edehvictor/StellarYield",
+        "nirium-protocol/nirium",
+        "sorolens/sorolens",
+        "xebra-org/xebra",
+        "zkpayroll/zk-payroll-dashboard"
+      ],
+      "complexityBreakdown": {
+        "large": 20,
+        "medium": 8,
+        "small": 1
+      },
+      "firstClosedAt": "2026-11-19T07:21:05.000Z",
+      "lastClosedAt": "2026-11-24T00:41:10.000Z"
     },
     {
       "contributor": "Agba-Coder-ng",
@@ -17012,6 +17049,31 @@
       "lastClosedAt": "2026-11-23T14:09:13.000Z"
     },
     {
+      "contributor": "legend-esc",
+      "profileUrl": "https://github.com/legend-esc",
+      "pointsEarned": 5050,
+      "issuesClosed": 27,
+      "avgPointsPerIssue": 187.0,
+      "reposCount": 8,
+      "reposContributedTo": [
+        "Hamplard-Hub/Hamplard--contracts",
+        "Kevin737866/stellar-web3-toolkit",
+        "Mossad-esc/stellar-footprint-engine",
+        "SoroStream/sorostream-app",
+        "SoroWill/sorowill-contracts",
+        "StellarHyperion/stellarhyperion-backend",
+        "pendulum-max/Veritag",
+        "releaseken/Perpetua-Contracts"
+      ],
+      "complexityBreakdown": {
+        "large": 23,
+        "small": 3,
+        "medium": 1
+      },
+      "firstClosedAt": "2026-11-18T21:59:34.000Z",
+      "lastClosedAt": "2026-11-24T00:40:24.000Z"
+    },
+    {
       "contributor": "Biebo669",
       "profileUrl": "https://github.com/Biebo669",
       "pointsEarned": 5000,
@@ -17099,6 +17161,28 @@
       },
       "firstClosedAt": "2026-11-21T08:16:33.000Z",
       "lastClosedAt": "2026-11-23T18:36:02.000Z"
+    },
+    {
+      "contributor": "KingFRANKHOOD",
+      "profileUrl": "https://github.com/KingFRANKHOOD",
+      "pointsEarned": 5000,
+      "issuesClosed": 25,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 7,
+      "reposContributedTo": [
+        "Dantama022/stellar-api-inspector",
+        "Konfirm-xyz/konfirm-backend",
+        "Parashield-Protocol/parashield-contracts",
+        "RWA-ToolKit/stellar-rwa-contracts",
+        "SmartDropLabs/smartdrop-contracts",
+        "The-Engineer-Network/engipay",
+        "privexlabs/BrandBlitz"
+      ],
+      "complexityBreakdown": {
+        "large": 25
+      },
+      "firstClosedAt": "2026-11-20T07:26:07.000Z",
+      "lastClosedAt": "2026-11-24T00:53:32.000Z"
     },
     {
       "contributor": "Mac-5",
@@ -17193,36 +17277,6 @@
       "lastClosedAt": "2026-11-23T17:51:48.000Z"
     },
     {
-      "contributor": "solaawojobi00-bit",
-      "profileUrl": "https://github.com/solaawojobi00-bit",
-      "pointsEarned": 5000,
-      "issuesClosed": 27,
-      "avgPointsPerIssue": 185.2,
-      "reposCount": 13,
-      "reposContributedTo": [
-        "Boxkit-Labs/stellar-address-kit",
-        "Neurowealth/NeuroWealth-Frontend",
-        "Neziahtech/streampay",
-        "ToluLabs/StellarCred",
-        "accesslayerorg/accesslayer-client",
-        "accesslayerorg/accesslayer-server",
-        "corridor-in-a-box/corridor-in-a-box",
-        "drydocs/meridian",
-        "edehvictor/StellarYield",
-        "nirium-protocol/nirium",
-        "sorolens/sorolens",
-        "xebra-org/xebra",
-        "zkpayroll/zk-payroll-dashboard"
-      ],
-      "complexityBreakdown": {
-        "large": 20,
-        "medium": 6,
-        "small": 1
-      },
-      "firstClosedAt": "2026-11-19T07:21:05.000Z",
-      "lastClosedAt": "2026-11-23T23:00:59.000Z"
-    },
-    {
       "contributor": "AbdulHameedAnofi",
       "profileUrl": "https://github.com/AbdulHameedAnofi",
       "pointsEarned": 4950,
@@ -17244,29 +17298,6 @@
       },
       "firstClosedAt": "2026-11-19T20:41:46.000Z",
       "lastClosedAt": "2026-11-22T17:08:08.000Z"
-    },
-    {
-      "contributor": "legend-esc",
-      "profileUrl": "https://github.com/legend-esc",
-      "pointsEarned": 4900,
-      "issuesClosed": 26,
-      "avgPointsPerIssue": 188.5,
-      "reposCount": 7,
-      "reposContributedTo": [
-        "Hamplard-Hub/Hamplard--contracts",
-        "Mossad-esc/stellar-footprint-engine",
-        "SoroStream/sorostream-app",
-        "SoroWill/sorowill-contracts",
-        "StellarHyperion/stellarhyperion-backend",
-        "pendulum-max/Veritag",
-        "releaseken/Perpetua-Contracts"
-      ],
-      "complexityBreakdown": {
-        "large": 23,
-        "small": 3
-      },
-      "firstClosedAt": "2026-11-18T21:59:34.000Z",
-      "lastClosedAt": "2026-11-22T03:02:15.000Z"
     },
     {
       "contributor": "melanindebbie",
@@ -18696,6 +18727,27 @@
       "lastClosedAt": "2026-11-23T16:27:27.000Z"
     },
     {
+      "contributor": "Lacastar2000",
+      "profileUrl": "https://github.com/Lacastar2000",
+      "pointsEarned": 4800,
+      "issuesClosed": 24,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 6,
+      "reposContributedTo": [
+        "Godgift-care/sci-healthcare-frontend",
+        "MMM-pay/payflow-backend",
+        "OGRoute/openajo-contract",
+        "plimsoll-protocol/plimsoll-app",
+        "sorotrail/SoroVista",
+        "stellar-optics/stellar-focus"
+      ],
+      "complexityBreakdown": {
+        "large": 24
+      },
+      "firstClosedAt": "2026-11-19T11:44:06.000Z",
+      "lastClosedAt": "2026-11-24T01:47:25.000Z"
+    },
+    {
       "contributor": "laddyr141-ui",
       "profileUrl": "https://github.com/laddyr141-ui",
       "pointsEarned": 4800,
@@ -19806,6 +19858,59 @@
       "lastClosedAt": "2026-11-23T11:59:08.000Z"
     },
     {
+      "contributor": "dominiccreates",
+      "profileUrl": "https://github.com/dominiccreates",
+      "pointsEarned": 4700,
+      "issuesClosed": 39,
+      "avgPointsPerIssue": 120.5,
+      "reposCount": 11,
+      "reposContributedTo": [
+        "Altacon-Labs/RevMarket",
+        "Chronopay-Org/ChronoPay-Frontend",
+        "Creditra/Creditra-Frontend",
+        "JafetCHVDev/soroban-quest",
+        "SaboLabs/soroban-devkit",
+        "Stellabill/stellabill-frontend",
+        "StellarLend/Stellarlend-frontend",
+        "Streampay-Org/StreamPay-Frontend",
+        "Talenttrust/Talenttrust-Frontend",
+        "Veritasor/Veritasor-Frontend",
+        "naninu123/4evergent"
+      ],
+      "complexityBreakdown": {
+        "medium": 6,
+        "large": 5,
+        "small": 28
+      },
+      "firstClosedAt": "2026-11-19T07:55:01.000Z",
+      "lastClosedAt": "2026-11-24T00:45:00.000Z"
+    },
+    {
+      "contributor": "itzsoftwaredevops-sys",
+      "profileUrl": "https://github.com/itzsoftwaredevops-sys",
+      "pointsEarned": 4700,
+      "issuesClosed": 19,
+      "avgPointsPerIssue": 247.4,
+      "reposCount": 8,
+      "reposContributedTo": [
+        "DocForum/docforum-escrow",
+        "Neziahtech/streampay",
+        "Obiajulu-gif/Prompt-Hash-Stellar",
+        "Savitura/Savitools",
+        "StormSale/StormSale",
+        "Talenttrust/Talenttrust-Contracts",
+        "ToluLabs/StellarCred",
+        "safetrustcr/backend-SafeTrust"
+      ],
+      "complexityBreakdown": {
+        "large": 15,
+        "medium": 2,
+        "small": 2
+      },
+      "firstClosedAt": "2026-11-19T22:43:13.000Z",
+      "lastClosedAt": "2026-11-24T01:32:56.000Z"
+    },
+    {
       "contributor": "Mkalbani",
       "profileUrl": "https://github.com/Mkalbani",
       "pointsEarned": 4700,
@@ -19964,33 +20069,6 @@
       },
       "firstClosedAt": "2026-11-22T09:39:28.000Z",
       "lastClosedAt": "2026-11-23T11:58:42.000Z"
-    },
-    {
-      "contributor": "dominiccreates",
-      "profileUrl": "https://github.com/dominiccreates",
-      "pointsEarned": 4600,
-      "issuesClosed": 38,
-      "avgPointsPerIssue": 121.1,
-      "reposCount": 10,
-      "reposContributedTo": [
-        "Altacon-Labs/RevMarket",
-        "Chronopay-Org/ChronoPay-Frontend",
-        "Creditra/Creditra-Frontend",
-        "SaboLabs/soroban-devkit",
-        "Stellabill/stellabill-frontend",
-        "StellarLend/Stellarlend-frontend",
-        "Streampay-Org/StreamPay-Frontend",
-        "Talenttrust/Talenttrust-Frontend",
-        "Veritasor/Veritasor-Frontend",
-        "naninu123/4evergent"
-      ],
-      "complexityBreakdown": {
-        "medium": 6,
-        "large": 5,
-        "small": 27
-      },
-      "firstClosedAt": "2026-11-19T07:55:01.000Z",
-      "lastClosedAt": "2026-11-23T13:43:15.000Z"
     },
     {
       "contributor": "elijahbok14-sudo",
@@ -20205,6 +20283,51 @@
       "lastClosedAt": "2026-11-23T11:50:31.000Z"
     },
     {
+      "contributor": "Ke-creator03",
+      "profileUrl": "https://github.com/Ke-creator03",
+      "pointsEarned": 4500,
+      "issuesClosed": 23,
+      "avgPointsPerIssue": 195.7,
+      "reposCount": 6,
+      "reposContributedTo": [
+        "Godgift-care/sci-healthcare-frontend",
+        "OGRoute/openajo-contract",
+        "plimsoll-protocol/plimsoll-app",
+        "sorotrail/SoroVista",
+        "soroworks/soroprobe",
+        "stellar-optics/stellar-focus"
+      ],
+      "complexityBreakdown": {
+        "large": 21,
+        "medium": 2
+      },
+      "firstClosedAt": "2026-11-20T00:46:46.000Z",
+      "lastClosedAt": "2026-11-24T00:50:52.000Z"
+    },
+    {
+      "contributor": "Mossad-esc",
+      "profileUrl": "https://github.com/Mossad-esc",
+      "pointsEarned": 4500,
+      "issuesClosed": 24,
+      "avgPointsPerIssue": 187.5,
+      "reposCount": 7,
+      "reposContributedTo": [
+        "Hamplard-Hub/Hamplard--contracts",
+        "Kevin737866/stellar-web3-toolkit",
+        "SoroStream/sorostream-app",
+        "SoroWill/sorowill-sdk",
+        "StellarHyperion/stellarhyperion-backend",
+        "pendulum-max/Veritag",
+        "releaseken/Perpetua-Contracts"
+      ],
+      "complexityBreakdown": {
+        "large": 21,
+        "small": 3
+      },
+      "firstClosedAt": "2026-11-19T10:27:51.000Z",
+      "lastClosedAt": "2026-11-24T00:36:38.000Z"
+    },
+    {
       "contributor": "ogaziedaniel80-droid",
       "profileUrl": "https://github.com/ogaziedaniel80-droid",
       "pointsEarned": 4500,
@@ -20249,6 +20372,29 @@
       },
       "firstClosedAt": "2026-11-21T06:33:17.000Z",
       "lastClosedAt": "2026-11-23T23:40:55.000Z"
+    },
+    {
+      "contributor": "audusamson",
+      "profileUrl": "https://github.com/audusamson",
+      "pointsEarned": 4450,
+      "issuesClosed": 24,
+      "avgPointsPerIssue": 185.4,
+      "reposCount": 6,
+      "reposContributedTo": [
+        "Arenax-gaming/ArenaX",
+        "DelegoLabs/Delego",
+        "Kevin737866/stellar-web3-toolkit",
+        "Lead-Studios/veritix-contract",
+        "Sidewalk-Works/Sidewalk",
+        "Trust-Analysis/Tokenized-Fractional-"
+      ],
+      "complexityBreakdown": {
+        "large": 20,
+        "small": 3,
+        "medium": 1
+      },
+      "firstClosedAt": "2026-11-21T10:15:17.000Z",
+      "lastClosedAt": "2026-11-24T00:39:00.000Z"
     },
     {
       "contributor": "aristotle224",
@@ -20380,28 +20526,6 @@
       },
       "firstClosedAt": "2026-11-20T22:33:21.000Z",
       "lastClosedAt": "2026-11-23T15:14:57.000Z"
-    },
-    {
-      "contributor": "Mossad-esc",
-      "profileUrl": "https://github.com/Mossad-esc",
-      "pointsEarned": 4300,
-      "issuesClosed": 23,
-      "avgPointsPerIssue": 187.0,
-      "reposCount": 6,
-      "reposContributedTo": [
-        "Hamplard-Hub/Hamplard--contracts",
-        "SoroStream/sorostream-app",
-        "SoroWill/sorowill-sdk",
-        "StellarHyperion/stellarhyperion-backend",
-        "pendulum-max/Veritag",
-        "releaseken/Perpetua-Contracts"
-      ],
-      "complexityBreakdown": {
-        "large": 20,
-        "small": 3
-      },
-      "firstClosedAt": "2026-11-19T10:27:51.000Z",
-      "lastClosedAt": "2026-11-22T18:37:12.000Z"
     },
     {
       "contributor": "vicistar-star",
@@ -20623,27 +20747,6 @@
       "lastClosedAt": "2026-11-23T18:49:49.000Z"
     },
     {
-      "contributor": "KingFRANKHOOD",
-      "profileUrl": "https://github.com/KingFRANKHOOD",
-      "pointsEarned": 4200,
-      "issuesClosed": 21,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 6,
-      "reposContributedTo": [
-        "Dantama022/stellar-api-inspector",
-        "Konfirm-xyz/konfirm-backend",
-        "Parashield-Protocol/parashield-contracts",
-        "RWA-ToolKit/stellar-rwa-contracts",
-        "SmartDropLabs/smartdrop-contracts",
-        "The-Engineer-Network/engipay"
-      ],
-      "complexityBreakdown": {
-        "large": 21
-      },
-      "firstClosedAt": "2026-11-20T07:26:07.000Z",
-      "lastClosedAt": "2026-11-23T13:42:52.000Z"
-    },
-    {
       "contributor": "Levi-Ojukwu",
       "profileUrl": "https://github.com/Levi-Ojukwu",
       "pointsEarned": 4200,
@@ -20791,6 +20894,31 @@
       },
       "firstClosedAt": "2026-11-19T21:30:11.000Z",
       "lastClosedAt": "2026-11-23T14:01:24.000Z"
+    },
+    {
+      "contributor": "SantanFeli",
+      "profileUrl": "https://github.com/SantanFeli",
+      "pointsEarned": 4200,
+      "issuesClosed": 22,
+      "avgPointsPerIssue": 190.9,
+      "reposCount": 9,
+      "reposContributedTo": [
+        "Fluxora-Org/Fluxora-Frontend",
+        "JiggyStell/Stardial",
+        "LabsCrypt/remitlend",
+        "OdyxeeeLabs/Perigee",
+        "RevoraOrg/Revora-Frontend",
+        "SO4-Markets/interface",
+        "accensa/accensa-contracts",
+        "mergepay/mergepay-api",
+        "posture-sec/airlock"
+      ],
+      "complexityBreakdown": {
+        "large": 20,
+        "small": 2
+      },
+      "firstClosedAt": "2026-11-20T16:40:50.000Z",
+      "lastClosedAt": "2026-11-24T00:36:14.000Z"
     },
     {
       "contributor": "simplex001",
@@ -21142,6 +21270,26 @@
       "lastClosedAt": "2026-11-23T20:20:49.000Z"
     },
     {
+      "contributor": "anifast-123",
+      "profileUrl": "https://github.com/anifast-123",
+      "pointsEarned": 4000,
+      "issuesClosed": 20,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "LabsCrypt/remitlend",
+        "accensa/accensa-contracts",
+        "mergepay/mergepay-api",
+        "posture-sec/airlock",
+        "use-assay/Assay"
+      ],
+      "complexityBreakdown": {
+        "large": 20
+      },
+      "firstClosedAt": "2026-11-21T13:10:31.000Z",
+      "lastClosedAt": "2026-11-24T01:14:20.000Z"
+    },
+    {
       "contributor": "anuoluwaponiorimi",
       "profileUrl": "https://github.com/anuoluwaponiorimi",
       "pointsEarned": 4000,
@@ -21180,26 +21328,6 @@
       },
       "firstClosedAt": "2026-11-19T19:11:56.000Z",
       "lastClosedAt": "2026-11-23T13:41:28.000Z"
-    },
-    {
-      "contributor": "audusamson",
-      "profileUrl": "https://github.com/audusamson",
-      "pointsEarned": 4000,
-      "issuesClosed": 20,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 5,
-      "reposContributedTo": [
-        "Arenax-gaming/ArenaX",
-        "DelegoLabs/Delego",
-        "Lead-Studios/veritix-contract",
-        "Sidewalk-Works/Sidewalk",
-        "Trust-Analysis/Tokenized-Fractional-"
-      ],
-      "complexityBreakdown": {
-        "large": 20
-      },
-      "firstClosedAt": "2026-11-21T10:15:17.000Z",
-      "lastClosedAt": "2026-11-23T20:33:35.000Z"
     },
     {
       "contributor": "augustinemartins",
@@ -21462,6 +21590,26 @@
       "lastClosedAt": "2026-11-23T02:24:38.000Z"
     },
     {
+      "contributor": "cokehill-litpage",
+      "profileUrl": "https://github.com/cokehill-litpage",
+      "pointsEarned": 4000,
+      "issuesClosed": 20,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "Arenax-gaming/ArenaX",
+        "Kevin737866/stellar-web3-toolkit",
+        "Lead-Studios/veritix-web",
+        "Sidewalk-Works/Sidewalk",
+        "Trust-Analysis/Tokenized-Fractional-"
+      ],
+      "complexityBreakdown": {
+        "large": 20
+      },
+      "firstClosedAt": "2026-11-21T11:07:23.000Z",
+      "lastClosedAt": "2026-11-24T00:39:25.000Z"
+    },
+    {
       "contributor": "Crypto-Oracle001",
       "profileUrl": "https://github.com/Crypto-Oracle001",
       "pointsEarned": 4000,
@@ -21580,6 +21728,26 @@
       },
       "firstClosedAt": "2026-11-20T00:59:57.000Z",
       "lastClosedAt": "2026-11-23T12:52:00.000Z"
+    },
+    {
+      "contributor": "DanielCharis1",
+      "profileUrl": "https://github.com/DanielCharis1",
+      "pointsEarned": 4000,
+      "issuesClosed": 20,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "ApexChainx/ApexChainx-Frontend",
+        "Kevin737866/stellar-web3-toolkit",
+        "MettaChain/PropChain-contract",
+        "SkyyNineCrew/Quoin",
+        "UnityChainxx/StellarHunts"
+      ],
+      "complexityBreakdown": {
+        "large": 20
+      },
+      "firstClosedAt": "2026-11-20T06:53:56.000Z",
+      "lastClosedAt": "2026-11-24T00:26:06.000Z"
     },
     {
       "contributor": "Danlee76",
@@ -22645,26 +22813,6 @@
       "lastClosedAt": "2026-11-23T20:23:43.000Z"
     },
     {
-      "contributor": "Lacastar2000",
-      "profileUrl": "https://github.com/Lacastar2000",
-      "pointsEarned": 4000,
-      "issuesClosed": 20,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 5,
-      "reposContributedTo": [
-        "Godgift-care/sci-healthcare-frontend",
-        "MMM-pay/payflow-backend",
-        "OGRoute/openajo-contract",
-        "sorotrail/SoroVista",
-        "stellar-optics/stellar-focus"
-      ],
-      "complexityBreakdown": {
-        "large": 20
-      },
-      "firstClosedAt": "2026-11-19T11:44:06.000Z",
-      "lastClosedAt": "2026-11-23T12:48:49.000Z"
-    },
-    {
       "contributor": "levoski1",
       "profileUrl": "https://github.com/levoski1",
       "pointsEarned": 4000,
@@ -23505,30 +23653,6 @@
       "lastClosedAt": "2026-11-23T08:48:45.000Z"
     },
     {
-      "contributor": "SantanFeli",
-      "profileUrl": "https://github.com/SantanFeli",
-      "pointsEarned": 4000,
-      "issuesClosed": 21,
-      "avgPointsPerIssue": 190.5,
-      "reposCount": 8,
-      "reposContributedTo": [
-        "Fluxora-Org/Fluxora-Frontend",
-        "JiggyStell/Stardial",
-        "LabsCrypt/remitlend",
-        "OdyxeeeLabs/Perigee",
-        "RevoraOrg/Revora-Frontend",
-        "accensa/accensa-contracts",
-        "mergepay/mergepay-api",
-        "posture-sec/airlock"
-      ],
-      "complexityBreakdown": {
-        "large": 19,
-        "small": 2
-      },
-      "firstClosedAt": "2026-11-20T16:40:50.000Z",
-      "lastClosedAt": "2026-11-23T19:47:56.000Z"
-    },
-    {
       "contributor": "shelterfaithapps",
       "profileUrl": "https://github.com/shelterfaithapps",
       "pointsEarned": 4000,
@@ -24009,30 +24133,6 @@
       "lastClosedAt": "2026-11-22T14:24:43.000Z"
     },
     {
-      "contributor": "itzsoftwaredevops-sys",
-      "profileUrl": "https://github.com/itzsoftwaredevops-sys",
-      "pointsEarned": 3900,
-      "issuesClosed": 15,
-      "avgPointsPerIssue": 260.0,
-      "reposCount": 7,
-      "reposContributedTo": [
-        "DocForum/docforum-escrow",
-        "Neziahtech/streampay",
-        "Obiajulu-gif/Prompt-Hash-Stellar",
-        "Savitura/Savitools",
-        "Talenttrust/Talenttrust-Contracts",
-        "ToluLabs/StellarCred",
-        "safetrustcr/backend-SafeTrust"
-      ],
-      "complexityBreakdown": {
-        "large": 11,
-        "medium": 2,
-        "small": 2
-      },
-      "firstClosedAt": "2026-11-19T22:43:13.000Z",
-      "lastClosedAt": "2026-11-23T18:45:38.000Z"
-    },
-    {
       "contributor": "JJBoogeyTheMan",
       "profileUrl": "https://github.com/JJBoogeyTheMan",
       "pointsEarned": 3900,
@@ -24286,6 +24386,27 @@
       "lastClosedAt": "2026-11-23T15:29:18.000Z"
     },
     {
+      "contributor": "jeorgei",
+      "profileUrl": "https://github.com/jeorgei",
+      "pointsEarned": 3800,
+      "issuesClosed": 20,
+      "avgPointsPerIssue": 190.0,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "Arenax-gaming/ArenaX",
+        "Kevin737866/stellar-web3-toolkit",
+        "Lead-Studios/veritix-contract",
+        "Sidewalk-Works/Sidewalk",
+        "Trust-Analysis/Tokenized-Fractional-"
+      ],
+      "complexityBreakdown": {
+        "large": 16,
+        "medium": 4
+      },
+      "firstClosedAt": "2026-11-21T11:07:52.000Z",
+      "lastClosedAt": "2026-11-24T00:40:00.000Z"
+    },
+    {
       "contributor": "otobongdev",
       "profileUrl": "https://github.com/otobongdev",
       "pointsEarned": 3800,
@@ -24388,27 +24509,6 @@
       },
       "firstClosedAt": "2026-11-20T07:03:44.000Z",
       "lastClosedAt": "2026-11-23T18:27:49.000Z"
-    },
-    {
-      "contributor": "Ke-creator03",
-      "profileUrl": "https://github.com/Ke-creator03",
-      "pointsEarned": 3700,
-      "issuesClosed": 19,
-      "avgPointsPerIssue": 194.7,
-      "reposCount": 5,
-      "reposContributedTo": [
-        "Godgift-care/sci-healthcare-frontend",
-        "OGRoute/openajo-contract",
-        "sorotrail/SoroVista",
-        "soroworks/soroprobe",
-        "stellar-optics/stellar-focus"
-      ],
-      "complexityBreakdown": {
-        "large": 17,
-        "medium": 2
-      },
-      "firstClosedAt": "2026-11-20T00:46:46.000Z",
-      "lastClosedAt": "2026-11-22T10:42:05.000Z"
     },
     {
       "contributor": "DammyAji",
@@ -25498,25 +25598,6 @@
       "lastClosedAt": "2026-11-23T20:27:38.000Z"
     },
     {
-      "contributor": "anifast-123",
-      "profileUrl": "https://github.com/anifast-123",
-      "pointsEarned": 3200,
-      "issuesClosed": 16,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "LabsCrypt/remitlend",
-        "accensa/accensa-contracts",
-        "posture-sec/airlock",
-        "use-assay/Assay"
-      ],
-      "complexityBreakdown": {
-        "large": 16
-      },
-      "firstClosedAt": "2026-11-21T13:10:31.000Z",
-      "lastClosedAt": "2026-11-22T21:33:43.000Z"
-    },
-    {
       "contributor": "anifatseke007-ctrl",
       "profileUrl": "https://github.com/anifatseke007-ctrl",
       "pointsEarned": 3200,
@@ -25973,25 +26054,6 @@
       "lastClosedAt": "2026-11-23T01:14:41.000Z"
     },
     {
-      "contributor": "cokehill-litpage",
-      "profileUrl": "https://github.com/cokehill-litpage",
-      "pointsEarned": 3200,
-      "issuesClosed": 16,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "Arenax-gaming/ArenaX",
-        "Lead-Studios/veritix-web",
-        "Sidewalk-Works/Sidewalk",
-        "Trust-Analysis/Tokenized-Fractional-"
-      ],
-      "complexityBreakdown": {
-        "large": 16
-      },
-      "firstClosedAt": "2026-11-21T11:07:23.000Z",
-      "lastClosedAt": "2026-11-23T20:31:47.000Z"
-    },
-    {
       "contributor": "connectingdevops-droid",
       "profileUrl": "https://github.com/connectingdevops-droid",
       "pointsEarned": 3200,
@@ -26068,25 +26130,6 @@
       },
       "firstClosedAt": "2026-11-19T18:40:07.000Z",
       "lastClosedAt": "2026-11-23T19:52:20.000Z"
-    },
-    {
-      "contributor": "DanielCharis1",
-      "profileUrl": "https://github.com/DanielCharis1",
-      "pointsEarned": 3200,
-      "issuesClosed": 16,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "ApexChainx/ApexChainx-Frontend",
-        "MettaChain/PropChain-contract",
-        "SkyyNineCrew/Quoin",
-        "UnityChainxx/StellarHunts"
-      ],
-      "complexityBreakdown": {
-        "large": 16
-      },
-      "firstClosedAt": "2026-11-20T06:53:56.000Z",
-      "lastClosedAt": "2026-11-23T16:24:27.000Z"
     },
     {
       "contributor": "DanProtocol",
@@ -26859,25 +26902,6 @@
       "lastClosedAt": "2026-11-21T03:30:30.000Z"
     },
     {
-      "contributor": "jeorgei",
-      "profileUrl": "https://github.com/jeorgei",
-      "pointsEarned": 3200,
-      "issuesClosed": 16,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "Arenax-gaming/ArenaX",
-        "Lead-Studios/veritix-contract",
-        "Sidewalk-Works/Sidewalk",
-        "Trust-Analysis/Tokenized-Fractional-"
-      ],
-      "complexityBreakdown": {
-        "large": 16
-      },
-      "firstClosedAt": "2026-11-21T11:07:52.000Z",
-      "lastClosedAt": "2026-11-23T20:39:35.000Z"
-    },
-    {
       "contributor": "JoeADCodes",
       "profileUrl": "https://github.com/JoeADCodes",
       "pointsEarned": 3200,
@@ -26895,6 +26919,25 @@
       },
       "firstClosedAt": "2026-11-18T17:05:38.000Z",
       "lastClosedAt": "2026-11-21T11:28:16.000Z"
+    },
+    {
+      "contributor": "Joeloo1",
+      "profileUrl": "https://github.com/Joeloo1",
+      "pointsEarned": 3200,
+      "issuesClosed": 16,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 4,
+      "reposContributedTo": [
+        "Heliobond/frontend",
+        "MergeFi/contracts",
+        "SorobanPool/sorobanpool-backend",
+        "trustflow-protocol/trustflow-sdk"
+      ],
+      "complexityBreakdown": {
+        "large": 16
+      },
+      "firstClosedAt": "2026-11-18T21:32:54.000Z",
+      "lastClosedAt": "2026-11-24T01:09:19.000Z"
     },
     {
       "contributor": "Justice989810",
@@ -29428,6 +29471,30 @@
       "lastClosedAt": "2026-11-23T08:18:42.000Z"
     },
     {
+      "contributor": "baling-1",
+      "profileUrl": "https://github.com/baling-1",
+      "pointsEarned": 2700,
+      "issuesClosed": 11,
+      "avgPointsPerIssue": 245.5,
+      "reposCount": 8,
+      "reposContributedTo": [
+        "AidTraceHQ/AidTraceLabs",
+        "DigiNodes/stellarforge-cli",
+        "OFFER-HUB/offer-hub-monorepo",
+        "Savitura/Savitools",
+        "StormSale/StormSale",
+        "Toolbox-Lab/Prism",
+        "accesslayerorg/accesslayer-client",
+        "edehvictor/StellarYield"
+      ],
+      "complexityBreakdown": {
+        "large": 9,
+        "medium": 2
+      },
+      "firstClosedAt": "2026-11-20T00:48:12.000Z",
+      "lastClosedAt": "2026-11-24T01:01:05.000Z"
+    },
+    {
       "contributor": "Peolite001",
       "profileUrl": "https://github.com/Peolite001",
       "pointsEarned": 2700,
@@ -30659,28 +30726,6 @@
       "lastClosedAt": "2026-11-23T01:14:10.000Z"
     },
     {
-      "contributor": "baling-1",
-      "profileUrl": "https://github.com/baling-1",
-      "pointsEarned": 2400,
-      "issuesClosed": 9,
-      "avgPointsPerIssue": 266.7,
-      "reposCount": 7,
-      "reposContributedTo": [
-        "AidTraceHQ/AidTraceLabs",
-        "DigiNodes/stellarforge-cli",
-        "OFFER-HUB/offer-hub-monorepo",
-        "Savitura/Savitools",
-        "Toolbox-Lab/Prism",
-        "accesslayerorg/accesslayer-client",
-        "edehvictor/StellarYield"
-      ],
-      "complexityBreakdown": {
-        "large": 9
-      },
-      "firstClosedAt": "2026-11-20T00:48:12.000Z",
-      "lastClosedAt": "2026-11-23T23:16:20.000Z"
-    },
-    {
       "contributor": "bambam2625",
       "profileUrl": "https://github.com/bambam2625",
       "pointsEarned": 2400,
@@ -31386,6 +31431,24 @@
       "lastClosedAt": "2026-11-23T01:14:57.000Z"
     },
     {
+      "contributor": "ebube231chukwu",
+      "profileUrl": "https://github.com/ebube231chukwu",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "BrainTease/Brain-Storm",
+        "Fund-My-Cause/Fund-My-Cause",
+        "Xoulomon/Stellar-Save"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-24T00:57:34.000Z",
+      "lastClosedAt": "2026-11-24T01:22:00.000Z"
+    },
+    {
       "contributor": "edwardfavour998-code",
       "profileUrl": "https://github.com/edwardfavour998-code",
       "pointsEarned": 2400,
@@ -31565,6 +31628,24 @@
       "lastClosedAt": "2026-11-22T16:26:08.000Z"
     },
     {
+      "contributor": "florence2peter",
+      "profileUrl": "https://github.com/florence2peter",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Lex-Studios/Stellar-Spend",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T17:30:26.000Z",
+      "lastClosedAt": "2026-11-24T01:19:21.000Z"
+    },
+    {
       "contributor": "fn-ripe",
       "profileUrl": "https://github.com/fn-ripe",
       "pointsEarned": 2400,
@@ -31599,6 +31680,24 @@
       },
       "firstClosedAt": "2026-11-22T11:22:55.000Z",
       "lastClosedAt": "2026-11-23T09:59:22.000Z"
+    },
+    {
+      "contributor": "Francisasala",
+      "profileUrl": "https://github.com/Francisasala",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Lex-Studios/Stellar-Spend",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T17:31:16.000Z",
+      "lastClosedAt": "2026-11-24T01:08:01.000Z"
     },
     {
       "contributor": "freddywarlord",
@@ -31998,24 +32097,6 @@
       },
       "firstClosedAt": "2026-11-20T00:34:26.000Z",
       "lastClosedAt": "2026-11-20T00:50:28.000Z"
-    },
-    {
-      "contributor": "Joeloo1",
-      "profileUrl": "https://github.com/Joeloo1",
-      "pointsEarned": 2400,
-      "issuesClosed": 12,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 3,
-      "reposContributedTo": [
-        "Heliobond/frontend",
-        "SorobanPool/sorobanpool-backend",
-        "trustflow-protocol/trustflow-sdk"
-      ],
-      "complexityBreakdown": {
-        "large": 12
-      },
-      "firstClosedAt": "2026-11-18T21:32:54.000Z",
-      "lastClosedAt": "2026-11-23T14:53:18.000Z"
     },
     {
       "contributor": "Joyee730",
@@ -32501,6 +32582,28 @@
       "lastClosedAt": "2026-11-22T14:44:11.000Z"
     },
     {
+      "contributor": "Mioha-guru",
+      "profileUrl": "https://github.com/Mioha-guru",
+      "pointsEarned": 2400,
+      "issuesClosed": 13,
+      "avgPointsPerIssue": 184.6,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "Deen-Bridge/dnb-ai",
+        "DocForum/docforum-escrow",
+        "Savitura/Savitools",
+        "StormSale/StormSale",
+        "Talenttrust/Talenttrust-Frontend"
+      ],
+      "complexityBreakdown": {
+        "large": 10,
+        "small": 1,
+        "medium": 2
+      },
+      "firstClosedAt": "2026-11-21T16:08:56.000Z",
+      "lastClosedAt": "2026-11-24T01:39:11.000Z"
+    },
+    {
       "contributor": "modricjesse",
       "profileUrl": "https://github.com/modricjesse",
       "pointsEarned": 2400,
@@ -32789,6 +32892,24 @@
       "lastClosedAt": "2026-11-22T01:24:13.000Z"
     },
     {
+      "contributor": "ogunu7747-hub",
+      "profileUrl": "https://github.com/ogunu7747-hub",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Kevin737866/stellar-web3-toolkit",
+        "PhasoraLabs/StellarGrantProtocol",
+        "blessingsokeke618-sys/CertChain-Blockchain-Academic-Credential-Verification-System"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T08:11:42.000Z",
+      "lastClosedAt": "2026-11-24T00:32:11.000Z"
+    },
+    {
       "contributor": "OkonkwoEmeka",
       "profileUrl": "https://github.com/OkonkwoEmeka",
       "pointsEarned": 2400,
@@ -32990,6 +33111,24 @@
       "lastClosedAt": "2026-11-21T13:25:00.000Z"
     },
     {
+      "contributor": "Penielka",
+      "profileUrl": "https://github.com/Penielka",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "ApexChainx/ApexChainx-Frontend",
+        "Kevin737866/stellar-web3-toolkit",
+        "SkyyNineCrew/Quoin"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T22:00:20.000Z",
+      "lastClosedAt": "2026-11-24T00:26:29.000Z"
+    },
+    {
       "contributor": "PERIXN",
       "profileUrl": "https://github.com/PERIXN",
       "pointsEarned": 2400,
@@ -33061,6 +33200,24 @@
       },
       "firstClosedAt": "2026-11-20T13:03:50.000Z",
       "lastClosedAt": "2026-11-22T20:35:13.000Z"
+    },
+    {
+      "contributor": "Praisefotos1",
+      "profileUrl": "https://github.com/Praisefotos1",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Lex-Studios/Stellar-Spend",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T17:30:52.000Z",
+      "lastClosedAt": "2026-11-24T01:08:34.000Z"
     },
     {
       "contributor": "princebright18",
@@ -33715,6 +33872,24 @@
       "lastClosedAt": "2026-11-23T20:52:18.000Z"
     },
     {
+      "contributor": "Timothy2025-20",
+      "profileUrl": "https://github.com/Timothy2025-20",
+      "pointsEarned": 2400,
+      "issuesClosed": 12,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Lex-Studios/Stellar-Spend",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 12
+      },
+      "firstClosedAt": "2026-11-22T17:42:47.000Z",
+      "lastClosedAt": "2026-11-24T01:10:23.000Z"
+    },
+    {
       "contributor": "Tyreenn",
       "profileUrl": "https://github.com/Tyreenn",
       "pointsEarned": 2400,
@@ -34349,6 +34524,26 @@
       },
       "firstClosedAt": "2026-11-19T18:51:07.000Z",
       "lastClosedAt": "2026-11-21T19:15:27.000Z"
+    },
+    {
+      "contributor": "Adeyemi7-11",
+      "profileUrl": "https://github.com/Adeyemi7-11",
+      "pointsEarned": 2200,
+      "issuesClosed": 9,
+      "avgPointsPerIssue": 244.4,
+      "reposCount": 4,
+      "reposContributedTo": [
+        "Neurowealth/Backend",
+        "Savitura/Savitools",
+        "StormSale/StormSale",
+        "safetrustcr/backend-SafeTrust"
+      ],
+      "complexityBreakdown": {
+        "medium": 1,
+        "large": 8
+      },
+      "firstClosedAt": "2026-11-19T22:42:01.000Z",
+      "lastClosedAt": "2026-11-24T01:39:28.000Z"
     },
     {
       "contributor": "Alimzy",
@@ -35351,6 +35546,28 @@
       "lastClosedAt": "2026-11-22T15:40:28.000Z"
     },
     {
+      "contributor": "Nacho1499",
+      "profileUrl": "https://github.com/Nacho1499",
+      "pointsEarned": 2050,
+      "issuesClosed": 11,
+      "avgPointsPerIssue": 186.4,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "JafetCHVDev/soroban-quest",
+        "MindFlowInteractive/quest-contract",
+        "Stellar-Uzima/Uzima-Backend",
+        "Xconfess/Xconfess",
+        "wraith-protocol/www"
+      ],
+      "complexityBreakdown": {
+        "large": 9,
+        "small": 1,
+        "medium": 1
+      },
+      "firstClosedAt": "2026-11-21T14:36:23.000Z",
+      "lastClosedAt": "2026-11-24T00:45:35.000Z"
+    },
+    {
       "contributor": "ABDUL6818",
       "profileUrl": "https://github.com/ABDUL6818",
       "pointsEarned": 2000,
@@ -36162,24 +36379,22 @@
       "lastClosedAt": "2026-11-23T11:26:37.000Z"
     },
     {
-      "contributor": "Nacho1499",
-      "profileUrl": "https://github.com/Nacho1499",
+      "contributor": "my908-hue",
+      "profileUrl": "https://github.com/my908-hue",
       "pointsEarned": 1900,
-      "issuesClosed": 10,
-      "avgPointsPerIssue": 190.0,
-      "reposCount": 4,
+      "issuesClosed": 7,
+      "avgPointsPerIssue": 271.4,
+      "reposCount": 2,
       "reposContributedTo": [
-        "MindFlowInteractive/quest-contract",
-        "Stellar-Uzima/Uzima-Backend",
-        "Xconfess/Xconfess",
-        "wraith-protocol/www"
+        "Kevin737866/stellar-liquidity-yield-engine",
+        "mind-vault-1/mindvault"
       ],
       "complexityBreakdown": {
-        "large": 9,
-        "small": 1
+        "large": 4,
+        "small": 3
       },
-      "firstClosedAt": "2026-11-21T14:36:23.000Z",
-      "lastClosedAt": "2026-11-23T21:05:17.000Z"
+      "firstClosedAt": "2026-11-22T11:08:16.000Z",
+      "lastClosedAt": "2026-11-24T00:42:57.000Z"
     },
     {
       "contributor": "KingDavid9999",
@@ -36849,26 +37064,6 @@
       "lastClosedAt": "2026-11-23T21:58:18.000Z"
     },
     {
-      "contributor": "Mioha-guru",
-      "profileUrl": "https://github.com/Mioha-guru",
-      "pointsEarned": 1700,
-      "issuesClosed": 9,
-      "avgPointsPerIssue": 188.9,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "Deen-Bridge/dnb-ai",
-        "DocForum/docforum-escrow",
-        "Savitura/Savitools",
-        "Talenttrust/Talenttrust-Frontend"
-      ],
-      "complexityBreakdown": {
-        "large": 8,
-        "small": 1
-      },
-      "firstClosedAt": "2026-11-21T16:08:56.000Z",
-      "lastClosedAt": "2026-11-23T06:57:54.000Z"
-    },
-    {
       "contributor": "OLAMIGHTY010",
       "profileUrl": "https://github.com/OLAMIGHTY010",
       "pointsEarned": 1700,
@@ -37146,25 +37341,6 @@
       },
       "firstClosedAt": "2026-11-22T10:14:58.000Z",
       "lastClosedAt": "2026-11-22T19:18:54.000Z"
-    },
-    {
-      "contributor": "Adeyemi7-11",
-      "profileUrl": "https://github.com/Adeyemi7-11",
-      "pointsEarned": 1600,
-      "issuesClosed": 6,
-      "avgPointsPerIssue": 266.7,
-      "reposCount": 3,
-      "reposContributedTo": [
-        "Neurowealth/Backend",
-        "Savitura/Savitools",
-        "safetrustcr/backend-SafeTrust"
-      ],
-      "complexityBreakdown": {
-        "medium": 1,
-        "large": 5
-      },
-      "firstClosedAt": "2026-11-19T22:42:01.000Z",
-      "lastClosedAt": "2026-11-23T20:06:40.000Z"
     },
     {
       "contributor": "agdaniel10",
@@ -38386,40 +38562,6 @@
       "lastClosedAt": "2026-11-22T00:00:18.000Z"
     },
     {
-      "contributor": "florence2peter",
-      "profileUrl": "https://github.com/florence2peter",
-      "pointsEarned": 1600,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "Lex-Studios/Stellar-Spend",
-        "Xoulomon/Scavenger"
-      ],
-      "complexityBreakdown": {
-        "large": 8
-      },
-      "firstClosedAt": "2026-11-22T17:30:26.000Z",
-      "lastClosedAt": "2026-11-23T09:54:39.000Z"
-    },
-    {
-      "contributor": "Francisasala",
-      "profileUrl": "https://github.com/Francisasala",
-      "pointsEarned": 1600,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "Lex-Studios/Stellar-Spend",
-        "Xoulomon/Scavenger"
-      ],
-      "complexityBreakdown": {
-        "large": 8
-      },
-      "firstClosedAt": "2026-11-22T17:31:16.000Z",
-      "lastClosedAt": "2026-11-23T09:54:22.000Z"
-    },
-    {
       "contributor": "frank0277",
       "profileUrl": "https://github.com/frank0277",
       "pointsEarned": 1600,
@@ -38593,6 +38735,25 @@
       },
       "firstClosedAt": "2026-11-19T16:00:51.000Z",
       "lastClosedAt": "2026-11-21T11:39:50.000Z"
+    },
+    {
+      "contributor": "graceful-tech12",
+      "profileUrl": "https://github.com/graceful-tech12",
+      "pointsEarned": 1600,
+      "issuesClosed": 10,
+      "avgPointsPerIssue": 160.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Kevin737866/stellar-defi-toolkit",
+        "OpenKnight-Foundation/KnightVerse",
+        "Streampay-Org/StreamPay-Frontend"
+      ],
+      "complexityBreakdown": {
+        "large": 6,
+        "small": 4
+      },
+      "firstClosedAt": "2026-11-20T13:02:58.000Z",
+      "lastClosedAt": "2026-11-24T01:50:35.000Z"
     },
     {
       "contributor": "gracejames9017-eng",
@@ -39662,22 +39823,6 @@
       "lastClosedAt": "2026-11-19T02:12:23.000Z"
     },
     {
-      "contributor": "my908-hue",
-      "profileUrl": "https://github.com/my908-hue",
-      "pointsEarned": 1600,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 400.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "mind-vault-1/mindvault"
-      ],
-      "complexityBreakdown": {
-        "large": 4
-      },
-      "firstClosedAt": "2026-11-22T11:08:16.000Z",
-      "lastClosedAt": "2026-11-22T11:08:20.000Z"
-    },
-    {
       "contributor": "N-i-xx",
       "profileUrl": "https://github.com/N-i-xx",
       "pointsEarned": 1600,
@@ -39966,23 +40111,6 @@
       },
       "firstClosedAt": "2026-11-20T20:11:58.000Z",
       "lastClosedAt": "2026-11-20T21:16:09.000Z"
-    },
-    {
-      "contributor": "ogunu7747-hub",
-      "profileUrl": "https://github.com/ogunu7747-hub",
-      "pointsEarned": 1600,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "PhasoraLabs/StellarGrantProtocol",
-        "blessingsokeke618-sys/CertChain-Blockchain-Academic-Credential-Verification-System"
-      ],
-      "complexityBreakdown": {
-        "large": 8
-      },
-      "firstClosedAt": "2026-11-22T08:11:42.000Z",
-      "lastClosedAt": "2026-11-22T08:32:53.000Z"
     },
     {
       "contributor": "ojuotimi932",
@@ -40308,23 +40436,6 @@
       "lastClosedAt": "2026-11-22T14:30:02.000Z"
     },
     {
-      "contributor": "Penielka",
-      "profileUrl": "https://github.com/Penielka",
-      "pointsEarned": 1600,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "ApexChainx/ApexChainx-Frontend",
-        "SkyyNineCrew/Quoin"
-      ],
-      "complexityBreakdown": {
-        "large": 8
-      },
-      "firstClosedAt": "2026-11-22T22:00:20.000Z",
-      "lastClosedAt": "2026-11-23T16:24:01.000Z"
-    },
-    {
       "contributor": "Petah1",
       "profileUrl": "https://github.com/Petah1",
       "pointsEarned": 1600,
@@ -40427,21 +40538,21 @@
       "lastClosedAt": "2026-11-21T02:38:52.000Z"
     },
     {
-      "contributor": "Praisefotos1",
-      "profileUrl": "https://github.com/Praisefotos1",
+      "contributor": "Praizfotos",
+      "profileUrl": "https://github.com/Praizfotos",
       "pointsEarned": 1600,
       "issuesClosed": 8,
       "avgPointsPerIssue": 200.0,
       "reposCount": 2,
       "reposContributedTo": [
-        "Lex-Studios/Stellar-Spend",
-        "Xoulomon/Scavenger"
+        "Blue-Kollar/Blue-Collar",
+        "Lex-Studios/Stellar-Spend"
       ],
       "complexityBreakdown": {
         "large": 8
       },
-      "firstClosedAt": "2026-11-22T17:30:52.000Z",
-      "lastClosedAt": "2026-11-23T17:43:09.000Z"
+      "firstClosedAt": "2026-11-22T17:29:56.000Z",
+      "lastClosedAt": "2026-11-24T01:12:52.000Z"
     },
     {
       "contributor": "princesshittu",
@@ -41094,23 +41205,6 @@
       "lastClosedAt": "2026-11-21T06:46:00.000Z"
     },
     {
-      "contributor": "Timothy2025-20",
-      "profileUrl": "https://github.com/Timothy2025-20",
-      "pointsEarned": 1600,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "Lex-Studios/Stellar-Spend",
-        "Xoulomon/Scavenger"
-      ],
-      "complexityBreakdown": {
-        "large": 8
-      },
-      "firstClosedAt": "2026-11-22T17:42:47.000Z",
-      "lastClosedAt": "2026-11-23T09:57:05.000Z"
-    },
-    {
       "contributor": "titilayo967",
       "profileUrl": "https://github.com/titilayo967",
       "pointsEarned": 1600,
@@ -41520,6 +41614,23 @@
       "lastClosedAt": "2026-11-22T19:16:55.000Z"
     },
     {
+      "contributor": "yachamdaniel1-alt",
+      "profileUrl": "https://github.com/yachamdaniel1-alt",
+      "pointsEarned": 1600,
+      "issuesClosed": 8,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 8
+      },
+      "firstClosedAt": "2026-11-23T17:43:11.000Z",
+      "lastClosedAt": "2026-11-24T01:19:30.000Z"
+    },
+    {
       "contributor": "yash-matt",
       "profileUrl": "https://github.com/yash-matt",
       "pointsEarned": 1600,
@@ -41535,6 +41646,23 @@
       },
       "firstClosedAt": "2026-11-21T00:08:41.000Z",
       "lastClosedAt": "2026-11-22T14:30:55.000Z"
+    },
+    {
+      "contributor": "Yebom3220",
+      "profileUrl": "https://github.com/Yebom3220",
+      "pointsEarned": 1600,
+      "issuesClosed": 8,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "Xoulomon/Scavenger"
+      ],
+      "complexityBreakdown": {
+        "large": 8
+      },
+      "firstClosedAt": "2026-11-23T17:42:09.000Z",
+      "lastClosedAt": "2026-11-24T01:16:47.000Z"
     },
     {
       "contributor": "Yhungprof-star",
@@ -42906,6 +43034,27 @@
       "lastClosedAt": "2026-11-23T10:31:38.000Z"
     },
     {
+      "contributor": "Whiznificent",
+      "profileUrl": "https://github.com/Whiznificent",
+      "pointsEarned": 1350,
+      "issuesClosed": 8,
+      "avgPointsPerIssue": 168.8,
+      "reposCount": 4,
+      "reposContributedTo": [
+        "JafetCHVDev/soroban-quest",
+        "frienzy514-png/stellar-TrueStub",
+        "vatal-system/Decentralized-Freelance-Payment-Platform",
+        "vegaforge/tollway"
+      ],
+      "complexityBreakdown": {
+        "medium": 3,
+        "large": 4,
+        "small": 1
+      },
+      "firstClosedAt": "2026-11-20T08:36:02.000Z",
+      "lastClosedAt": "2026-11-24T00:44:24.000Z"
+    },
+    {
       "contributor": "affy-exe",
       "profileUrl": "https://github.com/affy-exe",
       "pointsEarned": 1300,
@@ -43186,25 +43335,6 @@
       },
       "firstClosedAt": "2026-11-20T20:30:35.000Z",
       "lastClosedAt": "2026-11-23T11:24:45.000Z"
-    },
-    {
-      "contributor": "Whiznificent",
-      "profileUrl": "https://github.com/Whiznificent",
-      "pointsEarned": 1250,
-      "issuesClosed": 7,
-      "avgPointsPerIssue": 178.6,
-      "reposCount": 3,
-      "reposContributedTo": [
-        "frienzy514-png/stellar-TrueStub",
-        "vatal-system/Decentralized-Freelance-Payment-Platform",
-        "vegaforge/tollway"
-      ],
-      "complexityBreakdown": {
-        "medium": 3,
-        "large": 4
-      },
-      "firstClosedAt": "2026-11-20T08:36:02.000Z",
-      "lastClosedAt": "2026-11-23T19:35:21.000Z"
     },
     {
       "contributor": "08038165041",
@@ -43628,24 +43758,6 @@
       },
       "firstClosedAt": "2026-11-20T08:37:05.000Z",
       "lastClosedAt": "2026-11-23T05:46:19.000Z"
-    },
-    {
-      "contributor": "graceful-tech12",
-      "profileUrl": "https://github.com/graceful-tech12",
-      "pointsEarned": 1200,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 150.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "Kevin737866/stellar-defi-toolkit",
-        "Streampay-Org/StreamPay-Frontend"
-      ],
-      "complexityBreakdown": {
-        "large": 4,
-        "small": 4
-      },
-      "firstClosedAt": "2026-11-20T13:02:58.000Z",
-      "lastClosedAt": "2026-11-22T22:58:15.000Z"
     },
     {
       "contributor": "Grazial-hash",
@@ -44205,6 +44317,23 @@
       "lastClosedAt": "2026-11-23T22:05:26.000Z"
     },
     {
+      "contributor": "Wetshakat",
+      "profileUrl": "https://github.com/Wetshakat",
+      "pointsEarned": 1200,
+      "issuesClosed": 6,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Akanimoh12/Stellar-Tipz",
+        "mind-vault-1/mindvault_mobile"
+      ],
+      "complexityBreakdown": {
+        "large": 6
+      },
+      "firstClosedAt": "2026-11-23T14:04:16.000Z",
+      "lastClosedAt": "2026-11-24T00:17:51.000Z"
+    },
+    {
       "contributor": "yuabdulazeez5-glitch",
       "profileUrl": "https://github.com/yuabdulazeez5-glitch",
       "pointsEarned": 1200,
@@ -44420,6 +44549,27 @@
       },
       "firstClosedAt": "2026-11-23T16:07:34.000Z",
       "lastClosedAt": "2026-11-23T21:18:00.000Z"
+    },
+    {
+      "contributor": "mojeed-painless",
+      "profileUrl": "https://github.com/mojeed-painless",
+      "pointsEarned": 1100,
+      "issuesClosed": 9,
+      "avgPointsPerIssue": 122.2,
+      "reposCount": 5,
+      "reposContributedTo": [
+        "Creditra/Creditra-Frontend",
+        "SO4-Markets/interface",
+        "StellarLend/stellarlend-contracts",
+        "Streampay-Org/StreamPay-Frontend",
+        "agnesnaomiolim-cloud/Stellar-forge"
+      ],
+      "complexityBreakdown": {
+        "large": 2,
+        "small": 7
+      },
+      "firstClosedAt": "2026-11-19T21:58:08.000Z",
+      "lastClosedAt": "2026-11-24T00:38:14.000Z"
     },
     {
       "contributor": "Real-Ola",
@@ -45003,6 +45153,23 @@
       "lastClosedAt": "2026-11-22T17:53:06.000Z"
     },
     {
+      "contributor": "Jayking40",
+      "profileUrl": "https://github.com/Jayking40",
+      "pointsEarned": 1000,
+      "issuesClosed": 5,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Stellar-Kolo/kolo-contracts",
+        "Stellar-Sentinel/sentinel-backend"
+      ],
+      "complexityBreakdown": {
+        "large": 5
+      },
+      "firstClosedAt": "2026-11-21T16:21:45.000Z",
+      "lastClosedAt": "2026-11-24T00:26:53.000Z"
+    },
+    {
       "contributor": "jessicacinderella9-cloud",
       "profileUrl": "https://github.com/jessicacinderella9-cloud",
       "pointsEarned": 1000,
@@ -45464,23 +45631,6 @@
       "lastClosedAt": "2026-11-21T11:26:33.000Z"
     },
     {
-      "contributor": "Wetshakat",
-      "profileUrl": "https://github.com/Wetshakat",
-      "pointsEarned": 1000,
-      "issuesClosed": 5,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "Akanimoh12/Stellar-Tipz",
-        "mind-vault-1/mindvault_mobile"
-      ],
-      "complexityBreakdown": {
-        "large": 5
-      },
-      "firstClosedAt": "2026-11-23T14:04:16.000Z",
-      "lastClosedAt": "2026-11-23T19:29:36.000Z"
-    },
-    {
       "contributor": "wonderwhoman3-source",
       "profileUrl": "https://github.com/wonderwhoman3-source",
       "pointsEarned": 1000,
@@ -45589,6 +45739,25 @@
       },
       "firstClosedAt": "2026-11-22T03:21:04.000Z",
       "lastClosedAt": "2026-11-23T07:19:02.000Z"
+    },
+    {
+      "contributor": "aswadi",
+      "profileUrl": "https://github.com/aswadi",
+      "pointsEarned": 950,
+      "issuesClosed": 6,
+      "avgPointsPerIssue": 158.3,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Altacon-Labs/RevMarket",
+        "Open-Hub-Tec/yucu-protocol"
+      ],
+      "complexityBreakdown": {
+        "medium": 1,
+        "large": 3,
+        "small": 2
+      },
+      "firstClosedAt": "2026-11-20T06:24:02.000Z",
+      "lastClosedAt": "2026-11-24T00:59:46.000Z"
     },
     {
       "contributor": "graceanya796-maker",
@@ -45877,26 +46046,6 @@
       },
       "firstClosedAt": "2026-11-20T21:04:46.000Z",
       "lastClosedAt": "2026-11-23T12:03:49.000Z"
-    },
-    {
-      "contributor": "mojeed-painless",
-      "profileUrl": "https://github.com/mojeed-painless",
-      "pointsEarned": 900,
-      "issuesClosed": 8,
-      "avgPointsPerIssue": 112.5,
-      "reposCount": 4,
-      "reposContributedTo": [
-        "Creditra/Creditra-Frontend",
-        "StellarLend/stellarlend-contracts",
-        "Streampay-Org/StreamPay-Frontend",
-        "agnesnaomiolim-cloud/Stellar-forge"
-      ],
-      "complexityBreakdown": {
-        "large": 1,
-        "small": 7
-      },
-      "firstClosedAt": "2026-11-19T21:58:08.000Z",
-      "lastClosedAt": "2026-11-23T13:26:12.000Z"
     },
     {
       "contributor": "mskdylan",
@@ -49227,6 +49376,22 @@
       "lastClosedAt": "2026-11-23T16:24:00.000Z"
     },
     {
+      "contributor": "muazumikail1915-create",
+      "profileUrl": "https://github.com/muazumikail1915-create",
+      "pointsEarned": 800,
+      "issuesClosed": 4,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "StormSale/StormSale"
+      ],
+      "complexityBreakdown": {
+        "large": 4
+      },
+      "firstClosedAt": "2026-11-24T01:34:16.000Z",
+      "lastClosedAt": "2026-11-24T01:35:22.000Z"
+    },
+    {
       "contributor": "muhammedabdulrazaq46-svg",
       "profileUrl": "https://github.com/muhammedabdulrazaq46-svg",
       "pointsEarned": 800,
@@ -49354,6 +49519,22 @@
       },
       "firstClosedAt": "2026-11-19T19:54:06.000Z",
       "lastClosedAt": "2026-11-20T22:07:37.000Z"
+    },
+    {
+      "contributor": "Neola06",
+      "profileUrl": "https://github.com/Neola06",
+      "pointsEarned": 800,
+      "issuesClosed": 4,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "Smartdevs17/stellarlend"
+      ],
+      "complexityBreakdown": {
+        "large": 4
+      },
+      "firstClosedAt": "2026-11-24T01:28:15.000Z",
+      "lastClosedAt": "2026-11-24T01:32:33.000Z"
     },
     {
       "contributor": "nevysonzim124",
@@ -49633,6 +49814,26 @@
       "lastClosedAt": "2026-11-23T18:54:44.000Z"
     },
     {
+      "contributor": "OnlyBarry",
+      "profileUrl": "https://github.com/OnlyBarry",
+      "pointsEarned": 800,
+      "issuesClosed": 5,
+      "avgPointsPerIssue": 160.0,
+      "reposCount": 4,
+      "reposContributedTo": [
+        "Creditra/Creditra-Frontend",
+        "Liquifact/Liquifact-contracts",
+        "OpenKnight-Foundation/KnightVerse",
+        "Streampay-Org/StreamPay-Frontend"
+      ],
+      "complexityBreakdown": {
+        "small": 2,
+        "large": 3
+      },
+      "firstClosedAt": "2026-11-23T10:14:40.000Z",
+      "lastClosedAt": "2026-11-24T01:48:58.000Z"
+    },
+    {
       "contributor": "oreoluwa648",
       "profileUrl": "https://github.com/oreoluwa648",
       "pointsEarned": 800,
@@ -49744,22 +49945,6 @@
       },
       "firstClosedAt": "2026-11-20T11:01:55.000Z",
       "lastClosedAt": "2026-11-20T11:01:56.000Z"
-    },
-    {
-      "contributor": "Praizfotos",
-      "profileUrl": "https://github.com/Praizfotos",
-      "pointsEarned": 800,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "Lex-Studios/Stellar-Spend"
-      ],
-      "complexityBreakdown": {
-        "large": 4
-      },
-      "firstClosedAt": "2026-11-22T17:29:56.000Z",
-      "lastClosedAt": "2026-11-22T17:30:00.000Z"
     },
     {
       "contributor": "precious1joe",
@@ -50681,22 +50866,6 @@
       "lastClosedAt": "2026-11-23T13:01:13.000Z"
     },
     {
-      "contributor": "yachamdaniel1-alt",
-      "profileUrl": "https://github.com/yachamdaniel1-alt",
-      "pointsEarned": 800,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "Xoulomon/Scavenger"
-      ],
-      "complexityBreakdown": {
-        "large": 4
-      },
-      "firstClosedAt": "2026-11-23T17:43:11.000Z",
-      "lastClosedAt": "2026-11-23T17:43:16.000Z"
-    },
-    {
       "contributor": "yahia008",
       "profileUrl": "https://github.com/yahia008",
       "pointsEarned": 800,
@@ -50729,20 +50898,20 @@
       "lastClosedAt": "2026-11-23T14:47:47.000Z"
     },
     {
-      "contributor": "Yebom3220",
-      "profileUrl": "https://github.com/Yebom3220",
+      "contributor": "yashimamina6",
+      "profileUrl": "https://github.com/yashimamina6",
       "pointsEarned": 800,
       "issuesClosed": 4,
       "avgPointsPerIssue": 200.0,
       "reposCount": 1,
       "reposContributedTo": [
-        "Xoulomon/Scavenger"
+        "Kevin737866/stellar-web3-toolkit"
       ],
       "complexityBreakdown": {
         "large": 4
       },
-      "firstClosedAt": "2026-11-23T17:42:09.000Z",
-      "lastClosedAt": "2026-11-23T17:42:14.000Z"
+      "firstClosedAt": "2026-11-24T00:35:50.000Z",
+      "lastClosedAt": "2026-11-24T00:35:56.000Z"
     },
     {
       "contributor": "ZainabJanee",
@@ -50809,23 +50978,6 @@
       "lastClosedAt": "2026-11-23T19:28:15.000Z"
     },
     {
-      "contributor": "aswadi",
-      "profileUrl": "https://github.com/aswadi",
-      "pointsEarned": 750,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 187.5,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "Altacon-Labs/RevMarket"
-      ],
-      "complexityBreakdown": {
-        "medium": 1,
-        "large": 3
-      },
-      "firstClosedAt": "2026-11-20T06:24:02.000Z",
-      "lastClosedAt": "2026-11-20T15:01:56.000Z"
-    },
-    {
       "contributor": "Awosdot",
       "profileUrl": "https://github.com/Awosdot",
       "pointsEarned": 750,
@@ -50860,6 +51012,24 @@
       },
       "firstClosedAt": "2026-11-22T21:40:44.000Z",
       "lastClosedAt": "2026-11-22T21:42:52.000Z"
+    },
+    {
+      "contributor": "DevFaster",
+      "profileUrl": "https://github.com/DevFaster",
+      "pointsEarned": 750,
+      "issuesClosed": 4,
+      "avgPointsPerIssue": 187.5,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "StellarHyperion/stellarhyperion-backend",
+        "StormSale/StormSale"
+      ],
+      "complexityBreakdown": {
+        "large": 3,
+        "medium": 1
+      },
+      "firstClosedAt": "2026-11-20T04:52:02.000Z",
+      "lastClosedAt": "2026-11-24T00:47:36.000Z"
     },
     {
       "contributor": "eegbinade-lang",
@@ -51119,6 +51289,25 @@
       },
       "firstClosedAt": "2026-11-19T11:11:58.000Z",
       "lastClosedAt": "2026-11-20T09:40:31.000Z"
+    },
+    {
+      "contributor": "IbnNaseer",
+      "profileUrl": "https://github.com/IbnNaseer",
+      "pointsEarned": 700,
+      "issuesClosed": 4,
+      "avgPointsPerIssue": 175.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Kevin737866/stellar-web3-toolkit",
+        "OpenKnight-Foundation/KnightVerse",
+        "StormSale/StormSale"
+      ],
+      "complexityBreakdown": {
+        "large": 2,
+        "medium": 2
+      },
+      "firstClosedAt": "2026-11-21T00:37:38.000Z",
+      "lastClosedAt": "2026-11-24T01:40:06.000Z"
     },
     {
       "contributor": "ibrahimtenimudev",
@@ -51816,22 +52005,6 @@
       "lastClosedAt": "2026-11-20T21:46:50.000Z"
     },
     {
-      "contributor": "DevFaster",
-      "profileUrl": "https://github.com/DevFaster",
-      "pointsEarned": 600,
-      "issuesClosed": 3,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "StellarHyperion/stellarhyperion-backend"
-      ],
-      "complexityBreakdown": {
-        "large": 3
-      },
-      "firstClosedAt": "2026-11-20T04:52:02.000Z",
-      "lastClosedAt": "2026-11-20T04:52:50.000Z"
-    },
-    {
       "contributor": "dot-enny",
       "profileUrl": "https://github.com/dot-enny",
       "pointsEarned": 600,
@@ -52096,22 +52269,6 @@
       "lastClosedAt": "2026-11-23T14:30:51.000Z"
     },
     {
-      "contributor": "Jayking40",
-      "profileUrl": "https://github.com/Jayking40",
-      "pointsEarned": 600,
-      "issuesClosed": 3,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "Stellar-Sentinel/sentinel-backend"
-      ],
-      "complexityBreakdown": {
-        "large": 3
-      },
-      "firstClosedAt": "2026-11-21T16:21:45.000Z",
-      "lastClosedAt": "2026-11-21T16:21:45.000Z"
-    },
-    {
       "contributor": "JohnKorex",
       "profileUrl": "https://github.com/JohnKorex",
       "pointsEarned": 600,
@@ -52195,6 +52352,23 @@
       },
       "firstClosedAt": "2026-11-22T07:43:19.000Z",
       "lastClosedAt": "2026-11-23T09:41:56.000Z"
+    },
+    {
+      "contributor": "keshav2800",
+      "profileUrl": "https://github.com/keshav2800",
+      "pointsEarned": 600,
+      "issuesClosed": 2,
+      "avgPointsPerIssue": 300.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "SO4-Markets/interface",
+        "forever8896/dvdnd"
+      ],
+      "complexityBreakdown": {
+        "large": 2
+      },
+      "firstClosedAt": "2026-11-23T21:00:31.000Z",
+      "lastClosedAt": "2026-11-24T00:37:07.000Z"
     },
     {
       "contributor": "kingAkinwale",
@@ -52496,25 +52670,6 @@
       "lastClosedAt": "2026-11-20T16:08:52.000Z"
     },
     {
-      "contributor": "OnlyBarry",
-      "profileUrl": "https://github.com/OnlyBarry",
-      "pointsEarned": 600,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 150.0,
-      "reposCount": 3,
-      "reposContributedTo": [
-        "Creditra/Creditra-Frontend",
-        "Liquifact/Liquifact-contracts",
-        "Streampay-Org/StreamPay-Frontend"
-      ],
-      "complexityBreakdown": {
-        "small": 2,
-        "large": 2
-      },
-      "firstClosedAt": "2026-11-23T10:14:40.000Z",
-      "lastClosedAt": "2026-11-23T10:56:43.000Z"
-    },
-    {
       "contributor": "oyeyemidavid-gif",
       "profileUrl": "https://github.com/oyeyemidavid-gif",
       "pointsEarned": 600,
@@ -52715,6 +52870,25 @@
       "lastClosedAt": "2026-11-21T17:34:18.000Z"
     },
     {
+      "contributor": "Steddy0",
+      "profileUrl": "https://github.com/Steddy0",
+      "pointsEarned": 600,
+      "issuesClosed": 4,
+      "avgPointsPerIssue": 150.0,
+      "reposCount": 3,
+      "reposContributedTo": [
+        "Godgift-care/sci-healthcare-frontend",
+        "mimir-stellar/mimir-markets",
+        "zkpayroll/zk-payroll-dashboard"
+      ],
+      "complexityBreakdown": {
+        "large": 2,
+        "small": 2
+      },
+      "firstClosedAt": "2026-11-22T18:29:43.000Z",
+      "lastClosedAt": "2026-11-24T01:55:50.000Z"
+    },
+    {
       "contributor": "The-Najaah",
       "profileUrl": "https://github.com/The-Najaah",
       "pointsEarned": 600,
@@ -52795,6 +52969,24 @@
       },
       "firstClosedAt": "2026-11-22T05:43:19.000Z",
       "lastClosedAt": "2026-11-22T05:43:19.000Z"
+    },
+    {
+      "contributor": "Treasure-analyst",
+      "profileUrl": "https://github.com/Treasure-analyst",
+      "pointsEarned": 600,
+      "issuesClosed": 5,
+      "avgPointsPerIssue": 120.0,
+      "reposCount": 2,
+      "reposContributedTo": [
+        "Blue-Kollar/Blue-Collar",
+        "harpocrates-stellar/main"
+      ],
+      "complexityBreakdown": {
+        "small": 4,
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-21T12:27:08.000Z",
+      "lastClosedAt": "2026-11-24T01:13:20.000Z"
     },
     {
       "contributor": "trishluxie-star",
@@ -53272,24 +53464,6 @@
       },
       "firstClosedAt": "2026-11-22T09:26:05.000Z",
       "lastClosedAt": "2026-11-23T12:00:11.000Z"
-    },
-    {
-      "contributor": "Steddy0",
-      "profileUrl": "https://github.com/Steddy0",
-      "pointsEarned": 500,
-      "issuesClosed": 3,
-      "avgPointsPerIssue": 166.7,
-      "reposCount": 2,
-      "reposContributedTo": [
-        "mimir-stellar/mimir-markets",
-        "zkpayroll/zk-payroll-dashboard"
-      ],
-      "complexityBreakdown": {
-        "large": 2,
-        "small": 1
-      },
-      "firstClosedAt": "2026-11-22T18:29:43.000Z",
-      "lastClosedAt": "2026-11-23T20:32:16.000Z"
     },
     {
       "contributor": "Swayymalcolm99",
@@ -54349,22 +54523,6 @@
       "lastClosedAt": "2026-11-22T18:30:22.000Z"
     },
     {
-      "contributor": "keshav2800",
-      "profileUrl": "https://github.com/keshav2800",
-      "pointsEarned": 400,
-      "issuesClosed": 1,
-      "avgPointsPerIssue": 400.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "forever8896/dvdnd"
-      ],
-      "complexityBreakdown": {
-        "large": 1
-      },
-      "firstClosedAt": "2026-11-23T21:00:31.000Z",
-      "lastClosedAt": "2026-11-23T21:00:31.000Z"
-    },
-    {
       "contributor": "KingMavin",
       "profileUrl": "https://github.com/KingMavin",
       "pointsEarned": 400,
@@ -55085,22 +55243,6 @@
       "lastClosedAt": "2026-11-22T21:59:18.000Z"
     },
     {
-      "contributor": "Treasure-analyst",
-      "profileUrl": "https://github.com/Treasure-analyst",
-      "pointsEarned": 400,
-      "issuesClosed": 4,
-      "avgPointsPerIssue": 100.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "harpocrates-stellar/main"
-      ],
-      "complexityBreakdown": {
-        "small": 4
-      },
-      "firstClosedAt": "2026-11-21T12:27:08.000Z",
-      "lastClosedAt": "2026-11-23T11:37:02.000Z"
-    },
-    {
       "contributor": "Truphile",
       "profileUrl": "https://github.com/Truphile",
       "pointsEarned": 400,
@@ -55728,6 +55870,22 @@
       "lastClosedAt": "2026-11-23T06:53:18.000Z"
     },
     {
+      "contributor": "Agbeleshe",
+      "profileUrl": "https://github.com/Agbeleshe",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "SO4-Markets/interface"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T00:39:18.000Z",
+      "lastClosedAt": "2026-11-24T00:39:18.000Z"
+    },
+    {
       "contributor": "Ahmbern",
       "profileUrl": "https://github.com/Ahmbern",
       "pointsEarned": 200,
@@ -55968,6 +56126,22 @@
       "lastClosedAt": "2026-11-23T13:51:55.000Z"
     },
     {
+      "contributor": "charleswilliams788",
+      "profileUrl": "https://github.com/charleswilliams788",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "SO4-Markets/interface"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T00:38:52.000Z",
+      "lastClosedAt": "2026-11-24T00:38:52.000Z"
+    },
+    {
       "contributor": "CHKM001",
       "profileUrl": "https://github.com/CHKM001",
       "pointsEarned": 200,
@@ -56094,6 +56268,22 @@
       },
       "firstClosedAt": "2026-11-20T07:19:32.000Z",
       "lastClosedAt": "2026-11-20T07:19:32.000Z"
+    },
+    {
+      "contributor": "Dayz-tech-co",
+      "profileUrl": "https://github.com/Dayz-tech-co",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "Tech-Cred/stellar-contract-platform"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T00:40:41.000Z",
+      "lastClosedAt": "2026-11-24T00:40:41.000Z"
     },
     {
       "contributor": "degendev23",
@@ -56513,22 +56703,6 @@
       "lastClosedAt": "2026-11-18T16:26:13.000Z"
     },
     {
-      "contributor": "IbnNaseer",
-      "profileUrl": "https://github.com/IbnNaseer",
-      "pointsEarned": 200,
-      "issuesClosed": 1,
-      "avgPointsPerIssue": 200.0,
-      "reposCount": 1,
-      "reposContributedTo": [
-        "OpenKnight-Foundation/KnightVerse"
-      ],
-      "complexityBreakdown": {
-        "large": 1
-      },
-      "firstClosedAt": "2026-11-21T00:37:38.000Z",
-      "lastClosedAt": "2026-11-21T00:37:38.000Z"
-    },
-    {
       "contributor": "igunmwonyinoma75-byte",
       "profileUrl": "https://github.com/igunmwonyinoma75-byte",
       "pointsEarned": 200,
@@ -56927,6 +57101,22 @@
       },
       "firstClosedAt": "2026-11-21T20:49:57.000Z",
       "lastClosedAt": "2026-11-21T20:49:57.000Z"
+    },
+    {
+      "contributor": "michaelmbanusi20-dev",
+      "profileUrl": "https://github.com/michaelmbanusi20-dev",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "Altacon-Labs/RevMarket"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T00:48:12.000Z",
+      "lastClosedAt": "2026-11-24T00:48:12.000Z"
     },
     {
       "contributor": "monarchtk",
@@ -57492,6 +57682,22 @@
       "lastClosedAt": "2026-11-22T16:00:53.000Z"
     },
     {
+      "contributor": "Talomola1",
+      "profileUrl": "https://github.com/Talomola1",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "OpenKnight-Foundation/KnightVerse"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T01:49:15.000Z",
+      "lastClosedAt": "2026-11-24T01:49:15.000Z"
+    },
+    {
       "contributor": "Tobi200",
       "profileUrl": "https://github.com/Tobi200",
       "pointsEarned": 200,
@@ -57634,6 +57840,38 @@
       },
       "firstClosedAt": "2026-11-21T05:18:27.000Z",
       "lastClosedAt": "2026-11-21T05:18:27.000Z"
+    },
+    {
+      "contributor": "WinnerMalachi",
+      "profileUrl": "https://github.com/WinnerMalachi",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "zkpayroll/zk-payroll-dashboard"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T00:34:12.000Z",
+      "lastClosedAt": "2026-11-24T00:34:12.000Z"
+    },
+    {
+      "contributor": "worldlightonline1",
+      "profileUrl": "https://github.com/worldlightonline1",
+      "pointsEarned": 200,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 200.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "OpenKnight-Foundation/KnightVerse"
+      ],
+      "complexityBreakdown": {
+        "large": 1
+      },
+      "firstClosedAt": "2026-11-24T01:51:20.000Z",
+      "lastClosedAt": "2026-11-24T01:51:20.000Z"
     },
     {
       "contributor": "yusuf0851",
@@ -58082,6 +58320,22 @@
       },
       "firstClosedAt": "2026-11-23T09:59:05.000Z",
       "lastClosedAt": "2026-11-23T09:59:05.000Z"
+    },
+    {
+      "contributor": "ebenezeracevedo12-byte",
+      "profileUrl": "https://github.com/ebenezeracevedo12-byte",
+      "pointsEarned": 100,
+      "issuesClosed": 1,
+      "avgPointsPerIssue": 100.0,
+      "reposCount": 1,
+      "reposContributedTo": [
+        "Open-Hub-Tec/yucu-protocol"
+      ],
+      "complexityBreakdown": {
+        "small": 1
+      },
+      "firstClosedAt": "2026-11-24T00:09:18.000Z",
+      "lastClosedAt": "2026-11-24T00:09:18.000Z"
     },
     {
       "contributor": "Eddi3mendoz",
@@ -58564,7 +58818,7 @@
       "lastClosedAt": "2026-11-23T09:59:37.000Z"
     }
   ],
-  "contributorsCount": 2927,
+  "contributorsCount": 2939,
   "perRepo": {
     "totalRepos": 883,
     "enrolledRepos": 959,
@@ -58746,6 +59000,24 @@
         "distinctContributors": 33,
         "avgTimeToCloseHours": 348.93,
         "medianTimeToCloseHours": 13.59,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "zkpayroll/zk-payroll-dashboard",
+        "repoUrl": "https://github.com/zkpayroll/zk-payroll-dashboard",
+        "org": "zkpayroll",
+        "openIssues": 19,
+        "unassignedOpen": 7,
+        "closedInWave": 125,
+        "pointsScored": 25000,
+        "distinctContributors": 55,
+        "avgTimeToCloseHours": 418.2,
+        "medianTimeToCloseHours": 114.88,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -58944,24 +59216,6 @@
         "distinctContributors": 38,
         "avgTimeToCloseHours": 310.3,
         "medianTimeToCloseHours": 109.7,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "zkpayroll/zk-payroll-dashboard",
-        "repoUrl": "https://github.com/zkpayroll/zk-payroll-dashboard",
-        "org": "zkpayroll",
-        "openIssues": 20,
-        "unassignedOpen": 7,
-        "closedInWave": 124,
-        "pointsScored": 24800,
-        "distinctContributors": 55,
-        "avgTimeToCloseHours": 420.57,
-        "medianTimeToCloseHours": 114.88,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -60770,6 +61024,24 @@
         "tags": []
       },
       {
+        "repo": "Blue-Kollar/Blue-Collar",
+        "repoUrl": "https://github.com/Blue-Kollar/Blue-Collar",
+        "org": "Blue-Kollar",
+        "openIssues": 11,
+        "unassignedOpen": 0,
+        "closedInWave": 114,
+        "pointsScored": 22800,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 78.98,
+        "medianTimeToCloseHours": 66.85,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "PolarisQ-xyz/polaris-contracts",
         "repoUrl": "https://github.com/PolarisQ-xyz/polaris-contracts",
         "org": "PolarisQ-xyz",
@@ -60780,6 +61052,24 @@
         "distinctContributors": 30,
         "avgTimeToCloseHours": 116.25,
         "medianTimeToCloseHours": 100.29,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "StellarState/SS-frontend",
+        "repoUrl": "https://github.com/StellarState/SS-frontend",
+        "org": "StellarState",
+        "openIssues": 11,
+        "unassignedOpen": 2,
+        "closedInWave": 114,
+        "pointsScored": 22800,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 45.17,
+        "medianTimeToCloseHours": 22.81,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -60852,6 +61142,24 @@
         "distinctContributors": 32,
         "avgTimeToCloseHours": 1454.14,
         "medianTimeToCloseHours": 126.77,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Fund-My-Cause/Fund-My-Cause",
+        "repoUrl": "https://github.com/Fund-My-Cause/Fund-My-Cause",
+        "org": "Fund-My-Cause",
+        "openIssues": 12,
+        "unassignedOpen": 0,
+        "closedInWave": 113,
+        "pointsScored": 22600,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 69.19,
+        "medianTimeToCloseHours": 65.82,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -60942,6 +61250,24 @@
         "distinctContributors": 34,
         "avgTimeToCloseHours": 208.66,
         "medianTimeToCloseHours": 113.59,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "BrainTease/Brain-Storm",
+        "repoUrl": "https://github.com/BrainTease/Brain-Storm",
+        "org": "BrainTease",
+        "openIssues": 13,
+        "unassignedOpen": 0,
+        "closedInWave": 112,
+        "pointsScored": 22400,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 68.48,
+        "medianTimeToCloseHours": 69.9,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -61292,24 +61618,6 @@
         "tags": []
       },
       {
-        "repo": "StellarState/SS-frontend",
-        "repoUrl": "https://github.com/StellarState/SS-frontend",
-        "org": "StellarState",
-        "openIssues": 15,
-        "unassignedOpen": 2,
-        "closedInWave": 110,
-        "pointsScored": 22000,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 44.67,
-        "medianTimeToCloseHours": 21.99,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "AyinkxLab/ai-code-assistant",
         "repoUrl": "https://github.com/AyinkxLab/ai-code-assistant",
         "org": "AyinkxLab",
@@ -61392,24 +61700,6 @@
         "distinctContributors": 32,
         "avgTimeToCloseHours": 8.8,
         "medianTimeToCloseHours": 3.99,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Fund-My-Cause/Fund-My-Cause",
-        "repoUrl": "https://github.com/Fund-My-Cause/Fund-My-Cause",
-        "org": "Fund-My-Cause",
-        "openIssues": 16,
-        "unassignedOpen": 0,
-        "closedInWave": 109,
-        "pointsScored": 21800,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 66.72,
-        "medianTimeToCloseHours": 65.82,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -61580,24 +61870,6 @@
         "tags": []
       },
       {
-        "repo": "BrainTease/Brain-Storm",
-        "repoUrl": "https://github.com/BrainTease/Brain-Storm",
-        "org": "BrainTease",
-        "openIssues": 17,
-        "unassignedOpen": 0,
-        "closedInWave": 108,
-        "pointsScored": 21600,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 65.96,
-        "medianTimeToCloseHours": 65.89,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "bridgelet-org/bridgelet-core",
         "repoUrl": "https://github.com/bridgelet-org/bridgelet-core",
         "org": "bridgelet-org",
@@ -61620,10 +61892,10 @@
         "repoUrl": "https://github.com/Vatix-Protocol/Swyft",
         "org": "Vatix-Protocol",
         "openIssues": 17,
-        "unassignedOpen": 1,
+        "unassignedOpen": 0,
         "closedInWave": 108,
         "pointsScored": 21600,
-        "distinctContributors": 32,
+        "distinctContributors": 33,
         "avgTimeToCloseHours": 59.54,
         "medianTimeToCloseHours": 48.93,
         "pointsBudget": 25000,
@@ -61764,7 +62036,7 @@
         "repoUrl": "https://github.com/JhayJ22/remitlend",
         "org": "JhayJ22",
         "openIssues": 24,
-        "unassignedOpen": 3,
+        "unassignedOpen": 1,
         "closedInWave": 107,
         "pointsScored": 21400,
         "distinctContributors": 36,
@@ -61886,6 +62158,24 @@
         "tags": []
       },
       {
+        "repo": "Akanimoh12/Stellar-Tipz",
+        "repoUrl": "https://github.com/Akanimoh12/Stellar-Tipz",
+        "org": "Akanimoh12",
+        "openIssues": 24,
+        "unassignedOpen": 0,
+        "closedInWave": 105,
+        "pointsScored": 21000,
+        "distinctContributors": 35,
+        "avgTimeToCloseHours": 906.04,
+        "medianTimeToCloseHours": 912.32,
+        "pointsBudget": 25000,
+        "pointsUsed": 24900,
+        "pointsRemaining": 100,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "ada-nwali/AutoMint",
         "repoUrl": "https://github.com/ada-nwali/AutoMint",
         "org": "ada-nwali",
@@ -61917,24 +62207,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 24000,
         "pointsRemaining": 1000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Akanimoh12/Stellar-Tipz",
-        "repoUrl": "https://github.com/Akanimoh12/Stellar-Tipz",
-        "org": "Akanimoh12",
-        "openIssues": 25,
-        "unassignedOpen": 2,
-        "closedInWave": 104,
-        "pointsScored": 20800,
-        "distinctContributors": 34,
-        "avgTimeToCloseHours": 905.41,
-        "medianTimeToCloseHours": 912.32,
-        "pointsBudget": 25000,
-        "pointsUsed": 24900,
-        "pointsRemaining": 100,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -62061,6 +62333,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 24200,
         "pointsRemaining": 800,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "MergeFi/contracts",
+        "repoUrl": "https://github.com/MergeFi/contracts",
+        "org": "MergeFi",
+        "openIssues": 16,
+        "unassignedOpen": 8,
+        "closedInWave": 104,
+        "pointsScored": 20800,
+        "distinctContributors": 30,
+        "avgTimeToCloseHours": 224.02,
+        "medianTimeToCloseHours": 228.8,
+        "pointsBudget": 25000,
+        "pointsUsed": 24900,
+        "pointsRemaining": 100,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -62556,10 +62846,10 @@
         "repoUrl": "https://github.com/Vatix-Protocol/vatix-contract",
         "org": "Vatix-Protocol",
         "openIssues": 25,
-        "unassignedOpen": 1,
+        "unassignedOpen": 0,
         "closedInWave": 100,
         "pointsScored": 20000,
-        "distinctContributors": 31,
+        "distinctContributors": 32,
         "avgTimeToCloseHours": 85.62,
         "medianTimeToCloseHours": 93.15,
         "pointsBudget": 25000,
@@ -62601,24 +62891,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 24000,
         "pointsRemaining": 1000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "MergeFi/contracts",
-        "repoUrl": "https://github.com/MergeFi/contracts",
-        "org": "MergeFi",
-        "openIssues": 20,
-        "unassignedOpen": 8,
-        "closedInWave": 100,
-        "pointsScored": 20000,
-        "distinctContributors": 30,
-        "avgTimeToCloseHours": 221.29,
-        "medianTimeToCloseHours": 228.79,
-        "pointsBudget": 25000,
-        "pointsUsed": 24900,
-        "pointsRemaining": 100,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -62822,6 +63094,24 @@
         "tags": []
       },
       {
+        "repo": "Akanimoh12/Stellar-iPredict",
+        "repoUrl": "https://github.com/Akanimoh12/Stellar-iPredict",
+        "org": "Akanimoh12",
+        "openIssues": 30,
+        "unassignedOpen": 0,
+        "closedInWave": 98,
+        "pointsScored": 19600,
+        "distinctContributors": 36,
+        "avgTimeToCloseHours": 1197.05,
+        "medianTimeToCloseHours": 950.81,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "sorolens/sorolens",
         "repoUrl": "https://github.com/sorolens/sorolens",
         "org": "sorolens",
@@ -62871,6 +63161,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 22800,
         "pointsRemaining": 2200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "privexlabs/BrandBlitz",
+        "repoUrl": "https://github.com/privexlabs/BrandBlitz",
+        "org": "privexlabs",
+        "openIssues": 30,
+        "unassignedOpen": 1,
+        "closedInWave": 97,
+        "pointsScored": 19400,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 2802.0,
+        "medianTimeToCloseHours": 2789.36,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -62966,6 +63274,24 @@
         "tags": []
       },
       {
+        "repo": "OpenKnight-Foundation/KnightVerse",
+        "repoUrl": "https://github.com/OpenKnight-Foundation/KnightVerse",
+        "org": "OpenKnight-Foundation",
+        "openIssues": 30,
+        "unassignedOpen": 3,
+        "closedInWave": 96,
+        "pointsScored": 19200,
+        "distinctContributors": 50,
+        "avgTimeToCloseHours": 78.52,
+        "medianTimeToCloseHours": 61.8,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "chioma-housing-protocol-I/chioma",
         "repoUrl": "https://github.com/chioma-housing-protocol-I/chioma",
         "org": "chioma-housing-protocol-I",
@@ -63006,10 +63332,10 @@
         "repoUrl": "https://github.com/Vatix-Protocol/vatix-backend",
         "org": "Vatix-Protocol",
         "openIssues": 29,
-        "unassignedOpen": 18,
+        "unassignedOpen": 0,
         "closedInWave": 96,
         "pointsScored": 19200,
-        "distinctContributors": 27,
+        "distinctContributors": 32,
         "avgTimeToCloseHours": 125.84,
         "medianTimeToCloseHours": 123.28,
         "pointsBudget": 25000,
@@ -63164,6 +63490,24 @@
         "tags": []
       },
       {
+        "repo": "Xoulomon/Stellar-Save",
+        "repoUrl": "https://github.com/Xoulomon/Stellar-Save",
+        "org": "Xoulomon",
+        "openIssues": 30,
+        "unassignedOpen": 0,
+        "closedInWave": 95,
+        "pointsScored": 19000,
+        "distinctContributors": 33,
+        "avgTimeToCloseHours": 92.38,
+        "medianTimeToCloseHours": 78.8,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Servora/StellarCert",
         "repoUrl": "https://github.com/Servora/StellarCert",
         "org": "Servora",
@@ -63177,24 +63521,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 21050,
         "pointsRemaining": 3950,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Akanimoh12/Stellar-iPredict",
-        "repoUrl": "https://github.com/Akanimoh12/Stellar-iPredict",
-        "org": "Akanimoh12",
-        "openIssues": 34,
-        "unassignedOpen": 2,
-        "closedInWave": 94,
-        "pointsScored": 18800,
-        "distinctContributors": 35,
-        "avgTimeToCloseHours": 1193.73,
-        "medianTimeToCloseHours": 950.81,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -63290,24 +63616,6 @@
         "tags": []
       },
       {
-        "repo": "privexlabs/BrandBlitz",
-        "repoUrl": "https://github.com/privexlabs/BrandBlitz",
-        "org": "privexlabs",
-        "openIssues": 34,
-        "unassignedOpen": 1,
-        "closedInWave": 93,
-        "pointsScored": 18600,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 2799.37,
-        "medianTimeToCloseHours": 2789.36,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "NovaGrids/VaultDAO",
         "repoUrl": "https://github.com/NovaGrids/VaultDAO",
         "org": "NovaGrids",
@@ -63375,6 +63683,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 24800,
         "pointsRemaining": 200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Tech-Cred/stellar-contract-platform",
+        "repoUrl": "https://github.com/Tech-Cred/stellar-contract-platform",
+        "org": "Tech-Cred",
+        "openIssues": 30,
+        "unassignedOpen": 0,
+        "closedInWave": 92,
+        "pointsScored": 18400,
+        "distinctContributors": 39,
+        "avgTimeToCloseHours": 1433.87,
+        "medianTimeToCloseHours": 1432.15,
+        "pointsBudget": 25000,
+        "pointsUsed": 24400,
+        "pointsRemaining": 600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -63501,60 +63827,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "OpenKnight-Foundation/KnightVerse",
-        "repoUrl": "https://github.com/OpenKnight-Foundation/KnightVerse",
-        "org": "OpenKnight-Foundation",
-        "openIssues": 35,
-        "unassignedOpen": 3,
-        "closedInWave": 91,
-        "pointsScored": 18200,
-        "distinctContributors": 50,
-        "avgTimeToCloseHours": 75.43,
-        "medianTimeToCloseHours": 61.79,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Xoulomon/Stellar-Save",
-        "repoUrl": "https://github.com/Xoulomon/Stellar-Save",
-        "org": "Xoulomon",
-        "openIssues": 34,
-        "unassignedOpen": 0,
-        "closedInWave": 91,
-        "pointsScored": 18200,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 90.47,
-        "medianTimeToCloseHours": 78.8,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Tech-Cred/stellar-contract-platform",
-        "repoUrl": "https://github.com/Tech-Cred/stellar-contract-platform",
-        "org": "Tech-Cred",
-        "openIssues": 31,
-        "unassignedOpen": 0,
-        "closedInWave": 91,
-        "pointsScored": 18200,
-        "distinctContributors": 39,
-        "avgTimeToCloseHours": 1433.27,
-        "medianTimeToCloseHours": 1432.14,
-        "pointsBudget": 25000,
-        "pointsUsed": 24400,
-        "pointsRemaining": 600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -64056,24 +64328,6 @@
         "distinctContributors": 44,
         "avgTimeToCloseHours": 302.92,
         "medianTimeToCloseHours": 92.54,
-        "pointsBudget": 25000,
-        "pointsUsed": 25000,
-        "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Blue-Kollar/Blue-Collar",
-        "repoUrl": "https://github.com/Blue-Kollar/Blue-Collar",
-        "org": "Blue-Kollar",
-        "openIssues": 40,
-        "unassignedOpen": 0,
-        "closedInWave": 85,
-        "pointsScored": 17000,
-        "distinctContributors": 33,
-        "avgTimeToCloseHours": 59.05,
-        "medianTimeToCloseHours": 66.74,
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
@@ -64877,16 +65131,16 @@
         "repo": "OGRoute/openajo-contract",
         "repoUrl": "https://github.com/OGRoute/openajo-contract",
         "org": "OGRoute",
-        "openIssues": 41,
-        "unassignedOpen": 8,
+        "openIssues": 45,
+        "unassignedOpen": 0,
         "closedInWave": 75,
         "pointsScored": 15000,
-        "distinctContributors": 27,
+        "distinctContributors": 30,
         "avgTimeToCloseHours": 137.37,
         "medianTimeToCloseHours": 118.95,
         "pointsBudget": 25000,
-        "pointsUsed": 23200,
-        "pointsRemaining": 1800,
+        "pointsUsed": 24000,
+        "pointsRemaining": 1000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -64995,6 +65249,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 24900,
         "pointsRemaining": 100,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Smartdevs17/stellarlend",
+        "repoUrl": "https://github.com/Smartdevs17/stellarlend",
+        "org": "Smartdevs17",
+        "openIssues": 13,
+        "unassignedOpen": 0,
+        "closedInWave": 73,
+        "pointsScored": 14600,
+        "distinctContributors": 26,
+        "avgTimeToCloseHours": 44.19,
+        "medianTimeToCloseHours": 35.1,
+        "pointsBudget": 25000,
+        "pointsUsed": 17400,
+        "pointsRemaining": 7600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -65147,16 +65419,16 @@
         "repo": "ASTROIDX556/astroid-contract",
         "repoUrl": "https://github.com/ASTROIDX556/astroid-contract",
         "org": "ASTROIDX556",
-        "openIssues": 24,
-        "unassignedOpen": 1,
+        "openIssues": 28,
+        "unassignedOpen": 0,
         "closedInWave": 71,
         "pointsScored": 14200,
-        "distinctContributors": 26,
+        "distinctContributors": 28,
         "avgTimeToCloseHours": 36.43,
         "medianTimeToCloseHours": 36.29,
         "pointsBudget": 25000,
-        "pointsUsed": 18800,
-        "pointsRemaining": 6200,
+        "pointsUsed": 19600,
+        "pointsRemaining": 5400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -65211,24 +65483,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Smartdevs17/stellarlend",
-        "repoUrl": "https://github.com/Smartdevs17/stellarlend",
-        "org": "Smartdevs17",
-        "openIssues": 17,
-        "unassignedOpen": 0,
-        "closedInWave": 69,
-        "pointsScored": 13800,
-        "distinctContributors": 26,
-        "avgTimeToCloseHours": 40.1,
-        "medianTimeToCloseHours": 32.9,
-        "pointsBudget": 25000,
-        "pointsUsed": 17400,
-        "pointsRemaining": 7600,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -65972,6 +66226,24 @@
         "tags": []
       },
       {
+        "repo": "Godgift-care/sci-healthcare-frontend",
+        "repoUrl": "https://github.com/Godgift-care/sci-healthcare-frontend",
+        "org": "Godgift-care",
+        "openIssues": 70,
+        "unassignedOpen": 0,
+        "closedInWave": 60,
+        "pointsScored": 11900,
+        "distinctContributors": 49,
+        "avgTimeToCloseHours": 148.84,
+        "medianTimeToCloseHours": 102.64,
+        "pointsBudget": 25000,
+        "pointsUsed": 24500,
+        "pointsRemaining": 500,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Obiajulu-gif/eduvault-archive",
         "repoUrl": "https://github.com/Obiajulu-gif/eduvault-archive",
         "org": "Obiajulu-gif",
@@ -65985,24 +66257,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 24900,
         "pointsRemaining": 100,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Godgift-care/sci-healthcare-frontend",
-        "repoUrl": "https://github.com/Godgift-care/sci-healthcare-frontend",
-        "org": "Godgift-care",
-        "openIssues": 71,
-        "unassignedOpen": 0,
-        "closedInWave": 59,
-        "pointsScored": 11800,
-        "distinctContributors": 49,
-        "avgTimeToCloseHours": 137.11,
-        "medianTimeToCloseHours": 102.63,
-        "pointsBudget": 25000,
-        "pointsUsed": 24600,
-        "pointsRemaining": 400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -66116,6 +66370,24 @@
         "tags": []
       },
       {
+        "repo": "mergepay/mergepay-api",
+        "repoUrl": "https://github.com/mergepay/mergepay-api",
+        "org": "mergepay",
+        "openIssues": 69,
+        "unassignedOpen": 60,
+        "closedInWave": 56,
+        "pointsScored": 11200,
+        "distinctContributors": 17,
+        "avgTimeToCloseHours": 113.45,
+        "medianTimeToCloseHours": 108.62,
+        "pointsBudget": 25000,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "DocForum/docforum-core",
         "repoUrl": "https://github.com/DocForum/docforum-core",
         "org": "DocForum",
@@ -66201,6 +66473,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 14500,
         "pointsRemaining": 10500,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "StormSale/StormSale",
+        "repoUrl": "https://github.com/StormSale/StormSale",
+        "org": "StormSale",
+        "openIssues": 96,
+        "unassignedOpen": 2,
+        "closedInWave": 58,
+        "pointsScored": 11050,
+        "distinctContributors": 46,
+        "avgTimeToCloseHours": 920.69,
+        "medianTimeToCloseHours": 201.76,
+        "pointsBudget": 25000,
+        "pointsUsed": 23550,
+        "pointsRemaining": 1450,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -66435,24 +66725,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 25000,
         "pointsRemaining": 0,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "mergepay/mergepay-api",
-        "repoUrl": "https://github.com/mergepay/mergepay-api",
-        "org": "mergepay",
-        "openIssues": 26,
-        "unassignedOpen": 13,
-        "closedInWave": 52,
-        "pointsScored": 10400,
-        "distinctContributors": 17,
-        "avgTimeToCloseHours": 112.63,
-        "medianTimeToCloseHours": 108.62,
-        "pointsBudget": 25000,
-        "pointsUsed": 15600,
-        "pointsRemaining": 9400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -66872,6 +67144,24 @@
         "tags": []
       },
       {
+        "repo": "StellarState/SS-backend",
+        "repoUrl": "https://github.com/StellarState/SS-backend",
+        "org": "StellarState",
+        "openIssues": 25,
+        "unassignedOpen": 0,
+        "closedInWave": 56,
+        "pointsScored": 9400,
+        "distinctContributors": 27,
+        "avgTimeToCloseHours": 154.27,
+        "medianTimeToCloseHours": 61.33,
+        "pointsBudget": 25000,
+        "pointsUsed": 20800,
+        "pointsRemaining": 4200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Neurowealth/NeuroWealth-Smartcontract",
         "repoUrl": "https://github.com/Neurowealth/NeuroWealth-Smartcontract",
         "org": "Neurowealth",
@@ -66975,6 +67265,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 22800,
         "pointsRemaining": 2200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Kevin737866/stellar-web3-toolkit",
+        "repoUrl": "https://github.com/Kevin737866/stellar-web3-toolkit",
+        "org": "Kevin737866",
+        "openIssues": 98,
+        "unassignedOpen": 36,
+        "closedInWave": 49,
+        "pointsScored": 8950,
+        "distinctContributors": 38,
+        "avgTimeToCloseHours": 864.04,
+        "medianTimeToCloseHours": 631.45,
+        "pointsBudget": 25000,
+        "pointsUsed": 20300,
+        "pointsRemaining": 4700,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -67137,24 +67445,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 15000,
         "pointsRemaining": 10000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "StellarState/SS-backend",
-        "repoUrl": "https://github.com/StellarState/SS-backend",
-        "org": "StellarState",
-        "openIssues": 29,
-        "unassignedOpen": 0,
-        "closedInWave": 52,
-        "pointsScored": 8600,
-        "distinctContributors": 27,
-        "avgTimeToCloseHours": 159.41,
-        "medianTimeToCloseHours": 55.51,
-        "pointsBudget": 25000,
-        "pointsUsed": 20800,
-        "pointsRemaining": 4200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -67700,32 +67990,14 @@
         "tags": []
       },
       {
-        "repo": "StormSale/StormSale",
-        "repoUrl": "https://github.com/StormSale/StormSale",
-        "org": "StormSale",
-        "openIssues": 119,
-        "unassignedOpen": 2,
-        "closedInWave": 35,
-        "pointsScored": 6950,
-        "distinctContributors": 46,
-        "avgTimeToCloseHours": 988.52,
-        "medianTimeToCloseHours": 901.85,
-        "pointsBudget": 25000,
-        "pointsUsed": 24850,
-        "pointsRemaining": 150,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Wayfare-labs/wayfare",
         "repoUrl": "https://github.com/Wayfare-labs/wayfare",
         "org": "Wayfare-labs",
         "openIssues": 99,
-        "unassignedOpen": 15,
+        "unassignedOpen": 11,
         "closedInWave": 35,
         "pointsScored": 6850,
-        "distinctContributors": 44,
+        "distinctContributors": 48,
         "avgTimeToCloseHours": 882.49,
         "medianTimeToCloseHours": 923.45,
         "pointsBudget": 25000,
@@ -67811,16 +68083,16 @@
         "repo": "Savitura/Savitools",
         "repoUrl": "https://github.com/Savitura/Savitools",
         "org": "Savitura",
-        "openIssues": 58,
-        "unassignedOpen": 9,
+        "openIssues": 78,
+        "unassignedOpen": 18,
         "closedInWave": 33,
         "pointsScored": 6600,
-        "distinctContributors": 46,
+        "distinctContributors": 49,
         "avgTimeToCloseHours": 375.96,
         "medianTimeToCloseHours": 59.26,
         "pointsBudget": 25000,
-        "pointsUsed": 15800,
-        "pointsRemaining": 9200,
+        "pointsUsed": 19800,
+        "pointsRemaining": 5200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -68183,6 +68455,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 14600,
         "pointsRemaining": 10400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "plimsoll-protocol/plimsoll-app",
+        "repoUrl": "https://github.com/plimsoll-protocol/plimsoll-app",
+        "org": "plimsoll-protocol",
+        "openIssues": 43,
+        "unassignedOpen": 0,
+        "closedInWave": 28,
+        "pointsScored": 5600,
+        "distinctContributors": 18,
+        "avgTimeToCloseHours": 309.74,
+        "medianTimeToCloseHours": 201.33,
+        "pointsBudget": 25000,
+        "pointsUsed": 14200,
+        "pointsRemaining": 10800,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -68674,6 +68964,24 @@
         "tags": []
       },
       {
+        "repo": "Altacon-Labs/RevMarket",
+        "repoUrl": "https://github.com/Altacon-Labs/RevMarket",
+        "org": "Altacon-Labs",
+        "openIssues": 26,
+        "unassignedOpen": 24,
+        "closedInWave": 24,
+        "pointsScored": 4300,
+        "distinctContributors": 10,
+        "avgTimeToCloseHours": 156.5,
+        "medianTimeToCloseHours": 161.87,
+        "pointsBudget": 25000,
+        "pointsUsed": 7100,
+        "pointsRemaining": 17900,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "Talenttrust/Talenttrust-Contracts",
         "repoUrl": "https://github.com/Talenttrust/Talenttrust-Contracts",
         "org": "Talenttrust",
@@ -68759,24 +69067,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 10200,
         "pointsRemaining": 14800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Altacon-Labs/RevMarket",
-        "repoUrl": "https://github.com/Altacon-Labs/RevMarket",
-        "org": "Altacon-Labs",
-        "openIssues": 3,
-        "unassignedOpen": 0,
-        "closedInWave": 23,
-        "pointsScored": 4100,
-        "distinctContributors": 10,
-        "avgTimeToCloseHours": 155.29,
-        "medianTimeToCloseHours": 160.23,
-        "pointsBudget": 25000,
-        "pointsUsed": 4600,
-        "pointsRemaining": 20400,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -69002,10 +69292,10 @@
         "repoUrl": "https://github.com/Kevin737866/stellar-defi-toolkit",
         "org": "Kevin737866",
         "openIssues": 14,
-        "unassignedOpen": 6,
+        "unassignedOpen": 4,
         "closedInWave": 20,
         "pointsScored": 4000,
-        "distinctContributors": 11,
+        "distinctContributors": 13,
         "avgTimeToCloseHours": 2798.55,
         "medianTimeToCloseHours": 2801.2,
         "pointsBudget": 25000,
@@ -69019,16 +69309,16 @@
         "repo": "Savitura/crowdpay",
         "repoUrl": "https://github.com/Savitura/crowdpay",
         "org": "Savitura",
-        "openIssues": 89,
-        "unassignedOpen": 1,
+        "openIssues": 109,
+        "unassignedOpen": 2,
         "closedInWave": 19,
         "pointsScored": 3800,
-        "distinctContributors": 58,
+        "distinctContributors": 63,
         "avgTimeToCloseHours": 138.64,
         "medianTimeToCloseHours": 62.14,
         "pointsBudget": 25000,
-        "pointsUsed": 16300,
-        "pointsRemaining": 8700,
+        "pointsUsed": 20300,
+        "pointsRemaining": 4700,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -69304,24 +69594,6 @@
         "tags": []
       },
       {
-        "repo": "Kevin737866/stellar-web3-toolkit",
-        "repoUrl": "https://github.com/Kevin737866/stellar-web3-toolkit",
-        "org": "Kevin737866",
-        "openIssues": 130,
-        "unassignedOpen": 58,
-        "closedInWave": 17,
-        "pointsScored": 3250,
-        "distinctContributors": 27,
-        "avgTimeToCloseHours": 845.2,
-        "medianTimeToCloseHours": 604.97,
-        "pointsBudget": 25000,
-        "pointsUsed": 21800,
-        "pointsRemaining": 3200,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "Elite-Work/EliteWork",
         "repoUrl": "https://github.com/Elite-Work/EliteWork",
         "org": "Elite-Work",
@@ -69414,24 +69686,6 @@
         "tags": [
           "Build On Stellar Hackathon - IBW 2026"
         ]
-      },
-      {
-        "repo": "plimsoll-protocol/plimsoll-app",
-        "repoUrl": "https://github.com/plimsoll-protocol/plimsoll-app",
-        "org": "plimsoll-protocol",
-        "openIssues": 55,
-        "unassignedOpen": 7,
-        "closedInWave": 16,
-        "pointsScored": 3200,
-        "distinctContributors": 17,
-        "avgTimeToCloseHours": 143.37,
-        "medianTimeToCloseHours": 133.76,
-        "pointsBudget": 25000,
-        "pointsUsed": 14200,
-        "pointsRemaining": 10800,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
       },
       {
         "repo": "ASTROIDX556/astroid-sdk",
@@ -69636,6 +69890,24 @@
         "tags": []
       },
       {
+        "repo": "Open-Hub-Tec/yucu-protocol",
+        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
+        "org": "Open-Hub-Tec",
+        "openIssues": 79,
+        "unassignedOpen": 45,
+        "closedInWave": 23,
+        "pointsScored": 2650,
+        "distinctContributors": 56,
+        "avgTimeToCloseHours": 346.06,
+        "medianTimeToCloseHours": 144.01,
+        "pointsBudget": 25000,
+        "pointsUsed": 11800,
+        "pointsRemaining": 13200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "ToluLabs/StellarCred",
         "repoUrl": "https://github.com/ToluLabs/StellarCred",
         "org": "ToluLabs",
@@ -69726,19 +69998,37 @@
         "tags": []
       },
       {
+        "repo": "SO4-Markets/interface",
+        "repoUrl": "https://github.com/SO4-Markets/interface",
+        "org": "SO4-Markets",
+        "openIssues": 25,
+        "unassignedOpen": 9,
+        "closedInWave": 13,
+        "pointsScored": 2600,
+        "distinctContributors": 13,
+        "avgTimeToCloseHours": 543.41,
+        "medianTimeToCloseHours": 904.63,
+        "pointsBudget": 25000,
+        "pointsUsed": 7200,
+        "pointsRemaining": 17800,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "safetrustcr/frontend-SafeTrust",
         "repoUrl": "https://github.com/safetrustcr/frontend-SafeTrust",
         "org": "safetrustcr",
-        "openIssues": 9,
-        "unassignedOpen": 0,
+        "openIssues": 17,
+        "unassignedOpen": 5,
         "closedInWave": 4,
         "pointsScored": 2600,
-        "distinctContributors": 12,
+        "distinctContributors": 13,
         "avgTimeToCloseHours": 63.92,
         "medianTimeToCloseHours": 75.54,
         "pointsBudget": 25000,
-        "pointsUsed": 2250,
-        "pointsRemaining": 22750,
+        "pointsUsed": 3650,
+        "pointsRemaining": 21350,
         "pointsMultiplier": 4,
         "isFeatured": true,
         "tags": []
@@ -69816,24 +70106,6 @@
         "tags": []
       },
       {
-        "repo": "OFFER-HUB/offer-hub-monorepo",
-        "repoUrl": "https://github.com/OFFER-HUB/offer-hub-monorepo",
-        "org": "OFFER-HUB",
-        "openIssues": 31,
-        "unassignedOpen": 5,
-        "closedInWave": 3,
-        "pointsScored": 2400,
-        "distinctContributors": 26,
-        "avgTimeToCloseHours": 69.35,
-        "medianTimeToCloseHours": 69.98,
-        "pointsBudget": 25000,
-        "pointsUsed": 6800,
-        "pointsRemaining": 18200,
-        "pointsMultiplier": 4,
-        "isFeatured": true,
-        "tags": []
-      },
-      {
         "repo": "Flamki/stellarmind",
         "repoUrl": "https://github.com/Flamki/stellarmind",
         "org": "Flamki",
@@ -69852,6 +70124,24 @@
         "tags": [
           "Stellar Agentic Hackathon"
         ]
+      },
+      {
+        "repo": "OFFER-HUB/offer-hub-monorepo",
+        "repoUrl": "https://github.com/OFFER-HUB/offer-hub-monorepo",
+        "org": "OFFER-HUB",
+        "openIssues": 27,
+        "unassignedOpen": 1,
+        "closedInWave": 3,
+        "pointsScored": 2400,
+        "distinctContributors": 26,
+        "avgTimeToCloseHours": 69.35,
+        "medianTimeToCloseHours": 69.98,
+        "pointsBudget": 25000,
+        "pointsUsed": 6000,
+        "pointsRemaining": 19000,
+        "pointsMultiplier": 4,
+        "isFeatured": true,
+        "tags": []
       },
       {
         "repo": "veridatum-labs/earnproof-frontend",
@@ -69885,24 +70175,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 4600,
         "pointsRemaining": 20400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Open-Hub-Tec/yucu-protocol",
-        "repoUrl": "https://github.com/Open-Hub-Tec/yucu-protocol",
-        "org": "Open-Hub-Tec",
-        "openIssues": 82,
-        "unassignedOpen": 47,
-        "closedInWave": 20,
-        "pointsScored": 2350,
-        "distinctContributors": 55,
-        "avgTimeToCloseHours": 334.13,
-        "medianTimeToCloseHours": 141.61,
-        "pointsBudget": 25000,
-        "pointsUsed": 11800,
-        "pointsRemaining": 13200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -69983,16 +70255,16 @@
         "repo": "mergepay/mergepay-web",
         "repoUrl": "https://github.com/mergepay/mergepay-web",
         "org": "mergepay",
-        "openIssues": 112,
-        "unassignedOpen": 49,
+        "openIssues": 120,
+        "unassignedOpen": 57,
         "closedInWave": 11,
         "pointsScored": 2100,
         "distinctContributors": 24,
         "avgTimeToCloseHours": 285.86,
         "medianTimeToCloseHours": 60.92,
         "pointsBudget": 25000,
-        "pointsUsed": 23500,
-        "pointsRemaining": 1500,
+        "pointsUsed": 25000,
+        "pointsRemaining": 0,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -70155,24 +70427,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 14000,
         "pointsRemaining": 11000,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "SO4-Markets/interface",
-        "repoUrl": "https://github.com/SO4-Markets/interface",
-        "org": "SO4-Markets",
-        "openIssues": 26,
-        "unassignedOpen": 7,
-        "closedInWave": 8,
-        "pointsScored": 1600,
-        "distinctContributors": 12,
-        "avgTimeToCloseHours": 872.83,
-        "medianTimeToCloseHours": 904.64,
-        "pointsBudget": 25000,
-        "pointsUsed": 6800,
-        "pointsRemaining": 18200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -70598,7 +70852,7 @@
         "repoUrl": "https://github.com/EziAgric/EziAgric",
         "org": "EziAgric",
         "openIssues": 70,
-        "unassignedOpen": 33,
+        "unassignedOpen": 30,
         "closedInWave": 4,
         "pointsScored": 800,
         "distinctContributors": 11,
@@ -70634,10 +70888,10 @@
         "repoUrl": "https://github.com/ShadeProtocol/shade-stellar-contract",
         "org": "ShadeProtocol",
         "openIssues": 58,
-        "unassignedOpen": 41,
+        "unassignedOpen": 40,
         "closedInWave": 4,
         "pointsScored": 800,
-        "distinctContributors": 17,
+        "distinctContributors": 18,
         "avgTimeToCloseHours": 821.24,
         "medianTimeToCloseHours": 821.47,
         "pointsBudget": 25000,
@@ -70758,6 +71012,24 @@
         "tags": []
       },
       {
+        "repo": "Kevin737866/stellar-liquidity-yield-engine",
+        "repoUrl": "https://github.com/Kevin737866/stellar-liquidity-yield-engine",
+        "org": "Kevin737866",
+        "openIssues": 197,
+        "unassignedOpen": 119,
+        "closedInWave": 7,
+        "pointsScored": 700,
+        "distinctContributors": 43,
+        "avgTimeToCloseHours": 670.6,
+        "medianTimeToCloseHours": 633.38,
+        "pointsBudget": 25000,
+        "pointsUsed": 20800,
+        "pointsRemaining": 4200,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
         "repo": "CredenceOrg/Credence-Contracts",
         "repoUrl": "https://github.com/CredenceOrg/Credence-Contracts",
         "org": "CredenceOrg",
@@ -70780,10 +71052,10 @@
         "repoUrl": "https://github.com/SoroTags/SoroTags",
         "org": "SoroTags",
         "openIssues": 77,
-        "unassignedOpen": 12,
+        "unassignedOpen": 0,
         "closedInWave": 3,
         "pointsScored": 600,
-        "distinctContributors": 17,
+        "distinctContributors": 20,
         "avgTimeToCloseHours": 161.63,
         "medianTimeToCloseHours": 161.63,
         "pointsBudget": 25000,
@@ -70825,24 +71097,6 @@
         "pointsBudget": 25000,
         "pointsUsed": 11600,
         "pointsRemaining": 13400,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
-        "repo": "Kevin737866/stellar-liquidity-yield-engine",
-        "repoUrl": "https://github.com/Kevin737866/stellar-liquidity-yield-engine",
-        "org": "Kevin737866",
-        "openIssues": 200,
-        "unassignedOpen": 119,
-        "closedInWave": 4,
-        "pointsScored": 400,
-        "distinctContributors": 43,
-        "avgTimeToCloseHours": 698.52,
-        "medianTimeToCloseHours": 627.14,
-        "pointsBudget": 25000,
-        "pointsUsed": 20800,
-        "pointsRemaining": 4200,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -70897,6 +71151,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 19400,
         "pointsRemaining": 5600,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "Stellar-Kolo/kolo-contracts",
+        "repoUrl": "https://github.com/Stellar-Kolo/kolo-contracts",
+        "org": "Stellar-Kolo",
+        "openIssues": 75,
+        "unassignedOpen": 32,
+        "closedInWave": 2,
+        "pointsScored": 400,
+        "distinctContributors": 21,
+        "avgTimeToCloseHours": 184.68,
+        "medianTimeToCloseHours": 184.68,
+        "pointsBudget": 25000,
+        "pointsUsed": 16000,
+        "pointsRemaining": 9000,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -71009,6 +71281,24 @@
         "pointsBudget": 25000,
         "pointsUsed": 1600,
         "pointsRemaining": 23400,
+        "pointsMultiplier": 1,
+        "isFeatured": false,
+        "tags": []
+      },
+      {
+        "repo": "JafetCHVDev/soroban-quest",
+        "repoUrl": "https://github.com/JafetCHVDev/soroban-quest",
+        "org": "JafetCHVDev",
+        "openIssues": 10,
+        "unassignedOpen": 0,
+        "closedInWave": 3,
+        "pointsScored": 350,
+        "distinctContributors": 9,
+        "avgTimeToCloseHours": 127.88,
+        "medianTimeToCloseHours": 127.88,
+        "pointsBudget": 25000,
+        "pointsUsed": 1950,
+        "pointsRemaining": 23050,
         "pointsMultiplier": 1,
         "isFeatured": false,
         "tags": []
@@ -71272,10 +71562,10 @@
         "repoUrl": "https://github.com/Kevin737866/stellar-asset-tokenization-suite",
         "org": "Kevin737866",
         "openIssues": 157,
-        "unassignedOpen": 137,
+        "unassignedOpen": 123,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 9,
+        "distinctContributors": 14,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -71616,10 +71906,10 @@
         "repoUrl": "https://github.com/kellymusk/Aframp",
         "org": "kellymusk",
         "openIssues": 125,
-        "unassignedOpen": 20,
+        "unassignedOpen": 12,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 29,
+        "distinctContributors": 31,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -72422,24 +72712,6 @@
         "tags": []
       },
       {
-        "repo": "Stellar-Kolo/kolo-contracts",
-        "repoUrl": "https://github.com/Stellar-Kolo/kolo-contracts",
-        "org": "Stellar-Kolo",
-        "openIssues": 82,
-        "unassignedOpen": 34,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 21,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 16400,
-        "pointsRemaining": 8600,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
-      },
-      {
         "repo": "CoralSwap-Finance/coralswap-sdk",
         "repoUrl": "https://github.com/CoralSwap-Finance/coralswap-sdk",
         "org": "CoralSwap-Finance",
@@ -72662,10 +72934,10 @@
         "repoUrl": "https://github.com/codebestia/clicked",
         "org": "codebestia",
         "openIssues": 54,
-        "unassignedOpen": 41,
+        "unassignedOpen": 29,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 10,
+        "distinctContributors": 18,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -73208,10 +73480,10 @@
         "repoUrl": "https://github.com/Inferara/soroban-security-portal",
         "org": "Inferara",
         "openIssues": 22,
-        "unassignedOpen": 10,
+        "unassignedOpen": 9,
         "closedInWave": 0,
         "pointsScored": 0,
-        "distinctContributors": 10,
+        "distinctContributors": 11,
         "avgTimeToCloseHours": null,
         "medianTimeToCloseHours": null,
         "pointsBudget": 25000,
@@ -73426,24 +73698,6 @@
         "tags": [
           "Stellar Agentic Hackathon"
         ]
-      },
-      {
-        "repo": "JafetCHVDev/soroban-quest",
-        "repoUrl": "https://github.com/JafetCHVDev/soroban-quest",
-        "org": "JafetCHVDev",
-        "openIssues": 13,
-        "unassignedOpen": 0,
-        "closedInWave": 0,
-        "pointsScored": 0,
-        "distinctContributors": 9,
-        "avgTimeToCloseHours": null,
-        "medianTimeToCloseHours": null,
-        "pointsBudget": 25000,
-        "pointsUsed": 1950,
-        "pointsRemaining": 23050,
-        "pointsMultiplier": 1,
-        "isFeatured": false,
-        "tags": []
       },
       {
         "repo": "Neko-Protocol/Neko-Playground",
@@ -74521,22 +74775,22 @@
   },
   "waveEconomics": {
     "budgetUSD": 75000.0,
-    "usdPerPoint": 0.004534,
-    "usdPerScoredPoint": 0.007745,
-    "usdPaid": 43908.57,
-    "usdRemaining": 31091.43,
-    "projectedFinalScoredPts": 12513038,
+    "usdPerPoint": 0.004527,
+    "usdPerScoredPoint": 0.007721,
+    "usdPaid": 43977.94,
+    "usdRemaining": 31022.06,
+    "projectedFinalScoredPts": 12362016,
     "waveDurationHours": 168.0,
-    "elapsedHours": 130.0,
+    "elapsedHours": 132.0,
     "concentration": {
-      "top1pctShare": 5.14,
+      "top1pctShare": 5.13,
       "top10pctShare": 31.63,
-      "top3Share": 0.67,
-      "top10Share": 1.96,
+      "top3Share": 0.66,
+      "top10Share": 1.95,
       "medianPoints": 2400,
-      "meanPoints": 3307.91,
+      "meanPoints": 3304.7,
       "longTailUnder100pts": 0,
-      "attributedPoints": 9682250,
+      "attributedPoints": 9712500,
       "unattributedPoints": 1200,
       "unattributedIssues": 6
     },
@@ -74544,145 +74798,145 @@
       {
         "contributor": "Georgechisom",
         "pointsEarned": 22350,
-        "estimatedUSD": 101.34,
-        "shareOfScoredPct": 0.231,
-        "estimatedUSDIfEndedNow": 173.13
+        "estimatedUSD": 101.19,
+        "shareOfScoredPct": 0.23,
+        "estimatedUSDIfEndedNow": 172.59
       },
       {
         "contributor": "greyforreal",
         "pointsEarned": 21500,
-        "estimatedUSD": 97.49,
-        "shareOfScoredPct": 0.222,
-        "estimatedUSDIfEndedNow": 166.54
+        "estimatedUSD": 97.34,
+        "shareOfScoredPct": 0.221,
+        "estimatedUSDIfEndedNow": 166.02
       },
       {
         "contributor": "monique-7arch",
         "pointsEarned": 20600,
-        "estimatedUSD": 93.41,
-        "shareOfScoredPct": 0.213,
-        "estimatedUSDIfEndedNow": 159.57
+        "estimatedUSD": 93.26,
+        "shareOfScoredPct": 0.212,
+        "estimatedUSDIfEndedNow": 159.07
       },
       {
         "contributor": "NteinPrecious",
         "pointsEarned": 19200,
-        "estimatedUSD": 87.06,
+        "estimatedUSD": 86.93,
         "shareOfScoredPct": 0.198,
-        "estimatedUSDIfEndedNow": 148.73
+        "estimatedUSDIfEndedNow": 148.26
       },
       {
         "contributor": "robertocarlous",
         "pointsEarned": 19200,
-        "estimatedUSD": 87.06,
+        "estimatedUSD": 86.93,
         "shareOfScoredPct": 0.198,
-        "estimatedUSDIfEndedNow": 148.73
+        "estimatedUSDIfEndedNow": 148.26
       },
       {
         "contributor": "jayteemoney",
         "pointsEarned": 18200,
-        "estimatedUSD": 82.53,
-        "shareOfScoredPct": 0.188,
-        "estimatedUSDIfEndedNow": 140.98
+        "estimatedUSD": 82.4,
+        "shareOfScoredPct": 0.187,
+        "estimatedUSDIfEndedNow": 140.54
       },
       {
         "contributor": "Essther77-git",
         "pointsEarned": 17600,
-        "estimatedUSD": 79.81,
-        "shareOfScoredPct": 0.182,
-        "estimatedUSDIfEndedNow": 136.33
+        "estimatedUSD": 79.68,
+        "shareOfScoredPct": 0.181,
+        "estimatedUSDIfEndedNow": 135.91
       },
       {
         "contributor": "prismn",
         "pointsEarned": 17600,
-        "estimatedUSD": 79.81,
-        "shareOfScoredPct": 0.182,
-        "estimatedUSDIfEndedNow": 136.33
+        "estimatedUSD": 79.68,
+        "shareOfScoredPct": 0.181,
+        "estimatedUSDIfEndedNow": 135.91
       },
       {
         "contributor": "amberly-d",
         "pointsEarned": 16800,
-        "estimatedUSD": 76.18,
-        "shareOfScoredPct": 0.174,
-        "estimatedUSDIfEndedNow": 130.14
+        "estimatedUSD": 76.06,
+        "shareOfScoredPct": 0.173,
+        "estimatedUSDIfEndedNow": 129.73
       },
       {
         "contributor": "BigBen-7",
         "pointsEarned": 16800,
-        "estimatedUSD": 76.18,
-        "shareOfScoredPct": 0.174,
-        "estimatedUSDIfEndedNow": 130.14
+        "estimatedUSD": 76.06,
+        "shareOfScoredPct": 0.173,
+        "estimatedUSDIfEndedNow": 129.73
       },
       {
         "contributor": "demilade18-git",
         "pointsEarned": 16800,
-        "estimatedUSD": 76.18,
-        "shareOfScoredPct": 0.174,
-        "estimatedUSDIfEndedNow": 130.14
+        "estimatedUSD": 76.06,
+        "shareOfScoredPct": 0.173,
+        "estimatedUSDIfEndedNow": 129.73
       },
       {
         "contributor": "LGTM-ButItsBroken",
         "pointsEarned": 16800,
-        "estimatedUSD": 76.18,
-        "shareOfScoredPct": 0.174,
-        "estimatedUSDIfEndedNow": 130.14
+        "estimatedUSD": 76.06,
+        "shareOfScoredPct": 0.173,
+        "estimatedUSDIfEndedNow": 129.73
       },
       {
         "contributor": "sanmipaul",
         "pointsEarned": 16600,
-        "estimatedUSD": 75.27,
+        "estimatedUSD": 75.16,
         "shareOfScoredPct": 0.171,
-        "estimatedUSDIfEndedNow": 128.59
+        "estimatedUSDIfEndedNow": 128.19
       },
       {
         "contributor": "bobaivigitalpoint-ui",
         "pointsEarned": 16000,
-        "estimatedUSD": 72.55,
+        "estimatedUSD": 72.44,
         "shareOfScoredPct": 0.165,
-        "estimatedUSDIfEndedNow": 123.94
+        "estimatedUSDIfEndedNow": 123.55
       },
       {
         "contributor": "Femaleotaku",
         "pointsEarned": 16000,
-        "estimatedUSD": 72.55,
+        "estimatedUSD": 72.44,
         "shareOfScoredPct": 0.165,
-        "estimatedUSDIfEndedNow": 123.94
+        "estimatedUSDIfEndedNow": 123.55
       },
       {
         "contributor": "kike-alt",
         "pointsEarned": 16000,
-        "estimatedUSD": 72.55,
+        "estimatedUSD": 72.44,
         "shareOfScoredPct": 0.165,
-        "estimatedUSDIfEndedNow": 123.94
+        "estimatedUSDIfEndedNow": 123.55
       },
       {
         "contributor": "Mordy7",
         "pointsEarned": 16000,
-        "estimatedUSD": 72.55,
+        "estimatedUSD": 72.44,
         "shareOfScoredPct": 0.165,
-        "estimatedUSDIfEndedNow": 123.94
+        "estimatedUSDIfEndedNow": 123.55
       },
       {
         "contributor": "Chucks1093",
         "pointsEarned": 15400,
-        "estimatedUSD": 69.83,
+        "estimatedUSD": 69.72,
         "shareOfScoredPct": 0.159,
-        "estimatedUSDIfEndedNow": 119.29
+        "estimatedUSDIfEndedNow": 118.92
       },
       {
         "contributor": "Ibinola",
         "pointsEarned": 15200,
-        "estimatedUSD": 68.92,
-        "shareOfScoredPct": 0.157,
-        "estimatedUSDIfEndedNow": 117.74
+        "estimatedUSD": 68.82,
+        "shareOfScoredPct": 0.156,
+        "estimatedUSDIfEndedNow": 117.37
       },
       {
         "contributor": "JONAH-6",
         "pointsEarned": 15200,
-        "estimatedUSD": 68.92,
-        "shareOfScoredPct": 0.157,
-        "estimatedUSDIfEndedNow": 117.74
+        "estimatedUSD": 68.82,
+        "shareOfScoredPct": 0.156,
+        "estimatedUSDIfEndedNow": 117.37
       }
     ],
-    "allPayoutsCount": 2927
+    "allPayoutsCount": 2939
   },
   "velocity": {
     "series": [
@@ -75072,7 +75326,7 @@
       },
       {
         "hour": "2026-11-20T14:00Z",
-        "opened": 1967,
+        "opened": 1975,
         "closed": 544,
         "scoredPts": 108050,
         "newContributors": 50,
@@ -75144,7 +75398,7 @@
       },
       {
         "hour": "2026-11-20T23:00Z",
-        "opened": 178,
+        "opened": 182,
         "closed": 135,
         "scoredPts": 26800,
         "newContributors": 8,
@@ -75624,7 +75878,7 @@
       },
       {
         "hour": "2026-11-23T11:00Z",
-        "opened": 125,
+        "opened": 165,
         "closed": 971,
         "scoredPts": 159700,
         "newContributors": 27,
@@ -75672,7 +75926,7 @@
       },
       {
         "hour": "2026-11-23T17:00Z",
-        "opened": 67,
+        "opened": 107,
         "closed": 544,
         "scoredPts": 108200,
         "newContributors": 29,
@@ -75720,7 +75974,7 @@
       },
       {
         "hour": "2026-11-23T23:00Z",
-        "opened": 4,
+        "opened": 0,
         "closed": 125,
         "scoredPts": 25550,
         "newContributors": 4,
@@ -75728,26 +75982,42 @@
       },
       {
         "hour": "2026-11-24T00:00Z",
+        "opened": 4,
+        "closed": 92,
+        "scoredPts": 16550,
+        "newContributors": 8,
+        "prs": 92
+      },
+      {
+        "hour": "2026-11-24T01:00Z",
+        "opened": 39,
+        "closed": 76,
+        "scoredPts": 14900,
+        "newContributors": 4,
+        "prs": 76
+      },
+      {
+        "hour": "2026-11-24T02:00Z",
         "opened": 0,
-        "closed": 6,
-        "scoredPts": 1200,
+        "closed": 0,
+        "scoredPts": 0,
         "newContributors": 0,
-        "prs": 6
+        "prs": 0
       }
     ],
     "totals": {
-      "openedInWave": 37933,
-      "openedInWaveStillOpen": 17800,
-      "closedInWave": 49113,
-      "scoredInWave": 9683450,
-      "newContributorsInWave": 2927,
-      "prsInWave": 49113
+      "openedInWave": 38064,
+      "openedInWaveStillOpen": 17908,
+      "closedInWave": 49275,
+      "scoredInWave": 9713700,
+      "newContributorsInWave": 2939,
+      "prsInWave": 49275
     }
   },
   "applicationPipeline": {
-    "openAssigned": 29157,
-    "openWithAppsNoAssignment": 4708,
-    "avgApplicationsPerOpen": 1.003,
+    "openAssigned": 29158,
+    "openWithAppsNoAssignment": 4849,
+    "avgApplicationsPerOpen": 1.012,
     "mostCompetitionIssues": [
       {
         "issueNumber": 750,
@@ -75824,17 +76094,17 @@
     "staleAssignmentsCount": 0
   },
   "issueQuality": {
-    "closedWithPR": 393398,
-    "closedWithoutPR": 15195,
+    "closedWithPR": 393560,
+    "closedWithoutPR": 15204,
     "prToIssueRatio": 96.28,
     "bounceRate": 3.72,
     "countsScope": "program, all time",
     "countsStale": false,
-    "closedPrInWave": 49370,
-    "rewardedInWave": 49113,
-    "staleOpenIssues": 4301,
+    "closedPrInWave": 49532,
+    "rewardedInWave": 49275,
+    "staleOpenIssues": 4258,
     "staleThresholdDays": 7,
-    "recentlyActiveOpen": 713,
+    "recentlyActiveOpen": 267,
     "recentWindowHours": 2
   },
   "dataQuality": {
@@ -75843,32 +76113,32 @@
       "basisRequested": "auto",
       "bases": {
         "resolved": {
-          "issues": 49113,
-          "rewarded": 49113,
-          "scoredPoints": 9683450,
-          "totalPoints": 9683450
+          "issues": 49275,
+          "rewarded": 49275,
+          "scoredPoints": 9713700,
+          "totalPoints": 9713700
         },
         "closed": {
-          "issues": 49370,
-          "rewarded": 49260,
-          "scoredPoints": 9712450,
-          "totalPoints": 9712450
+          "issues": 49532,
+          "rewarded": 49422,
+          "scoredPoints": 9742700,
+          "totalPoints": 9742700
         },
         "completed": {
-          "issues": 49113,
-          "rewarded": 49113,
-          "scoredPoints": 9683450,
-          "totalPoints": 9683450
+          "issues": 49275,
+          "rewarded": 49275,
+          "scoredPoints": 9713700,
+          "totalPoints": 9713700
         }
       },
       "resolvedInWaveValues": [
         [
           "{'id': '36ee4785-3a2c-4cde-a893-25fa48f0931e', 'waveProgramId': 'fdc01c95-806f-4",
-          49113
+          49275
         ],
         [
           "{'id': '4927b67c-6bfc-4bad-8cee-bf29702b16ee', 'waveProgramId': 'fdc01c95-806f-4",
-          397
+          347
         ],
         [
           "{'id': '25c87af5-ed75-4a77-a932-f7f135d52881', 'waveProgramId': 'fdc01c95-806f-4",
@@ -75900,19 +76170,19 @@
         ]
       }
     },
-    "paginationCursorPages": 502,
-    "openFetched": 35908,
-    "openReportedTotal": 35908,
+    "paginationCursorPages": 503,
+    "openFetched": 35876,
+    "openReportedTotal": 35876,
     "openDuplicatesRemoved": 0,
-    "closedScanned": 50300,
-    "closedPagesScanned": 503,
+    "closedScanned": 50400,
+    "closedPagesScanned": 504,
     "closedScanStoppedEarly": true,
     "enrollments": 959,
     "countsStale": false,
     "warnings": [
       "6 rewarded issues (1,200 pts) have no assignee and are excluded from contributor tables",
-      "scored points differ by definition of \"closed in wave\": resolved=9,683,450, closed=9,712,450, completed=9,683,450; using resolved"
+      "scored points differ by definition of \"closed in wave\": resolved=9,713,700, closed=9,742,700, completed=9,713,700; using resolved"
     ]
   },
-  "finishedAt": "2026-11-24T00:06:14+00:00"
+  "finishedAt": "2026-11-24T02:07:06+00:00"
 }
