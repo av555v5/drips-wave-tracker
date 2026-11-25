@@ -2425,5 +2425,24 @@
       "pointsEarned": 22300,
       "issuesClosed": 112
     }
+  },
+  {
+    "runAt": "2026-11-25T16:01:30+00:00",
+    "waveStatus": "ended",
+    "inWaveWindowNow": false,
+    "openIssuesTotal": 26838,
+    "openTotalPoints": 5194800,
+    "closedInWave11": 59856,
+    "closedTotalPoints": 11774050,
+    "maxTotalPoints": 16968850,
+    "scoredPoints": 11774050,
+    "remainingPoints": 5194800,
+    "newIssuesSinceLastRun": 3,
+    "contributorsCount": 3331,
+    "topContributor": {
+      "contributor": "greyforreal",
+      "pointsEarned": 22300,
+      "issuesClosed": 112
+    }
   }
 ]
