@@ -2463,5 +2463,24 @@
       "pointsEarned": 21400,
       "issuesClosed": 108
     }
+  },
+  {
+    "runAt": "2026-11-25T20:01:28+00:00",
+    "waveStatus": "ended",
+    "inWaveWindowNow": false,
+    "openIssuesTotal": 25366,
+    "openTotalPoints": 4894650,
+    "closedInWave11": 59862,
+    "closedTotalPoints": 11781300,
+    "maxTotalPoints": 16675950,
+    "scoredPoints": 11781300,
+    "remainingPoints": 4894650,
+    "newIssuesSinceLastRun": 0,
+    "contributorsCount": 3344,
+    "topContributor": {
+      "contributor": "jayteemoney",
+      "pointsEarned": 21400,
+      "issuesClosed": 108
+    }
   }
 ]
