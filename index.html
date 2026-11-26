@@ -110,7 +110,7 @@ select option{background:var(--bg);color:var(--hi)}
       <div class="blk"><h2>prize pool</h2><div id="econ-kv"></div></div>
       <div class="blk"><h2>concentration <small>share of total points</small></h2><div id="conc-kv"></div></div>
     </div>
-    <div class="blk grow"><h2>top 20 est. payouts <small>if the wave ended now</small></h2><div class="fit f" id="t-pay"></div></div>
+    <div class="blk grow"><h2>top 20 est. payouts <small>points × budget ÷ total scored points</small></h2><div class="fit f" id="t-pay"></div></div>
   </div>
 
   <div class="v full hidden" id="v-pipeline">
@@ -127,6 +127,13 @@ select option{background:var(--bg);color:var(--hi)}
       <div class="blk"><h2>fetch checks</h2><div id="dq-kv"></div></div>
     </div>
     <div class="blk"><h2>warnings</h2><pre id="dq-warn" style="white-space:pre-wrap"></pre></div>
+  </div>
+
+  <div class="v hidden" id="v-contributor">
+    <div class="blk"><h2><span id="cu-name">—</span><small><a href="#contributors">← all contributors</a> · <a id="cu-gh" href="https://github.com" target="_blank" rel="noopener">github ↗</a></small></h2>
+      <div class="g g2"><div id="cu-kv"></div><div id="cu-kv2"></div></div></div>
+    <div class="blk"><h2>review flags <small>automated hints from public PR data, not proof of misconduct</small></h2><pre id="cu-flags" style="white-space:pre-wrap;line-height:1.8"></pre></div>
+    <div class="blk"><h2>contributions <small id="cu-sub"></small></h2><div class="fit" id="t-cu" style="height:560px"></div></div>
   </div>
 
   <div class="v hidden" id="v-runs">
@@ -197,12 +204,17 @@ function table(host, cols, rows, o = {}){
 /* ── Shell ── */
 const views = ['overview','contributors','repos','economics','pipeline','data','runs'];
 let cur = 'overview', _snap = null, _hist = [], _ready = false;
+const allViews = [...views, 'contributor'];
 function show(v){
-  if(!views.includes(v)) v = 'overview';
+  let who = null;
+  if(v.startsWith('u/')){ try{ who = decodeURIComponent(v.slice(2)); }catch(e){ who = v.slice(2); } v = 'contributor'; }
+  if(!allViews.includes(v)) v = 'overview';
   cur = v;
-  views.forEach(x => $('v-'+x).classList.toggle('hidden', x !== v));
-  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  allViews.forEach(x => $('v-'+x).classList.toggle('hidden', x !== v));
+  const tab = v === 'contributor' ? 'contributors' : v;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.v === tab));
   $('main').scrollTop = 0; charts();
+  if(who) openContributor(who);
 }
 $('tabs').onclick = e => { const b = e.target.closest('button'); if(b) location.hash = b.dataset.v; };
 addEventListener('hashchange', () => { if(_ready) show(location.hash.slice(1)); });
@@ -226,7 +238,7 @@ function renderKpis(s){
     c('scored', fmt(s.scoredPoints), `${fmt(cw.uniqueIssues)} issues closed`) + c('remaining', fmt(s.remainingPoints), 'claimable') +
     c('new this run', fmt(ni.newSinceLastRun), 'opened since last run') +
     c('contributors', fmt(s.contributorsCount), tc ? `top ${esc(tc.contributor)} · ${fmt(tc.pointsEarned)}` : 'no rewards yet') +
-    c('paid', e.usdPaid != null ? usd(e.usdPaid) : '—', e.usdRemaining != null ? `${usd(e.usdRemaining)} remaining` : '');
+    c('usd / point', e.usdPerPoint ? '$' + e.usdPerPoint.toFixed(2) : '—', 'budget ÷ scored points');
 }
 
 function charts(){
@@ -305,16 +317,69 @@ function renderData(dq){
 
 function renderEconomics(e){
   if(!e){ $('econ-kv').innerHTML = '<span class="d">no data</span>'; return; }
-  $('econ-kv').innerHTML = kv('budget', usd(e.budgetUSD)) + kv('usd per point', '$'+e.usdPerPoint.toFixed(6)) + kv('paid', usd(e.usdPaid)) + kv('remaining', usd(e.usdRemaining)) +
+  $('econ-kv').innerHTML = kv('budget', usd(e.budgetUSD)) + kv('usd per scored point', '$'+(e.usdPerPoint||0).toFixed(6)) + kv('floor, if all open points score', '$'+(e.usdPerPointAtMax||0).toFixed(6)) + kv('projected at wave end', '$'+(e.projectedUsdPerPoint||0).toFixed(6)) +
     kv('projected final points', fmt(e.projectedFinalScoredPts)) + kv('duration / elapsed', `${e.waveDurationHours}h / ${e.elapsedHours}h`);
   const c = e.concentration || {};
   $('conc-kv').innerHTML = Object.keys(c).length
     ? kv('top 1%', c.top1pctShare+'%') + kv('top 10%', c.top10pctShare+'%') + kv('top 3', c.top3Share+'%') + kv('top 10', c.top10Share+'%') + kv('median / mean points', `${fmt(c.medianPoints)} / ${fmt(c.meanPoints)}`) + kv('under 100 points', fmt(c.longTailUnder100pts))
     : '<span class="d">no scored points yet</span>';
   table($('t-pay'), [
-    {l:'#',k:'#',w:'5ch',n:1,f:v=>v}, {l:'contributor',k:'contributor',w:'2fr',f:v=>gh(v)},
+    {l:'#',k:'#',w:'5ch',n:1,f:v=>v}, {l:'contributor',k:'contributor',w:'2fr',f:v=>cl(v)},
     {l:'points',k:'pointsEarned',n:1,w:'1fr'}, {l:'est. usd',k:'estimatedUSD',n:1,w:'1fr',f:v=>usd(v)}
   ], (e.topPayouts||[]).map(x => ({...x})), {search:false});
+}
+
+/* ── Contributor page: every rewarded issue with its PR and the automated review flags (contributions.json, loaded on demand) ── */
+let _contrib = null, _contribErr = null;
+const cl = u => `<a href="#u/${encodeURIComponent(u)}">${esc(u)}</a> <a class="d" href="https://github.com/${esc(u)}" target="_blank" rel="noopener" title="GitHub profile">↗</a>`;
+const LV = {high:'HIGH', medium:'MED', low:'low', clean:'ok', unchecked:'—'};
+async function loadContributions(){
+  if(_contrib || _contribErr) return;
+  try{ const r = await fetch('contributions.json', {cache:'no-store'}); if(!r.ok) throw new Error('HTTP ' + r.status); _contrib = await r.json(); }
+  catch(e){ _contribErr = e.message; }
+}
+async function openContributor(name){
+  const all = (_snap && _snap.allContributors) || [];
+  const idx = all.findIndex(c => c.contributor.toLowerCase() === name.toLowerCase());
+  const row = idx >= 0 ? all[idx] : null, user = row ? row.contributor : name;
+  $('cu-name').textContent = user; $('cu-gh').href = 'https://github.com/' + encodeURIComponent(user);
+  const e = (_snap && _snap.waveEconomics) || {}, pts = row ? row.pointsEarned : 0;
+  $('cu-kv').innerHTML = row
+    ? kv('points earned', fmt(pts)) + kv('est. earnings', usd(pts * (e.usdPerPoint || 0))) + kv('rank', `#${idx + 1} of ${fmt(all.length)}`) +
+      kv('share of scored points', _snap.scoredPoints ? (pts / _snap.scoredPoints * 100).toFixed(2) + '%' : '—') + kv('issues closed', fmt(row.issuesClosed)) + kv('avg points / issue', fmt(row.avgPointsPerIssue))
+    : '<span class="d">not in the current wave data</span>';
+  $('cu-kv2').innerHTML = row
+    ? kv('repos', fmt(row.reposCount ?? (row.reposContributedTo||[]).length)) + kv('complexity mix', esc(Object.entries(row.complexityBreakdown||{}).map(([k,v]) => `${k}:${v}`).join(' ') || '—')) +
+      kv('first closed', shortDate(row.firstClosedAt)) + kv('last closed', shortDate(row.lastClosedAt)) : '';
+  $('cu-flags').textContent = 'loading…'; $('t-cu').innerHTML = '';
+  await loadContributions();
+  if(cur !== 'contributor' || $('cu-name').textContent !== user) return;     // user navigated away while loading
+  const d = _contrib && _contrib.contributors && _contrib.contributors[user];
+  if(!d){
+    $('cu-flags').textContent = _contribErr ? `contributions.json is not available (${_contribErr}). Run the updated bot once.` : 'No rewarded issues recorded for this contributor.';
+    $('cu-sub').textContent = ''; return;
+  }
+  const sm = d.summary;
+  $('cu-kv2').innerHTML += kv('PRs checked', `${fmt(sm.issues - sm.unchecked)} of ${fmt(sm.issues)}`) + kv('flags high / medium / low', `${sm.high} / ${sm.medium} / ${sm.low}`) +
+    kv('points on high/medium flags', `${fmt(sm.pointsAtRisk)}${pts ? ' (' + (sm.pointsAtRisk / pts * 100).toFixed(0) + '%)' : ''}`);
+  const flagged = d.items.filter(x => x.risk > 0).sort((a,b) => b.risk - a.risk).slice(0, 80);
+  $('cu-flags').innerHTML = flagged.length
+    ? flagged.map(x => `<span class="${x.level === 'high' ? 'h' : 'd'}">${(LV[x.level] || '').padEnd(4)}</span> ${link(x.issueUrl, x.repo + '#' + x.number)} · ${x.prUrl ? link(x.prUrl, 'PR' + (x.pr ? ' #' + x.pr.number : '')) : 'no PR'}  ${x.flags.map(f => esc(f.t)).join('; ')}`).join('\n')
+    : (sm.unchecked ? `${sm.unchecked} PRs not read yet; the rest passed every automated rule.` : 'No flags: every PR passed the automated rules.');
+  $('cu-sub').textContent = `${d.items.length} rewarded issues · click a header to sort · / to filter`;
+  const rows = d.items.map(x => ({
+    repo:x.repo, number:x.number, issueUrl:x.issueUrl, title:x.title, points:x.pointsEarned, prUrl:x.prUrl, prNo:x.pr ? x.pr.number : null,
+    state:x.pr ? x.pr.state : (x.prUrl ? 'unavailable' : 'no PR'), add:x.pr ? x.pr.additions : 0, del:x.pr ? x.pr.deletions : 0,
+    lines:x.pr ? x.pr.additions + x.pr.deletions : null, files:x.pr ? x.pr.changedFiles : null,
+    level:x.level, risk:x.risk, flagCodes:x.flags.map(f => f.c).join(', '), closedAt:x.closedAt}));
+  table($('t-cu'), [
+    {l:'#',k:'#',n:1,w:'5ch',f:v=>v}, {l:'issue',k:r=>`${r.repo}#${r.number}`,w:'minmax(18ch,1.3fr)',f:(v,r)=>link(r.issueUrl,v)},
+    {l:'title',k:'title',w:'2fr'}, {l:'pts',k:'points',n:1,w:'7ch'},
+    {l:'PR',k:r=>r.prNo ?? 0,n:1,w:'8ch',f:(v,r)=>r.prUrl ? link(r.prUrl, r.prNo != null ? '#' + r.prNo : 'link') : '—'},
+    {l:'state',k:'state',w:'12ch'}, {l:'changes',k:'lines',n:1,w:'12ch',f:(v,r)=>r.prNo == null ? '—' : `+${fmt(r.add)} −${fmt(r.del)}`},
+    {l:'files',k:'files',n:1,w:'6ch'}, {l:'risk',k:'risk',n:1,w:'8ch',f:(v,r)=>(LV[r.level] || '') + (r.risk ? ' ' + r.risk : '')},
+    {l:'flags',k:'flagCodes',w:'minmax(20ch,2fr)'}, {l:'closed',k:'closedAt',w:'14ch',f:v=>shortDate(v)}
+  ], rows, {sort:8});
 }
 
 /* ── Runs page: the last N stored runs (runs.json) + a two-run comparison read from each run's own files ── */
@@ -346,10 +411,10 @@ function renderRuns(r){
     {l:'closed',k:'closedIssues',n:1,w:'8ch'}, {l:'max pts',k:'maxPoints',n:1,w:'10ch'},
     {l:'scored',k:'scoredPoints',n:1,w:'10ch'}, {l:'Δ scored',k:'dScored',n:1,w:'10ch',f:v=>sgn(v)}, {l:'left',k:'remainingPoints',n:1,w:'10ch'},
     {l:'new',k:'newIssues',n:1,w:'6ch'}, {l:'people',k:'contributors',n:1,w:'8ch'},
-    {l:'paid',k:'usdPaid',n:1,w:'11ch',f:v=>v==null ? '—' : usd(v)}, {l:'warn',k:'warnings',n:1,w:'6ch'},
+    {l:'usd/pt',k:'usdPerPoint',n:1,w:'11ch',f:v=>v==null ? '—' : '$' + v.toFixed(2)}, {l:'warn',k:'warnings',n:1,w:'6ch'},
     {l:'files',k:'dir',w:'minmax(22ch,1fr)',f:v=>['summary','contributors','repos'].map(f => `<a href="runs/${esc(v)}/${f}.json" target="_blank" rel="noopener">${f}</a>`).join(' · ')}
   ], rows, {search:false, sort:0});
-  const lines = [['scored','scoredPoints'],['open points','openPoints'],['max points','maxPoints'],['open issues','openIssues'],['closed issues','closedIssues'],['contributors','contributors'],['new issues','newIssues'],['usd paid','usdPaid']];
+  const lines = [['scored','scoredPoints'],['open points','openPoints'],['max points','maxPoints'],['open issues','openIssues'],['closed issues','closedIssues'],['contributors','contributors'],['new issues','newIssues'],['usd per point','usdPerPoint']];
   $('runs-spark').innerHTML = lines.map(([l,k]) => {
     const a = _runs.map(x => x[k] ?? 0), first = a[0], last = a[a.length-1];
     return `<span class="d">${l.padEnd(14)}</span>${spark(a, a.length).replace(/./gu, c => c.repeat(3))}  <span class="d">${fmt(first)} → </span><span class="h">${fmt(last)}</span> <span class="d">(${sgn(last - first)})</span>`;
@@ -365,7 +430,7 @@ async function compareRuns(){
   const A = _runs.find(x => x.dir === da), B = _runs.find(x => x.dir === db);
   if(!A || !B) return;
   $('cmp-sub').textContent = `${shortDate(A.runAt)} → ${shortDate(B.runAt)}`;
-  const m = [['open issues','openIssues'],['open points','openPoints'],['closed in wave','closedIssues'],['max points','maxPoints'],['scored','scoredPoints'],['remaining','remainingPoints'],['contributors','contributors'],['repos','repos'],['usd paid','usdPaid'],['pr ratio %','prRatio'],['stale assignments','stale']];
+  const m = [['open issues','openIssues'],['open points','openPoints'],['closed in wave','closedIssues'],['max points','maxPoints'],['scored','scoredPoints'],['remaining','remainingPoints'],['contributors','contributors'],['repos','repos'],['usd per point','usdPerPoint'],['pr ratio %','prRatio'],['stale assignments','stale']];
   $('cmp-kv').innerHTML = m.map(([l,k]) => kv(l, `${fmt(A[k])} → ${fmt(B[k])} <span class="d">(${sgn(A[k] != null && B[k] != null ? Math.round((B[k]-A[k])*100)/100 : null)})</span>`)).join('');
   $('t-cg').innerHTML = $('t-rg').innerHTML = '<div class="empty">loading…</div>';
   try{
@@ -376,7 +441,7 @@ async function compareRuns(){
       return {contributor:c.contributor, before, after:c.pointsEarned, delta:c.pointsEarned - before, issues:c.issuesClosed - (p ? p.issuesClosed : 0), isNew:p ? '' : 'new'}; })
       .filter(r => r.delta !== 0 || r.isNew);
     table($('t-cg'), [
-      {l:'#',k:'#',n:1,w:'5ch',f:v=>v}, {l:'contributor',k:'contributor',w:'2fr',f:v=>gh(v)},
+      {l:'#',k:'#',n:1,w:'5ch',f:v=>v}, {l:'contributor',k:'contributor',w:'2fr',f:v=>cl(v)},
       {l:'before',k:'before',n:1,w:'1fr'}, {l:'after',k:'after',n:1,w:'1fr'},
       {l:'Δ pts',k:'delta',n:1,w:'1fr',f:v=>sgn(v)}, {l:'Δ issues',k:'issues',n:1,w:'1fr',f:v=>sgn(v)}, {l:'',k:'isNew',w:'5ch'}
     ], crows, {sort:4});
@@ -395,11 +460,14 @@ async function compareRuns(){
 }
 
 const contribCols = [
-  {l:'#',k:'#',w:'5ch',n:1,f:v=>v}, {l:'contributor',k:'contributor',w:'minmax(16ch,2fr)',f:v=>gh(v)},
+  {l:'#',k:'#',w:'5ch',n:1,f:v=>v}, {l:'contributor',k:'contributor',w:'minmax(16ch,2fr)',f:v=>cl(v)},
   {l:'points',k:'pointsEarned',n:1,w:'9ch'}, {l:'issues',k:'issuesClosed',n:1,w:'7ch'},
   {l:'avg/issue',k:'avgPointsPerIssue',n:1,w:'10ch'}, {l:'repos',k:r=>r.reposCount ?? (r.reposContributedTo||[]).length,n:1,w:'6ch'},
   {l:'complexity mix',k:r=>Object.entries(r.complexityBreakdown||{}).map(([k,v])=>`${k}:${v}`).join(' '),w:'minmax(16ch,2fr)',f:v=>esc(v||'—')},
-  {l:'first closed',k:'firstClosedAt',w:'14ch',f:v=>shortDate(v)}, {l:'last closed',k:'lastClosedAt',w:'14ch',f:v=>shortDate(v)}
+  {l:'first closed',k:'firstClosedAt',w:'14ch',f:v=>shortDate(v)}, {l:'last closed',k:'lastClosedAt',w:'14ch',f:v=>shortDate(v)},
+  {l:'flags H/M/L',k:r=>(r.flagsHigh||0)*10000 + (r.flagsMedium||0)*100 + (r.flagsLow||0),n:1,w:'13ch',
+   f:(v,r)=>v ? `${r.flagsHigh||0} / ${r.flagsMedium||0} / ${r.flagsLow||0}` : (r.prsUnchecked ? 'unchecked' : '—')},
+  {l:'pts at risk',k:'pointsAtRisk',n:1,w:'11ch'}
 ];
 const repoCols = [
   {l:'#',k:'#',w:'5ch',n:1,f:v=>v},
