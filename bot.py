@@ -22,6 +22,8 @@ Accuracy rules this script follows
 from __future__ import annotations
 
 import datetime as dt
+import csv
+import io
 import json
 import math
 import os
@@ -988,6 +990,38 @@ def build_contributions(closed: list[dict], cache: dict, contributors: list[dict
             'contributors': out}
 
 
+def write_flagged_csv(contributions: dict) -> int:
+    """flagged_prs.csv: every PR that carries at least one review flag, highest
+    risk first. One row per rewarded issue: who it was credited to, who wrote
+    the PR, who merged it, in which repo, and why it was flagged. Cells that
+    start with = + - @ are prefixed with ' so a spreadsheet cannot run them as
+    formulas (PR titles are written by strangers)."""
+    cols = ['risk_level', 'risk_score', 'repo', 'issue_number', 'issue_url', 'issue_title', 'credited_contributor',
+            'pr_url', 'pr_number', 'pr_author', 'merged_by', 'pr_state', 'additions', 'deletions', 'changed_files',
+            'points_earned', 'flags', 'reasons', 'closed_at']
+    safe = lambda v: ("'" + str(v)) if isinstance(v, str) and v[:1] in ('=', '+', '-', '@', '\t', '\r') else ('' if v is None else v)
+    rows = []
+    for user, d in (contributions.get('contributors') or {}).items():
+        for x in d['items']:
+            if x['risk'] <= 0:
+                continue
+            pr = x.get('pr') or {}
+            rows.append((-x['risk'], x['repo'].lower(), [
+                x['level'], x['risk'], x['repo'], x['number'], x['issueUrl'], x['title'], user,
+                x['prUrl'], pr.get('number'), pr.get('author'), pr.get('mergedBy'),
+                pr.get('state') or ('unavailable' if x['prUrl'] else 'no PR'),
+                pr.get('additions'), pr.get('deletions'), pr.get('changedFiles'), x['pointsEarned'],
+                '; '.join(f['c'] for f in x['flags']), '; '.join(f['t'] for f in x['flags']), x['closedAt']]))
+    rows.sort(key=lambda r: r[:2])
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    w.writerow(cols)
+    for _, _, r in rows:
+        w.writerow([safe(v) for v in r])
+    write_atomic(ROOT / 'flagged_prs.csv', '\ufeff' + buf.getvalue())       # BOM: Excel reads UTF-8 correctly
+    return len(rows)
+
+
 def build_runs_index() -> None:
     """runs.json: one compact row per stored run (the last KEEP_RUNS), read from
     each run's summary.json, so the dashboard can show and compare them with a
@@ -1151,6 +1185,7 @@ def main() -> int:
     write_atomic(run_dir / 'summary.json', json.dumps(snap, indent=2))
     write_atomic(run_dir / 'contributors.json', json.dumps(contributors, indent=2))
     write_atomic(ROOT / 'contributions.json', json.dumps(contributions, separators=(',', ':')))
+    log(f'  wrote flagged_prs.csv ({write_flagged_csv(contributions)} flagged PRs)')
     write_atomic(run_dir / 'repos.json', json.dumps(per_repo, indent=2))
     write_markdown(run_dir, snap)
     append_history(snap)
