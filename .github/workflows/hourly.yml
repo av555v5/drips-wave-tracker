@@ -76,6 +76,10 @@ jobs:
         # `shell: bash` enables pipefail, so a crash in bot.py fails the job
         # instead of being hidden by `| tee`.
         shell: bash
+        env:
+          # Read access to public PRs for the contributor review flags. The default
+          # token is enough; PAT_TOKEN (if set) gets a larger API budget.
+          GH_TOKEN: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           python bot.py | tee runs_log.txt
           if grep -q "SKIP:" runs_log.txt; then echo "skipped=true" >> "$GITHUB_OUTPUT"; fi
@@ -87,7 +91,7 @@ jobs:
           git config user.email "wave-bot@users.noreply.github.com"
           # Stage each path on its own: one `git add a b c` stages NOTHING if
           # any single path is missing. -A also records pruned run dirs.
-          for p in runs state runs_log.txt latest.json history.json runs.json; do
+          for p in runs state runs_log.txt latest.json history.json runs.json contributions.json; do
             if [ -e "$p" ] || git ls-files --error-unmatch "$p" >/dev/null 2>&1; then
               git add -A "$p"
             fi
@@ -112,6 +116,7 @@ jobs:
             latest.json
             history.json
             runs.json
+            contributions.json
           retention-days: 30
 
       - name: Send summary to webhook (Slack/Discord/Telegram)
