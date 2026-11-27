@@ -1,63 +1,7 @@
 {
- "generatedAt": "2026-11-27T16:33:53+00:00",
+ "generatedAt": "2026-11-27T18:23:51+00:00",
  "keep": 10,
  "runs": [
-  {
-   "dir": "2026-11-26T12-01Z",
-   "runAt": "2026-11-26T12:01:31+00:00",
-   "status": "ended",
-   "inWaveWindowNow": false,
-   "openIssues": 21838,
-   "openPoints": 4184900,
-   "closedIssues": 59872,
-   "closedPoints": 11784900,
-   "maxPoints": 15969800,
-   "scoredPoints": 11784900,
-   "remainingPoints": 4184900,
-   "newIssues": 0,
-   "contributors": 3388,
-   "repos": 871,
-   "usdPerPoint": 0.006364,
-   "projectedFinal": 11784900,
-   "assigned": 18894,
-   "appsNoAssign": 0,
-   "stale": 18894,
-   "prRatio": 96.42,
-   "bounceRate": 3.58,
-   "warnings": 3,
-   "basis": "resolved",
-   "distribution": {
-    "small": {
-     "count": 2680,
-     "points": 310500
-    },
-    "medium": {
-     "count": 1181,
-     "points": 194400
-    },
-    "large": {
-     "count": 17977,
-     "points": 3680000
-    }
-   },
-   "top": [
-    {
-     "contributor": "greyforreal",
-     "pointsEarned": 20700,
-     "issuesClosed": 104
-    },
-    {
-     "contributor": "jayteemoney",
-     "pointsEarned": 19000,
-     "issuesClosed": 96
-    },
-    {
-     "contributor": "Georgechisom",
-     "pointsEarned": 16800,
-     "issuesClosed": 84
-    }
-   ]
-  },
   {
    "dir": "2026-11-26T15-41Z",
    "runAt": "2026-11-26T15:41:01+00:00",
@@ -542,6 +486,62 @@
     "large": {
      "count": 11755,
      "points": 2431600
+    }
+   },
+   "top": [
+    {
+     "contributor": "greyforreal",
+     "pointsEarned": 16700,
+     "issuesClosed": 84
+    },
+    {
+     "contributor": "aniokedianne",
+     "pointsEarned": 16600,
+     "issuesClosed": 83
+    },
+    {
+     "contributor": "Yormee-103",
+     "pointsEarned": 16400,
+     "issuesClosed": 83
+    }
+   ]
+  },
+  {
+   "dir": "2026-11-27T18-18Z",
+   "runAt": "2026-11-27T18:18:09+00:00",
+   "status": "ended",
+   "inWaveWindowNow": false,
+   "openIssues": 14800,
+   "openPoints": 2817100,
+   "closedIssues": 59857,
+   "closedPoints": 11748300,
+   "maxPoints": 14565400,
+   "scoredPoints": 11748300,
+   "remainingPoints": 2817100,
+   "newIssues": 0,
+   "contributors": 3478,
+   "repos": 865,
+   "usdPerPoint": 0.006384,
+   "projectedFinal": 11748300,
+   "assigned": 11812,
+   "appsNoAssign": 0,
+   "stale": 11812,
+   "prRatio": 96.45,
+   "bounceRate": 3.55,
+   "warnings": 3,
+   "basis": "resolved",
+   "distribution": {
+    "small": {
+     "count": 2344,
+     "points": 274700
+    },
+    "medium": {
+     "count": 894,
+     "points": 149400
+    },
+    "large": {
+     "count": 11562,
+     "points": 2393000
     }
    },
    "top": [
